@@ -204,6 +204,11 @@ h1{margin:4px 0 4px;font-size:30px}
   padding:13px;
   margin-top:9px;
 }
+.area-card.group-meal{border-left:5px solid #c78945;background:#fffaf3}
+.area-card.group-pharmacy{border-left:5px solid #5b82b2;background:#f7faff}
+.area-card.group-convenience{border-left:5px solid #5b8b71;background:#f7fbf8}
+.area-card.group-shopping{border-left:5px solid #8469aa;background:#faf8fd}
+.area-card.group-dessert{border-left:5px solid #c9798c;background:#fff8fa}
 .area-card summary{
   cursor:pointer;
   font-weight:800;
@@ -612,7 +617,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day">9/20（日）</div>
-              <div class="preview-route">苫小牧 → 新千歲機場</div>
+              <div class="preview-route">🚗 苫小牧 → ✈️ 新千歲機場</div>
             </div>
           </div>
         </div>
@@ -944,7 +949,7 @@ const dayData = {
     label:"Day 4｜9/19（六）",
     route:"有珠山 → 虎杖浜 → 苫小牧",
     hotel:"苫小牧住宿",
-    highlights:["08:15有珠山首班纜車","🍴 虎杖浜午餐","苫小牧晚餐五選一"],
+    highlights:["08:15有珠山首班纜車","🍴 午餐二選一","苫小牧晚餐四選一"],
     missions:["07:40前抵達纜車站","搭08:15推估首班","選定虎杖浜午餐","選一間苫小牧晚餐"],
     foodFocus:["虎杖浜海鮮方案","白老牛方案","鱈魚子伴手禮"],
     sharedStops:[
@@ -953,16 +958,17 @@ const dayData = {
       {time:"08:15",name:"有珠山纜車上山",note:"目前官方首班為08:15；2026年9月正式班次公布後再確認。",stay:"單程約6分",next:"山頂展望台與步道"},
       {time:"08:21–09:35",name:"有珠山山頂",note:"前往展望台；依步道開放狀況行走，09:35前回到山頂站。",stay:"約74分",next:"搭09:45推估班次下山"},
       {time:"09:45–09:51",name:"有珠山纜車下山",note:"班次依現場運行調整。",stay:"約6分",next:"10:00開車前往虎杖浜"},
-      {time:"10:00–11:00",name:"有珠山 → 虎杖浜",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"午餐與水產採買"},
-      {time:"11:00–14:30",name:"虎杖浜午餐／水產採買",note:"海鮮午餐為主選，白老牛為備案；鱈魚子店依時間停留。",stay:"約3.5小時",next:"前往苫小牧"},
+      {time:"10:00–11:00",name:"有珠山 → 虎杖浜／白老",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"選擇午餐方案"}
+    ],
+    postLunchStops:[
       {time:"14:30–15:30",name:"虎杖浜 → 苫小牧",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"冰品最多選一間"},
       {time:"15:30–16:30",name:"苫小牧冰品（二選一）",note:"プチラパン或北からの贈り物選一間。",stay:"最多60分",next:"前往住宿"},
       {time:"17:00左右",name:"苫小牧住宿 Check-in",note:"停車、放行李。",stay:"約30分",next:"晚餐"},
-      {time:"18:00–20:30",name:"苫小牧晚餐（五選一）",note:"依料理、營業時間與訂位狀況選一間。",stay:"約60–90分",next:"藥妝、超商或大型採買"}
+      {time:"18:00–20:30",name:"苫小牧晚餐（四選一）",note:"依料理、營業時間與訂位狀況選一間。",stay:"約60–90分",next:"藥妝、超商或大型採買"}
     ],
     defaultPlan:"seafood",
     planOrder:["seafood","beef"],
-    areaOrder:["有珠山","虎杖浜海鮮","白老牛","苫小牧入住後"],
+    areaOrder:["有珠山","虎杖浜海鮮","白老牛","晚餐","藥妝","便利商店","大型採買","冰品"],
     plans:{
       beef:{
         title:"🥩 白老牛午餐",
@@ -1010,19 +1016,42 @@ const dayData = {
         ]
       },
       {
-        title:"苫小牧入住後",
-        note:"依需求選擇，不需要三家全部去",
+        title:"🍽️ 晚餐（四選一）",
+        note:"依料理、營業時間與訂位狀況選一間",
         shops:[
-          ["洋食／咖啡","ヴァンカム／Vankam","義大利麵、焗烤飯、漢堡排或蛋糕。","星期六 11:00–20:45（L.O.20:15）","https://www.google.com/maps/search/?api=1&query=ヴァンカム+苫小牧市表町5丁目5-1","晚餐五選一"],
-          ["壽司／海鮮","海鮮・鮨 みね","壽司、生魚片與海鮮料理；建議訂位。","星期六 17:00–23:00","https://www.google.com/maps/search/?api=1&query=海鮮+鮨+みね+苫小牧市表町3丁目2-2","晚餐五選一"],
-          ["蕎麥","香るつけ蕎麦 蕎麦花 王子町店","つけ蕎麦、木の実せいろ與蕎麥料理。","星期六 17:30–21:00（L.O.20:30）","https://www.google.com/maps/search/?api=1&query=香るつけ蕎麦+蕎麦花+王子町店","晚餐五選一"],
-          ["會席／串料理","串坊・会席料理 たいしょう","會席料理、串料理與生魚片；建議訂位。","星期六 17:00–22:00","https://www.google.com/maps/search/?api=1&query=串坊+会席料理+たいしょう+苫小牧","晚餐五選一"],
-          ["海鮮／爐端燒","地魚・活魚・炉端焼き 魚次郎","地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。","星期六 17:00–22:30（L.O.22:00）","https://www.google.com/maps/search/?api=1&query=地魚+活魚+炉端焼き+魚次郎+苫小牧","晚餐五選一"],
-          ["住宿旁藥妝","ツルハドラッグ 苫小牧王子店","補防曬、暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。","09:00–22:00","https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店","表町"],
-          ["北海道超商","セイコーマート 苫小牧表町店","買 HOT CHEF 豬排丼或炸雞、山わさび零食、北海道牛乳與哈密瓜冰品。","06:00–24:00","https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店","表町"],
-          ["大型採買","MEGAドン・キホーテ 苫小牧店","一次補零食、飲料、藥妝、盥洗用品與北海道伴手禮。","09:00–24:00","https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店","木場町"],
-          ["冰品候選","幸せの生ソフト プチラパン","吃牛奶生霜淇淋，口味與配料以當日菜單為準。","11:00–18:00；不定休","https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン","苫小牧"],
-          ["冰品備選","北からの贈り物 苫小牧店","北海道牛乳Blender Ice與Gelato；位於沼ノ端。","約10:00–17:30，出發前確認","https://www.google.com/maps/search/?api=1&query=北からの贈り物+苫小牧店","沼ノ端"]
+          ["壽司／海鮮","海鮮・鮨 みね","壽司、生魚片與海鮮料理；建議訂位。","星期六 17:00–23:00","https://www.google.com/maps/search/?api=1&query=海鮮+鮨+みね+苫小牧市表町3丁目2-2",""],
+          ["蕎麥","香るつけ蕎麦 蕎麦花 王子町店","つけ蕎麦、木の実せいろ與蕎麥料理。","星期六 17:30–21:00（L.O.20:30）","https://www.google.com/maps/search/?api=1&query=香るつけ蕎麦+蕎麦花+王子町店",""],
+          ["會席／串料理","串坊・会席料理 たいしょう","會席料理、串料理與生魚片；建議訂位。","星期六 17:00–22:00","https://www.google.com/maps/search/?api=1&query=串坊+会席料理+たいしょう+苫小牧",""],
+          ["海鮮／爐端燒","地魚・活魚・炉端焼き 魚次郎","地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。","星期六 17:00–22:30（L.O.22:00）","https://www.google.com/maps/search/?api=1&query=地魚+活魚+炉端焼き+魚次郎+苫小牧",""]
+        ]
+      },
+      {
+        title:"💊 藥妝／藥局",
+        note:"補藥品、面膜與旅行用品",
+        shops:[
+          ["藥妝","ツルハドラッグ 苫小牧王子店","補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。","09:00–22:00","https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店",""]
+        ]
+      },
+      {
+        title:"🏪 便利商店",
+        note:"買宵夜與隔日早餐",
+        shops:[
+          ["北海道超商","セイコーマート 苫小牧表町店","買 HOT CHEF 豬排丼或炸雞、山わさび零食、北海道牛乳與哈密瓜冰品。","06:00–24:00","https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店",""]
+        ]
+      },
+      {
+        title:"🛒 大型採買",
+        note:"需要大量補貨時開車前往",
+        shops:[
+          ["大型採買","MEGAドン・キホーテ 苫小牧店","補零食、飲料、藥妝、盥洗用品與北海道伴手禮。","09:00–24:00","https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店",""]
+        ]
+      },
+      {
+        title:"🍦 冰品（二選一）",
+        note:"下午最多選一間",
+        shops:[
+          ["冰品主選","幸せの生ソフト プチラパン","吃牛奶生霜淇淋，口味與配料以當日菜單為準。","11:00–18:00；不定休","https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン",""] ,
+          ["冰品備選","北からの贈り物 苫小牧店","北海道牛乳Blender Ice與Gelato；位於沼ノ端。","約10:00–17:30，出發前確認","https://www.google.com/maps/search/?api=1&query=北からの贈り物+苫小牧店",""]
         ]
       }
     ]
@@ -1089,8 +1118,10 @@ function stopMarkup(stops){
 }
 
 function areaMarkup(areas){
-  return areas.map(a=>`
-    <details class="area-card">
+  return areas.map(a=>{
+    const groupClass=/晚餐/.test(a.title)?"group-meal":/藥妝|藥局/.test(a.title)?"group-pharmacy":/便利商店/.test(a.title)?"group-convenience":/大型採買/.test(a.title)?"group-shopping":/冰品/.test(a.title)?"group-dessert":"";
+    return `
+    <details class="area-card ${groupClass}">
       <summary>${a.title}</summary>
       ${(() => {
         let lastDistrict = "";
@@ -1112,7 +1143,7 @@ function areaMarkup(areas){
         }).join("");
       })()}
     </details>
-  `).join("");
+  `}).join("");
 }
 
 
@@ -1120,7 +1151,7 @@ const mustDoByDate={
   "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包"],
   "9/17":["🦀 中央市場海鮮","🍦 小樽代表冰品","🍽️ 小樽 Muse"],
   "9/18":["🧳 12:30 小樽退房","☕ 北一ホール","🍔 鹿肉漢堡","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
-  "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮 或 🥩 白老牛","🍽️ 苫小牧晚餐五選一"],
+  "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮 或 🥩 白老牛","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
 };
 function dayBriefMarkup(d){
@@ -1195,7 +1226,7 @@ function renderDay(dayKey, selectedPlan){
         </div>
         ${dayBriefMarkup(d)}
 
-        <div class="plan-label">共同行程</div>
+        <div class="plan-label">上午行程</div>
         ${stopMarkup(d.sharedStops)}
 
         <div class="plan-switch">
@@ -1212,6 +1243,8 @@ function renderDay(dayKey, selectedPlan){
 
         <div class="plan-label" id="dayPlanLabel">🍴 午餐（二選一）｜${plan.title.replace(/^[🥩🐟]\s*/,"").replace(/午餐$/,"")}</div>
         <div id="dayPlanStops" aria-live="polite">${stopMarkup(plan.stops)}</div>
+
+        ${d.postLunchStops?`<div class="plan-label">午餐後行程</div>${stopMarkup(d.postLunchStops)}`:""}
 
         <div class="area-list">
           <h3 style="margin:14px 0 2px">今日會經過的區域</h3>
