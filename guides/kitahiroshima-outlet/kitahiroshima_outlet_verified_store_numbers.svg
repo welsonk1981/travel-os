@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="3260" viewBox="0 0 1600 3260">
+  <style>
+    text{font-family:"PingFang TC","Noto Sans CJK TC","Microsoft JhengHei",sans-serif;fill:#172437}
+    .title{font-size:38px;font-weight:750}
+    .subtitle{font-size:18px;fill:#5e7082}
+    .floor{font-size:30px;font-weight:750}
+    .note{font-size:14px;fill:#6a7a8a}
+    .panel{fill:#fff;stroke:#d5dde5;stroke-width:2}
+  </style>
+
+  <rect width="1600" height="3260" fill="#f4f6f8"/>
+  <rect x="35" y="25" width="1530" height="3205" rx="22" fill="#fff"/>
+  <text x="70" y="78" class="title">北廣島三井 OUTLET｜空白樓層底圖</text>
+  <text x="70" y="112" class="subtitle">第一步：僅保留官方店面配置輪廓；店名、店號、Logo、分類及目的地標記全部移除</text>
+
+  <g id="clover-1f">
+    <rect x="65" y="145" width="1470" height="1120" rx="18" class="panel"/>
+    <text x="95" y="192" class="floor">Clover Mall 1F</text>
+    <image x="210" y="165" width="1180" height="1090" xlink:href="official-outline-clover1.png"/>
+  </g>
+
+  <g id="clover-2f">
+    <rect x="65" y="1300" width="1470" height="1000" rx="18" class="panel"/>
+    <text x="95" y="1347" class="floor">Clover Mall 2F</text>
+    <image x="205" y="1370" width="1190" height="910" xlink:href="official-outline-clover2.png"/>
+  </g>
+
+  <g id="maple-2f">
+    <rect x="65" y="2335" width="1470" height="850" rx="18" class="panel"/>
+    <text x="95" y="2382" class="floor">Maple Mall 2F</text>
+    <image x="280" y="2415" width="1040" height="750" xlink:href="official-outline-maple2.png"/>
+  </g>
+
+  <text x="70" y="3220" class="note">官方圖版本：2026/06/11｜此版本不含任何目的店標示</text>
+</svg>

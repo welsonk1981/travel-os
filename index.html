@@ -1,0 +1,1380 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4f7fa8">
+<title>2026 北海道 Travel OS 3.0 Minimal</title>
+<style>
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --text:#20252b;
+  --sub:#6e7681;
+  --line:#e5e9ee;
+  --blue:#4f7fa8;
+  --blue-soft:#eaf2f8;
+  --green:#5b8b71;
+  --green-soft:#e9f2ec;
+  --amber:#a9783f;
+  --amber-soft:#f6eee2;
+  --gray-soft:#f1f3f5;
+  --shadow:0 10px 28px rgba(44,57,72,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
+  line-height:1.5;
+}
+button,a{font:inherit}
+.app{max-width:820px;margin:0 auto;padding:16px 14px 96px}
+.hero{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--sub)}
+h1{margin:4px 0 4px;font-size:30px}
+.sub{font-size:14px;color:var(--sub)}
+.countdown{
+  min-width:106px;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:16px;
+  padding:10px 13px;
+  text-align:right;
+}
+.countdown strong{display:block;font-size:24px}
+.countdown span{font-size:12px}
+.weather{
+  margin-top:14px;
+  border:1px solid var(--line);
+  background:#fafcff;
+  border-radius:16px;
+  padding:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:center;
+}
+.weather-main{display:flex;align-items:center;gap:10px}
+.weather-icon{font-size:30px}
+.weather-temp{font-size:24px;font-weight:800}
+.weather-meta{text-align:right;font-size:12px;color:var(--sub)}
+.tabs{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding:14px 0 8px;
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:linear-gradient(var(--bg) 78%,transparent);
+}
+.tab{
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  border-radius:999px;
+  padding:9px 14px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+.tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.panel{display:none}
+.panel.active{display:block}
+.card,.day-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  margin:12px 0;
+  padding:17px;
+  box-shadow:var(--shadow);
+}
+.day-list{
+  display:grid;
+  gap:10px;
+}
+.day-preview{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:18px;
+  padding:15px;
+  cursor:pointer;
+}
+.day-preview:hover{border-color:#c8d7e4}
+.preview-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+}
+.preview-day{font-size:14px;color:var(--sub);font-weight:750}
+.preview-route{font-size:21px;font-weight:850;margin-top:4px}
+.hotel-chip{
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:12px;
+  white-space:nowrap;
+}
+.preview-points{
+  margin-top:10px;
+  color:#4f5760;
+  font-size:13px;
+}
+.day-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  padding-bottom:13px;
+  border-bottom:1px solid var(--line);
+}
+.day-label{font-size:12px;color:var(--sub)}
+.route{font-size:22px;font-weight:900;margin-top:2px}
+.stop{
+  display:grid;
+  grid-template-columns:108px minmax(0,1fr);
+  gap:16px;
+  padding:17px 0;
+  border-bottom:1px dashed var(--line);
+}
+.stop:last-child{border-bottom:none}
+.stop-top{
+  display:block;
+}
+.place-title{font-size:19px;font-weight:850}
+.place-title a{color:var(--text);text-decoration:none}
+.stop-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:5px}
+.stop-option{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:10px;padding:5px 8px;color:var(--text);background:var(--blue-soft);font-size:15px}
+.arrival{
+  grid-column:1;
+  grid-row:1;
+  font-size:15px;
+  color:#7c858f;
+  font-weight:750;
+  white-space:nowrap;
+  padding-top:1px;
+}
+.stop-content{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+}
+.place-note{font-size:15px;color:var(--sub);margin-top:3px}
+.metrics{
+  display:flex;
+  gap:0;
+  flex-wrap:wrap;
+  margin-top:7px;
+  color:#8a929b;
+  font-size:12px;
+}
+.metric{
+  font-size:12px;
+  font-weight:500;
+  padding:0;
+  border-radius:0;
+  background:transparent!important;
+  color:#8a929b!important;
+}
+.metric + .metric::before{
+  content:"｜";
+  color:#c1c6cc;
+  margin:0 7px;
+}
+.area-list{margin-top:14px}
+.area-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:13px;
+  margin-top:9px;
+}
+.area-card summary{
+  cursor:pointer;
+  font-weight:800;
+}
+.area-note{font-size:12px;color:var(--sub);margin-top:3px}
+.shop{
+  padding:11px 0;
+  border-bottom:1px dashed var(--line);
+}
+.shop:last-child{border-bottom:0}
+.shop a{color:#1769aa;text-decoration:none;font-weight:850;font-size:17px}
+.shop p{margin:4px 0;color:var(--sub);font-size:15px}
+.shop-hours{font-size:14px;color:#505a65;margin-top:4px;font-weight:700}
+.shop-alert{font-size:12px;color:#955f45;background:#f8eee9;border-radius:9px;padding:7px 9px;margin-top:7px}
+.district-label{margin-top:12px;padding:6px 9px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
+.tag{
+  display:inline-block;
+  border-radius:999px;
+  padding:3px 8px;
+  font-size:11px;
+  font-weight:800;
+  margin-right:6px;
+}
+.tag.must{background:var(--green-soft);color:var(--green)}
+.tag.rec{background:var(--amber-soft);color:var(--amber)}
+.tag.opt{background:var(--gray-soft);color:#69717a}
+.tag.time{background:#f5e5df;color:#9b654f}
+.back-btn{
+  border:0;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:999px;
+  padding:8px 12px;
+  font-weight:800;
+  cursor:pointer;
+  margin-bottom:10px;
+}
+.flight{
+  padding:0;
+  overflow:hidden;
+}
+.flight-head{
+  background:var(--blue);
+  color:#fff;
+  padding:11px 15px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:13px;
+}
+.flight-body{padding:17px}
+.airports{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  align-items:center;
+}
+.code{font-size:38px;font-weight:900;line-height:1}
+.clock{font-size:20px;font-weight:800;margin-top:6px}
+.plane{color:var(--sub)}
+.meta{border-top:1px dashed var(--line);margin-top:14px;padding-top:10px}
+.meta div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-size:14px}
+.meta span{color:var(--sub)}
+.hotel-row{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:13px;
+  margin-top:10px;
+}
+.hotel-top{display:flex;justify-content:space-between;gap:12px}
+.hotel-city{font-weight:800}
+.hotel-date{font-size:12px;color:var(--blue);background:var(--blue-soft);padding:4px 8px;border-radius:999px}
+.hotel-row a{display:block;margin-top:7px;color:#1769aa;text-decoration:none;font-size:13px}
+.hotel-parking{margin-top:7px;font-size:13px;color:#505862}
+.hotel-parking.pending{color:#9a6b3f}
+.note-row{padding:12px 0;border-bottom:1px dashed var(--line)}
+.note-row:last-child{border-bottom:0}
+.note-row b{display:block}
+.note-row span{font-size:13px;color:var(--sub)}
+.footer{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
+  width:min(780px,calc(100vw - 20px));
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(44,57,72,.13);
+  display:flex;
+  justify-content:space-around;
+  padding:8px;
+  backdrop-filter:blur(12px);
+}
+.footer button{
+  border:0;
+  background:transparent;
+  color:var(--sub);
+  padding:8px 10px;
+  min-width:58px;
+  cursor:pointer;
+}
+.footer button.active{color:var(--blue);font-weight:800}
+.footer span{display:block;font-size:18px}
+.footer small{display:block;font-size:10px;margin-top:2px}
+@media(max-width:560px){
+  .hero-top{align-items:flex-start}
+  .stop{grid-template-columns:92px minmax(0,1fr);gap:12px}
+  .arrival{font-size:14px}
+}
+
+.rental-card{padding:0;overflow:hidden}
+.rental-head{background:var(--blue);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;gap:10px}
+.rental-body{padding:17px}
+.rental-title{font-size:21px;font-weight:900}
+.rental-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.rental-links a{color:#1769aa;text-decoration:none;font-weight:800;background:var(--blue-soft);padding:7px 10px;border-radius:10px}
+.rental-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.rental-box{border:1px solid var(--line);border-radius:14px;padding:12px}
+.rental-box span{display:block;color:var(--sub);font-size:12px}
+.rental-box b{display:block;font-size:16px;margin-top:2px}
+.rental-more{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+.rental-more summary{cursor:pointer;font-weight:800}
+@media(max-width:560px){.rental-grid{grid-template-columns:1fr}}
+
+
+.plan-switch{
+  margin:16px 0 4px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#f8fafc;
+}
+.plan-switch-title{font-size:13px;color:var(--sub);font-weight:800;margin-bottom:9px}
+.plan-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+  padding:3px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#e9edf1;
+}
+.plan-btn{
+  border:0;
+  background:transparent;
+  color:var(--sub);
+  border-radius:11px;
+  padding:10px 9px;
+  text-align:center;
+  cursor:pointer;
+  font-weight:800;
+  transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .12s ease;
+}
+.plan-btn::before{content:"○ ";font-weight:900}
+.plan-btn:active{transform:scale(.985)}
+.plan-btn small{display:block;color:inherit;font-size:11px;font-weight:500;margin-top:2px;opacity:.82}
+.plan-btn.active{
+  background:var(--card);
+  color:var(--blue);
+  box-shadow:0 2px 8px rgba(44,57,72,.12);
+}
+.plan-btn.active::before{content:"● "}
+.plan-hint{font-size:12px;color:var(--sub);margin-top:8px}
+#dayPlanStops{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .2s ease,transform .2s ease;
+}
+#dayPlanStops.is-switching{
+  opacity:0;
+  transform:translateY(4px);
+}
+.must-do{margin:14px 0 4px;padding:13px;border-radius:15px;background:var(--green-soft)}
+.must-do-title{font-size:15px;font-weight:900;color:var(--green);margin-bottom:8px}
+.must-do .mission-list{display:grid;gap:8px}
+.must-do .mission-item{font-size:15px;font-weight:750}
+.quick-rates{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.quick-rates button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;cursor:pointer}
+.plan-label{
+  display:inline-block;
+  margin:16px 0 0;
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--blue-soft);
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+}
+@media(max-width:560px){.plan-btn{padding:10px 6px;font-size:13px}}
+
+
+.audit-box{
+  margin:12px 0;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid #ead9bd;
+  background:#fff9ef;
+  color:#795b31;
+  font-size:13px;
+}
+.audit-status{
+  display:inline-block;
+  margin-left:6px;
+  padding:2px 7px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+  vertical-align:2px;
+}
+.audit-status.confirmed{background:#e9f2ec;color:#4e7e64}
+.audit-status.estimate{background:#f6eee2;color:#96703c}
+.audit-status.pending{background:#f1f3f5;color:#6f7782}
+.fixed-event{
+  border-left:4px solid var(--blue);
+  padding-left:12px;
+}
+
+
+.day-brief{
+  margin:14px 0 2px;
+  display:grid;
+  gap:9px;
+}
+.brief-block{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:12px 13px;
+  background:#fbfcfd;
+}
+.brief-title{
+  font-size:12px;
+  color:var(--sub);
+  font-weight:900;
+  margin-bottom:7px;
+}
+.brief-tags{display:flex;gap:6px;flex-wrap:wrap}
+.brief-tag{
+  display:inline-block;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:11px;
+  background:var(--gray-soft);
+  color:#59616a;
+}
+.mission-list{display:grid;gap:5px}
+.mission-item{display:flex;gap:8px;align-items:center;font-size:13px}
+.mission-item input{width:17px;height:17px;accent-color:var(--green)}
+.mission-item input:checked + span{text-decoration:line-through;color:#9ca3aa}
+.area-guide-link{
+  display:inline-block;
+  margin-top:8px;
+  padding:8px 11px;
+  border-radius:10px;
+  background:var(--blue);
+  color:#fff!important;
+  font-size:12px;
+  font-weight:900;
+}
+.plan-card-note{
+  margin:8px 0 0;
+  padding:8px 10px;
+  border-radius:10px;
+  background:var(--amber-soft);
+  color:#805a31;
+  font-size:12px;
+}
+
+
+.currency-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:12px;
+  align-items:end;
+  margin-top:14px;
+}
+.currency-field label{display:block;font-size:12px;color:var(--sub);font-weight:800;margin-bottom:6px}
+.currency-field input{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 13px;
+  background:#fff;
+  color:var(--text);
+  font-size:18px;
+  font-weight:800;
+}
+.currency-swap{
+  border:0;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:999px;
+  width:42px;
+  height:42px;
+  cursor:pointer;
+  font-weight:900;
+}
+.rate-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.rate-row input{
+  width:120px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 10px;
+  font-weight:800;
+}
+.rate-btn{
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  border-radius:10px;
+  padding:9px 12px;
+  cursor:pointer;
+  font-weight:800;
+}
+.rate-status{font-size:12px;color:var(--sub);margin-top:8px}
+@media(max-width:560px){
+  .currency-grid{grid-template-columns:1fr}
+  .currency-swap{transform:rotate(90deg);justify-self:center}
+}
+
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">TRAVEL OS 3.0・MINIMAL</div>
+        <h1>2026 北海道</h1>
+        <div class="sub">9/16（三）– 9/20（日）｜5天4夜自駕</div>
+      </div>
+      <div class="countdown" id="countdown">
+        <strong>計算中</strong>
+        <span>距離出發</span>
+      </div>
+    </div>
+
+    <div class="weather" id="weather">
+      <div class="weather-main">
+        <div class="weather-icon" id="weatherIcon">⌛</div>
+        <div>
+          <div class="weather-temp" id="weatherTemp">讀取中</div>
+          <div class="sub" id="weatherText">札幌今日天氣</div>
+        </div>
+      </div>
+      <div class="weather-meta" id="weatherMeta"></div>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-target="home">首頁</button>
+    <button class="tab" data-target="flights">航班</button>
+    <button class="tab" data-target="rental">租車</button>
+    <button class="tab" data-target="lodging">住宿</button>
+    <button class="tab" data-target="currency">匯率</button>
+  </nav>
+
+  <section id="home" class="panel active">
+    <article class="card">
+      <h2 style="margin:0 0 12px">北海道 5 日</h2>
+      <div class="day-list">
+
+        <div class="day-preview" data-day="day1">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day">9/16（三）</div>
+              <div class="preview-route">✈ 新千歲 → 🛍️ 北廣島 Outlet → 🌃 札幌</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day2">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day">9/17（四）</div>
+              <div class="preview-route">🌳 中島公園 → 🦀 中央市場 → 🌊 小樽</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day3">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day">9/18（五）</div>
+              <div class="preview-route">☕ 北一ホール → 🐄 高橋牧場 → 🎆 洞爺湖</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day4">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day">9/19（六）</div>
+              <div class="preview-route">有珠山 → 虎杖浜 → 苫小牧</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day5">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day">9/20（日）</div>
+              <div class="preview-route">苫小牧 → 新千歲機場</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </section>
+
+  <section id="dayDetail" class="panel"></section>
+
+  <section id="flights" class="panel">
+    <article class="card flight">
+      <div class="flight-head"><span>去程｜IT234</span><span>2026/9/16</span></div>
+      <div class="flight-body">
+        <div class="airports">
+          <div><div class="code">TPE</div><div class="clock">06:20</div></div>
+          <div class="plane">✈</div>
+          <div><div class="code">CTS</div><div class="clock">11:05</div></div>
+        </div>
+        <div class="meta">
+          <div><span>託運行李</span><b>20 公斤</b></div>
+          <div><span>座位</span><b>3F</b></div>
+          <div><span>機上餐</span><b>油蔥雞肉飯</b></div>
+          <div><span>訂位代號</span><b>F7MUNJ</b></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card flight">
+      <div class="flight-head"><span>回程｜IT235</span><span>2026/9/20</span></div>
+      <div class="flight-body">
+        <div class="airports">
+          <div><div class="code">CTS</div><div class="clock">12:05</div></div>
+          <div class="plane">✈</div>
+          <div><div class="code">TPE</div><div class="clock">15:20</div></div>
+        </div>
+        <div class="meta">
+          <div><span>託運行李</span><b>40 公斤</b></div>
+          <div><span>座位</span><b>3A</b></div>
+          <div><span>訂位代號</span><b>F7MUNJ</b></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  
+  <section id="rental" class="panel">
+    <article class="card rental-card">
+      <div class="rental-head">
+        <span>Toyota Rent a Car</span>
+        <span>預約完成</span>
+      </div>
+      <div class="rental-body">
+        <div class="rental-title">新千歲機場鈴蘭店</div>
+        <div class="sub">預約號碼 99995679600</div>
+
+        <div class="rental-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC" target="_blank">新千歲機場鈴蘭店 ↗</a>
+          <a href="tel:+81123240100">撥打 0123-24-0100</a>
+        </div>
+
+        <div class="rental-grid">
+          <div class="rental-box"><span>取車</span><b>9/16 12:00</b><span>到着便 IT234</span></div>
+          <div class="rental-box"><span>還車</span><b>9/20 09:00</b><span>出発便 IT235</span></div>
+          <div class="rental-box"><span>車輛</span><b>C2 等級</b><span>AT／禁菸</span></div>
+          <div class="rental-box"><span>租車總額</span><b>¥55,352</b><span>WEB 信用卡結算</span></div>
+        </div>
+
+        <div class="meta">
+          <div><span>完整套餐</span><b>已包含</b></div>
+          <div><span>4WD</span><b>不指定</b></div>
+          <div><span>雪胎</span><b>不需要</b></div>
+          <div><span>ETC／JAF</span><b>依現場庫存；無法提供則退款</b></div>
+        </div>
+
+        <details class="rental-more">
+          <summary>更多預約與費用資訊</summary>
+          <div class="meta">
+            <div><span>姓名</span><b>Taihua Chen</b></div>
+            <div><span>Email</span><b>welsonk@gmail.com</b></div>
+            <div><span>基本費用</span><b>¥50,160</b></div>
+            <div><span>信用卡折扣</span><b>-¥2,508</b></div>
+            <div><span>配件費用</span><b>¥7,700</b></div>
+            <div><span>內含消費稅</span><b>¥5,032</b></div>
+          </div>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section id="lodging" class="panel">
+    <article class="card">
+      <h2 style="margin:0">住宿</h2>
+
+      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=5-chōme-2-10+Kotoni+2+Jō,+Nishi-ku,+Sapporo,+Hokkaido+063-0812" target="_blank">9/16（三）｜🏨 札幌｜Airbnb ↗</a><div class="hotel-parking">🅿️ 現金 ¥1,500</div></div>
+
+      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=1-19+Shinonomechō,+Otaru,+Hokkaido+047-0026" target="_blank">9/17（四）｜🏨 小樽｜Airbnb ↗</a><div class="hotel-parking">🅿️ 免費</div></div>
+
+      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721" target="_blank">9/18（五）｜🏨 洞爺湖｜Airbnb ↗</a><div class="hotel-parking">🅿️ 免費</div></div>
+
+      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=4+Chome-3-1+Omotemachi,+Tomakomai,+Hokkaido+053-0022" target="_blank">9/19（六）｜🏨 苫小牧｜Trip.com ↗</a><div class="hotel-parking">🅿️ 收費</div></div>
+    </article>
+  </section>
+
+  <section id="currency" class="panel">
+    <article class="card">
+      <h2 style="margin:0">💴 日圓匯率工具</h2>
+      <div class="currency-grid">
+        <div class="currency-field">
+          <label for="jpyAmount">日圓 JPY</label>
+          <input id="jpyAmount" type="number" inputmode="decimal" min="0" step="1" placeholder="例如 5000">
+        </div>
+        <div class="currency-field">
+          <label for="twdAmount">結果 TWD</label>
+          <input id="twdAmount" type="number" inputmode="decimal" readonly>
+        </div>
+      </div>
+
+      <div class="rate-row">
+        <span>1 JPY =</span>
+        <input id="jpyRate" type="number" inputmode="decimal" min="0.001" step="0.0001" value="0.2200" readonly>
+        <span>TWD</span>
+        <button class="rate-btn" id="refreshRate" type="button">更新</button>
+      </div>
+      <div class="quick-rates"><button type="button" data-jpy="1000">¥1,000</button><button type="button" data-jpy="3000">¥3,000</button><button type="button" data-jpy="5000">¥5,000</button><button type="button" data-jpy="10000">¥10,000</button></div>
+      <div class="rate-status" id="rateStatus" aria-live="polite"></div>
+    </article>
+  </section>
+
+</main>
+
+<nav class="footer">
+  <button class="active" data-target="home"><span>⌂</span><small>首頁</small></button>
+  <button data-target="flights"><span>✈</span><small>航班</small></button>
+  <button data-target="rental"><span>🚗</span><small>租車</small></button>
+  <button data-target="lodging"><span>▣</span><small>住宿</small></button>
+  <button data-target="currency"><span>¥</span><small>匯率</small></button>
+</nav>
+
+<script>
+const dayData = {
+  day1: {
+    label:"Day 1｜9/16（三）",
+    highlights:["北廣島 Outlet","札幌夜間散步","北海道第一支冰品"],
+    missions:["完成取車","Outlet主要採購","入住札幌"],
+    foodFocus:["札幌農学校牛奶霜淇淋","道之驛南瓜咖哩麵包"],
+    route:"新千歲 → 北廣島 → 札幌",
+    hotel:"札幌住宿",
+    stops:[
+      {time:"11:05–12:00",name:"新千歲機場／取車",note:"入境、領行李，前往鈴蘭店。",stay:"約 55 分",next:"下一段約 30 分"},
+      {time:"12:30–13:20",name:"花ロードえにわ",note:"中午道之驛用餐，品嚐人氣南瓜咖哩麵包。",stay:"約 50 分",next:"下一段約 15 分"},
+      {time:"13:35–20:00",name:"三井 Outlet 札幌北廣島",note:"購物、晚餐一次完成，今天主要採購行程。",stay:"約 6 小時 25 分",next:"前往札幌市區約 35 分"},
+      {time:"20:35–21:20",name:"札幌市區／狸小路六丁目 → 二丁目",note:"補吃居酒屋，沿商店街步行逛街。",stay:"約 45 分",next:"前往住宿約 10 分"},
+      {time:"21:30",name:"札幌住宿",note:"Check-in。",stay:"",next:""}
+    ],
+    areas:[
+      {
+        title:"惠庭",
+        note:"Day 1 中午短停",
+        shops:[
+          ["推薦","花ロードえにわ","道之驛午餐、南瓜咖哩麵包。","https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC"]
+        ]
+      },
+      {
+        title:"北廣島",
+        note:"Day 1 主要購物區",
+        shops:[
+          ["必去","三井 Outlet 札幌北廣島","採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島","主要行程"],
+          ["Guide","查看 Outlet 店號簡圖","依官方樓層圖校正店號；Clover 1F → Clover 2F → Maple 2F。","現場對照使用","guides/kitahiroshima-outlet/index.html","主要行程"],
+          ["冰品必吃","札幌農学校 札幌北広島店","酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=札幌農学校+札幌北広島店","Outlet冰品"],
+          ["冰品備選","MIL PRESSO","北海道ロコファームビレッジ內的北海道素材霜淇淋。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=MIL+PRESSO+三井アウトレットパーク札幌北広島","Outlet冰品"]
+        ]
+      },
+      {
+        title:"札幌晚上",
+        note:"依實際步行順序排列：狸小路外圍 → 7丁目 → 6丁目 → 5丁目 → 4丁目 → 3丁目 → 2丁目",
+        shops:[
+          ["備選","Space 1-15","找北海道作家陶器、布包、紙品、飾品與手作生活雜貨。","各店不同，出發前確認","https://www.google.com/maps/search/?api=1&query=Space+1-15+Sapporo","狸小路外圍"],
+          ["推薦","D&DEPARTMENT HOKKAIDO by 3KG","買北海道製餐具、木工作品、地方食品與長用型生活用品。","11:00–19:00（日、月休；遇假日可能調整）","https://www.google.com/maps/search/?api=1&query=D%26DEPARTMENT+HOKKAIDO+by+3KG","狸小路外圍"],
+          ["必去","幸乃園 安中茶舗","買焙茶、煎茶、抹茶與日式茶壺、茶杯。","平日 10:00–19:00；日、祝 13:00–18:30；第3日曜休","https://www.google.com/maps/search/?api=1&query=幸乃園+安中茶舗+札幌","狸小路7丁目"],
+          ["推薦","Soup Curry ouchi","點雞腿野菜湯咖哩，可依喜好調整辣度與飯量。","11:30–15:00／17:00–23:00；週三、週日晚上休","https://www.google.com/maps/search/?api=1&query=スープカレー+ouchi+札幌","狸小路7丁目"],
+          ["推薦","串鳥 南二条店","點豬肉串、雞皮、雞肉丸與北海道風串燒。","平日 16:30–23:30；六日祝 15:30–23:30","https://www.google.com/maps/search/?api=1&query=串鳥+南二条店+札幌","狸小路5丁目"],
+          ["備選","BicCamera Select 札幌狸小路店","補行動電源、充電線、轉接頭、記憶卡與旅行小電器。","10:00–23:00","https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店","狸小路5丁目"],
+          ["必去","TNOC THE STORE SAPPORO T4","買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。","10:00–21:00","https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4","狸小路4丁目"]
+        ]
+      }
+    ]
+  },
+  day2:{
+    label:"Day 2｜9/17（四）",
+    highlights:["中島公園","札幌中央市場","小樽港町"],
+    missions:["中島公園散步","中央市場用餐","小樽 Muse晚餐"],
+    foodFocus:["中央市場海鮮","小樽冰品候選"],
+    route:"札幌 → 小樽",
+    hotel:"小樽住宿",
+    stops:[
+      {time:"08:00",name:"咖啡廳早餐 → 中島公園／豐平館",note:"在咖啡廳用早餐，再前往中島公園與豐平館散步。",stay:"約 45 分",next:"下一段約 20 分"},
+      {time:"09:15–10:30",name:"札幌中央市場",note:"早午餐／海鮮。",stay:"約 75 分",next:"下一段約 40 分"},
+      {time:"中央市場後",name:"Sapporo Experience Base（備選）",note:"Salomon 直營體驗型門市，時間與動線允許再前往。",stay:"約 30–45 分",next:"不納入固定時間"},
+      {time:"11:30",name:"頭大佛",note:"安藤忠雄建築與園區。",stay:"約 60 分",next:"下一段約 60 分"},
+      {time:"13:30–14:00",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"約 20 分",next:"後續步行"},
+      {time:"14:00–18:15",name:"堺町通 → 北一硝子三号館 → 小樽運河",note:"甜點、玻璃工藝、選物，最後接夕景與夜景。",stay:"整段約 4 小時 15 分",next:"18:30 已預約晚餐"},
+      {time:"18:30（已預約）",name:"小樽 Muse",note:"燭光洋食餐廳，已確認 Day 2 晚餐預約。",stay:"約 60–90 分",next:"步行返回住宿"}
+    ],
+    areas:[
+      {
+        title:"札幌上午",
+        note:"Day 2 早晨使用｜先停車，再步行至公園與咖啡店",
+        shops:[
+          ["停車","ナビパーク南9西4駐車場","地址：4 Chome-6-13 Minami 9 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0809 日本。","24小時；08:00–20:00 每20分 ¥300；12小時最高 ¥1,000","https://www.google.com/maps/search/?api=1&query=4+Chome-6-13+Minami+9+Jonishi%2C+Chuo+Ward%2C+Sapporo%2C+Hokkaido+064-0809%E6%97%A5%E6%9C%AC","中島公園停車"],
+          ["主行程","中島公園／豐平館","早晨散步；從停車場步行進入公園。","公園全天；豐平館開館時間另確認","https://www.google.com/maps/search/?api=1&query=中島公園+豊平館","中島公園"],
+          ["咖啡候選","Postman Oak","墨爾本風格精品咖啡，自家烘焙；有 Long Black、Piccolo，也有自製輕食與甜點。","週二至週六 07:30–16:30；週日、週一休","https://www.google.com/maps/search/?api=1&query=Postman+Oak+Sapporo","中島公園咖啡"],
+          ["咖啡候選","Smooch Coffee Stand","外帶手沖咖啡、拿鐵或美式咖啡。","官方社群顯示約 08:00–18:00；營業日可能臨時調整","https://www.google.com/maps/search/?api=1&query=Smooch+Coffee+Stand+Sapporo","中島公園咖啡"],
+          ["咖啡候選","森香珈琲","點自家焙煎咖啡、Morning 吐司早餐與當日甜點。","09:00–17:00；火、三休；09:00–11:00 Morning","https://www.google.com/maps/search/?api=1&query=森香珈琲+札幌","中島公園咖啡"],
+          ["停車＋市場","札幌場外市場 一般車免費停車場","停車後直接進入市場，吃海鮮丼、螃蟹與烤魚。","依市場營業時間","https://www.google.com/maps/search/?api=1&query=札幌場外市場+一般車+無料駐車場","中央市場停車"],
+          ["備選","Sapporo Experience Base／サロモンストア","試穿 Salomon 越野跑鞋、健行鞋，查看 S/LAB 裝備與跑步背心。","平日 11:00–20:00；六日祝 10:00–19:00；週三休","https://www.google.com/maps/search/?api=1&query=サロモンストア+サッポロエクスペリエンスベース","中央市場後備選"]
+        ]
+      },
+      {
+        title:"頭大佛",
+        note:"Day 2 中午",
+        shops:[
+          ["主行程","頭大佛","安藤忠雄建築與園區；地址：2 Takino, Minami Ward, Sapporo, Hokkaido 005-0862 日本。","https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC"]
+        ]
+      },
+      {
+        title:"小樽 Walking Guide｜依步行順序",
+        note:"住宿放行李後，由堺町南端一路往小樽運河方向走；冰品直接併入沿途店家卡片。",
+        shops:[
+          ["① 起點","堺町通南端／LeTAO 本店","買 Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 吃 Jersey 牛乳霜淇淋。","09:00–18:00（各店略有差異）","https://www.google.com/maps/search/?api=1&query=LeTAO+小樽","堺町南端"],
+          ["② 玻璃街區","北一硝子三号館","買玻璃杯、醬油瓶與燈具；Terrace 吃八段霜淇淋。","10:00–17:30（L.O.17:15）","https://www.google.com/maps/search/?api=1&query=北一硝子三号館","堺町通"],
+          ["③ 甜點段","六花亭 小樽運河店","買 Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店","堺町通"],
+          ["④ 甜點段","北菓樓 小樽本館","買妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","堺町通"],
+          ["⑤ 冰品備選","ポプラファーム 小樽店","點サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。","11:00–17:30（L.O.17:00）","https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店","堺町通北段"],
+          ["⑥ 老舖冰品","アイスクリームパーラー美園","吃自家製傳統冰淇淋、聖代或冰淇淋蘇打。","11:00–17:00","https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽","小樽站前／稲穂"],
+          ["⑦ 夕景","小樽運河","拍攝石造倉庫、煤氣燈與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","運河"],
+          ["⑧ 已預約晚餐","小樽 Muse","18:30 已預約；看完運河後前往，主打漢堡排、蛋包飯等洋食。","預約 18:30｜17:00–20:30（L.O.20:00）；週一休","https://www.google.com/maps/search/?api=1&query=小樽+Muse","晚餐"]
+        ]
+      }
+    ]
+  },
+  day3:{
+    label:"Day 3｜9/18（五）",
+    highlights:["北一ホール","高橋牧場","洞爺湖煙火船"],
+    missions:["外帶EBIJIN漢堡","Milk Kobo冰品","準時入住洞爺湖","搭煙火船"],
+    foodFocus:["EBIJIN鹿肉漢堡","Milk Kobo牛奶霜淇淋"],
+    route:"小樽 → 俱知安 → 二世谷 → 洞爺湖",
+    hotel:"洞爺湖溫泉街",
+    stops:[
+      {time:"07:30–08:30",name:"小樽運河晨間散步",note:"早晨人潮較少，先看運河晨景。",stay:"約 60 分",next:"步行前往堺町通"},
+      {time:"09:00–10:30",name:"北一硝子 北一ホール",note:"今天主要咖啡與早餐，在石油燈照明的老倉庫空間慢慢休息。",stay:"約 90 分",next:"前往 EBIJIN／外帶漢堡"},
+      {time:"10:40–11:20",name:"🍔 漢堡（二選一）",note:"EBIJIN 主選鹿肉漢堡；3-SUN 備選、停車方便。",stay:"約 30–40 分",next:"前往サツドラ",options:[
+        {label:"主選",name:"EBIJIN 小樽店",link:"https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC"},
+        {label:"備選",name:"CONTAINER BURGER 3-SUN",link:"https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"}
+      ]},
+      {time:"11:20–11:40",name:"サツドラ小樽堺町店",note:"買完漢堡後補藥妝與旅行用品。",stay:"約 20 分",next:"約 11:40 離開小樽"},
+      {time:"11:40–13:05",name:"小樽 → 俱知安",note:"今天第一段長距離。",stay:"估計約 75–90 分",next:"抵達後前往午餐",static:true},
+      {time:"13:05–14:05",name:"MARKIE CURRY",note:"俱知安在地香料咖哩。",stay:"約 60 分",next:"前往高橋牧場約 20–30 分"},
+      {time:"14:30–15:25",name:"ニセコ高橋牧場 Milk Kobo",note:"北海道牛奶、冰淇淋、甜點、伴手禮與羊蹄山景；今天下午主要停留點。",stay:"約 55 分",next:"fanfun 為另一停車點，實際車程以導航為準"},
+      {time:"15:35–15:50",name:"革と珈琲 fanfun（可選）",note:"獨立停車點，皮革工藝與咖啡；若前段延誤，直接略過以確保準時抵達洞爺湖。",stay:"約 15 分",next:"前往洞爺湖約 60–80 分，依道路與導航為準"},
+      {time:"途中擇一",name:"休息站／冰品（二選一）",note:"只停一個即可。",stay:"",next:"前往洞爺湖住宿",options:[
+        {label:"休息站",name:"道の駅 230ルスツ"},
+        {label:"冰品",name:"🍦 Lake Hill Farm 本店"}
+      ]},
+      {time:"16:50–17:10",name:"洞爺湖溫泉街住宿",note:"Check-in、放行李、確認停車；抵達後優先處理煙火船票與登船資訊。",stay:"約 20 分",next:"晚餐與湖畔自由活動"},
+      {time:"17:10–17:40",name:"わかさいも本舗／確認煙火船票",note:"わかさいも本舗 19:30 關門，逛店並確認售票、集合位置與登船時間。",stay:"約 30 分",next:"晚餐"},
+      {time:"17:40–19:00",name:"洞爺湖晚餐",note:"晚餐不要安排過晚，避免影響登船。",stay:"約 90 分",next:"回房或湖畔散步"},
+      {time:"19:00–20:00",name:"湖畔散步／回房準備",note:"準備外套、相機與船票，湖面晚間可能有風。",stay:"約 60 分",next:"前往碼頭"},
+      {time:"20:00",name:"前往煙火船碼頭",note:"預留找路、排隊與驗票時間。",stay:"",next:""},
+      {time:"20:15–20:25",name:"抵達花火觀賞船碼頭",note:"官方船班 20:35 出航；網路票需最晚在出航前10分鐘換成紙票。",stay:"候船／驗票",next:""},
+      {time:"20:35–21:20 左右",name:"洞爺湖花火觀賞船",note:"固定事件：官方運航約20:35–21:20；煙火本身約20:45–21:05。",stay:"約 45 分",next:"返回飯店泡湯"}
+    ],
+    areas:[
+      {
+        title:"小樽早晨",
+        note:"Day 3 離開小樽前",
+        shops:[
+          ["主行程","小樽運河","拍攝清晨石造倉庫、運河與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","小樽早晨"],
+          ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール","小樽早晨"],
+          ["主選外帶","EBIJIN 小樽店","後志產鹿肉漢堡專門店，可外帶；地址：小樽市稲穂2-13-16。沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC","小樽漢堡"],
+          ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店","小樽採買"],
+          ["備案","CONTAINER BURGER 3 -SUN-","點牛肉漢堡、薯條與無酒精啤酒。","11:00–19:00（L.O.18:30）；臨時休業需確認","https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽","小樽漢堡"]
+        ]
+      },
+      {
+        title:"俱知安午餐",
+        note:"Day 3 中午",
+        shops:[
+          ["停車","Kutosan Park Parking Lot／くとさんパーク駐車場","俱知安車站附近停車點，停好後步行前往午餐。","依現場標示","https://www.google.com/maps/search/?api=1&query=くとさんパーク+駐車場+倶知安","俱知安"],
+          ["午餐","MARKIE CURRY／マーキーカリー","點雞腿野菜湯咖哩，可依喜好選辣度與飯量。","11:30–21:00；週四休，臨時異動看官方社群","https://www.google.com/maps/search/?api=1&query=MARKIE+CURRY+倶知安","俱知安"]
+        ]
+      },
+      {
+        title:"二世谷下午",
+        note:"牧場為固定；fanfun 為可選的獨立停車點",
+        shops:[
+          ["冰品必吃","ニセコ高橋牧場 Milk Kobo","吃牛奶霜淇淋，買飲用優格、乳酪塔與泡芙；地址曽我888-1，Mapcode 398 321 164*50。","09:30–18:00；免費停車","https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場+ミルク工房","高橋牧場"],
+          ["可停留","革と珈琲 fanfun","買手工皮夾、零錢包與皮革小物，搭配手沖咖啡；地址曽我256-3。","夏季約 10:00–17:00；週二休；小型免費停車場","https://www.google.com/maps/search/?api=1&query=革と珈琲+fanfun+ニセコ","fanfun"]
+        ]
+      },
+      {
+        title:"前往洞爺湖途中（二選一）",
+        note:"兩個地點只停一個即可，依當天時間與需求選擇",
+        shops:[
+          ["休息站","道の駅 230ルスツ","補飲料，買留壽都當地蔬菜、馬鈴薯與豬肉加工品。","9月賣店約 09:00–18:00","https://www.google.com/maps/search/?api=1&query=道の駅+230ルスツ","途中擇一"],
+          ["冰品","Lake Hill Farm 本店","吃牧場牛奶 Gelato，可選牛奶、香草或當日季節口味。","9月 09:00–18:00","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127","途中擇一"]
+        ]
+      },
+      {
+        title:"洞爺湖商店參考",
+        note:"住宿後、晚餐前排定前往",
+        shops:[
+          ["排定採買","わかさいも本舗 洞爺湖本店","買わかさいも、いもてん與北海道あんぽてと。","09:00–19:30","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店","洞爺湖溫泉街"]
+        ]
+      },
+      {
+        title:"洞爺湖晚上",
+        note:"今晚有固定煙火船行程",
+        shops:[
+          ["住宿","洞爺湖溫泉街","建議最晚 17:00 前抵達、入住並放行李。","全天","https://www.google.com/maps/search/?api=1&query=洞爺湖温泉街","洞爺湖溫泉街"],
+          ["固定事件","洞爺湖煙火觀賞船","官方成人票 ¥1,900、兒童 ¥950；花火船碼頭位於洞爺湖萬世閣與乃之風之間。","官方船班約 20:35–21:20；煙火約 20:45–21:05","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船","洞爺湖碼頭"]
+        ]
+      }
+    ]
+  },
+  day4:{
+    label:"Day 4｜9/19（六）",
+    route:"有珠山 → 虎杖浜 → 苫小牧",
+    hotel:"苫小牧住宿",
+    highlights:["有珠山纜車","🍴 午餐（二選一）","苫小牧夜間採買"],
+    missions:["確認有珠山纜車營運","選定午餐方案","買鱈魚子或牧場甜點","入住苫小牧"],
+    foodFocus:["虎杖浜海鮮方案","白老牛方案","鱈魚子伴手禮"],
+    sharedStops:[
+      {time:"上午",name:"洞爺湖早晨／山岳喫茶（候選）",note:"是否前往依起床時間與店家營業狀況決定。",stay:"待確認",next:""},
+      {time:"上午至中午",name:"有珠山纜車",note:"依天氣、風勢與當日營運狀態決定是否搭乘，並預留山頂步道時間。",stay:"約 1.5–2 小時",next:"前往白老／虎杖浜"}
+    ],
+    defaultPlan:"seafood",
+    planOrder:["seafood","beef"],
+    areaOrder:["有珠山","虎杖浜海鮮","白老牛","苫小牧入住後"],
+    plans:{
+      beef:{
+        title:"🥩 白老牛午餐",
+        subtitle:"白老牛餐廳選一＋Mother’s Plus甜點",
+        stops:[
+          {time:"中午",name:"白老牛午餐（選一）",note:"依排隊、預算與營業狀況決定一家。",stay:"約 60–90 分",next:""},
+          {time:"飯後",name:"Mother’s Plus",note:"布丁、泡芙、布丁霜淇淋；牧場直營雞蛋甜點。",stay:"約 20–30 分",next:"前往苫小牧"}
+        ]
+      },
+      seafood:{
+        title:"🐟 虎杖浜海鮮午餐",
+        subtitle:"海鮮午餐選一＋鱈魚子伴手禮",
+        stops:[
+          {time:"中午",name:"虎杖浜午餐（選一）",note:"たっちゃん食堂或Kojohama Café擇一。",stay:"約 60–90 分",next:""},
+          {time:"飯後",name:"虎杖浜沿途水產",note:"依南往北方向停留たらこ家與かんばら，不必全部買。",stay:"約 30–60 分",next:"前往苫小牧"}
+        ]
+      }
+    },
+    areas:[
+      {
+        title:"有珠山",
+        note:"上午主行程；依天氣與風勢決定是否搭乘",
+        shops:[
+          ["主行程","有珠山ロープウェイ","2026/9/19 屬官方 B 時段：上行首班 08:15；每 15 分鐘一班，單程約 6 分。仍須依當日風勢與官網營運公告。","08:15 首班；下行末班 17:15","https://www.google.com/maps/search/?api=1&query=有珠山ロープウェイ","有珠山"]
+        ]
+      },
+      {
+        title:"🍴 午餐（二選一）｜白老牛",
+        note:"只去一家；其他全部是備選",
+        shops:[
+          ["午餐候選","牛の里 白老本店","吃白老牛漢堡排或牛排，外帶白老牛可樂餅、肉包與便當。","午餐時間出發前確認","https://www.google.com/maps/search/?api=1&query=牛の里+白老本店","白老"],
+          ["午餐候選","おいしい肉屋さん 白老店","吃白老牛燒肉或肉料理，並可採買冷藏白老牛肉。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=おいしい肉屋さん+白老店","社台"],
+          ["午餐候選","Shiraoi Beef Shop Iwasaki Omotenashi-tei","點岩崎牧場白老牛排、漢堡排或燒肉套餐。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=白老牛の店いわさき+おもてなし亭","社台"],
+          ["甜點","Mother’s Plus","雞蛋布丁、泡芙、布丁霜淇淋；免費停車。","10:00–17:00","https://www.google.com/maps/search/?api=1&query=マザーズプラス+白老","社台"]
+        ]
+      },
+      {
+        title:"🍴 午餐（二選一）｜虎杖浜海鮮",
+        note:"午餐選一；吃完後水產店依南往北順路停留",
+        shops:[
+          ["午餐候選","白老たっちゃん食堂","點海鮮丼、烤魚定食或當日水產料理。","10:00–14:00；火、三休","https://www.google.com/maps/search/?api=1&query=白老たっちゃん食堂","虎杖浜"],
+          ["午餐候選","Kojohama Café／虎杖浜カフェ","點咖啡、甜點或當日輕食，菜單以現場為準。","出發前確認","https://www.google.com/maps/search/?api=1&query=虎杖浜カフェ","虎杖浜"],
+          ["水產伴手禮","たらこ家 虎杖浜","買虎杖浜鱈魚子、明太子與冷藏水產，食堂可點鱈魚子飯。","商店約09:00–17:00；週四休","https://www.google.com/maps/search/?api=1&query=たらこ家+虎杖浜","虎杖浜"],
+          ["水產伴手禮","虎杖浜たらこのかんばら直売所","無著色鱈魚子、真空包與送禮選擇。","09:00–16:30；週三休","https://www.google.com/maps/search/?api=1&query=虎杖浜たらこのかんばら","虎杖浜"]
+        ]
+      },
+      {
+        title:"苫小牧入住後",
+        note:"依需求選擇，不需要三家全部去",
+        shops:[
+          ["住宿旁藥妝","ツルハドラッグ 苫小牧王子店","補防曬、暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。","09:00–22:00","https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店","表町"],
+          ["北海道超商","セイコーマート 苫小牧表町店","買 HOT CHEF 豬排丼或炸雞、山わさび零食、北海道牛乳與哈密瓜冰品。","06:00–24:00","https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店","表町"],
+          ["大型採買","MEGAドン・キホーテ 苫小牧店","一次補零食、飲料、藥妝、盥洗用品與北海道伴手禮。","09:00–24:00","https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店","木場町"],
+          ["冰品候選","幸せの生ソフト プチラパン","吃牛奶生霜淇淋，口味與配料以當日菜單為準。","11:00–18:00；不定休","https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン","苫小牧"],
+          ["冰品備選","北からの贈り物 苫小牧店","北海道牛乳Blender Ice與Gelato；位於沼ノ端。","約10:00–17:30，出發前確認","https://www.google.com/maps/search/?api=1&query=北からの贈り物+苫小牧店","沼ノ端"]
+        ]
+      }
+    ]
+  },
+  day5:{
+    label:"Day 5｜9/20（日）",
+    highlights:["09:00還車","新千歲機場最後採買"],
+    missions:["準時還車","完成報到與安檢","購買冷藏伴手禮"],
+    foodFocus:["機場最後一餐","北海道最後一支冰品（有時間）"],
+    route:"苫小牧 → 新千歲機場",
+    hotel:"返程",
+    stops:[
+      {time:"07:40 左右",name:"苫小牧住宿出發",note:"還車預約固定為09:00，必須倒推時間；此出發時間仍需依飯店位置與導航微調。",stay:"",next:""},
+      {time:"08:00–08:20",name:"道の駅ウトナイ湖（可略過）",note:"只能短停約15–20分鐘；若出發延誤、路況不佳或需加油，直接取消。",stay:"最多 20 分",next:"最晚約08:25離開"},
+      {time:"08:45–09:00",name:"新千歲機場鈴蘭店還車",note:"預約還車時間09:00；原網頁寫09:20抵達是錯誤，已修正。",stay:"依店家流程",next:"接駁前往機場"},
+      {time:"09:30–11:15",name:"新千歲機場補貨／用餐",note:"預留接駁、報到、安檢與購物時間；餐廳是否排隊需現場判斷。",stay:"約 90 分",next:"準備登機"},
+      {time:"12:05",name:"IT235 新千歲 → 桃園",note:"回程航班。",stay:"",next:""}
+    ],
+    areas:[
+      {
+        title:"苫小牧至機場",
+        note:"Day 5 上午",
+        shops:[
+          ["短停","道の駅ウトナイ湖","買 B1 とんちゃん豬肉包、北寄貝相關食品與苫小牧伴手禮。","營業時間依設施；戶外區域可早到","https://www.google.com/maps/search/?api=1&query=道の駅ウトナイ湖","ウトナイ湖"],
+          ["還車","トヨタレンタカー 新千歳空港すずらん店","預約還車時間 09:00。","依預約時間","https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC","新千歲"]
+        ]
+      },
+      {
+        title:"新千歲機場",
+        note:"Day 5 返程",
+        shops:[
+          ["用餐候選","えびそば一幻 新千歳空港店","點えびみそ拉麵，可選濃厚蝦湯或較清爽湯底。","機場店營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=えびそば一幻+新千歳空港店","新千歲機場"],
+          ["採買","新千歲機場國內線商店區","買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。","依各店營業時間","https://www.google.com/maps/search/?api=1&query=新千歳空港+国内線+ショップ","新千歲機場"]
+        ]
+      }
+    ]
+  }
+};
+
+const mapLink=name=>{
+  if(name.includes("新千歲機場鈴蘭店") || name.includes("新千歲機場／取車")) return "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC";
+  if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
+  if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
+  if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
+};
+const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
+
+function stopMarkup(stops){
+  return stops.map(s=>`
+    <div class="stop">
+      <div class="arrival">${s.time}</div>
+      <div class="stop-content">
+        <div class="place-title">${s.name}</div>
+        ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+        ${s.note?`<div class="place-note">${shortText(s.note)}</div>`:""}
+        <div class="metrics">
+          ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
+          ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function areaMarkup(areas){
+  return areas.map(a=>`
+    <details class="area-card">
+      <summary>${a.title}</summary>
+      ${(() => {
+        let lastDistrict = "";
+        return a.shops.map(shop => {
+          const extended = shop.length >= 6;
+          const hours = extended ? shop[3] : "";
+          const link = extended ? shop[4] : shop[3];
+          const district = extended ? shop[5] : "";
+          const header = district && district !== lastDistrict ? `<div class="district-label">${district}</div>` : "";
+          if (district) lastDistrict = district;
+          const ice=/冰品|霜淇淋|ソフト|Gelato|MIL PRESSO|Milk Kobo|LeTAO PLUS|Mother’s Plus|札幌農学校|北一 Terrace|ポプラファーム|幸せの生ソフト/.test(shop.join(" "));
+          const name=(ice && !shop[1].startsWith("🍦"))?`🍦 ${shop[1]}`:shop[1];
+          const description=shortText(shop[2]);
+          return `${header}<div class="shop">
+            <a href="${link}" target="_blank" rel="noopener">${name} ↗</a>
+            ${description?`<p>${description}</p>`:""}
+            ${hours ? `<div class="shop-hours">🕘 ${hours}</div>` : ""}
+          </div>`;
+        }).join("");
+      })()}
+    </details>
+  `).join("");
+}
+
+
+const mustDoByDate={
+  "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包"],
+  "9/17":["🦀 中央市場海鮮","🍦 小樽代表冰品","🍽️ 小樽 Muse"],
+  "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🍦 Milk Kobo 牛奶霜淇淋","🎆 洞爺湖煙火船"],
+  "9/19":["🚠 有珠山纜車","🐟 虎杖浜海鮮 或 🥩 白老牛","🎁 虎杖浜鱈魚子伴手禮（海鮮線）"],
+  "9/20":["🎁 新千歲機場伴手禮"]
+};
+function dayBriefMarkup(d){
+  const date=Object.keys(mustDoByDate).find(x=>d.label.includes(x));
+  const items=mustDoByDate[date]||[];
+  const missions=items.map((x,i)=>`
+    <label class="mission-item">
+      <input type="checkbox" data-mission="${date}-${i}">
+      <span>${x}</span>
+    </label>`).join("");
+  if(!missions) return "";
+  return `
+    <div class="must-do">
+      <div class="must-do-title">⭐ 今日必完成</div>
+      <div class="mission-list">${missions}</div>
+    </div>`;
+}
+function restoreMissions(root){
+  root.querySelectorAll("[data-mission]").forEach(box=>{
+    const key="travelos-mission-"+box.dataset.mission;
+    box.checked=localStorage.getItem(key)==="1";
+    box.addEventListener("change",()=>localStorage.setItem(key,box.checked?"1":"0"));
+  });
+}
+
+function switchDayPlan(day, planKey){
+  const plan=day.plans?.[planKey];
+  const stops=document.getElementById("dayPlanStops");
+  const label=document.getElementById("dayPlanLabel");
+  if(!plan || !stops || !label) return;
+
+  document.querySelectorAll("#dayDetail .plan-btn").forEach(btn=>{
+    const active=btn.dataset.plan===planKey;
+    btn.classList.toggle("active",active);
+    btn.setAttribute("aria-pressed",active?"true":"false");
+  });
+
+  label.textContent=`🍴 午餐（二選一）｜${plan.title.replace(/^[🥩🐟]\s*/,"").replace(/午餐$/,"")}`;
+  stops.classList.add("is-switching");
+  window.setTimeout(()=>{
+    stops.innerHTML=stopMarkup(plan.stops);
+    requestAnimationFrame(()=>stops.classList.remove("is-switching"));
+  },200);
+}
+
+function renderDay(dayKey, selectedPlan){
+  const d=dayData[dayKey];
+  const detail=document.getElementById("dayDetail");
+  const orderedAreas=d.areaOrder
+    ? [...d.areas].sort((a,b)=>{
+        const rank=title=>{
+          const i=d.areaOrder.findIndex(key=>title.includes(key));
+          return i<0?d.areaOrder.length:i;
+        };
+        return rank(a.title)-rank(b.title);
+      })
+    : d.areas;
+
+  if(d.plans){
+    const planKey=selectedPlan || d.defaultPlan || Object.keys(d.plans)[0];
+    const plan=d.plans[planKey];
+
+    detail.innerHTML=`
+      <button class="back-btn" id="backHome">← 回每日總覽</button>
+      <article class="day-card">
+        <div class="day-head">
+          <div>
+            <div class="day-label">${d.label}</div>
+            <div class="route">${d.route}</div>
+          </div>
+          <div class="hotel-chip">${d.hotel}</div>
+        </div>
+        ${dayBriefMarkup(d)}
+
+        <div class="plan-label">共同行程</div>
+        ${stopMarkup(d.sharedStops)}
+
+        <div class="plan-switch">
+          <div class="plan-switch-title">🍴 午餐（二選一）</div>
+          <div class="plan-buttons">
+            ${(d.planOrder||Object.keys(d.plans)).map(key=>[key,d.plans[key]]).map(([key,p])=>`
+              <button class="plan-btn ${key===planKey?"active":""}" data-plan="${key}">
+                ${p.title}
+                <small>${p.subtitle}</small>
+              </button>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="plan-label" id="dayPlanLabel">🍴 午餐（二選一）｜${plan.title.replace(/^[🥩🐟]\s*/,"").replace(/午餐$/,"")}</div>
+        <div id="dayPlanStops" aria-live="polite">${stopMarkup(plan.stops)}</div>
+
+        <div class="area-list">
+          <h3 style="margin:14px 0 2px">今日會經過的區域</h3>
+          ${areaMarkup(orderedAreas)}
+        </div>
+      </article>
+    `;
+
+    detail.querySelectorAll(".plan-btn").forEach(btn=>{
+      btn.setAttribute("aria-pressed",btn.classList.contains("active")?"true":"false");
+      btn.addEventListener("click",()=>switchDayPlan(d,btn.dataset.plan));
+    });
+  }else{
+    detail.innerHTML=`
+      <button class="back-btn" id="backHome">← 回每日總覽</button>
+      <article class="day-card">
+        <div class="day-head">
+          <div>
+            <div class="day-label">${d.label}</div>
+            <div class="route">${d.route}</div>
+          </div>
+          <div class="hotel-chip">${d.hotel}</div>
+        </div>
+        ${dayBriefMarkup(d)}
+        ${stopMarkup(d.stops)}
+        <div class="area-list">
+          <h3 style="margin:14px 0 2px">今日會經過的區域</h3>
+          ${areaMarkup(orderedAreas)}
+        </div>
+      </article>
+    `;
+  }
+
+  showPanel("dayDetail");
+  restoreMissions(detail);
+  document.getElementById("backHome").addEventListener("click",()=>showPanel("home"));
+}
+
+document.querySelectorAll(".day-preview").forEach(el=>{
+  el.addEventListener("click",()=>{
+    if(dayData[el.dataset.day]) renderDay(el.dataset.day);
+  });
+});
+
+const buttons=document.querySelectorAll("[data-target]");
+const panels=document.querySelectorAll(".panel");
+
+function showPanel(id){
+  panels.forEach(p=>p.classList.toggle("active",p.id===id));
+  document.querySelectorAll(".tab,.footer button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.target===id);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+buttons.forEach(b=>b.addEventListener("click",()=>showPanel(b.dataset.target)));
+
+function updateCountdown(){
+  const start=new Date("2026-09-16T00:00:00+08:00");
+  const end=new Date("2026-09-20T23:59:59+08:00");
+  const now=new Date();
+  const box=document.getElementById("countdown");
+  const strong=box.querySelector("strong");
+  const label=box.querySelector("span");
+  if(now<start){
+    strong.textContent=Math.ceil((start-now)/86400000)+" 天";
+    label.textContent="距離出發";
+  }else if(now<=end){
+    strong.textContent="旅行中";
+    label.textContent="北海道旅程";
+  }else{
+    strong.textContent="已完成";
+    label.textContent="北海道旅程";
+  }
+}
+updateCountdown();
+
+function weatherIcon(code){
+  if(code===0) return "☀️";
+  if([1,2].includes(code)) return "🌤️";
+  if(code===3) return "☁️";
+  if([45,48].includes(code)) return "🌫️";
+  if([51,53,55,56,57].includes(code)) return "🌦️";
+  if([61,63,65,66,67,80,81,82].includes(code)) return "🌧️";
+  if([71,73,75,77,85,86].includes(code)) return "🌨️";
+  if([95,96,99].includes(code)) return "⛈️";
+  return "🌤️";
+}
+function weatherText(code){
+  if(code===0) return "晴朗";
+  if([1,2].includes(code)) return "晴時多雲";
+  if(code===3) return "多雲";
+  if([45,48].includes(code)) return "有霧";
+  if([51,53,55,56,57].includes(code)) return "毛毛雨";
+  if([61,63,65,66,67,80,81,82].includes(code)) return "有雨";
+  if([71,73,75,77,85,86].includes(code)) return "降雪";
+  if([95,96,99].includes(code)) return "雷雨";
+  return "天氣";
+}
+
+async function loadWeather(){
+  const temp=document.getElementById("weatherTemp");
+  const text=document.getElementById("weatherText");
+  const icon=document.getElementById("weatherIcon");
+  const meta=document.getElementById("weatherMeta");
+  try{
+    const url="https://api.open-meteo.com/v1/forecast?latitude=43.0618&longitude=141.3545&current=temperature_2m,apparent_temperature,weather_code,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=1";
+    const res=await fetch(url);
+    if(!res.ok) throw new Error("weather error");
+    const data=await res.json();
+    temp.textContent=Math.round(data.current.temperature_2m)+"°";
+    text.textContent="札幌今日・"+weatherText(data.current.weather_code);
+    icon.textContent=weatherIcon(data.current.weather_code);
+    const hi=Math.round(data.daily.temperature_2m_max[0]);
+    const lo=Math.round(data.daily.temperature_2m_min[0]);
+    const rain=data.daily.precipitation_probability_max[0] ?? 0;
+    meta.innerHTML=`體感 ${Math.round(data.current.apparent_temperature)}°<br>最高 ${hi}°／最低 ${lo}°<br>降雨機率 ${rain}%`;
+  }catch(e){
+    temp.textContent="無法取得";
+    text.textContent="札幌今日天氣";
+    icon.textContent="☁️";
+    meta.textContent="請確認網路連線";
+  }
+}
+loadWeather();
+
+function initCurrencyTool(){
+  const twd=document.getElementById("twdAmount");
+  const jpy=document.getElementById("jpyAmount");
+  const rate=document.getElementById("jpyRate");
+  const refresh=document.getElementById("refreshRate");
+  const status=document.getElementById("rateStatus");
+  if(!twd || !jpy || !rate) return;
+
+  const stored=Number(localStorage.getItem("travelos-jpy-rate"));
+  if(Number.isFinite(stored) && stored>0) rate.value=stored.toFixed(4);
+
+  const currentRate=()=>{
+    const value=Number(rate.value);
+    return Number.isFinite(value) && value>0 ? value : 0.22;
+  };
+  const fromJpy=()=>{
+    const value=Number(jpy.value);
+    twd.value=Number.isFinite(value) && jpy.value!=="" ? Math.round(value*currentRate()) : "";
+  };
+
+  async function loadLiveRate(){
+    status.textContent="";
+    if(refresh) refresh.disabled=true;
+    try{
+      const res=await fetch("https://api.frankfurter.dev/v2/rate/JPY/TWD",{cache:"no-store"});
+      if(!res.ok) throw new Error("rate request failed");
+      const data=await res.json();
+      const value=Number(data.rate);
+      if(!Number.isFinite(value) || value<=0) throw new Error("invalid rate");
+      rate.value=value.toFixed(4);
+      localStorage.setItem("travelos-jpy-rate",String(value));
+      fromJpy();
+    }catch(e){
+      const cached=Number(localStorage.getItem("travelos-jpy-rate"));
+      if(Number.isFinite(cached) && cached>0){
+        rate.value=cached.toFixed(4);
+      }
+      status.textContent="";
+      fromJpy();
+    }finally{
+      if(refresh) refresh.disabled=false;
+    }
+  }
+
+  jpy.addEventListener("input",fromJpy);
+  if(refresh) refresh.addEventListener("click",loadLiveRate);
+  document.querySelectorAll("[data-jpy]").forEach(btn=>btn.addEventListener("click",()=>{
+    jpy.value=btn.dataset.jpy;
+    fromJpy();
+  }));
+  loadLiveRate();
+}
+initCurrencyTool();
+
+</script>
+</body>
+</html>
