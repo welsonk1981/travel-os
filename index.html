@@ -31,7 +31,7 @@ body{
   line-height:1.5;
 }
 button,a{font:inherit}
-.app{max-width:820px;margin:0 auto;padding:16px 14px 96px}
+.app{max-width:820px;margin:0 auto;padding:16px 14px 36px}
 .hero{
   background:var(--card);
   border:1px solid var(--line);
@@ -121,7 +121,9 @@ h1{margin:4px 0 4px;font-size:30px}
   gap:12px;
   align-items:flex-start;
 }
-.preview-day{font-size:14px;color:var(--sub);font-weight:750}
+.preview-day{display:flex;align-items:baseline;gap:8px;line-height:1.2}
+.preview-day-label{font-size:14px;color:var(--blue);font-weight:800;letter-spacing:.02em}
+.preview-date{font-size:21px;color:var(--text);font-weight:900}
 .preview-route{font-size:21px;font-weight:850;margin-top:4px}
 .hotel-chip{
   background:var(--blue-soft);
@@ -273,47 +275,27 @@ h1{margin:4px 0 4px;font-size:30px}
 .meta div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-size:14px}
 .meta span{color:var(--sub)}
 .hotel-row{
+  display:block;
   border:1px solid var(--line);
   border-radius:16px;
-  padding:13px;
-  margin-top:10px;
+  padding:16px;
+  margin-top:12px;
+  color:var(--text);
+  text-decoration:none;
+  background:#fff;
 }
-.hotel-top{display:flex;justify-content:space-between;gap:12px}
-.hotel-city{font-weight:800}
-.hotel-date{font-size:12px;color:var(--blue);background:var(--blue-soft);padding:4px 8px;border-radius:999px}
-.hotel-row a{display:block;margin-top:7px;color:#1769aa;text-decoration:none;font-size:13px}
-.hotel-parking{margin-top:7px;font-size:13px;color:#505862}
+.hotel-row:active{background:#f8fbfd}
+.hotel-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hotel-date{font-size:18px;color:var(--blue);font-weight:900}
+.hotel-map{font-size:14px;color:#1769aa;font-weight:800}
+.hotel-city{font-size:22px;font-weight:900;margin-top:8px}
+.hotel-platform{font-size:14px;color:var(--sub);margin-top:2px}
+.hotel-parking{margin-top:11px;padding-top:10px;border-top:1px dashed var(--line);font-size:16px;font-weight:750;color:#505862}
 .hotel-parking.pending{color:#9a6b3f}
 .note-row{padding:12px 0;border-bottom:1px dashed var(--line)}
 .note-row:last-child{border-bottom:0}
 .note-row b{display:block}
 .note-row span{font-size:13px;color:var(--sub)}
-.footer{
-  position:fixed;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:10px;
-  width:min(780px,calc(100vw - 20px));
-  background:rgba(255,255,255,.96);
-  border:1px solid var(--line);
-  border-radius:22px;
-  box-shadow:0 12px 30px rgba(44,57,72,.13);
-  display:flex;
-  justify-content:space-around;
-  padding:8px;
-  backdrop-filter:blur(12px);
-}
-.footer button{
-  border:0;
-  background:transparent;
-  color:var(--sub);
-  padding:8px 10px;
-  min-width:58px;
-  cursor:pointer;
-}
-.footer button.active{color:var(--blue);font-weight:800}
-.footer span{display:block;font-size:18px}
-.footer small{display:block;font-size:10px;margin-top:2px}
 @media(max-width:560px){
   .hero-top{align-items:flex-start}
   .stop{grid-template-columns:92px minmax(0,1fr);gap:12px}
@@ -580,7 +562,7 @@ h1{margin:4px 0 4px;font-size:30px}
         <div class="day-preview" data-day="day1">
           <div class="preview-top">
             <div>
-              <div class="preview-day">9/16（三）</div>
+              <div class="preview-day"><span class="preview-day-label">Day 1</span><span class="preview-date">9/16（三）</span></div>
               <div class="preview-route">✈ 新千歲 → 🛍️ 北廣島 Outlet → 🌃 札幌</div>
             </div>
           </div>
@@ -589,7 +571,7 @@ h1{margin:4px 0 4px;font-size:30px}
         <div class="day-preview" data-day="day2">
           <div class="preview-top">
             <div>
-              <div class="preview-day">9/17（四）</div>
+              <div class="preview-day"><span class="preview-day-label">Day 2</span><span class="preview-date">9/17（四）</span></div>
               <div class="preview-route">🌳 中島公園 → 🦀 中央市場 → 🌊 小樽</div>
             </div>
           </div>
@@ -598,7 +580,7 @@ h1{margin:4px 0 4px;font-size:30px}
         <div class="day-preview" data-day="day3">
           <div class="preview-top">
             <div>
-              <div class="preview-day">9/18（五）</div>
+              <div class="preview-day"><span class="preview-day-label">Day 3</span><span class="preview-date">9/18（五）</span></div>
               <div class="preview-route">☕ 北一ホール → 🐄 高橋牧場 → 🎆 洞爺湖</div>
             </div>
           </div>
@@ -607,7 +589,7 @@ h1{margin:4px 0 4px;font-size:30px}
         <div class="day-preview" data-day="day4">
           <div class="preview-top">
             <div>
-              <div class="preview-day">9/19（六）</div>
+              <div class="preview-day"><span class="preview-day-label">Day 4</span><span class="preview-date">9/19（六）</span></div>
               <div class="preview-route">🚠 有珠山 → 🐟 虎杖浜 → 🏨 苫小牧</div>
             </div>
           </div>
@@ -616,7 +598,7 @@ h1{margin:4px 0 4px;font-size:30px}
         <div class="day-preview" data-day="day5">
           <div class="preview-top">
             <div>
-              <div class="preview-day">9/20（日）</div>
+              <div class="preview-day"><span class="preview-day-label">Day 5</span><span class="preview-date">9/20（日）</span></div>
               <div class="preview-route">🚗 苫小牧 → ✈️ 新千歲機場</div>
             </div>
           </div>
@@ -712,13 +694,33 @@ h1{margin:4px 0 4px;font-size:30px}
     <article class="card">
       <h2 style="margin:0">住宿</h2>
 
-      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=5-chōme-2-10+Kotoni+2+Jō,+Nishi-ku,+Sapporo,+Hokkaido+063-0812" target="_blank">9/16（三）｜🏨 札幌｜Airbnb ↗</a><div class="hotel-parking">🅿️ 現金 ¥1,500</div></div>
+      <a class="hotel-row" href="https://www.google.com/maps/search/?api=1&query=5-chōme-2-10+Kotoni+2+Jō,+Nishi-ku,+Sapporo,+Hokkaido+063-0812" target="_blank" rel="noopener">
+        <div class="hotel-top"><span class="hotel-date">9/16（三）</span><span class="hotel-map">開啟地圖 ↗</span></div>
+        <div class="hotel-city">🏨 札幌住宿</div>
+        <div class="hotel-platform">Airbnb</div>
+        <div class="hotel-parking">🅿️ 停車費：¥1,500／晚｜現金付款</div>
+      </a>
 
-      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=1-19+Shinonomechō,+Otaru,+Hokkaido+047-0026" target="_blank">9/17（四）｜🏨 小樽｜Airbnb ↗</a><div class="hotel-parking">🅿️ 免費</div></div>
+      <a class="hotel-row" href="https://www.google.com/maps/search/?api=1&query=1-19+Shinonomechō,+Otaru,+Hokkaido+047-0026" target="_blank" rel="noopener">
+        <div class="hotel-top"><span class="hotel-date">9/17（四）</span><span class="hotel-map">開啟地圖 ↗</span></div>
+        <div class="hotel-city">🏨 小樽住宿</div>
+        <div class="hotel-platform">Airbnb</div>
+        <div class="hotel-parking">🅿️ 停車費：免費</div>
+      </a>
 
-      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721" target="_blank">9/18（五）｜🏨 洞爺湖｜Airbnb ↗</a><div class="hotel-parking">🅿️ 免費</div></div>
+      <a class="hotel-row" href="https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721" target="_blank" rel="noopener">
+        <div class="hotel-top"><span class="hotel-date">9/18（五）</span><span class="hotel-map">開啟地圖 ↗</span></div>
+        <div class="hotel-city">🏨 洞爺湖住宿</div>
+        <div class="hotel-platform">Airbnb</div>
+        <div class="hotel-parking">🅿️ 停車費：免費</div>
+      </a>
 
-      <div class="hotel-row"><a href="https://www.google.com/maps/search/?api=1&query=4+Chome-3-1+Omotemachi,+Tomakomai,+Hokkaido+053-0022" target="_blank">9/19（六）｜🏨 苫小牧｜Trip.com ↗</a><div class="hotel-parking">🅿️ 收費</div></div>
+      <a class="hotel-row" href="https://www.google.com/maps/search/?api=1&query=4+Chome-3-1+Omotemachi,+Tomakomai,+Hokkaido+053-0022" target="_blank" rel="noopener">
+        <div class="hotel-top"><span class="hotel-date">9/19（六）</span><span class="hotel-map">開啟地圖 ↗</span></div>
+        <div class="hotel-city">🏨 苫小牧住宿</div>
+        <div class="hotel-platform">Trip.com</div>
+        <div class="hotel-parking pending">🅿️ 停車費：待確認</div>
+      </a>
     </article>
   </section>
 
@@ -748,14 +750,6 @@ h1{margin:4px 0 4px;font-size:30px}
   </section>
 
 </main>
-
-<nav class="footer">
-  <button class="active" data-target="home"><span>⌂</span><small>首頁</small></button>
-  <button data-target="flights"><span>✈</span><small>航班</small></button>
-  <button data-target="rental"><span>🚗</span><small>租車</small></button>
-  <button data-target="lodging"><span>▣</span><small>住宿</small></button>
-  <button data-target="currency"><span>¥</span><small>匯率</small></button>
-</nav>
 
 <script>
 const dayData = {
@@ -1294,7 +1288,7 @@ const panels=document.querySelectorAll(".panel");
 
 function showPanel(id){
   panels.forEach(p=>p.classList.toggle("active",p.id===id));
-  document.querySelectorAll(".tab,.footer button").forEach(b=>{
+  document.querySelectorAll(".tab").forEach(b=>{
     b.classList.toggle("active",b.dataset.target===id);
   });
   window.scrollTo({top:0,behavior:"smooth"});
