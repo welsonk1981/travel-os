@@ -28,6 +28,7 @@ body{
   background:var(--bg);
   color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
+  font-size:16px;
   line-height:1.5;
 }
 button,a{font:inherit}
@@ -45,9 +46,9 @@ button,a{font:inherit}
   gap:14px;
   align-items:flex-start;
 }
-.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--sub)}
+.eyebrow{font-size:13px;letter-spacing:.12em;color:var(--sub)}
 h1{margin:4px 0 4px;font-size:30px}
-.sub{font-size:14px;color:var(--sub)}
+.sub{font-size:15px;color:var(--sub)}
 .countdown{
   min-width:106px;
   background:var(--blue-soft);
@@ -72,7 +73,7 @@ h1{margin:4px 0 4px;font-size:30px}
 .weather-main{display:flex;align-items:center;gap:10px}
 .weather-icon{font-size:30px}
 .weather-temp{font-size:24px;font-weight:800}
-.weather-meta{text-align:right;font-size:12px;color:var(--sub)}
+.weather-meta{text-align:right;font-size:13px;color:var(--sub)}
 .tabs{
   display:flex;
   gap:8px;
@@ -292,16 +293,17 @@ h1{margin:4px 0 4px;font-size:30px}
 .route-stop-badge{display:inline-block;margin-top:4px;padding:3px 7px;border-radius:999px;background:#f0edf7;color:#705791;font-size:11px;font-weight:850}
 .route-stop-time{margin-top:3px;font-size:13px;font-weight:850;color:#4e5862}
 .route-stop-body{padding:0 14px 14px;border-top:1px dashed #dce4ea}
-.route-stop-desc{margin-top:4px;color:var(--sub);font-size:14px}
-.route-stop-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;color:#66717b;font-size:12px}
-.route-quick-guide{margin-top:11px;padding:10px 11px;border-radius:12px;background:#f7fafc;color:#4f5963;font-size:13px}
+.route-stop-desc{margin-top:4px;color:var(--sub);font-size:15px}
+.route-stop-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;color:#66717b;font-size:13px}
+.route-quick-guide{margin-top:11px;padding:10px 11px;border-radius:12px;background:#f7fafc;color:#4f5963;font-size:15px}
+.route-map-link{display:block;margin-top:10px;padding:10px 11px;border:1px solid #dce6ee;border-radius:12px;background:#f7fafc;color:#46677f;text-decoration:none;font-size:15px;font-weight:900}
 .route-quick-guide b{display:block;color:#46677f;margin-bottom:5px}
 .route-quick-guide ul{margin:0;padding-left:19px}
 .route-quick-guide li{margin:5px 0}
 .inside-list{margin-top:11px;padding:10px 11px;border-radius:12px;background:#fff8fa}
-.inside-title{font-size:12px;font-weight:900;color:#9a6170;margin-bottom:7px}
-.inside-item{font-size:13px;color:#555f68;padding:4px 0}
-.route-drive{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;color:#75818b;font-size:12px;font-weight:800}
+.inside-title{font-size:14px;font-weight:900;color:#9a6170;margin-bottom:7px}
+.inside-item{font-size:15px;color:#555f68;padding:4px 0}
+.route-drive{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;color:#75818b;font-size:14px;font-weight:800}
 .district-label{margin-top:12px;padding:6px 9px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
 .tag{
   display:inline-block;
@@ -1257,7 +1259,7 @@ function areaMarkup(areas){
           <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title"><a href="${outlet[4]}" target="_blank" rel="noopener">${outlet[1]} <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 13:35–18:50</div></div></div></summary>
           <div class="route-stop-body">
           <div class="route-quick-guide">🧭 先逛 164、123，18:50 離場</div>
-          <details class="field-guide"><summary>🗺️ 品牌位置</summary><div class="guide-body"><a href="${map[4]}" target="_blank" rel="noopener">店號簡圖 ↗</a></div></details>
+          <a class="route-map-link" href="${map[4]}" target="_blank" rel="noopener">🗺️ 品牌位置｜店號簡圖 ↗</a>
           <div class="inside-list"><div class="inside-title">🍦 冰品</div><div class="inside-item">札幌農学校｜酪農牛奶</div><div class="inside-item">MIL PRESSO｜北海道素材</div></div>
           </div>
         </details>
