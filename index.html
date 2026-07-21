@@ -278,17 +278,26 @@ h1{margin:4px 0 4px;font-size:30px}
 .route-area-note{font-size:12px;color:var(--sub);margin-top:3px}
 .route-strip{display:flex;align-items:center;gap:8px;margin:13px 0;padding:10px 12px;border-radius:12px;background:#edf4f8;color:#45677e;font-size:13px;font-weight:850}
 .route-strip .arrow{color:#8ca1b0}
-.route-stop-card{border:1px solid #dce4ea;border-radius:15px;padding:14px;background:#fff}
+.route-stop-card{border:1px solid #dce4ea;border-radius:15px;background:#fff;overflow:hidden}
 .route-stop-card.primary{border-left:5px solid #8469aa}
 .route-stop-card.shoes{border-left:5px solid #567b9e}
-.route-stop-head{display:flex;align-items:flex-start;gap:10px}
+.route-stop-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;cursor:pointer;list-style:none}
+.route-stop-summary::-webkit-details-marker{display:none}
+.route-stop-summary::after{content:"查看詳情 ⌄";flex:0 0 auto;color:#617b8d;font-size:12px;font-weight:900}
+.route-stop-card[open]>.route-stop-summary::after{content:"收起 ⌃"}
+.route-stop-head{display:flex;align-items:flex-start;gap:10px;min-width:0}
 .route-stop-number{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-weight:900}
 .route-stop-title{font-size:17px;font-weight:900;line-height:1.35}
 .route-stop-title a{color:#1769aa;text-decoration:none}
 .route-stop-badge{display:inline-block;margin-top:4px;padding:3px 7px;border-radius:999px;background:#f0edf7;color:#705791;font-size:11px;font-weight:850}
-.route-stop-time{margin-top:10px;font-size:14px;font-weight:850;color:#4e5862}
+.route-stop-time{margin-top:3px;font-size:13px;font-weight:850;color:#4e5862}
+.route-stop-body{padding:0 14px 14px;border-top:1px dashed #dce4ea}
 .route-stop-desc{margin-top:4px;color:var(--sub);font-size:14px}
 .route-stop-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;color:#66717b;font-size:12px}
+.route-quick-guide{margin-top:11px;padding:10px 11px;border-radius:12px;background:#f7fafc;color:#4f5963;font-size:13px}
+.route-quick-guide b{display:block;color:#46677f;margin-bottom:5px}
+.route-quick-guide ul{margin:0;padding-left:19px}
+.route-quick-guide li{margin:5px 0}
 .inside-list{margin-top:11px;padding:10px 11px;border-radius:12px;background:#fff8fa}
 .inside-title{font-size:12px;font-weight:900;color:#9a6170;margin-bottom:7px}
 .inside-item{font-size:13px;color:#555f68;padding:4px 0}
@@ -409,6 +418,9 @@ h1{margin:4px 0 4px;font-size:30px}
   .arrival{font-size:14px}
   .route-strip{align-items:flex-start;flex-wrap:wrap}
   .route-strip .arrow{width:100%;padding-left:3px}
+  .route-stop-summary{align-items:flex-start}
+  .route-stop-summary::after{content:"展開 ⌄"}
+  .route-stop-card[open]>.route-stop-summary::after{content:"收起 ⌃"}
 }
 
 .rental-card{padding:0;overflow:hidden}
@@ -1243,22 +1255,26 @@ function areaMarkup(areas){
         <div class="route-area-head">${a.title}</div>
         <div class="route-area-note">${a.note}</div>
         <div class="route-strip"><span>① 三井 Outlet</span><span class="arrow">→ 開車 2–3 分鐘 →</span><span>② Sports Depo</span></div>
-        <article class="route-stop-card primary">
-          <div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title"><a href="${outlet[4]}" target="_blank" rel="noopener">${outlet[1]} ↗</a></div><span class="route-stop-badge">主要行程</span></div></div>
-          <div class="route-stop-time">🕐 13:35–18:50</div>
+        <details class="route-stop-card primary">
+          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title">${outlet[1]}</div><div class="route-stop-time">🕐 13:35–18:50</div></div></div></summary>
+          <div class="route-stop-body">
           <div class="route-stop-desc">採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。</div>
-          ${guideMarkup(outlet[6])}
+          <div class="route-quick-guide"><b>🧭 採買重點</b><ul><li>進場先逛店號 164、123，再依原定路線逛其他店。</li><li>18:50 前離場，保留 Sports Depo 試鞋時間。</li></ul></div>
           <details class="field-guide"><summary>🗺️ 店舖地圖｜查看品牌位置</summary><div class="guide-body"><ul class="guide-list"><li><a href="${map[4]}" target="_blank" rel="noopener">開啟 Outlet 店號簡圖 ↗</a></li><li>${map[2]}</li></ul></div></details>
           <div class="inside-list"><div class="inside-title">🍦 Outlet 內順便吃</div><div class="inside-item">札幌農学校｜酪農牛奶霜淇淋</div><div class="inside-item">MIL PRESSO｜北海道素材霜淇淋</div></div>
-        </article>
+          <div class="route-stop-meta"><a href="${outlet[4]}" target="_blank" rel="noopener">📍 開啟地圖 ↗</a></div>
+          </div>
+        </details>
         <div class="route-drive">🚗 前往下一站｜約 2–3 分鐘</div>
-        <article class="route-stop-card shoes">
-          <div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title"><a href="${sports[4]}" target="_blank" rel="noopener">Sports Depo 大曲店 ↗</a></div><span class="route-stop-badge">最後試鞋</span></div></div>
-          <div class="route-stop-time">🕐 18:55–20:15</div>
+        <details class="route-stop-card shoes">
+          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title">Sports Depo 大曲店</div><div class="route-stop-time">🕐 18:55–20:15</div></div></div></summary>
+          <div class="route-stop-body">
           <div class="route-stop-desc">On・HOKA・Salomon 一站比較；指定鞋款與尺碼以現場庫存為準。</div>
           <div class="route-stop-meta"><span>🅿️ 有停車場</span><span>🛍️ 可免稅</span><span>☎ 011-377-1477</span></div>
           ${guideMarkup(sports[6])}
-        </article>
+          <div class="route-stop-meta"><a href="${sports[4]}" target="_blank" rel="noopener">📍 開啟地圖 ↗</a></div>
+          </div>
+        </details>
       </section>`;
     }
     const groupClass=/晚餐/.test(a.title)?"group-meal":/晚間採買/.test(a.title)?"group-essentials":/藥妝|藥局/.test(a.title)?"group-pharmacy":/便利商店/.test(a.title)?"group-convenience":/大型採買/.test(a.title)?"group-shopping":/冰品/.test(a.title)?"group-dessert":"";
