@@ -1256,23 +1256,21 @@ function areaMarkup(areas){
         <div class="route-area-note">${a.note}</div>
         <div class="route-strip"><span>① 三井 Outlet</span><span class="arrow">→ 開車 2–3 分鐘 →</span><span>② Sports Depo</span></div>
         <details class="route-stop-card primary">
-          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title">${outlet[1]}</div><div class="route-stop-time">🕐 13:35–18:50</div></div></div></summary>
+          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title"><a href="${outlet[4]}" target="_blank" rel="noopener">${outlet[1]} <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 13:35–18:50</div></div></div></summary>
           <div class="route-stop-body">
           <div class="route-stop-desc">採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。</div>
           <div class="route-quick-guide"><b>🧭 採買重點</b><ul><li>進場先逛店號 164、123，再依原定路線逛其他店。</li><li>18:50 前離場，保留 Sports Depo 試鞋時間。</li></ul></div>
-          <details class="field-guide"><summary>🗺️ 店舖地圖｜查看品牌位置</summary><div class="guide-body"><ul class="guide-list"><li><a href="${map[4]}" target="_blank" rel="noopener">開啟 Outlet 店號簡圖 ↗</a></li><li>${map[2]}</li></ul></div></details>
+          <details class="field-guide"><summary>🗺️ 品牌位置｜店號簡圖</summary><div class="guide-body"><ul class="guide-list"><li><a href="${map[4]}" target="_blank" rel="noopener">Outlet 店號簡圖 ↗</a></li><li>${map[2]}</li></ul></div></details>
           <div class="inside-list"><div class="inside-title">🍦 Outlet 內順便吃</div><div class="inside-item">札幌農学校｜酪農牛奶霜淇淋</div><div class="inside-item">MIL PRESSO｜北海道素材霜淇淋</div></div>
-          <div class="route-stop-meta"><a href="${outlet[4]}" target="_blank" rel="noopener">📍 開啟地圖 ↗</a></div>
           </div>
         </details>
         <div class="route-drive">🚗 前往下一站｜約 2–3 分鐘</div>
         <details class="route-stop-card shoes">
-          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title">Sports Depo 大曲店</div><div class="route-stop-time">🕐 18:55–20:15</div></div></div></summary>
+          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title"><a href="${sports[4]}" target="_blank" rel="noopener">Sports Depo 大曲店 <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 18:55–20:15</div></div></div></summary>
           <div class="route-stop-body">
           <div class="route-stop-desc">On・HOKA・Salomon 一站比較；指定鞋款與尺碼以現場庫存為準。</div>
           <div class="route-stop-meta"><span>🅿️ 有停車場</span><span>🛍️ 可免稅</span><span>☎ 011-377-1477</span></div>
           ${guideMarkup(sports[6])}
-          <div class="route-stop-meta"><a href="${sports[4]}" target="_blank" rel="noopener">📍 開啟地圖 ↗</a></div>
           </div>
         </details>
       </section>`;
