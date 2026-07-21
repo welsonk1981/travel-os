@@ -244,6 +244,35 @@ h1{margin:4px 0 4px;font-size:30px}
 .shop p{margin:4px 0;color:var(--sub);font-size:15px}
 .shop-hours{font-size:14px;color:#505a65;margin-top:4px;font-weight:700}
 .shop-alert{font-size:12px;color:#955f45;background:#f8eee9;border-radius:9px;padding:7px 9px;margin-top:7px}
+.field-guide{
+  margin-top:10px;
+  border:1px solid #dce6ee;
+  border-radius:12px;
+  background:#f7fafc;
+  overflow:hidden;
+}
+.field-guide summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  color:#46677f;
+  font-size:13px;
+  font-weight:900;
+  cursor:pointer;
+  list-style:none;
+}
+.field-guide summary::-webkit-details-marker{display:none}
+.field-guide summary::after{content:"⌄";font-size:16px;transition:transform .2s ease}
+.field-guide[open] summary::after{transform:rotate(180deg)}
+.guide-body{padding:0 12px 11px;border-top:1px dashed #dce6ee}
+.guide-note{margin:9px 0 0;color:var(--sub);font-size:12px}
+.guide-list{margin:8px 0 0;padding-left:19px;color:#4f5963;font-size:13px}
+.guide-list li{margin:6px 0}
+.guide-table{width:100%;border-collapse:collapse;margin-top:9px;font-size:12px}
+.guide-table th,.guide-table td{padding:7px 5px;border-bottom:1px solid #e5ebf0;text-align:left;vertical-align:top}
+.guide-table th{color:#526574;background:#eef4f7}
 .district-label{margin-top:12px;padding:6px 9px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
 .tag{
   display:inline-block;
@@ -621,7 +650,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day"><span class="preview-date">9/16（三）</span><span class="preview-day-label">Day 1</span></div>
-              <div class="preview-route">✈ 新千歲 → 🛍️ 北廣島 Outlet → 🌃 札幌</div>
+              <div class="preview-route">✈ 新千歲 → 🛍️ 北廣島 Outlet → 👟 Sports Depo → 🌃 札幌</div>
             </div>
           </div>
         </div>
@@ -639,7 +668,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day"><span class="preview-date">9/18（五）</span><span class="preview-day-label">Day 3</span></div>
-              <div class="preview-route">☕ 北一ホール → 🐄 高橋牧場 → 🎆 洞爺湖</div>
+              <div class="preview-route">☕ 小樽 → 🍄 仁木 → 🐄 二世谷 → 🎆 洞爺湖</div>
             </div>
           </div>
         </div>
@@ -817,17 +846,18 @@ h1{margin:4px 0 4px;font-size:30px}
 const dayData = {
   day1: {
     label:"Day 1｜9/16（三）",
-    highlights:["北廣島 Outlet","札幌夜間散步","北海道第一支冰品"],
-    missions:["完成取車","Outlet主要採購","入住札幌"],
+    highlights:["北廣島 Outlet","Sports Depo 三品牌試鞋","札幌夜間散步","北海道第一支冰品"],
+    missions:["完成取車","Outlet主要採購","試穿 On／HOKA／Salomon","入住札幌"],
     foodFocus:["札幌農学校牛奶霜淇淋","道之驛南瓜咖哩麵包"],
-    route:"新千歲 → 北廣島 → 札幌",
+    route:"新千歲 → 北廣島 Outlet → Sports Depo → 札幌",
     hotel:"札幌住宿",
     stops:[
       {time:"11:05–12:00",name:"新千歲機場／取車",note:"入境、領行李，前往鈴蘭店。",stay:"約 55 分",next:"下一段約 30 分"},
       {time:"12:30–13:20",name:"花ロードえにわ",note:"中午道之驛用餐，品嚐人氣南瓜咖哩麵包。",stay:"約 50 分",next:"下一段約 15 分"},
-      {time:"13:35–20:00",name:"三井 Outlet 札幌北廣島",note:"購物、晚餐一次完成，今天主要採購行程。",stay:"約 6 小時 25 分",next:"前往札幌市區約 35 分"},
-      {time:"20:35–21:20",name:"札幌市區／狸小路六丁目 → 二丁目",note:"補吃居酒屋，沿商店街步行逛街。",stay:"約 45 分",next:"前往住宿約 10 分"},
-      {time:"21:30",name:"札幌住宿",note:"Check-in。",stay:"",next:""}
+      {time:"13:35–18:50",name:"三井 Outlet 札幌北廣島",note:"今天主要採購行程；18:50離場，保留完整試鞋時間。",stay:"約 5 小時 15 分",next:"開車約 2–3 分"},
+      {time:"18:55–20:15",name:"Sports Depo 大曲店",note:"集中試穿 On、HOKA、Salomon；實際品牌與鞋款庫存依現場為準。",stay:"約 80 分",next:"前往札幌市區約 35 分"},
+      {time:"20:50–21:35",name:"札幌市區／狸小路六丁目 → 二丁目",note:"補吃居酒屋，沿商店街步行逛街。",stay:"約 45 分",next:"前往住宿約 10 分"},
+      {time:"21:45",name:"札幌住宿",note:"Check-in。",stay:"",next:""}
     ],
     areas:[
       {
@@ -841,10 +871,11 @@ const dayData = {
         title:"北廣島",
         note:"Day 1 主要購物區",
         shops:[
-          ["必去","三井 Outlet 札幌北廣島","採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島","主要行程"],
+          ["必去","三井 Outlet 札幌北廣島","採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島","主要行程",{title:"🧭 採買指南｜建議先逛 164、123",items:["進入 Outlet 後，優先前往店號 164、123。","完成重點採買後，再依原定路線逛其他店家。","18:50 前離場，保留 Sports Depo 三品牌試鞋時間。"]}],
           ["Guide","查看 Outlet 店號簡圖","依官方樓層圖校正店號；Clover 1F → Clover 2F → Maple 2F。","現場對照使用","guides/kitahiroshima-outlet/index.html","主要行程"],
           ["冰品必吃","札幌農学校 札幌北広島店","酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=札幌農学校+札幌北広島店","Outlet冰品"],
-          ["冰品備選","MIL PRESSO","北海道ロコファームビレッジ內的北海道素材霜淇淋。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=MIL+PRESSO+三井アウトレットパーク札幌北広島","Outlet冰品"]
+          ["冰品備選","MIL PRESSO","北海道ロコファームビレッジ內的北海道素材霜淇淋。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=MIL+PRESSO+三井アウトレットパーク札幌北広島","Outlet冰品"],
+          ["三品牌試鞋","Sports Depo 大曲店／スポーツデポ大曲店","地址：北海道北広島市大曲幸町2丁目8番地2；有停車場、可免稅。Salomon 經銷資格已有官方資料；On、HOKA 與指定鞋款請以現場庫存為準。","10:00–20:30｜011-377-1477","https://www.google.com/maps/search/?api=1&query=スポーツデポ大曲店","Outlet 北側｜開車約2–3分",{title:"👟 試鞋指南｜On・HOKA・Salomon",note:"低足弓以穩定、底盤寬度與長時間步行舒適度為主要比較；不要只看第一腳的柔軟感。",table:[["鞋款","適合度","試穿重點"],["HOKA Gaviota 6","★★★★★","底盤寬、穩定、緩震強；優先測長時間城市步行。"],["HOKA Arahi 8","★★★★☆","有穩定支撐且較輕；比較後足固定感。"],["On Cloudflyer／Cloudrunner","★★★★","支撐與穿搭均衡、腳感偏紮實。"],["Salomon XA Pro 3D V9","★★★★","底盤穩、抗扭強；適合步道及不平路面。"]],items:["依序試：Gaviota 6 → Arahi 8 → Cloudflyer／Cloudrunner → XA Pro 3D V9。","穿旅行會用的襪子，雙腳都試並走動至少 5–10 分鐘。","指定鞋款與尺碼不保證有貨，現場可請店員找同支撐類型替代款。"]}]
         ]
       },
       {
@@ -872,7 +903,6 @@ const dayData = {
     stops:[
       {time:"08:00",name:"咖啡廳早餐 → 中島公園／豐平館",note:"在咖啡廳用早餐，再前往中島公園與豐平館散步。",stay:"約 45 分",next:"下一段約 20 分"},
       {time:"09:15–10:30",name:"札幌中央市場",note:"早午餐／海鮮。",stay:"約 75 分",next:"下一段約 40 分"},
-      {time:"中央市場後",name:"Sapporo Experience Base（備選）",note:"Salomon 直營體驗型門市，時間與動線允許再前往。",stay:"約 30–45 分",next:"不納入固定時間"},
       {time:"11:30",name:"頭大佛",note:"安藤忠雄建築與園區。",stay:"約 60 分",next:"下一段約 60 分"},
       {time:"13:30–14:00",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"約 20 分",next:"後續步行"},
       {time:"14:00–18:15",name:"堺町通 → 北一硝子三号館 → 小樽運河",note:"甜點、玻璃工藝、選物，最後接夕景與夜景。",stay:"整段約 4 小時 15 分",next:"18:30 已預約晚餐"},
@@ -889,7 +919,7 @@ const dayData = {
           ["咖啡候選","Smooch Coffee Stand","外帶手沖咖啡、拿鐵或美式咖啡。","官方社群顯示約 08:00–18:00；營業日可能臨時調整","https://www.google.com/maps/search/?api=1&query=Smooch+Coffee+Stand+Sapporo","中島公園咖啡"],
           ["咖啡候選","森香珈琲","點自家焙煎咖啡、Morning 吐司早餐與當日甜點。","09:00–17:00；火、三休；09:00–11:00 Morning","https://www.google.com/maps/search/?api=1&query=森香珈琲+札幌","中島公園咖啡"],
           ["停車＋市場","札幌場外市場 一般車免費停車場","停車後直接進入市場，吃海鮮丼、螃蟹與烤魚。","依市場營業時間","https://www.google.com/maps/search/?api=1&query=札幌場外市場+一般車+無料駐車場","中央市場停車"],
-          ["備選","Sapporo Experience Base／サロモンストア","試穿 Salomon 越野跑鞋、健行鞋，查看 S/LAB 裝備與跑步背心。","平日 11:00–20:00；六日祝 10:00–19:00；週三休","https://www.google.com/maps/search/?api=1&query=サロモンストア+サッポロエクスペリエンスベース","中央市場後備選"]
+          ["停車＋市場","札幌場外市場 一般車免費停車場","停車後直接進入市場，吃海鮮丼、螃蟹與烤魚。","依市場營業時間","https://www.google.com/maps/search/?api=1&query=札幌場外市場+一般車+無料駐車場","中央市場停車"]
         ]
       },
       {
@@ -917,10 +947,10 @@ const dayData = {
   },
   day3:{
     label:"Day 3｜9/18（五）",
-    highlights:["北一ホール","高橋牧場","望羊蹄晚餐","洞爺湖煙火船"],
-    missions:["12:30退房","外帶EBIJIN漢堡","18:30望羊蹄晚餐","20:15前往煙火船碼頭"],
+    highlights:["北一ホール","きのこ王国 仁木店","高橋牧場","望羊蹄晚餐","洞爺湖煙火船"],
+    missions:["12:30退房","仁木短停","外帶EBIJIN漢堡","18:30望羊蹄晚餐","20:15前往煙火船碼頭"],
     foodFocus:["EBIJIN鹿肉漢堡","Milk Kobo牛奶霜淇淋","望羊蹄漢堡排套餐"],
-    route:"小樽 → 俱知安 → 二世谷 → 洞爺湖",
+    route:"小樽 → 余市 → 仁木 → 俱知安 → 二世谷 → 洞爺湖",
     hotel:"洞爺湖溫泉街",
     stops:[
       {time:"07:30–08:30",name:"小樽運河",note:"沿運河步行，拍攝運河與石造倉庫。",stay:"約 60 分",next:"步行前往堺町通"},
@@ -931,17 +961,16 @@ const dayData = {
         {label:"備選",name:"CONTAINER BURGER 3-SUN",link:"https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"}
       ]},
       {time:"11:40–12:30",name:"返回住宿／整理行李",note:"12:30前完成行李整理與裝車。",stay:"約 50 分",next:"12:30退房"},
-      {time:"12:30",name:"小樽住宿退房",note:"固定退房時間；退房後離開小樽。",stay:"",next:"開車前往俱知安"},
-      {time:"12:30–14:00",name:"小樽 → 俱知安",note:"車程依當日導航與路況調整。",stay:"估計約 75–90 分",next:"抵達後前往午餐",static:true},
-      {time:"14:00–15:00",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 60 分",next:"前往高橋牧場約 20–30 分"},
-      {time:"15:25–16:20",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 55 分",next:"依時間決定是否停 fanfun"},
-      {time:"16:30–16:45",name:"革と珈琲 fanfun（可選）",note:"買皮革小物或咖啡；16:30前未抵達就取消。",stay:"最多 15 分",next:"前往洞爺湖"},
-      {time:"時間足夠才停",name:"休息站／冰品（二選一）",note:"會影響18:30晚餐時直接取消。",stay:"最多停一個",next:"前往洞爺湖住宿",options:[
+      {time:"12:30",name:"小樽住宿退房",note:"固定退房時間；走國道5號，經余市往仁木。",stay:"",next:"開車約 40–45 分"},
+      {time:"13:15–13:35",name:"きのこ王国 仁木店",note:"洗手間、駕駛休息，可喝蘑菇湯或簡短採買；若延誤縮短為10–15分鐘。",stay:"約 20 分",next:"前往俱知安約 50–55 分"},
+      {time:"14:30–15:20",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 50 分",next:"前往高橋牧場約 20–25 分"},
+      {time:"15:45–16:25",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 40 分",next:"依時間決定是否停 fanfun"},
+      {time:"16:35–16:50",name:"革と珈琲 fanfun（可選）",note:"買皮革小物或咖啡；16:35前未抵達就取消。",stay:"最多 15 分",next:"直接前往洞爺湖"},
+      {time:"僅提早時才停",name:"230ルスツ／Lake Hill Farm（二選一）",note:"加入仁木後時間很緊，正常情況直接略過；只有全程提早且不影響18:30晚餐才停。",stay:"最多停一個、10–15 分",next:"前往洞爺湖住宿",options:[
         {label:"休息站",name:"道の駅 230ルスツ"},
         {label:"冰品",name:"🍦 Lake Hill Farm 本店"}
       ]},
-      {time:"17:45–18:10",name:"洞爺湖住宿 Check-in",note:"放行李、停車，確認煙火船票、集合位置與登船碼頭。",stay:"約 25 分",next:"時間足夠可先到わかさいも本舗"},
-      {time:"18:10–18:25",name:"わかさいも本舗（時間足夠才停）",note:"買わかさいも、いもてん與北海道あんぽてと；18:10前未完成入住就取消。",stay:"最多 15 分",next:"前往望羊蹄"},
+      {time:"17:55–18:20",name:"洞爺湖住宿 Check-in",note:"放行李、停車，確認煙火船票、集合位置與登船碼頭。",stay:"約 25 分",next:"直接前往望羊蹄"},
       {time:"18:30–19:40",name:"レストラン望羊蹄",note:"預計18:30晚餐；可點漢堡排套餐或西式料理。出發前確認營業並訂位。",stay:"約 70 分",next:"返回住宿準備船票與外套"},
       {time:"19:40–20:15",name:"返回住宿／準備登船",note:"準備外套、相機與紙本船票。",stay:"約 35 分",next:"前往碼頭"},
       {time:"20:15–20:25",name:"抵達花火觀賞船碼頭",note:"官方船班 20:35 出航；網路票需最晚在出航前10分鐘換成紙票。",stay:"候船／驗票",next:""},
@@ -957,6 +986,13 @@ const dayData = {
           ["主選外帶","EBIJIN 小樽店","後志產鹿肉漢堡專門店，可外帶；地址：小樽市稲穂2-13-16。沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC","小樽漢堡"],
           ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店","小樽採買"],
           ["備案","CONTAINER BURGER 3 -SUN-","點牛肉漢堡、薯條與無酒精啤酒。","11:00–19:00（L.O.18:30）；臨時休業需確認","https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽","小樽漢堡"]
+        ]
+      },
+      {
+        title:"余市・仁木途中休息",
+        note:"小樽退房後，沿國道5號前往俱知安",
+        shops:[
+          ["途中短停","きのこ王国 仁木店","洗手間、駕駛休息，可喝蘑菇湯及簡短採買；地址：北海道余市郡仁木町大江1丁目930。","09:00–18:00｜年中無休","https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店","余市之後"]
         ]
       },
       {
@@ -977,10 +1013,17 @@ const dayData = {
       },
       {
         title:"前往洞爺湖途中（二選一）",
-        note:"兩個地點只停一個即可，依當天時間與需求選擇",
+        note:"加入仁木後正常情況略過；只有整體行程提早才停一個",
         shops:[
           ["休息站","道の駅 230ルスツ","補飲料，買留壽都當地蔬菜、馬鈴薯與豬肉加工品。","9月賣店約 09:00–18:00","https://www.google.com/maps/search/?api=1&query=道の駅+230ルスツ","途中擇一"],
           ["冰品","Lake Hill Farm 本店","吃牧場牛奶 Gelato，可選牛奶、香草或當日季節口味。","9月 09:00–18:00","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127","途中擇一"]
+        ]
+      },
+      {
+        title:"洞爺湖便利商店",
+        note:"有需要再前往，不另增加固定行程",
+        shops:[
+          ["🏪 便利商店","Seicomart 洞爺田中店","補飲料、早餐與北海道限定商品。","依分店現場公告","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen","洞爺湖",{title:"🏪 Secoma 必買指南",note:"北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",items:["Secoma 北海道牛奶","夕張哈密瓜冰棒","HOT CHEF 炸雞便當","北海道玉米濃湯","北海道馬鈴薯洋芋片","北海道牛奶霜淇淋","起司奶油夾心歐姆蛋蛋糕捲"]}]
         ]
       },
       {
@@ -1086,7 +1129,7 @@ const dayData = {
         note:"藥妝、便利商店與大型採買集中在同一欄，依需要前往",
         shops:[
           ["💊 藥妝／藥局","ツルハドラッグ 苫小牧王子店","補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。","09:00–22:00","https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店",""],
-          ["🏪 便利商店","セイコーマート 苫小牧表町店","買 HOT CHEF 豬排丼或炸雞、山わさび零食、北海道牛乳與哈密瓜冰品。","06:00–24:00","https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店",""],
+          ["🏪 便利商店","セイコーマート 苫小牧表町店","補飲料、早餐與北海道限定商品。","06:00–24:00","https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店","",{title:"🏪 Secoma 必買指南",note:"北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",items:["Secoma 北海道牛奶","夕張哈密瓜冰棒","HOT CHEF 炸雞便當","北海道玉米濃湯","北海道馬鈴薯洋芋片","北海道牛奶霜淇淋","起司奶油夾心歐姆蛋蛋糕捲"]}],
           ["🛒 大型採買","MEGAドン・キホーテ 苫小牧店","補零食、飲料、藥妝、盥洗用品與北海道伴手禮。","09:00–24:00","https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店",""]
         ]
       },
@@ -1179,11 +1222,21 @@ function areaMarkup(areas){
           const ice=/冰品|霜淇淋|ソフト|Gelato|MIL PRESSO|Milk Kobo|LeTAO PLUS|Mother’s Plus|札幌農学校|北一 Terrace|ポプラファーム|幸せの生ソフト/.test(shop.join(" "));
           const name=(ice && !shop[1].startsWith("🍦"))?`🍦 ${shop[1]}`:shop[1];
           const description=shortText(shop[2]);
+          const guide=extended ? shop[6] : null;
+          const guideMarkup=guide?`<details class="field-guide">
+            <summary>${guide.title}</summary>
+            <div class="guide-body">
+              ${guide.note?`<p class="guide-note">${guide.note}</p>`:""}
+              ${guide.items?`<ul class="guide-list">${guide.items.map(item=>`<li>${item}</li>`).join("")}</ul>`:""}
+              ${guide.table?`<div style="overflow-x:auto"><table class="guide-table">${guide.table.map((row,i)=>`<tr>${row.map(cell=>i===0?`<th>${cell}</th>`:`<td>${cell}</td>`).join("")}</tr>`).join("")}</table></div>`:""}
+            </div>
+          </details>`:"";
           return `${header}<div class="shop">
             ${shop[0]?`<div class="shop-type">${shop[0]}</div>`:""}
             <a href="${link}" target="_blank" rel="noopener">${name} ↗</a>
             ${description?`<p>${description}</p>`:""}
             ${hours ? `<div class="shop-hours">🕘 ${hours}</div>` : ""}
+            ${guideMarkup}
           </div>`;
         }).join("");
       })()}
@@ -1193,9 +1246,9 @@ function areaMarkup(areas){
 
 
 const mustDoByDate={
-  "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包"],
+  "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
   "9/17":["🦀 中央市場海鮮","🍦 小樽代表冰品","🍽️ 小樽 Muse"],
-  "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
+  "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍄 仁木短停","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
   "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮 或 🥩 白老牛","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
 };
