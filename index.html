@@ -283,8 +283,8 @@ h1{margin:4px 0 4px;font-size:30px}
 .route-stop-card.shoes{border-left:5px solid #567b9e}
 .route-stop-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;cursor:pointer;list-style:none}
 .route-stop-summary::-webkit-details-marker{display:none}
-.route-stop-summary::after{content:"查看詳情 ⌄";flex:0 0 auto;color:#617b8d;font-size:12px;font-weight:900}
-.route-stop-card[open]>.route-stop-summary::after{content:"收起 ⌃"}
+.route-stop-summary::after{content:"⌄";flex:0 0 auto;color:#617b8d;font-size:15px;font-weight:900}
+.route-stop-card[open]>.route-stop-summary::after{content:"⌃"}
 .route-stop-head{display:flex;align-items:flex-start;gap:10px;min-width:0}
 .route-stop-number{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-weight:900}
 .route-stop-title{font-size:17px;font-weight:900;line-height:1.35}
@@ -419,8 +419,8 @@ h1{margin:4px 0 4px;font-size:30px}
   .route-strip{align-items:flex-start;flex-wrap:wrap}
   .route-strip .arrow{width:100%;padding-left:3px}
   .route-stop-summary{align-items:flex-start}
-  .route-stop-summary::after{content:"展開 ⌄"}
-  .route-stop-card[open]>.route-stop-summary::after{content:"收起 ⌃"}
+  .route-stop-summary::after{content:"⌄"}
+  .route-stop-card[open]>.route-stop-summary::after{content:"⌃"}
 }
 
 .rental-card{padding:0;overflow:hidden}
@@ -1253,23 +1253,20 @@ function areaMarkup(areas){
       </details>`:"";
       return `<section class="route-area">
         <div class="route-area-head">${a.title}</div>
-        <div class="route-area-note">${a.note}</div>
-        <div class="route-strip"><span>① 三井 Outlet</span><span class="arrow">→ 開車 2–3 分鐘 →</span><span>② Sports Depo</span></div>
         <details class="route-stop-card primary">
           <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title"><a href="${outlet[4]}" target="_blank" rel="noopener">${outlet[1]} <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 13:35–18:50</div></div></div></summary>
           <div class="route-stop-body">
-          <div class="route-stop-desc">採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。</div>
-          <div class="route-quick-guide"><b>🧭 採買重點</b><ul><li>進場先逛店號 164、123，再依原定路線逛其他店。</li><li>18:50 前離場，保留 Sports Depo 試鞋時間。</li></ul></div>
-          <details class="field-guide"><summary>🗺️ 品牌位置｜店號簡圖</summary><div class="guide-body"><ul class="guide-list"><li><a href="${map[4]}" target="_blank" rel="noopener">Outlet 店號簡圖 ↗</a></li><li>${map[2]}</li></ul></div></details>
-          <div class="inside-list"><div class="inside-title">🍦 Outlet 內順便吃</div><div class="inside-item">札幌農学校｜酪農牛奶霜淇淋</div><div class="inside-item">MIL PRESSO｜北海道素材霜淇淋</div></div>
+          <div class="route-quick-guide">🧭 先逛 164、123，18:50 離場</div>
+          <details class="field-guide"><summary>🗺️ 品牌位置</summary><div class="guide-body"><a href="${map[4]}" target="_blank" rel="noopener">店號簡圖 ↗</a></div></details>
+          <div class="inside-list"><div class="inside-title">🍦 冰品</div><div class="inside-item">札幌農学校｜酪農牛奶</div><div class="inside-item">MIL PRESSO｜北海道素材</div></div>
           </div>
         </details>
-        <div class="route-drive">🚗 前往下一站｜約 2–3 分鐘</div>
+        <div class="route-drive">🚗 2–3 分鐘</div>
         <details class="route-stop-card shoes">
           <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title"><a href="${sports[4]}" target="_blank" rel="noopener">Sports Depo 大曲店 <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 18:55–20:15</div></div></div></summary>
           <div class="route-stop-body">
-          <div class="route-stop-desc">On・HOKA・Salomon 一站比較；指定鞋款與尺碼以現場庫存為準。</div>
-          <div class="route-stop-meta"><span>🅿️ 有停車場</span><span>🛍️ 可免稅</span><span>☎ 011-377-1477</span></div>
+          <div class="route-stop-desc">On・HOKA・Salomon</div>
+          <div class="route-stop-meta"><span>🅿️</span><span>免稅</span><span>☎ 011-377-1477</span></div>
           ${guideMarkup(sports[6])}
           </div>
         </details>
