@@ -273,6 +273,26 @@ h1{margin:4px 0 4px;font-size:30px}
 .guide-table{width:100%;border-collapse:collapse;margin-top:9px;font-size:12px}
 .guide-table th,.guide-table td{padding:7px 5px;border-bottom:1px solid #e5ebf0;text-align:left;vertical-align:top}
 .guide-table th{color:#526574;background:#eef4f7}
+.route-area{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
+.route-area-head{font-size:18px;font-weight:900}
+.route-area-note{font-size:12px;color:var(--sub);margin-top:3px}
+.route-strip{display:flex;align-items:center;gap:8px;margin:13px 0;padding:10px 12px;border-radius:12px;background:#edf4f8;color:#45677e;font-size:13px;font-weight:850}
+.route-strip .arrow{color:#8ca1b0}
+.route-stop-card{border:1px solid #dce4ea;border-radius:15px;padding:14px;background:#fff}
+.route-stop-card.primary{border-left:5px solid #8469aa}
+.route-stop-card.shoes{border-left:5px solid #567b9e}
+.route-stop-head{display:flex;align-items:flex-start;gap:10px}
+.route-stop-number{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-weight:900}
+.route-stop-title{font-size:17px;font-weight:900;line-height:1.35}
+.route-stop-title a{color:#1769aa;text-decoration:none}
+.route-stop-badge{display:inline-block;margin-top:4px;padding:3px 7px;border-radius:999px;background:#f0edf7;color:#705791;font-size:11px;font-weight:850}
+.route-stop-time{margin-top:10px;font-size:14px;font-weight:850;color:#4e5862}
+.route-stop-desc{margin-top:4px;color:var(--sub);font-size:14px}
+.route-stop-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;color:#66717b;font-size:12px}
+.inside-list{margin-top:11px;padding:10px 11px;border-radius:12px;background:#fff8fa}
+.inside-title{font-size:12px;font-weight:900;color:#9a6170;margin-bottom:7px}
+.inside-item{font-size:13px;color:#555f68;padding:4px 0}
+.route-drive{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;color:#75818b;font-size:12px;font-weight:800}
 .district-label{margin-top:12px;padding:6px 9px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
 .tag{
   display:inline-block;
@@ -387,6 +407,8 @@ h1{margin:4px 0 4px;font-size:30px}
   .hero-top{align-items:flex-start}
   .stop{grid-template-columns:92px minmax(0,1fr);gap:12px}
   .arrival{font-size:14px}
+  .route-strip{align-items:flex-start;flex-wrap:wrap}
+  .route-strip .arrow{width:100%;padding-left:3px}
 }
 
 .rental-card{padding:0;overflow:hidden}
@@ -870,6 +892,7 @@ const dayData = {
       {
         title:"北廣島",
         note:"Day 1 主要購物區",
+        layout:"route",
         shops:[
           ["必去","三井 Outlet 札幌北廣島","採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島","主要行程",{title:"🧭 採買指南｜建議先逛 164、123",items:["進入 Outlet 後，優先前往店號 164、123。","完成重點採買後，再依原定路線逛其他店家。","18:50 前離場，保留 Sports Depo 三品牌試鞋時間。"]}],
           ["Guide","查看 Outlet 店號簡圖","依官方樓層圖校正店號；Clover 1F → Clover 2F → Maple 2F。","現場對照使用","guides/kitahiroshima-outlet/index.html","主要行程"],
@@ -1206,6 +1229,38 @@ function stopMarkup(stops){
 
 function areaMarkup(areas){
   return areas.map(a=>{
+    if(a.layout==="route"){
+      const outlet=a.shops[0], map=a.shops[1], ice1=a.shops[2], ice2=a.shops[3], sports=a.shops[4];
+      const guideMarkup=guide=>guide?`<details class="field-guide">
+        <summary>${guide.title}</summary>
+        <div class="guide-body">
+          ${guide.note?`<p class="guide-note">${guide.note}</p>`:""}
+          ${guide.items?`<ul class="guide-list">${guide.items.map(item=>`<li>${item}</li>`).join("")}</ul>`:""}
+          ${guide.table?`<div style="overflow-x:auto"><table class="guide-table">${guide.table.map((row,i)=>`<tr>${row.map(cell=>i===0?`<th>${cell}</th>`:`<td>${cell}</td>`).join("")}</tr>`).join("")}</table></div>`:""}
+        </div>
+      </details>`:"";
+      return `<section class="route-area">
+        <div class="route-area-head">${a.title}</div>
+        <div class="route-area-note">${a.note}</div>
+        <div class="route-strip"><span>① 三井 Outlet</span><span class="arrow">→ 開車 2–3 分鐘 →</span><span>② Sports Depo</span></div>
+        <article class="route-stop-card primary">
+          <div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title"><a href="${outlet[4]}" target="_blank" rel="noopener">${outlet[1]} ↗</a></div><span class="route-stop-badge">主要行程</span></div></div>
+          <div class="route-stop-time">🕐 13:35–18:50</div>
+          <div class="route-stop-desc">採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。</div>
+          ${guideMarkup(outlet[6])}
+          <details class="field-guide"><summary>🗺️ 店舖地圖｜查看品牌位置</summary><div class="guide-body"><ul class="guide-list"><li><a href="${map[4]}" target="_blank" rel="noopener">開啟 Outlet 店號簡圖 ↗</a></li><li>${map[2]}</li></ul></div></details>
+          <div class="inside-list"><div class="inside-title">🍦 Outlet 內順便吃</div><div class="inside-item">札幌農学校｜酪農牛奶霜淇淋</div><div class="inside-item">MIL PRESSO｜北海道素材霜淇淋</div></div>
+        </article>
+        <div class="route-drive">🚗 前往下一站｜約 2–3 分鐘</div>
+        <article class="route-stop-card shoes">
+          <div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title"><a href="${sports[4]}" target="_blank" rel="noopener">Sports Depo 大曲店 ↗</a></div><span class="route-stop-badge">最後試鞋</span></div></div>
+          <div class="route-stop-time">🕐 18:55–20:15</div>
+          <div class="route-stop-desc">On・HOKA・Salomon 一站比較；指定鞋款與尺碼以現場庫存為準。</div>
+          <div class="route-stop-meta"><span>🅿️ 有停車場</span><span>🛍️ 可免稅</span><span>☎ 011-377-1477</span></div>
+          ${guideMarkup(sports[6])}
+        </article>
+      </section>`;
+    }
     const groupClass=/晚餐/.test(a.title)?"group-meal":/晚間採買/.test(a.title)?"group-essentials":/藥妝|藥局/.test(a.title)?"group-pharmacy":/便利商店/.test(a.title)?"group-convenience":/大型採買/.test(a.title)?"group-shopping":/冰品/.test(a.title)?"group-dessert":"";
     return `
     <details class="area-card ${groupClass}">
