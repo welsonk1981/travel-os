@@ -236,6 +236,27 @@ h1{margin:4px 0 4px;font-size:30px}
   font-weight:800;
 }
 .area-note{font-size:12px;color:var(--sub);margin-top:3px}
+.place-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
+.place-guide-title{margin-bottom:11px;color:#405d70;font-size:18px;font-weight:900}
+.place-guide-item{border:1px solid #dce4ea;border-left:5px solid #567b9e;border-radius:15px;background:#fff;overflow:hidden}
+.place-guide-item summary{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:9px;padding:13px 14px;cursor:pointer;list-style:none}
+.place-guide-item summary::-webkit-details-marker{display:none}
+.place-guide-item summary::after{content:"⌄";color:#617b8d;font-size:15px;font-weight:900}
+.place-guide-item[open] summary::after{content:"⌃"}
+.place-guide-number{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-size:14px;font-weight:900}
+.place-guide-name{color:#1769aa;font-size:17px;font-weight:900}
+.place-guide-time{color:#4e5862;font-size:14px;font-weight:850;white-space:nowrap}
+.place-guide-body{padding:0 14px 14px 52px;border-top:1px dashed #dce4ea;color:#596570;font-size:14px}
+.place-guide-body div+div{margin-top:5px}
+.place-guide-link{color:#1769aa;text-decoration:none;font-weight:850}
+.place-guide-drive{display:flex;align-items:center;justify-content:center;padding:9px;color:#75818b;font-size:14px;font-weight:850}
+.coffee-guide{margin-top:11px;padding-top:10px;border-top:1px solid #dfe5e9}
+.coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
+.coffee-list{padding-top:4px}
+.coffee-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px dashed #dfe5e9}
+.coffee-item:first-child{border-top:0}
+.coffee-item a{color:#1769aa;text-decoration:none;font-size:15px;font-weight:850}
+.coffee-hours{color:#7b858d;font-size:13px;text-align:right}
 .shop{
   padding:11px 0;
   border-bottom:1px dashed var(--line);
@@ -423,6 +444,11 @@ h1{margin:4px 0 4px;font-size:30px}
   .route-stop-summary{align-items:flex-start}
   .route-stop-summary::after{content:"⌄"}
   .route-stop-card[open]>.route-stop-summary::after{content:"⌃"}
+  .place-guide-item summary{grid-template-columns:auto 1fr auto;gap:7px 9px}
+  .place-guide-time{grid-column:2;font-size:13px}
+  .place-guide-item summary::after{grid-column:3;grid-row:1 / span 2}
+  .place-guide-body{padding-left:48px}
+  .coffee-item{align-items:flex-start}
 }
 
 .rental-card{padding:0;overflow:hidden}
@@ -695,7 +721,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day"><span class="preview-date">9/17（四）</span><span class="preview-day-label">Day 2</span></div>
-              <div class="preview-route">🗿 頭大佛 → 🌳 豐平公園 → 🦀 場外市場 → 🌊 小樽</div>
+              <div class="preview-route">🗿 頭大佛 → 🏛️ 豐平館 → 🦀 場外市場 → 🌊 小樽</div>
             </div>
           </div>
         </div>
@@ -802,7 +828,6 @@ h1{margin:4px 0 4px;font-size:30px}
           <summary>更多預約與費用資訊</summary>
           <div class="meta">
             <div><span>姓名</span><b></b></div>
-            <div><span>Email</span><b></b></div>
             <div><span>基本費用</span><b></b></div>
             <div><span>信用卡折扣</span><b></b></div>
             <div><span>配件費用</span><b></b></div>
@@ -932,15 +957,15 @@ const dayData = {
   },
   day2:{
     label:"Day 2｜9/17（四）",
-    highlights:["頭大佛","豐平公園","札幌場外市場","小樽港町"],
-    missions:["頭大佛第一批參觀","豐平公園散步","場外市場早午餐","小樽 Muse晚餐"],
+    highlights:["頭大佛","豐平館","札幌場外市場","小樽港町"],
+    missions:["頭大佛第一批參觀","豐平館拍照","場外市場早午餐","小樽 Muse晚餐"],
     foodFocus:["場外市場海鮮","小樽冰品候選"],
-    route:"札幌 → 頭大佛 → 豐平公園 → 場外市場 → 小樽",
+    route:"琴似住宿 → 頭大佛 → 豐平館 → 場外市場 → 小樽",
     hotel:"小樽住宿",
     stops:[
       {time:"08:10",name:"札幌住宿出發",note:"由琴似住宿前往頭大佛，預留市區交通與停車時間。",stay:"",next:"開車約 45–50 分"},
       {time:"09:00–10:00",name:"頭大佛",note:"第一批入場，參觀安藤忠雄建築與園區。",stay:"約 60 分",next:"開車約 40–50 分"},
-      {time:"約 11:00–11:35",name:"豐平公園",note:"重點拍照與短程散步。",stay:"約 35 分",next:"開車、停車約 20–25 分"},
+      {time:"11:00–11:35",name:"豐平館",note:"位於中島公園內；館內外參觀與拍攝藍白色歷史建築。",stay:"約 35 分",next:"開車、停車約 20–25 分"},
       {time:"12:00–13:20",name:"札幌場外市場",note:"海鮮早午餐與簡單採買。",stay:"約 80 分",next:"13:30 出發"},
       {time:"13:30–14:30",name:"前往小樽",note:"由場外市場前往小樽住宿附近。",stay:"開車約 60 分",next:"抵達後停車、放行李"},
       {time:"14:30–15:00",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"約 30 分",next:"後續步行"},
@@ -949,21 +974,18 @@ const dayData = {
     ],
     areas:[
       {
-        title:"札幌上午",
-        note:"依行程順序：頭大佛 → 豐平公園 → 場外市場",
+        title:"札幌｜地點細節",
+        layout:"place-guide",
+        drives:["🚗 約 40–50 分鐘","🚗 約 20–25 分鐘"],
         shops:[
-          ["① 09:00","頭大佛","第一批入場；安藤忠雄建築與園區。","09:00–16:00","https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC","札幌南側"],
-          ["② 約 11:00","豐平公園","重點拍照與短程散步；停車若壅擠則縮短停留。","公園全天開放","https://www.google.com/maps/search/?api=1&query=豊平公園+札幌","札幌市區"],
-          ["③ 12:00","札幌場外市場 一般車免費停車場","停車後進入市場吃海鮮早午餐並簡單採買。","依各店營業時間","https://www.google.com/maps/search/?api=1&query=札幌場外市場+一般車+無料駐車場","13:30 出發小樽"]
-        ]
-      },
-      {
-        title:"☕ 咖啡廳備選｜有空再去",
-        note:"不占正式時間；頭大佛提早結束或想休息時再選一間",
-        shops:[
-          ["備選","Postman Oak","精品咖啡與輕食。","週二至週六 07:30–16:30；週日、週一休","https://www.google.com/maps/search/?api=1&query=Postman+Oak+Sapporo","札幌市區"],
-          ["備選","Smooch Coffee Stand","外帶手沖、拿鐵或美式咖啡。","約 08:00–18:00；營業日可能臨時調整","https://www.google.com/maps/search/?api=1&query=Smooch+Coffee+Stand+Sapporo","札幌市區"],
-          ["備選","森香珈琲","自家焙煎咖啡、Morning 吐司與甜點。","09:00–17:00；火、三休；09:00–11:00 Morning","https://www.google.com/maps/search/?api=1&query=森香珈琲+札幌","札幌市區"]
+          ["1","頭大佛","09:00–10:00","〒005-0862 北海道札幌市南区滝野2｜開放 09:00–16:00","https://www.google.com/maps/search/?api=1&query=%E9%A0%AD%E5%A4%A7%E4%BB%8F+%E7%9C%9F%E9%A7%92%E5%86%85%E6%BB%9D%E9%87%8E%E9%9C%8A%E5%9C%92","中央停車場｜免費"],
+          ["2","豐平館","11:00–11:35","〒064-0931 北海道札幌市中央区中島公園1番20号｜開館 09:00–17:00","https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8%2C+%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7","館方及中島公園無一般停車場｜停周邊付費停車場"],
+          ["3","札幌場外市場","12:00–13:20","市場約 06:00–17:00（各店不同）｜設免費停車場","https://www.google.com/maps/search/?api=1&query=%E6%9C%AD%E5%B9%8C%E5%A0%B4%E5%A4%96%E5%B8%82%E5%A0%B4%E7%84%A1%E6%96%99%E9%A7%90%E8%BB%8A%E5%A0%B4+%E5%8C%9710%E6%9D%A1%E8%A5%BF21%E4%B8%81%E7%9B%AE2","13:30 出發小樽"]
+        ],
+        coffee:[
+          ["Postman Oak","07:30–16:30｜四營業","https://www.google.com/maps/search/?api=1&query=Postman+Oak+%E5%8D%9713%E6%9D%A1%E8%A5%BF6-5-15"],
+          ["Smooch Coffee Stand","08:00–18:00｜出發前確認","https://www.google.com/maps/search/?api=1&query=Smooch+Coffee+Stand+%E5%8D%9711%E6%9D%A1%E8%A5%BF1-4-12"],
+          ["森香珈琲","09:00–17:00｜四營業","https://www.google.com/maps/search/?api=1&query=%E6%A3%AE%E9%A6%99%E7%8F%88%E7%90%B2+%E5%8D%9710%E6%9D%A1%E8%A5%BF6-6-18"]
         ]
       },
       {
@@ -1219,7 +1241,8 @@ const mapLink=name=>{
   if(name.includes("新千歲機場鈴蘭店") || name.includes("新千歲機場／取車")) return "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC";
   if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
   if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
-  if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
+  if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=%E9%A0%AD%E5%A4%A7%E4%BB%8F+%E7%9C%9F%E9%A7%92%E5%86%85%E6%BB%9D%E9%87%8E%E9%9C%8A%E5%9C%92";
+  if(name.includes("豐平館")) return "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8+%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7";
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
 };
 const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
@@ -1243,6 +1266,23 @@ function stopMarkup(stops){
 
 function areaMarkup(areas){
   return areas.map(a=>{
+    if(a.layout==="place-guide"){
+      return `<section class="place-guide">
+        <div class="place-guide-title">${a.title}</div>
+        ${a.shops.map((shop,index)=>`<details class="place-guide-item">
+          <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-name">${shop[1]}</span><span class="place-guide-time">${shop[2]}</span></summary>
+          <div class="place-guide-body">
+            <div>${shop[3]}</div>
+            ${shop[5]?`<div>${shop[5]}</div>`:""}
+            <div><a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener">📍 地圖 ↗</a></div>
+            ${shop[0]==="2"?`<div class="coffee-guide">
+              <div class="coffee-guide-title">☕ 順路備選</div>
+              <div class="coffee-list">${a.coffee.map(c=>`<div class="coffee-item"><a href="${c[2]}" target="_blank" rel="noopener">${c[0]} ↗</a><span class="coffee-hours">${c[1]}</span></div>`).join("")}</div>
+            </div>`:""}
+          </div>
+        </details>${a.drives?.[index]?`<div class="place-guide-drive">${a.drives[index]}</div>`:""}`).join("")}
+      </section>`;
+    }
     if(a.layout==="route"){
       const outlet=a.shops[0], map=a.shops[1], ice1=a.shops[2], ice2=a.shops[3], sports=a.shops[4];
       const guideMarkup=guide=>guide?`<details class="field-guide">
@@ -1315,7 +1355,7 @@ function areaMarkup(areas){
 
 const mustDoByDate={
   "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
-  "9/17":["🗿 09:00 頭大佛","🌳 豐平公園","🦀 場外市場海鮮","🚗 13:30 出發小樽","🍽️ 小樽 Muse"],
+  "9/17":["🗿 09:00 頭大佛","🏛️ 豐平館","🦀 場外市場海鮮","🚗 13:30 出發小樽","🍽️ 小樽 Muse"],
   "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍄 仁木短停","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
   "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮 或 🥩 白老牛","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
@@ -1413,7 +1453,7 @@ function renderDay(dayKey, selectedPlan){
         ${d.postLunchStops?`<div class="plan-label">午餐後行程</div>${stopMarkup(d.postLunchStops)}`:""}
 
         <div class="area-list">
-          <h3 style="margin:14px 0 2px">今日會經過的區域</h3>
+          ${orderedAreas.some(a=>a.layout==="place-guide")?"":`<h3 style="margin:14px 0 2px">今日會經過的區域</h3>`}
           ${areaMarkup(orderedAreas)}
         </div>
       </article>
@@ -1437,7 +1477,7 @@ function renderDay(dayKey, selectedPlan){
         ${dayBriefMarkup(d)}
         ${stopMarkup(d.stops)}
         <div class="area-list">
-          <h3 style="margin:14px 0 2px">今日會經過的區域</h3>
+          ${orderedAreas.some(a=>a.layout==="place-guide")?"":`<h3 style="margin:14px 0 2px">今日會經過的區域</h3>`}
           ${areaMarkup(orderedAreas)}
         </div>
       </article>
