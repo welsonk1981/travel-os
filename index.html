@@ -187,6 +187,11 @@ h1{margin:4px 0 4px;font-size:30px}
 .secondary-stop .place-title{font-size:17px}
 .secondary-stop-body{padding:0 13px 12px;border-top:1px dashed #dce4ea}
 .secondary-stop-body .place-note{margin-top:10px;line-height:1.65}
+.flow-list{display:grid;margin-top:8px}
+.flow-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:9px 0;border-bottom:1px dashed #dce4ea}
+.flow-row:last-child{border-bottom:0}
+.flow-time{color:#7c858f;font-size:13px;font-weight:800;white-space:nowrap;text-align:left}
+.flow-text{color:var(--text);font-size:14px;line-height:1.5;min-width:0}
 .place-note{font-size:15px;color:var(--sub);margin-top:3px}
 .metrics{
   display:flex;
@@ -490,6 +495,8 @@ h1{margin:4px 0 4px;font-size:30px}
   .place-guide-item summary::after{grid-column:auto;grid-row:auto}
   .place-guide-body{padding:12px}
   .coffee-item{align-items:flex-start}
+  .flow-row{grid-template-columns:94px minmax(0,1fr);gap:9px}
+  .flow-time{font-size:12px}
 }
 
 .rental-card{padding:0;overflow:hidden}
@@ -1051,7 +1058,7 @@ const dayData = {
     route:"小樽 → 余市 → 仁木 → 俱知安 → 二世谷 → 洞爺湖",
     hotel:"洞爺湖溫泉街",
     stops:[
-      {time:"07:30–12:30",name:"小樽｜住宿停車・步行行程",note:"小樽運河 → 北一ホール早餐 → サツドラ採買 → 外帶漢堡 → 返回住宿整理退房。各站時間與採購資訊請看下方「小樽」。",stay:"整段約 5 小時",next:"12:30 退房，前往仁木約 40–45 分"},
+      {time:"07:30–12:30",name:"小樽｜住宿停車・步行行程",steps:[["07:30–08:30","小樽運河"],["09:00–10:30","北一ホール"],["10:40–11:00","サツドラ小樽堺町店"],["11:00–11:40","外帶漢堡"],["11:40–12:30","返回住宿、整理行李並退房"]],stay:"整段約 5 小時",next:"12:30 退房，前往仁木約 40–45 分",collapsible:true},
       {time:"13:15–13:35",name:"きのこ王国 仁木店",note:"洗手間、駕駛休息，可喝蘑菇湯或簡短採買；若延誤縮短為10–15分鐘。",stay:"約 20 分",next:"前往俱知安約 50–55 分"},
       {time:"14:30–15:20",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 50 分",next:"前往高橋牧場約 20–25 分"},
       {time:"15:45–16:25",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 40 分",next:"依時間決定是否停 fanfun"},
@@ -1060,14 +1067,13 @@ const dayData = {
         {label:"休息站",name:"道の駅 230ルスツ"},
         {label:"冰品",name:"🍦 Lake Hill Farm 本店"}
       ]},
-      {time:"17:55–21:20",name:"洞爺湖住宿・晚餐・花火船",note:"17:55 住宿 Check-in、放行李與停車 → 18:30–19:40 レストラン望羊蹄晚餐 → 19:40 返回住宿準備外套、相機與紙本船票 → 20:15 抵達碼頭候船／驗票 → 20:35–21:20 花火觀賞船（煙火約20:45–21:05）。",stay:"晚間行程約 3 小時 25 分",next:"返回飯店泡湯",secondary:true}
+      {time:"17:55–21:20",name:"洞爺湖住宿・晚餐・花火船",steps:[["17:55","住宿 Check-in、放行李與停車"],["18:30–19:40","レストラン望羊蹄晚餐"],["19:40","返回住宿，準備外套、相機與紙本船票"],["20:15","抵達碼頭候船／驗票"],["20:35–21:20","花火觀賞船（煙火約 20:45–21:05）"]],stay:"晚間行程約 3 小時 25 分",next:"返回飯店泡湯",collapsible:true}
     ],
     areas:[
       {
         title:"小樽",
         note:"住宿停車後步行；12:30 整理完成並退房",
         shops:[
-          ["__SECTION__","07:30–12:30｜到訪順序","07:30–08:30 小樽運河 → 09:00–10:30 北一ホール → 10:40–11:00 サツドラ → 11:00–11:40 外帶漢堡 → 11:40–12:30 返回住宿、整理行李並退房"],
           ["主行程","小樽運河","拍攝清晨石造倉庫、運河與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","小樽早晨"],
           ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール","小樽早晨"],
           ["主選外帶","EBIJIN 小樽店","後志產鹿肉漢堡專門店，可外帶；地址：小樽市稲穂2-13-16。沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC","小樽漢堡"],
@@ -1252,14 +1258,15 @@ const mapLink=name=>{
 const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
 
 function stopMarkup(stops){
-  return stops.map(s=>s.secondary?`
+  return stops.map(s=>s.collapsible?`
     <div class="stop">
       <div class="arrival">${s.time}</div>
       <div class="stop-content">
         <details class="secondary-stop">
-          <summary><span class="secondary-stop-label">次要行程</span><span class="place-title">${s.name}</span></summary>
+          <summary><span class="place-title">${s.name}</span></summary>
           <div class="secondary-stop-body">
             ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[1]}</div></div>`).join("")}</div>`:""}
             ${s.note?`<div class="place-note">${s.note}</div>`:""}
             <div class="metrics">
               ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
