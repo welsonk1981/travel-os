@@ -312,6 +312,11 @@ h1{margin:4px 0 4px;font-size:30px}
 .shop-location{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:12px;font-weight:850;line-height:1.35}
 .shop p{margin:4px 0;color:var(--sub);font-size:15px}
 .shop-hours{font-size:14px;color:#505a65;margin-top:4px;font-weight:700}
+.burger-options{display:grid;gap:9px;margin-top:7px}
+.burger-option{padding:9px 0;border-top:1px dashed var(--line)}
+.burger-option:first-child{border-top:0;padding-top:0}
+.burger-option a{display:inline-block}
+.burger-option p{margin:3px 0 0}
 .shop-alert{font-size:12px;color:#955f45;background:#f8eee9;border-radius:9px;padding:7px 9px;margin-top:7px}
 .field-guide{
   margin-top:10px;
@@ -1075,11 +1080,12 @@ const dayData = {
         title:"小樽",
         note:"住宿停車後步行；12:30 整理完成並退房",
         shops:[
-          ["主行程","小樽運河","拍攝清晨石造倉庫、運河與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","小樽早晨"],
-          ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール","小樽早晨"],
-          ["主選外帶","EBIJIN 小樽店","後志產鹿肉漢堡專門店，可外帶；地址：小樽市稲穂2-13-16。沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC","小樽漢堡"],
-          ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店","小樽採買"],
-          ["備案","CONTAINER BURGER 3 -SUN-","點牛肉漢堡、薯條與無酒精啤酒。","11:00–19:00（L.O.18:30）；臨時休業需確認","https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽","小樽漢堡"]
+          ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール",""],
+          ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",""],
+          ["__BURGER__","漢堡（二選一）",[
+            ["EBIJIN 小樽店","主選：後志產鹿肉漢堡，可外帶；沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC"],
+            ["CONTAINER BURGER 3-SUN","備選：牛肉漢堡、薯條與無酒精啤酒；停車較方便。","11:00–19:00（L.O.18:30）；臨時休業需確認","https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"]
+          ]]
         ]
       },
       {
@@ -1371,6 +1377,17 @@ function areaMarkup(areas){
           if(shop[0]==="__SECTION__"){
             lastDistrict="";
             return `<div class="area-subhead">${shop[1]}</div>${shop[2]?`<div class="area-subnote">${shop[2]}</div>`:""}`;
+          }
+          if(shop[0]==="__BURGER__"){
+            return `<div class="shop">
+              <div class="shop-type">漢堡</div>
+              <div class="shop-name-row"><strong style="font-size:17px">${shop[1]}</strong></div>
+              <div class="burger-options">${shop[2].map(option=>`<div class="burger-option">
+                <a href="${option[3]}" target="_blank" rel="noopener">${option[0]} ↗</a>
+                <p>${option[1]}</p>
+                <div class="shop-hours">🕘 ${option[2]}</div>
+              </div>`).join("")}</div>
+            </div>`;
           }
           const extended = shop.length >= 6;
           const hours = extended ? shop[3] : "";
