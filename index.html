@@ -216,6 +216,29 @@ h1{margin:4px 0 4px;font-size:30px}
   margin:0 7px;
 }
 .area-list{margin-top:14px}
+.compact-options{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.compact-options-title{
+  margin-bottom:2px;
+  color:var(--text);
+  font-size:17px;
+  font-weight:850;
+}
+.compact-option-row{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:14px;
+  padding:11px 0;
+  border-bottom:1px dashed var(--line);
+}
+.compact-option-row:last-child{border-bottom:0}
+.compact-option-label{color:var(--sub);font-size:14px;font-weight:750}
+.compact-option-links{font-size:15px;line-height:1.65}
+.compact-option-links a{color:var(--text);font-weight:800;text-decoration:none}
+.compact-option-separator{margin:0 7px;color:#b0b6bb}
 .area-card{
   border:1px solid var(--line);
   border-radius:16px;
@@ -718,6 +741,9 @@ h1{margin:4px 0 4px;font-size:30px}
 @media(max-width:560px){
   .currency-grid{grid-template-columns:1fr}
   .currency-swap{transform:rotate(90deg);justify-self:center}
+  .compact-option-row{grid-template-columns:1fr;gap:4px}
+  .compact-option-links{display:flex;flex-direction:column;gap:4px}
+  .compact-option-separator{display:none}
 }
 
 </style>
@@ -1069,11 +1095,10 @@ const dayData = {
       {time:"14:30–15:20",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 50 分",next:"前往高橋牧場約 20–25 分"},
       {time:"15:45–16:25",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 40 分",next:"依時間決定是否停 fanfun"},
       {time:"16:35–16:50",name:"革と珈琲 fanfun（可選）",note:"買皮革小物或咖啡；16:35前未抵達就取消。",stay:"最多 15 分",next:"直接前往洞爺湖"},
-      {time:"僅提早時才停",name:"230ルスツ／Lake Hill Farm（二選一）",note:"加入仁木後時間很緊，正常情況直接略過；只有全程提早且不影響18:30晚餐才停。",stay:"最多停一個、10–15 分",next:"前往洞爺湖住宿",options:[
-        {label:"休息站",name:"道の駅 230ルスツ"},
-        {label:"冰品",name:"🍦 Lake Hill Farm 本店"}
-      ]},
-      {time:"17:55–21:20",name:"洞爺湖住宿・晚餐・花火船",steps:[["17:55","住宿 Check-in、放行李與停車"],["18:30–19:40","レストラン望羊蹄晚餐"],["19:40","返回住宿，準備外套、相機與紙本船票"],["20:15","抵達碼頭候船／驗票"],["20:35–21:20","花火觀賞船（煙火約 20:45–21:05）"]],stay:"晚間行程約 3 小時 25 分",next:"返回飯店泡湯",collapsible:true}
+      {time:"17:55",name:"洞爺湖住宿 Check-in",link:"https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721",note:"放行李、停車。"},
+      {time:"18:30",name:"レストラン望羊蹄",link:"https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖",note:"晚餐已排定。",stay:"至 19:40"},
+      {time:"20:15",name:"洞爺湖花火船碼頭",link:"https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場",note:"候船、驗票。"},
+      {time:"20:35–21:20",name:"花火觀賞船",link:"https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場",note:"煙火約 20:45–21:05。",next:"結束後返回住宿"}
     ],
     areas:[
       {
@@ -1105,13 +1130,17 @@ const dayData = {
         ]
       },
       {
-        title:"洞爺湖",
-        note:"",
-        shops:[
-          ["","道の駅 230ルスツ","途中休息。","","https://www.google.com/maps/search/?api=1&query=道の駅+230ルスツ",""],
-          ["","🍦 Lake Hill Farm 本店","霜淇淋；與 230 休息站擇一。","","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127",""],
-          ["","Seicomart 洞爺田中店","補飲料、早餐。","","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen",""],
-          ["","わかさいも本舗 洞爺湖本店","買わかさいも、いもてん。","","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店",""]
+        title:"補充選項",
+        layout:"compact-options",
+        groups:[
+          {label:"有時間再停（二選一）",places:[
+            ["道の駅 230ルスツ","https://www.google.com/maps/search/?api=1&query=道の駅+230ルスツ"],
+            ["🍦 Lake Hill Farm","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127"]
+          ]},
+          {label:"抵達後採買",places:[
+            ["Seicomart 洞爺田中店","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen"],
+            ["わかさいも本舗","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店"]
+          ]}
         ]
       }
     ]
@@ -1283,7 +1312,7 @@ function stopMarkup(stops){
     <div class="stop">
       <div class="arrival">${s.time}</div>
       <div class="stop-content">
-        <div class="place-title">${s.name}</div>
+        <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
         ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
         ${s.note?`<div class="place-note">${shortText(s.note)}</div>`:""}
         <div class="metrics">
@@ -1297,6 +1326,15 @@ function stopMarkup(stops){
 
 function areaMarkup(areas){
   return areas.map(a=>{
+    if(a.layout==="compact-options"){
+      return `<section class="compact-options">
+        <div class="compact-options-title">${a.title}</div>
+        ${a.groups.map(group=>`<div class="compact-option-row">
+          <div class="compact-option-label">${group.label}</div>
+          <div class="compact-option-links">${group.places.map(place=>`<a href="${place[1]}" target="_blank" rel="noopener">${place[0]} ↗</a>`).join(`<span class="compact-option-separator">／</span>`)}</div>
+        </div>`).join("")}
+      </section>`;
+    }
     if(a.layout==="place-guide"){
       return `<section class="place-guide">
         <div class="place-guide-title">${a.title}</div>
