@@ -549,53 +549,6 @@ h1{margin:4px 0 4px;font-size:30px}
 @media(max-width:560px){.rental-grid{grid-template-columns:1fr}}
 
 
-.plan-switch{
-  margin:16px 0 4px;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:#f8fafc;
-}
-.plan-switch-title{font-size:13px;color:var(--sub);font-weight:800;margin-bottom:9px}
-.plan-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:3px;
-  padding:3px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:#e9edf1;
-}
-.plan-btn{
-  border:0;
-  background:transparent;
-  color:var(--sub);
-  border-radius:11px;
-  padding:10px 9px;
-  text-align:center;
-  cursor:pointer;
-  font-weight:800;
-  transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .12s ease;
-}
-.plan-btn::before{content:"○ ";font-weight:900}
-.plan-btn:active{transform:scale(.985)}
-.plan-btn small{display:block;color:inherit;font-size:11px;font-weight:500;margin-top:2px;opacity:.82}
-.plan-btn.active{
-  background:var(--card);
-  color:var(--blue);
-  box-shadow:0 2px 8px rgba(44,57,72,.12);
-}
-.plan-btn.active::before{content:"● "}
-.plan-hint{font-size:12px;color:var(--sub);margin-top:8px}
-#dayPlanStops{
-  opacity:1;
-  transform:translateY(0);
-  transition:opacity .2s ease,transform .2s ease;
-}
-#dayPlanStops.is-switching{
-  opacity:0;
-  transform:translateY(4px);
-}
 .must-do{margin:14px 0 4px;padding:13px;border-radius:15px;background:var(--green-soft)}
 .must-do-title{font-size:15px;font-weight:900;color:var(--green);margin-bottom:8px}
 .must-do .mission-list{display:grid;gap:8px}
@@ -1157,44 +1110,20 @@ const dayData = {
     label:"Day 4｜9/19（六）",
     route:"有珠山 → 虎杖浜 → 苫小牧",
     hotel:"苫小牧住宿",
-    highlights:["08:15有珠山首班纜車","🍴 午餐二選一","苫小牧晚餐四選一"],
+    highlights:["08:15有珠山首班纜車","🐟 虎杖浜海鮮午餐","苫小牧晚餐四選一"],
     missions:["07:40前抵達纜車站","搭08:15推估首班","選定虎杖浜午餐","選一間苫小牧晚餐"],
-    foodFocus:["虎杖浜海鮮方案","白老牛方案","鱈魚子伴手禮"],
-    sharedStops:[
-      {time:"07:20–07:40",name:"洞爺湖住宿 → 有珠山纜車",note:"07:40前抵達山麓站。",stay:"車程約20分，依導航調整",next:"停車、購票"},
-      {time:"07:40–08:10",name:"有珠山纜車山麓站",note:"停車、購票，08:10前到乘車處。",stay:"約30分",next:"搭08:15推估首班"},
-      {time:"08:15",name:"有珠山纜車上山",note:"目前官方首班為08:15；2026年9月正式班次公布後再確認。",stay:"單程約6分",next:"山頂展望台與步道"},
-      {time:"08:21–09:35",name:"有珠山山頂",note:"前往展望台；依步道開放狀況行走，09:35前回到山頂站。",stay:"約74分",next:"搭09:45推估班次下山"},
-      {time:"09:45–09:51",name:"有珠山纜車下山",note:"班次依現場運行調整。",stay:"約6分",next:"10:00開車前往虎杖浜"},
-      {time:"10:00–11:00",name:"有珠山 → 虎杖浜／白老",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"選擇午餐方案"}
-    ],
-    postLunchStops:[
-      {time:"14:30–15:30",name:"虎杖浜 → 苫小牧",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"冰品最多選一間"},
-      {time:"15:30–16:30",name:"苫小牧冰品（二選一）",note:"プチラパン或北からの贈り物選一間。",stay:"最多60分",next:"前往住宿"},
+    foodFocus:["虎杖浜海鮮午餐","鱈魚子伴手禮"],
+    stops:[
+      {time:"07:20–09:51",name:"有珠山纜車｜上山・展望・下山",steps:[["07:20–07:40","洞爺湖住宿出發，前往有珠山纜車山麓站"],["07:40–08:10","停車、購票，08:10 前抵達乘車處"],["08:15–08:21","搭乘推估首班纜車上山（單程約 6 分）"],["08:21–09:35","山頂展望台與步道，09:35 前返回山頂站"],["09:45–09:51","搭乘纜車下山，班次依現場運行調整"]],next:"10:00 開車前往虎杖浜",collapsible:true},
+      {time:"10:00–11:00",name:"有珠山 → 虎杖浜",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"虎杖浜海鮮午餐"},
+      {time:"中午",name:"虎杖浜海鮮午餐",note:"たっちゃん食堂或 Kojohama Café，依現場營業與排隊狀況決定。",stay:"約 60–90 分",next:"沿途採買水產"},
+      {time:"飯後",name:"虎杖浜沿途水產",note:"依南往北方向停留たらこ家與かんばら，不必全部買。",stay:"約 30–60 分",next:"前往苫小牧"},
+      {time:"14:30–15:30",name:"虎杖浜 → 苫小牧",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"前往吃冰品"},
+      {time:"15:30–16:30",name:"幸せの生ソフト プチラパン",note:"吃牛奶生霜淇淋，口味與配料以當日菜單為準。",stay:"最多60分",next:"前往住宿"},
       {time:"17:00左右",name:"苫小牧住宿 Check-in",note:"停車、放行李。",stay:"約30分",next:"晚餐"},
       {time:"18:00–20:30",name:"苫小牧晚餐（四選一）",note:"依料理、營業時間與訂位狀況選一間。",stay:"約60–90分",next:"藥妝、超商或大型採買"}
     ],
-    defaultPlan:"seafood",
-    planOrder:["seafood","beef"],
-    areaOrder:["有珠山","虎杖浜海鮮","白老牛","晚餐","晚間採買","冰品"],
-    plans:{
-      beef:{
-        title:"🥩 白老牛午餐",
-        subtitle:"白老牛餐廳選一＋Mother’s Plus甜點",
-        stops:[
-          {time:"中午",name:"白老牛午餐（選一）",note:"依排隊、預算與營業狀況決定一家。",stay:"約 60–90 分",next:""},
-          {time:"飯後",name:"Mother’s Plus",note:"布丁、泡芙、布丁霜淇淋；牧場直營雞蛋甜點。",stay:"約 20–30 分",next:"前往苫小牧"}
-        ]
-      },
-      seafood:{
-        title:"🐟 虎杖浜海鮮午餐",
-        subtitle:"海鮮午餐選一＋鱈魚子伴手禮",
-        stops:[
-          {time:"中午",name:"虎杖浜午餐（選一）",note:"たっちゃん食堂或Kojohama Café擇一。",stay:"約 60–90 分",next:""},
-          {time:"飯後",name:"虎杖浜沿途水產",note:"依南往北方向停留たらこ家與かんばら，不必全部買。",stay:"約 30–60 分",next:"前往苫小牧"}
-        ]
-      }
-    },
+    areaOrder:["有珠山","虎杖浜海鮮","晚餐","晚間採買","冰品"],
     areas:[
       {
         title:"有珠山",
@@ -1204,17 +1133,7 @@ const dayData = {
         ]
       },
       {
-        title:"🍴 午餐（二選一）｜白老牛",
-        note:"只去一家；其他全部是備選",
-        shops:[
-          ["午餐候選","牛の里 白老本店","吃白老牛漢堡排或牛排，外帶白老牛可樂餅、肉包與便當。","午餐時間出發前確認","https://www.google.com/maps/search/?api=1&query=牛の里+白老本店","白老"],
-          ["午餐候選","おいしい肉屋さん 白老店","吃白老牛燒肉或肉料理，並可採買冷藏白老牛肉。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=おいしい肉屋さん+白老店","社台"],
-          ["午餐候選","Shiraoi Beef Shop Iwasaki Omotenashi-tei","點岩崎牧場白老牛排、漢堡排或燒肉套餐。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=白老牛の店いわさき+おもてなし亭","社台"],
-          ["甜點","Mother’s Plus","雞蛋布丁、泡芙、布丁霜淇淋；免費停車。","10:00–17:00","https://www.google.com/maps/search/?api=1&query=マザーズプラス+白老","社台"]
-        ]
-      },
-      {
-        title:"🍴 午餐（二選一）｜虎杖浜海鮮",
+        title:"🍴 虎杖浜海鮮午餐",
         note:"午餐選一；吃完後水產店依南往北順路停留",
         shops:[
           ["午餐候選","白老たっちゃん食堂","點海鮮丼、烤魚定食或當日水產料理。","10:00–14:00；火、三休","https://www.google.com/maps/search/?api=1&query=白老たっちゃん食堂","虎杖浜"],
@@ -1243,11 +1162,10 @@ const dayData = {
         ]
       },
       {
-        title:"🍦 冰品（二選一）",
-        note:"下午最多選一間",
+        title:"🍦 苫小牧冰品",
+        note:"下午前往プチラパン",
         shops:[
-          ["冰品主選","幸せの生ソフト プチラパン","吃牛奶生霜淇淋，口味與配料以當日菜單為準。","11:00–18:00；不定休","https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン",""] ,
-          ["冰品備選","北からの贈り物 苫小牧店","北海道牛乳Blender Ice與Gelato；位於沼ノ端。","約10:00–17:30，出發前確認","https://www.google.com/maps/search/?api=1&query=北からの贈り物+苫小牧店",""]
+          ["冰品","幸せの生ソフト プチラパン","吃牛奶生霜淇淋，口味與配料以當日菜單為準。","11:00–18:00；不定休","https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン",""]
         ]
       }
     ]
@@ -1438,7 +1356,7 @@ function areaMarkup(areas){
           const location = extended ? shop[7] : "";
           const header = district && district !== lastDistrict ? `<div class="district-label">${district}</div>` : "";
           if (district) lastDistrict = district;
-          const ice=/冰品|霜淇淋|ソフト|Gelato|MIL PRESSO|Milk Kobo|LeTAO PLUS|Mother’s Plus|札幌農学校|北一 Terrace|ポプラファーム|幸せの生ソフト/.test(shop.join(" "));
+          const ice=/冰品|霜淇淋|ソフト|Gelato|MIL PRESSO|Milk Kobo|LeTAO PLUS|札幌農学校|北一 Terrace|ポプラファーム|幸せの生ソフト/.test(shop.join(" "));
           const name=(ice && !shop[1].startsWith("🍦"))?`🍦 ${shop[1]}`:shop[1];
           const description=shortText(shop[2]);
           const guide=extended ? shop[6] : null;
@@ -1468,7 +1386,7 @@ const mustDoByDate={
   "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
   "9/17":["🗿 09:00 頭大佛","🏛️ 豐平館","🦀 場外市場海鮮","🚗 13:30 出發小樽","🍽️ 小樽 Muse"],
   "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍄 仁木短停","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
-  "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮 或 🥩 白老牛","🍽️ 苫小牧晚餐四選一"],
+  "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮午餐","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
 };
 function dayBriefMarkup(d){
@@ -1494,27 +1412,7 @@ function restoreMissions(root){
   });
 }
 
-function switchDayPlan(day, planKey){
-  const plan=day.plans?.[planKey];
-  const stops=document.getElementById("dayPlanStops");
-  const label=document.getElementById("dayPlanLabel");
-  if(!plan || !stops || !label) return;
-
-  document.querySelectorAll("#dayDetail .plan-btn").forEach(btn=>{
-    const active=btn.dataset.plan===planKey;
-    btn.classList.toggle("active",active);
-    btn.setAttribute("aria-pressed",active?"true":"false");
-  });
-
-  label.textContent=`🍴 午餐（二選一）｜${plan.title.replace(/^[🥩🐟]\s*/,"").replace(/午餐$/,"")}`;
-  stops.classList.add("is-switching");
-  window.setTimeout(()=>{
-    stops.innerHTML=stopMarkup(plan.stops);
-    requestAnimationFrame(()=>stops.classList.remove("is-switching"));
-  },200);
-}
-
-function renderDay(dayKey, selectedPlan){
+function renderDay(dayKey){
   const d=dayData[dayKey];
   const detail=document.getElementById("dayDetail");
   const orderedAreas=d.areaOrder
@@ -1527,55 +1425,7 @@ function renderDay(dayKey, selectedPlan){
       })
     : d.areas;
 
-  if(d.plans){
-    const planKey=selectedPlan || d.defaultPlan || Object.keys(d.plans)[0];
-    const plan=d.plans[planKey];
-
-    detail.innerHTML=`
-      <button class="back-btn" id="backHome">← 回每日總覽</button>
-      <article class="day-card">
-        <div class="day-head">
-          <div>
-            <div class="day-label">${d.label}</div>
-            <div class="route">${d.route}</div>
-          </div>
-          <div class="hotel-chip">${d.hotel}</div>
-        </div>
-        ${dayBriefMarkup(d)}
-
-        <div class="plan-label">上午行程</div>
-        ${stopMarkup(d.sharedStops)}
-
-        <div class="plan-switch">
-          <div class="plan-switch-title">🍴 午餐（二選一）</div>
-          <div class="plan-buttons">
-            ${(d.planOrder||Object.keys(d.plans)).map(key=>[key,d.plans[key]]).map(([key,p])=>`
-              <button class="plan-btn ${key===planKey?"active":""}" data-plan="${key}">
-                ${p.title}
-                <small>${p.subtitle}</small>
-              </button>
-            `).join("")}
-          </div>
-        </div>
-
-        <div class="plan-label" id="dayPlanLabel">🍴 午餐（二選一）｜${plan.title.replace(/^[🥩🐟]\s*/,"").replace(/午餐$/,"")}</div>
-        <div id="dayPlanStops" aria-live="polite">${stopMarkup(plan.stops)}</div>
-
-        ${d.postLunchStops?`<div class="plan-label">午餐後行程</div>${stopMarkup(d.postLunchStops)}`:""}
-
-        <div class="area-list">
-          ${orderedAreas.some(a=>a.layout==="place-guide")?"":`<h3 style="margin:14px 0 2px">今日會經過的區域</h3>`}
-          ${areaMarkup(orderedAreas)}
-        </div>
-      </article>
-    `;
-
-    detail.querySelectorAll(".plan-btn").forEach(btn=>{
-      btn.setAttribute("aria-pressed",btn.classList.contains("active")?"true":"false");
-      btn.addEventListener("click",()=>switchDayPlan(d,btn.dataset.plan));
-    });
-  }else{
-    detail.innerHTML=`
+  detail.innerHTML=`
       <button class="back-btn" id="backHome">← 回每日總覽</button>
       <article class="day-card">
         <div class="day-head">
@@ -1593,7 +1443,6 @@ function renderDay(dayKey, selectedPlan){
         </div>
       </article>
     `;
-  }
 
   showPanel("dayDetail");
   restoreMissions(detail);
