@@ -235,6 +235,16 @@ h1{margin:4px 0 4px;font-size:30px}
   cursor:pointer;
   font-weight:800;
 }
+.area-subhead{
+  margin:16px 0 3px;
+  padding-left:9px;
+  border-left:3px solid #7893a6;
+  color:#334b5d;
+  font-size:14px;
+  font-weight:900;
+}
+.area-subhead:first-child{margin-top:12px}
+.area-subnote{margin:0 0 6px 12px;color:var(--sub);font-size:12px}
 .area-note{font-size:12px;color:var(--sub);margin-top:3px}
 .place-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
 .place-guide-title{margin-bottom:4px;color:#16232d;font-size:18px;font-weight:900}
@@ -1032,15 +1042,7 @@ const dayData = {
     route:"小樽 → 余市 → 仁木 → 俱知安 → 二世谷 → 洞爺湖",
     hotel:"洞爺湖溫泉街",
     stops:[
-      {time:"07:30–08:30",name:"小樽運河",note:"沿運河步行，拍攝運河與石造倉庫。",stay:"約 60 分",next:"步行前往堺町通"},
-      {time:"09:00–10:30",name:"北一硝子 北一ホール",note:"吃早餐；可點咖啡、皇家奶茶、蛋糕或霜淇淋。",stay:"約 90 分",next:"前往サツドラ"},
-      {time:"10:40–11:00",name:"サツドラ小樽堺町店",note:"補藥妝與旅行用品。",stay:"約 20 分",next:"前往 EBIJIN／外帶漢堡"},
-      {time:"11:00–11:40",name:"🍔 漢堡（二選一）",note:"EBIJIN 主選鹿肉漢堡；3-SUN 備選、停車方便。",stay:"約 30–40 分",next:"返回住宿整理行李",options:[
-        {label:"主選",name:"EBIJIN 小樽店",link:"https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC"},
-        {label:"備選",name:"CONTAINER BURGER 3-SUN",link:"https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"}
-      ]},
-      {time:"11:40–12:30",name:"返回住宿／整理行李",note:"12:30前完成行李整理與裝車。",stay:"約 50 分",next:"12:30退房"},
-      {time:"12:30",name:"小樽住宿退房",note:"固定退房時間；走國道5號，經余市往仁木。",stay:"",next:"開車約 40–45 分"},
+      {time:"07:30–12:30",name:"小樽｜住宿停車・步行行程",note:"小樽運河 → 北一ホール早餐 → サツドラ採買 → 外帶漢堡 → 返回住宿整理退房。各站時間與採購資訊請看下方「小樽」。",stay:"整段約 5 小時",next:"12:30 退房，前往仁木約 40–45 分"},
       {time:"13:15–13:35",name:"きのこ王国 仁木店",note:"洗手間、駕駛休息，可喝蘑菇湯或簡短採買；若延誤縮短為10–15分鐘。",stay:"約 20 分",next:"前往俱知安約 50–55 分"},
       {time:"14:30–15:20",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 50 分",next:"前往高橋牧場約 20–25 分"},
       {time:"15:45–16:25",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 40 分",next:"依時間決定是否停 fanfun"},
@@ -1057,9 +1059,10 @@ const dayData = {
     ],
     areas:[
       {
-        title:"小樽早晨",
-        note:"Day 3 離開小樽前",
+        title:"小樽",
+        note:"住宿停車後步行；12:30 整理完成並退房",
         shops:[
+          ["__SECTION__","07:30–12:30｜到訪順序","07:30–08:30 小樽運河 → 09:00–10:30 北一ホール → 10:40–11:00 サツドラ → 11:00–11:40 外帶漢堡 → 11:40–12:30 返回住宿、整理行李並退房"],
           ["主行程","小樽運河","拍攝清晨石造倉庫、運河與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","小樽早晨"],
           ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール","小樽早晨"],
           ["主選外帶","EBIJIN 小樽店","後志產鹿肉漢堡專門店，可外帶；地址：小樽市稲穂2-13-16。沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC","小樽漢堡"],
@@ -1068,54 +1071,30 @@ const dayData = {
         ]
       },
       {
-        title:"余市・仁木途中休息",
-        note:"小樽退房後，沿國道5號前往俱知安",
+        title:"余市・俱知安・二世谷",
+        note:"途中休息、午餐與下午行程",
         shops:[
-          ["途中短停","きのこ王国 仁木店","洗手間、駕駛休息，可喝蘑菇湯及簡短採買；地址：北海道余市郡仁木町大江1丁目930。","09:00–18:00｜年中無休","https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店","余市之後"]
-        ]
-      },
-      {
-        title:"俱知安午餐",
-        note:"Day 3 中午",
-        shops:[
+          ["__SECTION__","余市・仁木途中休息","小樽退房後，沿國道5號前往俱知安"],
+          ["途中短停","きのこ王国 仁木店","洗手間、駕駛休息，可喝蘑菇湯及簡短採買；地址：北海道余市郡仁木町大江1丁目930。","09:00–18:00｜年中無休","https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店","余市之後"],
+          ["__SECTION__","俱知安午餐","Day 3 中午"],
           ["停車","Kutosan Park Parking Lot／くとさんパーク駐車場","俱知安車站附近停車點，停好後步行前往午餐。","依現場標示","https://www.google.com/maps/search/?api=1&query=くとさんパーク+駐車場+倶知安","俱知安"],
-          ["午餐","MARKIE CURRY／マーキーカリー","點雞腿野菜湯咖哩，可依喜好選辣度與飯量。","11:30–21:00；週四休，臨時異動看官方社群","https://www.google.com/maps/search/?api=1&query=MARKIE+CURRY+倶知安","俱知安"]
-        ]
-      },
-      {
-        title:"二世谷下午",
-        note:"牧場為固定；fanfun 為可選的獨立停車點",
-        shops:[
+          ["午餐","MARKIE CURRY／マーキーカリー","點雞腿野菜湯咖哩，可依喜好選辣度與飯量。","11:30–21:00；週四休，臨時異動看官方社群","https://www.google.com/maps/search/?api=1&query=MARKIE+CURRY+倶知安","俱知安"],
+          ["__SECTION__","二世谷下午","牧場為固定；fanfun 為可選的獨立停車點"],
           ["冰品必吃","ニセコ高橋牧場 Milk Kobo","吃牛奶霜淇淋，買飲用優格、乳酪塔與泡芙；地址曽我888-1，Mapcode 398 321 164*50。","09:30–18:00；免費停車","https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場+ミルク工房","高橋牧場"],
           ["可停留","革と珈琲 fanfun","買手工皮夾、零錢包與皮革小物，搭配手沖咖啡；地址曽我256-3。","夏季約 10:00–17:00；週二休；小型免費停車場","https://www.google.com/maps/search/?api=1&query=革と珈琲+fanfun+ニセコ","fanfun"]
         ]
       },
       {
-        title:"前往洞爺湖途中（二選一）",
-        note:"加入仁木後正常情況略過；只有整體行程提早才停一個",
+        title:"洞爺湖",
+        note:"途中備案、採買與晚間行程",
         shops:[
+          ["__SECTION__","前往洞爺湖途中（二選一）","加入仁木後正常情況略過；只有整體行程提早才停一個"],
           ["休息站","道の駅 230ルスツ","補飲料，買留壽都當地蔬菜、馬鈴薯與豬肉加工品。","9月賣店約 09:00–18:00","https://www.google.com/maps/search/?api=1&query=道の駅+230ルスツ","途中擇一"],
-          ["冰品","Lake Hill Farm 本店","吃牧場牛奶 Gelato，可選牛奶、香草或當日季節口味。","9月 09:00–18:00","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127","途中擇一"]
-        ]
-      },
-      {
-        title:"洞爺湖便利商店",
-        note:"有需要再前往，不另增加固定行程",
-        shops:[
-          ["🏪 便利商店","Seicomart 洞爺田中店","補飲料、早餐與北海道限定商品。","依分店現場公告","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen","洞爺湖",{title:"🏪 Secoma 必買指南",note:"北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",items:["Secoma 北海道牛奶","夕張哈密瓜冰棒","HOT CHEF 炸雞便當","北海道玉米濃湯","北海道馬鈴薯洋芋片","北海道牛奶霜淇淋","起司奶油夾心歐姆蛋蛋糕捲"]}]
-        ]
-      },
-      {
-        title:"洞爺湖商店參考",
-        note:"住宿後、晚餐前排定前往",
-        shops:[
-          ["排定採買","わかさいも本舗 洞爺湖本店","買わかさいも、いもてん與北海道あんぽてと。","09:00–19:30","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店","洞爺湖溫泉街"]
-        ]
-      },
-      {
-        title:"洞爺湖晚上",
-        note:"今晚有固定煙火船行程",
-        shops:[
+          ["冰品","Lake Hill Farm 本店","吃牧場牛奶 Gelato，可選牛奶、香草或當日季節口味。","9月 09:00–18:00","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127","途中擇一"],
+          ["__SECTION__","洞爺湖採買","便利商店有需要再前往；商店安排於住宿後、晚餐前"],
+          ["🏪 便利商店","Seicomart 洞爺田中店","補飲料、早餐與北海道限定商品。","依分店現場公告","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen","洞爺湖",{title:"🏪 Secoma 必買指南",note:"北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",items:["Secoma 北海道牛奶","夕張哈密瓜冰棒","HOT CHEF 炸雞便當","北海道玉米濃湯","北海道馬鈴薯洋芋片","北海道牛奶霜淇淋","起司奶油夾心歐姆蛋蛋糕捲"]}],
+          ["排定採買","わかさいも本舗 洞爺湖本店","買わかさいも、いもてん與北海道あんぽてと。","09:00–19:30","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店","洞爺湖溫泉街"],
+          ["__SECTION__","洞爺湖晚上","今晚有固定煙火船行程"],
           ["住宿","洞爺湖溫泉街","預計17:45左右抵達，先入住、停車並放行李。","全天","https://www.google.com/maps/search/?api=1&query=洞爺湖温泉街","洞爺湖溫泉街"],
           ["晚餐候選","レストラン望羊蹄／Boyotei Restaurant","預計18:30入店；可點漢堡排套餐或西式料理。出發前確認營業並訂位。","晚餐約17:00–19:30；星期三休","https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖温泉36-12","洞爺湖溫泉街"],
           ["固定事件","洞爺湖煙火觀賞船","官方成人票 ¥1,900、兒童 ¥950；花火船碼頭位於洞爺湖萬世閣與乃之風之間。","官方船班約 20:35–21:20；煙火約 20:45–21:05","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船","洞爺湖碼頭"]
@@ -1310,9 +1289,8 @@ function areaMarkup(areas){
     }
     if(a.layout==="walking-guide"){
       return `<details class="area-card">
-        <summary>小樽晚上</summary>
+        <summary>${a.title}</summary>
         <section class="walk-guide">
-        <div class="walk-guide-title">${a.title}</div>
         <div class="walk-guide-note">${a.note}</div>
         ${a.shops.map(shop=>`<article class="walk-shop">
           <div class="walk-shop-name"><span>${shop[0]} ${shop[1]}</span><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a></div>
@@ -1360,6 +1338,10 @@ function areaMarkup(areas){
       ${(() => {
         let lastDistrict = "";
         return a.shops.map(shop => {
+          if(shop[0]==="__SECTION__"){
+            lastDistrict="";
+            return `<div class="area-subhead">${shop[1]}</div>${shop[2]?`<div class="area-subnote">${shop[2]}</div>`:""}`;
+          }
           const extended = shop.length >= 6;
           const hours = extended ? shop[3] : "";
           const link = extended ? shop[4] : shop[3];
