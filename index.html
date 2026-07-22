@@ -283,6 +283,8 @@ h1{margin:4px 0 4px;font-size:30px}
 }
 .shop:last-child{border-bottom:0}
 .shop a{color:#1769aa;text-decoration:none;font-weight:850;font-size:17px}
+.shop-name-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.shop-location{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:12px;font-weight:850;line-height:1.35}
 .shop p{margin:4px 0;color:var(--sub);font-size:15px}
 .shop-hours{font-size:14px;color:#505a65;margin-top:4px;font-weight:700}
 .shop-alert{font-size:12px;color:#955f45;background:#f8eee9;border-radius:9px;padding:7px 9px;margin-top:7px}
@@ -962,12 +964,12 @@ const dayData = {
       },
       {
         title:"札幌晚上",
-        note:"晚間採買後，再依現場候位情況選一家消夜。",
+        note:"先沿狸小路採買，再依序前往兩家消夜。",
         shops:[
-          ["備選","BicCamera Select 札幌狸小路店","補行動電源、充電線、轉接頭、記憶卡與旅行小電器。","10:00–23:00","https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店","狸小路5丁目"],
-          ["必去","TNOC THE STORE SAPPORO T4","買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。","10:00–21:00","https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4","狸小路4丁目"],
-          ["消夜","迴轉壽司 根室花丸 COCONO SUSUKINO店","以根室海鮮握壽司、花咲蟹與當日推薦品項為主。","依當日營業與候位狀況","https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il","消夜"],
-          ["消夜","海味はちきょう別亭 おやじ","北海道海鮮居酒屋；適合壽司之外的第二消夜選擇。","依當日營業與候位狀況","https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il","消夜"]
+          ["備選","BicCamera Select 札幌狸小路店","補行動電源、充電線、轉接頭、記憶卡與旅行小電器。","10:00–23:00","https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店","🛍️ 採買",null,"狸小路5丁目"],
+          ["必去","TNOC THE STORE SAPPORO T4","買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。","10:00–21:00","https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4","🛍️ 採買",null,"狸小路4丁目"],
+          ["第一站","海味はちきょう別亭 おやじ","北海道海鮮居酒屋。","依當日營業時間","https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il","🌙 消夜",null,"南3條西3丁目"],
+          ["第二站","迴轉壽司 根室花丸 COCONO SUSUKINO店","根室海鮮握壽司、花咲蟹與當日推薦品項。","依當日營業時間","https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il","🌙 消夜",null,"南4條西4丁目"]
         ]
       }
     ]
@@ -1359,6 +1361,7 @@ function areaMarkup(areas){
           const hours = extended ? shop[3] : "";
           const link = extended ? shop[4] : shop[3];
           const district = extended ? shop[5] : "";
+          const location = extended ? shop[7] : "";
           const header = district && district !== lastDistrict ? `<div class="district-label">${district}</div>` : "";
           if (district) lastDistrict = district;
           const ice=/冰品|霜淇淋|ソフト|Gelato|MIL PRESSO|Milk Kobo|LeTAO PLUS|Mother’s Plus|札幌農学校|北一 Terrace|ポプラファーム|幸せの生ソフト/.test(shop.join(" "));
@@ -1375,7 +1378,7 @@ function areaMarkup(areas){
           </details>`:"";
           return `${header}<div class="shop">
             ${shop[0]?`<div class="shop-type">${shop[0]}</div>`:""}
-            <a href="${link}" target="_blank" rel="noopener">${name} ↗</a>
+            <div class="shop-name-row"><a href="${link}" target="_blank" rel="noopener">${name} ↗</a>${location?`<span class="shop-location">${location}</span>`:""}</div>
             ${description?`<p>${description}</p>`:""}
             ${hours ? `<div class="shop-hours">🕘 ${hours}</div>` : ""}
             ${guideMarkup}
