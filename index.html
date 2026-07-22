@@ -246,6 +246,10 @@ h1{margin:4px 0 4px;font-size:30px}
 .place-guide-number{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-size:14px;font-weight:900}
 .place-guide-heading{min-width:0}
 .place-guide-name{display:block;color:#1769aa;font-size:17px;font-weight:900;line-height:1.35}
+.place-guide-name-row{display:flex;align-items:center;gap:7px;min-width:0}
+.place-guide-name-row .place-guide-name{min-width:0}
+.place-guide-direct{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px;padding:13px 14px}
+.place-guide-direct-note{margin-top:5px;color:#66717b;font-size:13px;font-weight:800}
 .place-guide-time{display:block;margin-top:3px;color:#4e5862;font-size:13px;font-weight:850;white-space:nowrap}
 .place-guide-body{padding:14px 14px 14px 18px;border-top:1px dashed #dce4ea;color:#596570;font-size:14px}
 .place-guide-info{padding:10px 12px;border-radius:12px;background:#f7fafc;color:#4f5963;line-height:1.65}
@@ -1286,18 +1290,23 @@ function areaMarkup(areas){
     if(a.layout==="place-guide"){
       return `<section class="place-guide">
         <div class="place-guide-title">${a.title}</div>
-        ${a.shops.map((shop,index)=>`<details class="place-guide-item">
-          <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name">${shop[1]}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
+        ${a.shops.map((shop,index)=>{
+          const mapLink=`<a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">${shop[0]==="1"?"📍":"🅿️"}</a>`;
+          const card=shop[0]==="2"?`<details class="place-guide-item">
+          <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name-row"><span class="place-guide-name">${shop[1]}</span>${mapLink}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
           <div class="place-guide-body">
             ${shop[3]?`<div class="place-guide-info">${shop[3]}</div>`:""}
             ${shop[5]?`<div class="place-guide-info">${shop[5]}</div>`:""}
-            <div class="place-guide-map-row"><a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">${shop[0]==="1"?"📍":"🅿️"}</a></div>
-            ${shop[0]==="2"?`<div class="coffee-guide">
+            <div class="coffee-guide">
               <div class="coffee-guide-title">☕ 咖啡選擇</div>
               <div class="coffee-list">${a.coffee.map(c=>`<div class="coffee-item"><a href="${c[2]}" target="_blank" rel="noopener">${c[0]} ↗</a><span class="coffee-hours">${c[1]}</span></div>`).join("")}</div>
-            </div>`:""}
+            </div>
           </div>
-        </details>${a.drives?.[index]?`<div class="place-guide-drive">${a.drives[index]}</div>`:""}`).join("")}
+        </details>`:`<article class="place-guide-item">
+          <div class="place-guide-direct"><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name-row"><span class="place-guide-name">${shop[1]}</span>${mapLink}</span><span class="place-guide-time">🕐 ${shop[2]}</span>${shop[5]?`<span class="place-guide-direct-note">${shop[5]}</span>`:""}</span></div>
+        </article>`;
+          return `${card}${a.drives?.[index]?`<div class="place-guide-drive">${a.drives[index]}</div>`:""}`;
+        }).join("")}
       </section>`;
     }
     if(a.layout==="walking-guide"){
