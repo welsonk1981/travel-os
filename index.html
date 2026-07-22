@@ -237,22 +237,24 @@ h1{margin:4px 0 4px;font-size:30px}
 }
 .area-note{font-size:12px;color:var(--sub);margin-top:3px}
 .place-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
-.place-guide-title{margin-bottom:11px;color:#405d70;font-size:18px;font-weight:900}
-.place-guide-item{border:1px solid #dce4ea;border-left:5px solid #567b9e;border-radius:15px;background:#fff;overflow:hidden}
-.place-guide-item summary{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:9px;padding:13px 14px;cursor:pointer;list-style:none}
+.place-guide-title{margin-bottom:4px;color:#16232d;font-size:18px;font-weight:900}
+.place-guide-item{border:1px solid #dce4ea;border-left:5px solid #8469aa;border-radius:15px;background:#fff;overflow:hidden}
+.place-guide-item summary{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;list-style:none}
 .place-guide-item summary::-webkit-details-marker{display:none}
 .place-guide-item summary::after{content:"⌄";color:#617b8d;font-size:15px;font-weight:900}
 .place-guide-item[open] summary::after{content:"⌃"}
 .place-guide-number{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-size:14px;font-weight:900}
-.place-guide-name{color:#1769aa;font-size:17px;font-weight:900}
-.place-guide-time{color:#4e5862;font-size:14px;font-weight:850;white-space:nowrap}
-.place-guide-body{padding:0 14px 14px 52px;border-top:1px dashed #dce4ea;color:#596570;font-size:14px}
-.place-guide-body div+div{margin-top:5px}
+.place-guide-heading{min-width:0}
+.place-guide-name{display:block;color:#1769aa;font-size:17px;font-weight:900;line-height:1.35}
+.place-guide-time{display:block;margin-top:3px;color:#4e5862;font-size:13px;font-weight:850;white-space:nowrap}
+.place-guide-body{padding:14px 14px 14px 18px;border-top:1px dashed #dce4ea;color:#596570;font-size:14px}
+.place-guide-info{padding:10px 12px;border-radius:12px;background:#f7fafc;color:#4f5963;line-height:1.65}
+.place-guide-info+.place-guide-info{margin-top:9px}
 .place-guide-map-row{display:flex;align-items:center;margin-top:9px}
 .place-guide-link{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid #b9cad7;border-radius:10px;background:#f5f9fc;color:#1769aa;text-decoration:none;font-size:17px;line-height:1}
 .place-guide-link:hover{background:#eaf3f9;border-color:#8eafc5}
 .place-guide-drive{display:flex;align-items:center;justify-content:center;padding:9px;color:#75818b;font-size:14px;font-weight:850}
-.coffee-guide{margin-top:11px;padding-top:10px;border-top:1px solid #dfe5e9}
+.coffee-guide{margin-top:11px;padding:11px 12px;border-radius:12px;background:#fff8fa}
 .coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
 .coffee-list{padding-top:4px}
 .coffee-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px dashed #dfe5e9}
@@ -446,10 +448,10 @@ h1{margin:4px 0 4px;font-size:30px}
   .route-stop-summary{align-items:flex-start}
   .route-stop-summary::after{content:"⌄"}
   .route-stop-card[open]>.route-stop-summary::after{content:"⌃"}
-  .place-guide-item summary{grid-template-columns:auto 1fr auto;gap:7px 9px}
-  .place-guide-time{grid-column:2;font-size:13px}
-  .place-guide-item summary::after{grid-column:3;grid-row:1 / span 2}
-  .place-guide-body{padding-left:48px}
+  .place-guide-item summary{grid-template-columns:auto minmax(0,1fr) auto;gap:8px}
+  .place-guide-time{font-size:12px}
+  .place-guide-item summary::after{grid-column:auto;grid-row:auto}
+  .place-guide-body{padding:12px}
   .coffee-item{align-items:flex-start}
 }
 
@@ -976,7 +978,7 @@ const dayData = {
     ],
     areas:[
       {
-        title:"札幌｜地點細節",
+        title:"札幌",
         layout:"place-guide",
         drives:["🚗 約 40–50 分鐘","🚗 約 20–25 分鐘"],
         shops:[
@@ -1243,7 +1245,7 @@ const mapLink=name=>{
   if(name.includes("新千歲機場鈴蘭店") || name.includes("新千歲機場／取車")) return "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC";
   if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
   if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
-  if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=%E9%A0%AD%E5%A4%A7%E4%BB%8F+%E7%9C%9F%E9%A7%92%E5%86%85%E6%BB%9D%E9%87%8E%E9%9C%8A%E5%9C%92";
+  if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
   if(name.includes("豐平館")) return "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8+%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7";
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
 };
@@ -1272,10 +1274,10 @@ function areaMarkup(areas){
       return `<section class="place-guide">
         <div class="place-guide-title">${a.title}</div>
         ${a.shops.map((shop,index)=>`<details class="place-guide-item">
-          <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-name">${shop[1]}</span><span class="place-guide-time">${shop[2]}</span></summary>
+          <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name">${shop[1]}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
           <div class="place-guide-body">
-            <div>${shop[3]}</div>
-            ${shop[5]?`<div>${shop[5]}</div>`:""}
+            <div class="place-guide-info">${shop[3]}</div>
+            ${shop[5]?`<div class="place-guide-info">${shop[5]}</div>`:""}
             <div class="place-guide-map-row"><a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">📍</a></div>
             ${shop[0]==="2"?`<div class="coffee-guide">
               <div class="coffee-guide-title">☕ 咖啡選擇</div>
