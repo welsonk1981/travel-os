@@ -254,6 +254,16 @@ h1{margin:4px 0 4px;font-size:30px}
 .place-guide-link{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid #b9cad7;border-radius:10px;background:#f5f9fc;color:#1769aa;text-decoration:none;font-size:17px;line-height:1}
 .place-guide-link:hover{background:#eaf3f9;border-color:#8eafc5}
 .place-guide-drive{display:flex;align-items:center;justify-content:center;padding:9px;color:#75818b;font-size:14px;font-weight:850}
+.walk-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
+.walk-guide-title{color:#16232d;font-size:18px;font-weight:900}
+.walk-guide-note{margin:4px 0 12px;color:var(--sub);font-size:13px}
+.walk-shop{position:relative;margin-top:10px;padding:13px 46px 13px 14px;border:1px solid #dce4ea;border-radius:15px;background:#fff}
+.walk-shop:first-of-type{margin-top:0}
+.walk-shop-name{color:#1769aa;font-size:17px;font-weight:900;line-height:1.4}
+.walk-shop-desc{margin-top:5px;color:#596570;font-size:14px;line-height:1.55}
+.walk-shop-tag{display:inline-flex;margin-left:6px;padding:2px 7px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:11px;font-weight:850;vertical-align:1px}
+.walk-shop-hours{margin-top:6px;color:#6d7780;font-size:13px;font-weight:700}
+.walk-shop-map{position:absolute;right:12px;top:12px;display:grid;place-items:center;width:32px;height:32px;border:1px solid #b9cad7;border-radius:10px;background:#f5f9fc;text-decoration:none;font-size:16px}
 .coffee-guide{margin-top:11px;padding:11px 12px;border-radius:12px;background:#fff8fa}
 .coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
 .coffee-list{padding-top:4px}
@@ -982,9 +992,9 @@ const dayData = {
         layout:"place-guide",
         drives:["🚗 約 40–50 分鐘","🚗 約 20–25 分鐘"],
         shops:[
-          ["1","頭大佛","09:00–10:00","2 Takino, Minami Ward, Sapporo, Hokkaido 005-0862日本｜開放 09:00–16:00","https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC","中央停車場｜免費"],
-          ["2","豐平館","11:00–11:35","〒064-0931 北海道札幌市中央区中島公園1番20号｜開館 09:00–17:00","https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8%2C+%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7","🅿️ ナビパーク南9西4駐車場｜4 Chome-6-13 Minami 9 Jonishi｜周邊付費停車"],
-          ["3","札幌場外市場","12:00–13:20","市場約 06:00–17:00（各店不同）｜停車定位：第八卸売市場","https://www.google.com/maps/search/?api=1&query=%E7%AC%AC%E5%85%AB%E5%8D%B8%E5%A3%B2%E5%B8%82%E5%A0%B4+%E6%9C%AD%E5%B9%8C","13:30 出發小樽"]
+          ["1","頭大佛","09:00–10:00","","https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC",""],
+          ["2","豐平館","11:00–11:35","","https://www.google.com/maps/search/?api=1&query=4+Chome-6-13+Minami+9+Jonishi%2C+Chuo+Ward%2C+Sapporo%2C+Hokkaido+064-0809%E6%97%A5%E6%9C%AC",""],
+          ["3","札幌場外市場","12:00–13:20","","https://www.google.com/maps/search/?api=1&query=21+Chome-2-26+Kita+10+Jonishi%2C+Chuo+Ward%2C+Sapporo%2C+Hokkaido+060-0010%E6%97%A5%E6%9C%AC","13:30 出發小樽"]
         ],
         coffee:[
           ["Postman Oak","07:30–16:30｜四營業","https://www.google.com/maps/search/?api=1&query=Postman+Oak+%E5%8D%9713%E6%9D%A1%E8%A5%BF6-5-15"],
@@ -993,17 +1003,18 @@ const dayData = {
         ]
       },
       {
-        title:"小樽 Walking Guide｜依步行順序",
-        note:"住宿放行李後，由堺町南端一路往小樽運河方向走；冰品直接併入沿途店家卡片。",
+        title:"從住宿步行逛堺町通",
+        note:"從 1-19 Shinonomechō 出發，由近到遠。",
+        layout:"walking-guide",
         shops:[
-          ["① 起點","堺町通南端／LeTAO 本店","買 Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 吃 Jersey 牛乳霜淇淋。","09:00–18:00（各店略有差異）","https://www.google.com/maps/search/?api=1&query=LeTAO+小樽","堺町南端"],
-          ["② 玻璃街區","北一硝子三号館","買玻璃杯、醬油瓶與燈具；Terrace 吃八段霜淇淋。","10:00–17:30（L.O.17:15）","https://www.google.com/maps/search/?api=1&query=北一硝子三号館","堺町通"],
-          ["③ 甜點段","六花亭 小樽運河店","買 Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店","堺町通"],
-          ["④ 甜點段","北菓樓 小樽本館","買妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","堺町通"],
-          ["⑤ 冰品備選","ポプラファーム 小樽店","點サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。","11:00–17:30（L.O.17:00）","https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店","堺町通北段"],
-          ["⑥ 老舖冰品","アイスクリームパーラー美園","吃自家製傳統冰淇淋、聖代或冰淇淋蘇打。","11:00–17:00","https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽","小樽站前／稲穂"],
-          ["⑦ 夕景","小樽運河","拍攝石造倉庫、煤氣燈與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","運河"],
-          ["⑧ 已預約晚餐","小樽 Muse","18:30 已預約；看完運河後前往，主打漢堡排、蛋包飯等洋食。","預約 18:30｜17:00–20:30（L.O.20:00）；週一休","https://www.google.com/maps/search/?api=1&query=小樽+Muse","晚餐"]
+          ["①","LeTAO 本店","Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。","09:00–18:00（各店略有差異）","https://www.google.com/maps/search/?api=1&query=LeTAO+小樽","甜點選購"],
+          ["②","北菓樓 小樽本館","妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","甜點選購"],
+          ["③","六花亭 小樽運河店","Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店","甜點選購"],
+          ["④","北一硝子三号館","玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。","10:00–17:30（L.O.17:15）","https://www.google.com/maps/search/?api=1&query=北一硝子三号館","玻璃工藝"],
+          ["⑤","ポプラファーム 小樽店","サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。","11:00–17:30（L.O.17:00）","https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店","冰品備選"],
+          ["⑥","アイスクリームパーラー美園","自家製傳統冰淇淋、聖代或冰淇淋蘇打。","11:00–17:00","https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽","老舖冰品"],
+          ["⑦","小樽運河","拍攝石造倉庫、煤氣燈與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","夕景"],
+          ["⑧","小樽 Muse","18:30 已預約；看完運河後前往，主打漢堡排、蛋包飯等洋食。","預約 18:30｜17:00–20:30（L.O.20:00）；週一休","https://www.google.com/maps/search/?api=1&query=小樽+Muse","已預約晚餐"]
         ]
       }
     ]
@@ -1276,15 +1287,27 @@ function areaMarkup(areas){
         ${a.shops.map((shop,index)=>`<details class="place-guide-item">
           <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name">${shop[1]}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
           <div class="place-guide-body">
-            <div class="place-guide-info">${shop[3]}</div>
+            ${shop[3]?`<div class="place-guide-info">${shop[3]}</div>`:""}
             ${shop[5]?`<div class="place-guide-info">${shop[5]}</div>`:""}
-            <div class="place-guide-map-row"><a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">📍</a></div>
+            <div class="place-guide-map-row"><a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">${shop[0]==="1"?"📍":"🅿️"}</a></div>
             ${shop[0]==="2"?`<div class="coffee-guide">
               <div class="coffee-guide-title">☕ 咖啡選擇</div>
               <div class="coffee-list">${a.coffee.map(c=>`<div class="coffee-item"><a href="${c[2]}" target="_blank" rel="noopener">${c[0]} ↗</a><span class="coffee-hours">${c[1]}</span></div>`).join("")}</div>
             </div>`:""}
           </div>
         </details>${a.drives?.[index]?`<div class="place-guide-drive">${a.drives[index]}</div>`:""}`).join("")}
+      </section>`;
+    }
+    if(a.layout==="walking-guide"){
+      return `<section class="walk-guide">
+        <div class="walk-guide-title">${a.title}</div>
+        <div class="walk-guide-note">${a.note}</div>
+        ${a.shops.map(shop=>`<article class="walk-shop">
+          <div class="walk-shop-name">${shop[0]} ${shop[1]}</div>
+          <a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a>
+          <div class="walk-shop-desc">${shop[2]}${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}</div>
+          ${shop[3]?`<div class="walk-shop-hours">🕘 ${shop[3]}</div>`:""}
+        </article>`).join("")}
       </section>`;
     }
     if(a.layout==="route"){
