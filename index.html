@@ -1306,7 +1306,7 @@ function stopMarkup(stops){
           <summary><span class="place-title">${s.name}</span></summary>
           <div class="secondary-stop-body">
             ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
-            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[2]?`<a href="${step[2]}" target="_blank" rel="noopener">${step[1]}<span class="external-arrow"> ↗</span></a>`:step[1]}</div></div>`).join("")}</div>`:""}
+            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[1]}</div></div>`).join("")}</div>`:""}
             ${s.note?`<div class="place-note">${s.note}</div>`:""}
             <div class="metrics">
               ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
