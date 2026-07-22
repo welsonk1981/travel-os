@@ -257,13 +257,15 @@ h1{margin:4px 0 4px;font-size:30px}
 .walk-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
 .walk-guide-title{color:#16232d;font-size:18px;font-weight:900}
 .walk-guide-note{margin:4px 0 12px;color:var(--sub);font-size:13px}
-.walk-shop{position:relative;margin-top:10px;padding:13px 46px 13px 14px;border:1px solid #dce4ea;border-radius:15px;background:#fff}
+.walk-shop{margin-top:10px;padding:13px 14px;border:1px solid #dce4ea;border-radius:15px;background:#fff}
 .walk-shop:first-of-type{margin-top:0}
-.walk-shop-name{color:#1769aa;font-size:17px;font-weight:900;line-height:1.4}
-.walk-shop-desc{margin-top:5px;color:#596570;font-size:14px;line-height:1.55}
-.walk-shop-tag{display:inline-flex;margin-left:6px;padding:2px 7px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:11px;font-weight:850;vertical-align:1px}
-.walk-shop-hours{margin-top:6px;color:#6d7780;font-size:13px;font-weight:700}
-.walk-shop-map{position:absolute;right:12px;top:12px;display:grid;place-items:center;width:32px;height:32px;border:1px solid #b9cad7;border-radius:10px;background:#f5f9fc;text-decoration:none;font-size:16px}
+.walk-shop-name{display:flex;align-items:center;gap:7px;color:#1769aa;font-size:17px;font-weight:900;line-height:1.4}
+.walk-shop-desc{display:flex;align-items:flex-start;gap:7px;margin-top:6px;color:#596570;font-size:14px;line-height:1.55}
+.walk-shop-desc-text{min-width:0}
+.walk-shop-meta{margin-top:7px}
+.walk-shop-tag{display:inline-flex;flex:0 0 auto;padding:2px 7px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:11px;font-weight:850}
+.walk-shop-hours{color:#6d7780;font-size:13px;font-weight:700}
+.walk-shop-map{display:inline-grid;flex:0 0 auto;place-items:center;width:25px;height:25px;border:1px solid #b9cad7;border-radius:8px;background:#f5f9fc;text-decoration:none;font-size:14px;line-height:1}
 .coffee-guide{margin-top:11px;padding:11px 12px;border-radius:12px;background:#fff8fa}
 .coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
 .coffee-list{padding-top:4px}
@@ -1303,10 +1305,9 @@ function areaMarkup(areas){
         <div class="walk-guide-title">${a.title}</div>
         <div class="walk-guide-note">${a.note}</div>
         ${a.shops.map(shop=>`<article class="walk-shop">
-          <div class="walk-shop-name">${shop[0]} ${shop[1]}</div>
-          <a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a>
-          <div class="walk-shop-desc">${shop[2]}${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}</div>
-          ${shop[3]?`<div class="walk-shop-hours">🕘 ${shop[3]}</div>`:""}
+          <div class="walk-shop-name"><span>${shop[0]} ${shop[1]}</span><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a></div>
+          <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
+          ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
         </article>`).join("")}
       </section>`;
     }
