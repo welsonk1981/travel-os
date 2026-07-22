@@ -1008,7 +1008,7 @@ const dayData = {
         ]
       },
       {
-        title:"從住宿步行逛堺町通",
+        title:"【小樽】",
         note:"從 1-19 Shinonomechō 出發，由近到遠。",
         layout:"walking-guide",
         shops:[
@@ -1309,7 +1309,9 @@ function areaMarkup(areas){
       </section>`;
     }
     if(a.layout==="walking-guide"){
-      return `<section class="walk-guide">
+      return `<details class="area-card">
+        <summary>小樽晚上</summary>
+        <section class="walk-guide">
         <div class="walk-guide-title">${a.title}</div>
         <div class="walk-guide-note">${a.note}</div>
         ${a.shops.map(shop=>`<article class="walk-shop">
@@ -1317,7 +1319,8 @@ function areaMarkup(areas){
           <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
           ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
         </article>`).join("")}
-      </section>`;
+        </section>
+      </details>`;
     }
     if(a.layout==="route"){
       const outlet=a.shops[0], map=a.shops[1], ice1=a.shops[2], ice2=a.shops[3], sports=a.shops[4];
