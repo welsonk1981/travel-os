@@ -188,11 +188,17 @@ h1{margin:4px 0 4px;font-size:30px}
 .secondary-stop .place-title{font-size:19px;color:var(--text)}
 .secondary-stop-body{margin-top:10px;padding:0;border-top:1px dashed var(--line)}
 .secondary-stop-body .place-note{margin-top:10px;line-height:1.65}
-.flow-list{display:grid;margin-top:8px}
-.flow-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid #eef0ef}
-.flow-row:last-child{border-bottom:0}
-.flow-time{color:#708090;font-size:13px;font-weight:750;white-space:nowrap;text-align:left}
-.flow-text{color:var(--text);font-size:14px;line-height:1.5;min-width:0}
+.flow-list{display:grid;margin-top:10px;padding:2px 0}
+.flow-row{position:relative;display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding:7px 0 7px 19px}
+.flow-row::before{content:"";position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:50%;background:#91a5b3;box-shadow:0 0 0 3px #f4f7f8}
+.flow-row::after{content:"";position:absolute;left:7px;top:24px;bottom:-7px;width:1px;background:#dce4e8}
+.flow-row:last-child::after{display:none}
+.flow-time{color:#788791;font-size:12px;font-weight:800;white-space:nowrap;text-align:left;line-height:1.65}
+.flow-text{color:#273640;font-size:14px;font-weight:750;line-height:1.5;min-width:0}
+.flow-text a{color:inherit;text-decoration:none}
+.flow-text a:hover{color:#1769aa}
+.flow-text a::after{content:" ↗";color:#8a9aa5;font-size:11px;font-weight:700}
+.flow-text a .external-arrow{display:none}
 .place-note{font-size:15px;color:var(--sub);margin-top:3px}
 .metrics{
   display:flex;
@@ -524,7 +530,7 @@ h1{margin:4px 0 4px;font-size:30px}
   .place-guide-item summary::after{grid-column:auto;grid-row:auto}
   .place-guide-body{padding:12px}
   .coffee-item{align-items:flex-start}
-  .flow-row{grid-template-columns:94px minmax(0,1fr);gap:9px}
+  .flow-row{grid-template-columns:88px minmax(0,1fr);gap:9px}
   .flow-time{font-size:12px}
 }
 
@@ -1095,7 +1101,7 @@ const dayData = {
       {time:"14:30–15:20",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 50 分",next:"前往高橋牧場約 20–25 分"},
       {time:"15:45–16:25",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 40 分",next:"依時間決定是否停 fanfun"},
       {time:"16:35–16:50",name:"革と珈琲 fanfun（可選）",note:"買皮革小物或咖啡；16:35前未抵達就取消。",stay:"最多 15 分",next:"直接前往洞爺湖"},
-      {time:"17:55–21:20",name:"洞爺湖｜晚餐・煙火・住宿",steps:[["抵達後","Seicomart 洞爺田中店","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen"],["抵達後","わかさいも本舗 洞爺湖本店","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店"],["17:55","洞爺湖住宿 Check-in","https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721"],["18:30–19:40","レストラン望羊蹄","https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖"],["20:15","洞爺湖花火船碼頭","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場"],["20:35–21:20","花火觀賞船","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場"]],next:"結束後返回住宿",collapsible:true}
+      {time:"17:55–21:20",name:"洞爺湖｜晚餐・煙火・住宿",steps:[["抵達後採買","Seicomart 洞爺田中店","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen"],["","わかさいも本舗 洞爺湖本店","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店"],["17:55","洞爺湖住宿 Check-in","https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721"],["18:30–19:40","レストラン望羊蹄","https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖"],["20:15","洞爺湖花火船碼頭","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場"],["20:35–21:20","花火觀賞船","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場"]],next:"結束後返回住宿",collapsible:true}
     ],
     areas:[
       {
@@ -1300,7 +1306,7 @@ function stopMarkup(stops){
           <summary><span class="place-title">${s.name}</span></summary>
           <div class="secondary-stop-body">
             ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
-            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[2]?`<a href="${step[2]}" target="_blank" rel="noopener">${step[1]} ↗</a>`:step[1]}</div></div>`).join("")}</div>`:""}
+            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[2]?`<a href="${step[2]}" target="_blank" rel="noopener">${step[1]}<span class="external-arrow"> ↗</span></a>`:step[1]}</div></div>`).join("")}</div>`:""}
             ${s.note?`<div class="place-note">${s.note}</div>`:""}
             <div class="metrics">
               ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
