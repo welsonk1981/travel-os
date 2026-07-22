@@ -178,6 +178,15 @@ h1{margin:4px 0 4px;font-size:30px}
   grid-row:1;
   min-width:0;
 }
+.secondary-stop{margin:-8px 0;border:1px solid #dce4ea;border-radius:13px;background:#f8fafb;overflow:hidden}
+.secondary-stop summary{display:flex;align-items:center;gap:8px;padding:11px 13px;cursor:pointer;list-style:none}
+.secondary-stop summary::-webkit-details-marker{display:none}
+.secondary-stop summary::after{content:"⌄";margin-left:auto;color:#718493;font-size:15px;font-weight:900}
+.secondary-stop[open] summary::after{content:"⌃"}
+.secondary-stop-label{display:inline-flex;flex:0 0 auto;padding:3px 7px;border-radius:999px;background:#e9eef2;color:#63737f;font-size:11px;font-weight:850}
+.secondary-stop .place-title{font-size:17px}
+.secondary-stop-body{padding:0 13px 12px;border-top:1px dashed #dce4ea}
+.secondary-stop-body .place-note{margin-top:10px;line-height:1.65}
 .place-note{font-size:15px;color:var(--sub);margin-top:3px}
 .metrics{
   display:flex;
@@ -1051,7 +1060,7 @@ const dayData = {
         {label:"休息站",name:"道の駅 230ルスツ"},
         {label:"冰品",name:"🍦 Lake Hill Farm 本店"}
       ]},
-      {time:"17:55–21:20",name:"洞爺湖住宿・晚餐・花火船",note:"17:55 住宿 Check-in、放行李與停車 → 18:30–19:40 レストラン望羊蹄晚餐 → 19:40 返回住宿準備外套、相機與紙本船票 → 20:15 抵達碼頭候船／驗票 → 20:35–21:20 花火觀賞船（煙火約20:45–21:05）。",stay:"晚間行程約 3 小時 25 分",next:"返回飯店泡湯"}
+      {time:"17:55–21:20",name:"洞爺湖住宿・晚餐・花火船",note:"17:55 住宿 Check-in、放行李與停車 → 18:30–19:40 レストラン望羊蹄晚餐 → 19:40 返回住宿準備外套、相機與紙本船票 → 20:15 抵達碼頭候船／驗票 → 20:35–21:20 花火觀賞船（煙火約20:45–21:05）。",stay:"晚間行程約 3 小時 25 分",next:"返回飯店泡湯",secondary:true}
     ],
     areas:[
       {
@@ -1243,7 +1252,24 @@ const mapLink=name=>{
 const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
 
 function stopMarkup(stops){
-  return stops.map(s=>`
+  return stops.map(s=>s.secondary?`
+    <div class="stop">
+      <div class="arrival">${s.time}</div>
+      <div class="stop-content">
+        <details class="secondary-stop">
+          <summary><span class="secondary-stop-label">次要行程</span><span class="place-title">${s.name}</span></summary>
+          <div class="secondary-stop-body">
+            ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+            ${s.note?`<div class="place-note">${s.note}</div>`:""}
+            <div class="metrics">
+              ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
+              ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  `:`
     <div class="stop">
       <div class="arrival">${s.time}</div>
       <div class="stop-content">
