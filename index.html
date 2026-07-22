@@ -8,11 +8,11 @@
 <title>2026 北海道 Travel OS 3.0 Minimal</title>
 <style>
 :root{
-  --bg:#f4f6f8;
+  --bg:#f7f6f2;
   --card:#ffffff;
-  --text:#20252b;
-  --sub:#6e7681;
-  --line:#e5e9ee;
+  --text:#243746;
+  --sub:#66717a;
+  --line:#e7e9e8;
   --blue:#4f7fa8;
   --blue-soft:#eaf2f8;
   --green:#5b8b71;
@@ -178,19 +178,20 @@ h1{margin:4px 0 4px;font-size:30px}
   grid-row:1;
   min-width:0;
 }
-.secondary-stop{margin:-8px 0;border:1px solid #dce4ea;border-radius:13px;background:#f8fafb;overflow:hidden}
-.secondary-stop summary{display:flex;align-items:center;gap:8px;padding:11px 13px;cursor:pointer;list-style:none}
+.secondary-stop{position:relative;margin:-8px 0;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;box-shadow:0 2px 9px rgba(36,55,70,.035)}
+.secondary-stop::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:#7899b3}
+.secondary-stop summary{display:flex;align-items:center;gap:8px;padding:13px 15px 13px 17px;cursor:pointer;list-style:none}
 .secondary-stop summary::-webkit-details-marker{display:none}
-.secondary-stop summary::after{content:"⌄";margin-left:auto;color:#718493;font-size:15px;font-weight:900}
+.secondary-stop summary::after{content:"⌄";margin-left:auto;color:#708090;font-size:15px;font-weight:900}
 .secondary-stop[open] summary::after{content:"⌃"}
 .secondary-stop-label{display:inline-flex;flex:0 0 auto;padding:3px 7px;border-radius:999px;background:#e9eef2;color:#63737f;font-size:11px;font-weight:850}
-.secondary-stop .place-title{font-size:17px}
-.secondary-stop-body{padding:0 13px 12px;border-top:1px dashed #dce4ea}
+.secondary-stop .place-title{font-size:17px;color:#243746}
+.secondary-stop-body{padding:3px 15px 13px 17px;border-top:1px solid #eef0ef}
 .secondary-stop-body .place-note{margin-top:10px;line-height:1.65}
 .flow-list{display:grid;margin-top:8px}
-.flow-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:9px 0;border-bottom:1px dashed #dce4ea}
+.flow-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid #eef0ef}
 .flow-row:last-child{border-bottom:0}
-.flow-time{color:#7c858f;font-size:13px;font-weight:800;white-space:nowrap;text-align:left}
+.flow-time{color:#708090;font-size:13px;font-weight:750;white-space:nowrap;text-align:left}
 .flow-text{color:var(--text);font-size:14px;line-height:1.5;min-width:0}
 .place-note{font-size:15px;color:var(--sub);margin-top:3px}
 .metrics{
