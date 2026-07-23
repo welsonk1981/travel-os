@@ -200,6 +200,12 @@ h1{margin:4px 0 4px;font-size:30px}
 .flow-text a::after{content:" ↗";color:#8a9aa5;font-size:11px;font-weight:700}
 .flow-text a .external-arrow{display:none}
 .place-note{font-size:15px;color:var(--sub);margin-top:3px}
+.stop-detail{margin-top:7px}
+.stop-detail summary{display:inline-flex;align-items:center;gap:5px;color:#71808b;font-size:12px;font-weight:800;cursor:pointer;list-style:none}
+.stop-detail summary::-webkit-details-marker{display:none}
+.stop-detail summary::after{content:"⌄";font-size:13px}
+.stop-detail[open] summary::after{content:"⌃"}
+.stop-detail .place-note{margin-top:7px;padding:9px 11px;border-radius:10px;background:#f7f9fa;color:#68737c;font-size:13px;line-height:1.6}
 .metrics{
   display:flex;
   gap:0;
@@ -1015,8 +1021,8 @@ const dayData = {
         guideTitle:"🅿️ 北海道大學停車與 Café",
         drives:["🚗 約 35–40 分鐘","🚗 約 10–15 分鐘"],
         shops:[
-          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps/search/?api=1&query=2%20Takino%2C%20Minami%20Ward%2C%20Sapporo%2C%20Hokkaido%20005-0862%20%E6%97%A5%E6%9C%AC",""],
-          ["2","札幌場外市場","10:25–11:20","","https://www.google.com/maps/search/?api=1&query=21%20Chome-2-26%20Kita%2010%20Jonishi%2C%20Chuo%20Ward%2C%20Sapporo%2C%20Hokkaido%20060-0010%20%E6%97%A5%E6%9C%AC",""],
+          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps?q=42.9205589,141.3627319",""],
+          ["2","札幌場外市場","10:25–11:20","","https://www.google.com/maps?q=43.069568,141.321138",""],
           ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=北海道大学+北大マルシェ+Café%26Labo","13:00 出發小樽｜🅿️ タイムズ北９西４"]
         ],
         coffee:[
@@ -1238,11 +1244,11 @@ function stopMarkup(stops){
       <div class="stop-content">
         <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
         ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
-        ${s.note?`<div class="place-note">${shortText(s.note)}</div>`:""}
         <div class="metrics">
           ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
           ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
         </div>
+        ${s.note?`<details class="stop-detail"><summary>詳細資訊</summary><div class="place-note">${s.note}</div></details>`:""}
       </div>
     </div>
   `).join("");
