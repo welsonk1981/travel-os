@@ -760,7 +760,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day"><span class="preview-date">9/17（四）</span><span class="preview-day-label">Day 2</span></div>
-              <div class="preview-route">🗿 頭大佛 → 🏛️ 豐平館 → 🦀 場外市場 → 🌊 小樽</div>
+              <div class="preview-route">🗿 頭大佛 → 🦀 場外市場 → 🎓 北海道大學 → 🌊 小樽</div>
             </div>
           </div>
         </div>
@@ -993,35 +993,35 @@ const dayData = {
   },
   day2:{
     label:"Day 2｜9/17（四）",
-    highlights:["頭大佛","豐平館","札幌場外市場","小樽港町"],
-    missions:["頭大佛第一批參觀","豐平館拍照","場外市場早午餐","小樽 Muse晚餐"],
-    foodFocus:["場外市場海鮮","小樽冰品候選"],
-    route:"琴似住宿 → 頭大佛 → 豐平館 → 場外市場 → 小樽",
+    highlights:["頭大佛","札幌場外市場","北海道大學","小樽港町"],
+    missions:["頭大佛參觀","場外市場海鮮早午餐","北海道大學散步與北大マルシェ","小樽 Muse晚餐"],
+    foodFocus:["場外市場海鮮","北大マルシェ牛奶／冰淇淋","小樽冰品候選"],
+    route:"琴似住宿 → 頭大佛 → 場外市場 → 北海道大學 → 小樽",
     hotel:"小樽住宿",
     stops:[
-      {time:"08:10",name:"札幌住宿出發",note:"由琴似住宿前往頭大佛，預留市區交通與停車時間。",stay:"",next:"開車約 45–50 分"},
-      {time:"09:00–10:00",name:"頭大佛",note:"第一批入場，參觀安藤忠雄建築與園區。",stay:"約 60 分",next:"開車約 40–50 分"},
-      {time:"11:00–11:35",name:"豐平館",note:"位於中島公園內；館內外參觀與拍攝藍白色歷史建築。",stay:"約 35 分",next:"開車、停車約 20–25 分"},
-      {time:"12:00–13:20",name:"札幌場外市場",note:"海鮮早午餐與簡單採買。",stay:"約 80 分",next:"13:30 出發"},
-      {time:"13:30–14:30",name:"前往小樽",note:"由場外市場前往小樽住宿附近。",stay:"開車約 60 分",next:"抵達後停車、放行李"},
-      {time:"14:30–15:00",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"約 30 分",next:"後續步行"},
-      {time:"15:00–18:15",name:"堺町通 → 北一硝子三号館 → 小樽運河",note:"甜點、玻璃工藝、選物，最後接夕景與夜景。",stay:"整段約 3 小時 15 分",next:"18:30 已預約晚餐"},
+      {time:"08:00",name:"札幌住宿出發",note:"由琴似住宿前往頭大佛，預留市區交通與停車時間。",stay:"",next:"開車約 45 分"},
+      {time:"08:45–09:45",name:"頭大佛",note:"參觀安藤忠雄建築與園區。",stay:"約 60 分",next:"開車約 35–40 分"},
+      {time:"10:25–11:20",name:"札幌場外市場",note:"海鮮早午餐與簡單採買。",stay:"約 55 分",next:"前往北海道大學約 10–15 分"},
+      {time:"11:35–13:00",name:"北海道大學／北大マルシェ Café & Labo",note:"校園散步，品嚐牛奶、冰淇淋與甜點；停車建議 Times 北8西5。",stay:"約 85 分",next:"13:00 出發前往小樽"},
+      {time:"13:00–14:00",name:"前往小樽",note:"由北海道大學前往小樽住宿附近。",stay:"開車約 50–60 分",next:"抵達後停車、放行李"},
+      {time:"約 14:00–14:30",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"約 30 分",next:"後續步行"},
+      {time:"14:30–18:15",name:"堺町通 → 北一硝子三号館 → 小樽運河",note:"甜點、玻璃工藝、選物，最後接夕景與夜景。",stay:"整段約 3 小時 45 分",next:"18:30 已預約晚餐"},
       {time:"18:30（已預約）",name:"小樽 Muse",note:"燭光洋食餐廳，已確認 Day 2 晚餐預約。",stay:"約 60–90 分",next:"步行返回住宿"}
     ],
     areas:[
       {
         title:"札幌",
         layout:"place-guide",
-        drives:["🚗 約 40–50 分鐘","🚗 約 20–25 分鐘"],
+        guideTitle:"🅿️ 北海道大學停車與 Café",
+        drives:["🚗 約 35–40 分鐘","🚗 約 10–15 分鐘"],
         shops:[
-          ["1","頭大佛","09:00–10:00","","https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC",""],
-          ["2","豐平館","11:00–11:35","","https://www.google.com/maps/search/?api=1&query=4+Chome-6-13+Minami+9+Jonishi%2C+Chuo+Ward%2C+Sapporo%2C+Hokkaido+064-0809%E6%97%A5%E6%9C%AC",""],
-          ["3","札幌場外市場","12:00–13:20","","https://www.google.com/maps/search/?api=1&query=21+Chome-2-26+Kita+10+Jonishi%2C+Chuo+Ward%2C+Sapporo%2C+Hokkaido+060-0010%E6%97%A5%E6%9C%AC","13:30 出發小樽"]
+          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC",""],
+          ["2","札幌場外市場","10:25–11:20","","https://www.google.com/maps/search/?api=1&query=21+Chome-2-26+Kita+10+Jonishi%2C+Chuo+Ward%2C+Sapporo%2C+Hokkaido+060-0010%E6%97%A5%E6%9C%AC",""],
+          ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=北海道大学+北大マルシェ+Café%26Labo","13:00 出發小樽｜🅿️ Times 北8西5"]
         ],
         coffee:[
-          ["Postman Oak","07:30–16:30｜四營業","https://www.google.com/maps/search/?api=1&query=Postman+Oak+%E5%8D%9713%E6%9D%A1%E8%A5%BF6-5-15"],
-          ["Smooch Coffee Stand","08:00–18:00｜出發前確認","https://www.google.com/maps/search/?api=1&query=Smooch+Coffee+Stand+%E5%8D%9711%E6%9D%A1%E8%A5%BF1-4-12"],
-          ["森香珈琲","09:00–17:00｜四營業","https://www.google.com/maps/search/?api=1&query=%E6%A3%AE%E9%A6%99%E7%8F%88%E7%90%B2+%E5%8D%9710%E6%9D%A1%E8%A5%BF6-6-18"]
+          ["Times 北8西5","北海道大學正門附近停車場","https://www.google.com/maps/search/?api=1&query=タイムズ北8西5"],
+          ["北大マルシェ Café & Labo","牛奶、冰淇淋、甜點","https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo"]
         ]
       },
       {
@@ -1208,7 +1208,7 @@ const mapLink=name=>{
   if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
   if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
   if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
-  if(name.includes("豐平館")) return "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8+%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7";
+  if(name.includes("北海道大學")) return "https://www.google.com/maps/search/?api=1&query=北海道大学+北大マルシェ+Café%26Labo";
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
 };
 const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
@@ -1264,13 +1264,13 @@ function areaMarkup(areas){
         <div class="place-guide-title">${a.title}</div>
         ${a.shops.map((shop,index)=>{
           const mapLink=`<a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">${shop[0]==="1"?"📍":"🅿️"}</a>`;
-          const card=shop[0]==="2"?`<details class="place-guide-item">
+          const card=(a.title==="札幌"?shop[0]==="3":shop[0]==="2")?`<details class="place-guide-item">
           <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name-row"><span class="place-guide-name">${shop[1]}</span>${mapLink}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
           <div class="place-guide-body">
             ${shop[3]?`<div class="place-guide-info">${shop[3]}</div>`:""}
             ${shop[5]?`<div class="place-guide-info">${shop[5]}</div>`:""}
             <div class="coffee-guide">
-              <div class="coffee-guide-title">☕ 咖啡選擇</div>
+              <div class="coffee-guide-title">${a.guideTitle||"☕ 咖啡選擇"}</div>
               <div class="coffee-list">${a.coffee.map(c=>`<div class="coffee-item"><a href="${c[2]}" target="_blank" rel="noopener">${c[0]} ↗</a><span class="coffee-hours">${c[1]}</span></div>`).join("")}</div>
             </div>
           </div>
@@ -1382,7 +1382,7 @@ function areaMarkup(areas){
 
 const mustDoByDate={
   "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
-  "9/17":["🗿 09:00 頭大佛","🏛️ 豐平館","🦀 場外市場海鮮","🚗 13:30 出發小樽","🍽️ 小樽 Muse"],
+  "9/17":["🗿 08:45 頭大佛","🦀 10:25 場外市場海鮮","🎓 11:35 北海道大學／北大マルシェ","🚗 13:00 出發小樽","🍽️ 小樽 Muse"],
   "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍄 仁木短停","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
   "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮午餐","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
