@@ -339,6 +339,7 @@ h1{margin:4px 0 4px;font-size:30px}
 .shop a{color:#1769aa;text-decoration:none;font-weight:850;font-size:17px}
 .shop-name-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
 .shop-location{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:12px;font-weight:850;line-height:1.35}
+.reservation-note{display:inline-flex;align-items:center;margin-left:7px;color:#8a929b;font-size:12px;font-weight:700;vertical-align:2px}
 .shop p{margin:4px 0;color:var(--sub);font-size:15px}
 .shop-hours{font-size:14px;color:#505a65;margin-top:4px;font-weight:700}
 .burger-options{display:grid;gap:9px;margin-top:7px}
@@ -1030,7 +1031,7 @@ const dayData = {
       {time:"13:00–14:00",name:"前往小樽",note:"由北海道大學前往小樽住宿附近。",stay:"開車約 50–60 分",next:"抵達後停車、放行李"},
       {time:"14:00–14:30",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"30 分",next:"後續步行"},
       {time:"14:30–18:15",name:"堺町通 → 北一硝子三号館 → 小樽運河",note:"甜點、玻璃工藝、選物，最後接夕景與夜景。",stay:"整段 3 小時 45 分",next:"18:30 晚餐"},
-      {time:"18:30",name:"小樽 Muse",note:"燭光洋食餐廳",stay:"60–90 分"}
+      {time:"18:30",name:"小樽 Muse",reservation:"已預約",note:"燭光洋食餐廳",stay:"60–90 分"}
     ],
     areas:[
       {
@@ -1060,7 +1061,7 @@ const dayData = {
           ["⑤","ポプラファーム 小樽店","サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。","11:00–17:30（L.O.17:00）","https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店","冰品備選"],
           ["⑥","アイスクリームパーラー美園","自家製傳統冰淇淋、聖代或冰淇淋蘇打。","11:00–17:00","https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽","老舖冰品"],
           ["⑦","小樽運河","拍攝石造倉庫、煤氣燈與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","夕景"],
-          ["⑧","小樽 Muse","漢堡排、蛋包飯等洋食。","18:30｜17:00–20:30（L.O.20:00）；週一休","https://www.google.com/maps/search/?api=1&query=小樽+Muse",""]
+          ["⑧","小樽 Muse","漢堡排、蛋包飯等洋食。","18:30｜17:00–20:30（L.O.20:00）；週一休","https://www.google.com/maps/search/?api=1&query=小樽+Muse","","","", "已預約"]
         ]
       }
     ]
@@ -1259,7 +1260,7 @@ function stopMarkup(stops){
     <div class="stop">
       <div class="arrival">${s.time}</div>
       <div class="stop-content">
-        <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
+        <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}${s.reservation?`<span class="reservation-note">${s.reservation}</span>`:""}</div>
         ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
         ${s.note?`<div class="place-note">${shortText(s.note)}</div>`:""}
         <div class="metrics">
@@ -1391,7 +1392,7 @@ function areaMarkup(areas){
           </details>`:"";
           return `${header}<div class="shop">
             ${shop[0]?`<div class="shop-type">${shop[0]}</div>`:""}
-            <div class="shop-name-row"><a href="${link}" target="_blank" rel="noopener">${name} ↗</a>${location?`<span class="shop-location">${location}</span>`:""}</div>
+            <div class="shop-name-row"><a href="${link}" target="_blank" rel="noopener">${name} ↗</a>${shop[8]?`<span class="reservation-note">${shop[8]}</span>`:""}${location?`<span class="shop-location">${location}</span>`:""}</div>
             ${description?`<p>${description}</p>`:""}
             ${hours ? `<div class="shop-hours">🕘 ${hours}</div>` : ""}
             ${guideMarkup}
