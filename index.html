@@ -23,6 +23,7 @@
   --shadow:0 10px 28px rgba(44,57,72,.08);
 }
 *{box-sizing:border-box}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 body{
   margin:0;
   background:var(--bg);
@@ -1248,7 +1249,7 @@ function stopMarkup(stops){
           ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
           ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
         </div>
-        ${s.note?`<details class="stop-detail"><summary>詳細資訊</summary><div class="place-note">${s.note}</div></details>`:""}
+        ${s.note?`<details class="stop-detail"><summary aria-label="展開詳細資訊" title="展開詳細資訊"><span class="sr-only">詳細資訊</span></summary><div class="place-note">${s.note}</div></details>`:""}
       </div>
     </div>
   `).join("");
