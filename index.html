@@ -716,6 +716,41 @@ h1{margin:4px 0 4px;font-size:30px}
   .compact-option-separator{display:none}
 }
 
+
+/* Day 2 資訊架構樣板 */
+.day2-schedule{margin:16px 0 20px;padding:14px 15px;border:1px solid var(--line);border-radius:16px;background:#fbfcfd}
+.day2-section-label{margin:0 0 10px;color:#526574;font-size:13px;font-weight:900;letter-spacing:.04em}
+.day2-schedule-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:8px 0;border-bottom:1px solid #edf0f2}
+.day2-schedule-row:last-child{border-bottom:0}
+.day2-schedule-time{color:#71808b;font-size:13px;font-weight:800;white-space:nowrap}
+.day2-schedule-place{color:#263743;font-size:15px;font-weight:850}
+.day2-places{display:grid;gap:12px}
+.day2-place-card{border:1px solid #dce4ea;border-radius:17px;background:#fff;overflow:hidden}
+.day2-place-card>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:15px;cursor:pointer;list-style:none}
+.day2-place-card>summary::-webkit-details-marker{display:none}
+.day2-place-card>summary::after{content:"⌄";display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eef3f6;color:#587083;font-size:18px;font-weight:900;transition:transform .18s ease}
+.day2-place-card[open]>summary::after{transform:rotate(180deg);background:#e4edf3}
+.day2-place-name{font-size:18px;font-weight:900;line-height:1.35}
+.day2-place-meta{display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:7px;color:#76828b;font-size:12px;font-weight:750}
+.day2-actions{display:flex;flex-wrap:wrap;gap:8px;padding:0 15px 14px}
+.day2-action{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid #bfd0dc;border-radius:11px;background:#f4f8fb;color:#38627f;text-decoration:none;font-size:14px;font-weight:850}
+.day2-place-body{padding:14px 15px 16px;border-top:1px dashed #dce4ea;background:#fbfcfd}
+.day2-detail-row{display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px solid #e9eef1}
+.day2-detail-row:last-child{border-bottom:0}
+.day2-detail-label{color:#71808b;font-size:13px;font-weight:850}
+.day2-detail-value{color:#3e4c56;font-size:14px;line-height:1.6}
+@media(max-width:520px){
+  .day2-schedule{padding:11px 12px}
+  .day2-schedule-row{grid-template-columns:96px minmax(0,1fr);gap:8px;padding:7px 0}
+  .day2-schedule-time{font-size:12px}
+  .day2-schedule-place{font-size:14px}
+  .day2-place-card>summary{padding:14px 13px}
+  .day2-actions{padding:0 13px 13px}
+  .day2-action{flex:1 1 calc(50% - 4px)}
+  .day2-place-body{padding:12px 13px 14px}
+  .day2-detail-row{grid-template-columns:68px minmax(0,1fr);gap:8px}
+}
+
 </style>
 </head>
 <body>
@@ -1431,6 +1466,98 @@ function restoreMissions(root){
   });
 }
 
+
+const day2Cards=[
+  {
+    name:"頭大佛",stay:"約 60 分",next:"下一站開車約 35–40 分",
+    nav:"https://www.google.com/maps?cid=15134224251499317861",
+    parking:"https://www.google.com/maps?cid=15134224251499317861",
+    feature:"安藤忠雄設計的佛殿與薰衣草丘景觀；抵達後以參觀建築與園區為主。",
+    address:"2 Takino, Minami Ward, Sapporo, Hokkaido 005-0862 日本",
+    hours:"行程安排 08:45–09:45；實際開放與最後入場依園區當日公告。",
+    shopping:"此站不安排採買。",
+    caution:"園區範圍較大，離場時間以 09:45 為準，避免壓縮場外市場。"
+  },
+  {
+    name:"札幌場外市場",stay:"約 55 分",next:"下一站開車約 10–15 分",
+    nav:"https://www.google.com/maps/search/?api=1&query=札幌市中央卸売市場+場外市場",
+    parking:"https://maps.app.goo.gl/MWxtBL2Lwo6FDcDG8",
+    feature:"安排海鮮早午餐，並快速查看北海道海產與乾貨。",
+    address:"札幌市中央區北11條西21丁目一帶。",
+    hours:"行程安排 10:25–11:20；各店營業時間不同。",
+    shopping:"海產、乾貨與可攜帶伴手禮；先用餐，再視剩餘時間採買。",
+    caution:"停車按鈕使用已確認的場外市場巴士停車位置；不要以門牌搜尋替代。"
+  },
+  {
+    name:"北海道大學／北大マルシェ Café & Labo",stay:"約 85 分",next:"13:00 出發，前往小樽約 50–60 分",
+    nav:"https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo",
+    parking:"https://www.google.com/maps/search/?api=1&query=タイムズ北９西４",
+    feature:"校園散步，搭配北大乳製品、冰淇淋與甜點。",
+    address:"北海道大學札幌校區；停車建議 Times 北9西4。",
+    hours:"行程安排 11:35–13:00；Café 實際營業時間出發前再確認。",
+    shopping:"牛奶、冰淇淋、甜點與校園相關商品。",
+    caution:"13:00 必須離開，停車後先前往 Café，再依時間縮放校園散步。"
+  },
+  {
+    name:"堺町通／北一硝子三号館／小樽運河",stay:"約 3 小時 45 分",next:"18:30 前往已預約晚餐",
+    nav:"https://www.google.com/maps/search/?api=1&query=北一硝子三号館",
+    parking:"https://www.google.com/maps/search/?api=1&query=1-19+Shinonomechō,+Otaru,+Hokkaido+047-0026",
+    feature:"住宿放行李後改步行，依序逛堺町通、北一硝子，最後到運河看夕景與夜景。",
+    address:"小樽市堺町通至小樽運河一帶。",
+    hours:"步行行程 14:30–18:15；北一硝子三号館約 10:00–17:30（L.O.17:15）。",
+    shopping:"LeTAO、北菓樓、六花亭、玻璃工藝與冰品候選，依現場時間挑選。",
+    caution:"17:30 後多數店家陸續關門；不要為單一店排隊過久，18:15 準備前往 Muse。"
+  },
+  {
+    name:"小樽 Muse",stay:"約 60–90 分",next:"晚餐後步行返回住宿",
+    nav:"https://www.google.com/maps/search/?api=1&query=小樽+Muse",
+    parking:"",
+    feature:"燭光洋食餐廳，主打漢堡排與蛋包飯；Day 2 晚餐已預約。",
+    address:"小樽市內；由運河區步行前往，精確位置以導航按鈕為準。",
+    hours:"預約 18:30；17:00–20:30（L.O.20:00），週一休。",
+    shopping:"此站不安排採買。",
+    caution:"須依預約時間抵達，建議 18:15 結束運河行程並移動。"
+  }
+];
+
+function day2ScheduleMarkup(stops){
+  return `<section class="day2-schedule" aria-labelledby="day2ScheduleTitle">
+    <h3 class="day2-section-label" id="day2ScheduleTitle">簡單行程</h3>
+    ${stops.map(s=>`<div class="day2-schedule-row"><time class="day2-schedule-time">${s.time}</time><div class="day2-schedule-place">${s.name}</div></div>`).join("")}
+  </section>`;
+}
+
+function day2CardsMarkup(){
+  const row=(label,value)=>value?`<div class="day2-detail-row"><div class="day2-detail-label">${label}</div><div class="day2-detail-value">${value}</div></div>`:"";
+  return `<section aria-labelledby="day2PlacesTitle">
+    <h3 class="day2-section-label" id="day2PlacesTitle">景點／店家</h3>
+    <div class="day2-places">
+      ${day2Cards.map(card=>`<details class="day2-place-card">
+        <summary aria-label="展開 ${card.name}">
+          <div>
+            <div class="day2-place-name">${card.name}</div>
+            <div class="day2-place-meta">
+              <span>⏱ ${card.stay}</span>
+              <span>🚗 ${card.next}</span>
+            </div>
+          </div>
+        </summary>
+        <div class="day2-actions">
+          <a class="day2-action" href="${card.nav}" target="_blank" rel="noopener">📍 導航</a>
+          ${card.parking?`<a class="day2-action" href="${card.parking}" target="_blank" rel="noopener">🅿️ 停車</a>`:""}
+        </div>
+        <div class="day2-place-body">
+          ${row("特色",card.feature)}
+          ${row("地址",card.address)}
+          ${row("營業時間",card.hours)}
+          ${row("採買",card.shopping)}
+          ${row("注意事項",card.caution)}
+        </div>
+      </details>`).join("")}
+    </div>
+  </section>`;
+}
+
 function renderDay(dayKey){
   const d=dayData[dayKey];
   const detail=document.getElementById("dayDetail");
@@ -1454,12 +1581,12 @@ function renderDay(dayKey){
           </div>
           <div class="hotel-chip">${d.hotel}</div>
         </div>
-        ${dayBriefMarkup(d)}
-        ${stopMarkup(d.stops)}
-        <div class="area-list">
+        ${dayKey==="day2"?"":dayBriefMarkup(d)}
+        ${dayKey==="day2"?day2ScheduleMarkup(d.stops):stopMarkup(d.stops)}
+        ${dayKey==="day2"?day2CardsMarkup():`<div class="area-list">
           ${orderedAreas.some(a=>a.layout==="place-guide")?"":`<h3 style="margin:14px 0 2px">今日會經過的區域</h3>`}
           ${areaMarkup(orderedAreas)}
-        </div>
+        </div>`}
       </article>
     `;
 
