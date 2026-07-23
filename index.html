@@ -1041,10 +1041,10 @@ const dayData = {
         shops:[
           ["1","頭大佛","08:45–09:45","","https://www.google.com/maps?cid=15134224251499317861",""],
           ["2","札幌場外市場","10:25–11:20","","https://maps.app.goo.gl/MWxtBL2Lwo6FDcDG8",""],
-          ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=北海道大学+北大マルシェ+Café%26Labo","13:00 出發小樽｜🅿️ タイムズ北９西４"]
+          ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=タイムズ北９西４","13:00 出發小樽"]
         ],
+        coffeeStop:"3",
         coffee:[
-          ["タイムズ北９西４","4 Chome-1 Kita 9 Jonishi, Kita Ward, Sapporo, Hokkaido 060-0809 日本","https://www.google.com/maps/search/?api=1&query=タイムズ北９西４"],
           ["北大マルシェ Café & Labo","牛奶、冰淇淋、甜點","https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo"]
         ]
       },
@@ -1287,7 +1287,7 @@ function areaMarkup(areas){
         <div class="place-guide-title">${a.title}</div>
         ${a.shops.map((shop,index)=>{
           const mapLink=`<a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">${shop[0]==="1"?"📍":"🅿️"}</a>`;
-          const card=shop[0]==="2"?`<details class="place-guide-item">
+          const card=shop[0]===a.coffeeStop?`<details class="place-guide-item">
           <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name-row"><span class="place-guide-name">${shop[1]}</span>${mapLink}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
           <div class="place-guide-body">
             ${shop[3]?`<div class="place-guide-info">${shop[3]}</div>`:""}
