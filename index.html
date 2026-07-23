@@ -943,6 +943,30 @@ h1{margin:4px 0 4px;font-size:30px}
 </nav>
 
 <script>
+const masterLocations=Object.freeze({
+  toyaFireworksPier:Object.freeze({
+    id:"toya-fireworks-pier",
+    name:"洞爺湖花火船碼頭",
+    mapUrl:"https://maps.app.goo.gl/QtkVqHj5hLuV7svC8",
+    mapStatus:"人工確認",
+    verifiedAt:"2026-07-23"
+  }),
+  ebijinOtaru:Object.freeze({
+    id:"ebijin-otaru",
+    name:"EBIJIN 小樽店",
+    mapUrl:"https://maps.app.goo.gl/jaHGkfT3ZcdzwsUk8",
+    mapStatus:"人工確認",
+    verifiedAt:"2026-07-23"
+  }),
+  letAoMain:Object.freeze({
+    id:"letao-main",
+    name:"LeTAO 總店",
+    mapUrl:"https://maps.app.goo.gl/iRy2gmCFUBvbcEgW7",
+    mapStatus:"人工確認",
+    verifiedAt:"2026-07-23"
+  })
+});
+
 const dayData = {
   day1: {
     label:"Day 1｜9/16（三）",
@@ -1029,7 +1053,7 @@ const dayData = {
         note:"從 1-19 Shinonomechō 出發，由近到遠。",
         layout:"walking-guide",
         shops:[
-          ["①","LeTAO 本店","Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。","09:00–18:00（各店略有差異）","https://www.google.com/maps/search/?api=1&query=LeTAO+小樽","甜點選購"],
+          ["①",masterLocations.letAoMain.name,"Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。","09:00–18:00（各店略有差異）",masterLocations.letAoMain.mapUrl,"甜點選購"],
           ["②","北菓樓 小樽本館","妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","甜點選購"],
           ["③","六花亭 小樽運河店","Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店","甜點選購"],
           ["④","北一硝子三号館","玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。","10:00–17:30（L.O.17:15）","https://www.google.com/maps/search/?api=1&query=北一硝子三号館","玻璃工藝"],
@@ -1064,7 +1088,7 @@ const dayData = {
           ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール",""],
           ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",""],
           ["__BURGER__","漢堡（二選一）",[
-            ["EBIJIN 小樽店","主選：後志產鹿肉漢堡，可外帶；沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC"],
+            [masterLocations.ebijinOtaru.name,"主選：後志產鹿肉漢堡，可外帶；沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休",masterLocations.ebijinOtaru.mapUrl],
             ["CONTAINER BURGER 3-SUN","備選：牛肉漢堡、薯條與無酒精啤酒；停車較方便。","11:00–19:00（L.O.18:30）；臨時休業需確認","https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"]
           ]]
         ]
@@ -1101,7 +1125,7 @@ const dayData = {
           ["","Seicomart 洞爺田中店","逛超商、簡單採買。","","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen",""],
           ["","わかさいも本舗 洞爺湖本店","採買伴手禮、順逛周邊。","","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店",""],
           ["","レストラン望羊蹄","晚餐。","","https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖",""],
-          ["","洞爺湖花火船碼頭","購票、候船與登船。","","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場",""]
+          ["",masterLocations.toyaFireworksPier.name,"購票、候船與登船。","",masterLocations.toyaFireworksPier.mapUrl,""]
         ]
       }
     ]
@@ -1206,7 +1230,7 @@ const dayData = {
 const mapLink=name=>{
   if(name.includes("新千歲機場鈴蘭店") || name.includes("新千歲機場／取車")) return "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC";
   if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
-  if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
+  if(name.includes(masterLocations.ebijinOtaru.name)) return masterLocations.ebijinOtaru.mapUrl;
   if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
 };
