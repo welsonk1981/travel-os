@@ -760,7 +760,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day"><span class="preview-date">9/17（四）</span><span class="preview-day-label">Day 2</span></div>
-              <div class="preview-route">🗿 頭大佛 → 🏛️ 豐平館 → 🦀 場外市場 → 🌊 小樽</div>
+              <div class="preview-route">🗿 頭大佛 → 🦀 場外市場 → 🎓 北海道大學 → 🌊 小樽</div>
             </div>
           </div>
         </div>
@@ -1208,8 +1208,7 @@ const mapLink=name=>{
   if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
   if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
   if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
-  if(name.includes("豐平館")) return "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8+%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7";
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
 };
 const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
 
@@ -1382,7 +1381,7 @@ function areaMarkup(areas){
 
 const mustDoByDate={
   "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
-  "9/17":["🗿 09:00 頭大佛","🏛️ 豐平館","🦀 場外市場海鮮","🚗 13:30 出發小樽","🍽️ 小樽 Muse"],
+  "9/17":["🗿 08:45 頭大佛","🦀 10:25 場外市場海鮮","🎓 11:35 北海道大學／北大マルシェ","🚗 13:00 出發小樽","🍽️ 18:30 小樽 Muse"],
   "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍄 仁木短停","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
   "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮午餐","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
