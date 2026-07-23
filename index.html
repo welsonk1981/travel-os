@@ -1,1 +1,1593 @@
-__PLACEHOLDER__
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4f7fa8">
+<title>2026 北海道 Travel OS 3.0 Minimal</title>
+<style>
+:root{
+  --bg:#f7f6f2;
+  --card:#ffffff;
+  --text:#243746;
+  --sub:#66717a;
+  --line:#e7e9e8;
+  --blue:#4f7fa8;
+  --blue-soft:#eaf2f8;
+  --green:#5b8b71;
+  --green-soft:#e9f2ec;
+  --amber:#a9783f;
+  --amber-soft:#f6eee2;
+  --gray-soft:#f1f3f5;
+  --shadow:0 10px 28px rgba(44,57,72,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
+  font-size:16px;
+  line-height:1.5;
+}
+button,a{font:inherit}
+.app{max-width:820px;margin:0 auto;padding:16px 14px 118px}
+.hero{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+}
+.eyebrow{font-size:13px;letter-spacing:.12em;color:var(--sub)}
+h1{margin:4px 0 4px;font-size:30px}
+.sub{font-size:15px;color:var(--sub)}
+.countdown{
+  min-width:106px;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:16px;
+  padding:10px 13px;
+  text-align:right;
+}
+.countdown strong{display:block;font-size:24px}
+.countdown span{font-size:12px}
+.weather{
+  margin-top:14px;
+  border:1px solid var(--line);
+  background:#fafcff;
+  border-radius:16px;
+  padding:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:center;
+}
+.weather-main{display:flex;align-items:center;gap:10px}
+.weather-icon{font-size:30px}
+.weather-temp{font-size:24px;font-weight:800}
+.weather-meta{text-align:right;font-size:13px;color:var(--sub)}
+.tabs{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding:14px 0 8px;
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:linear-gradient(var(--bg) 78%,transparent);
+}
+.tab{
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  border-radius:999px;
+  padding:9px 14px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+.tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.panel{display:none}
+.panel.active{display:block}
+.card,.day-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  margin:12px 0;
+  padding:17px;
+  box-shadow:var(--shadow);
+}
+.day-list{
+  display:grid;
+  gap:10px;
+}
+.day-preview{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:18px;
+  padding:15px;
+  cursor:pointer;
+}
+.day-preview:hover{border-color:#c8d7e4}
+.preview-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+}
+.preview-day{display:flex;align-items:baseline;gap:8px;line-height:1.2}
+.preview-day-label{font-size:14px;color:var(--blue);font-weight:800;letter-spacing:.02em}
+.preview-date{font-size:21px;color:var(--text);font-weight:900}
+.preview-route{font-size:21px;font-weight:850;margin-top:4px}
+.hotel-chip{
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:12px;
+  white-space:nowrap;
+}
+.preview-points{
+  margin-top:10px;
+  color:#4f5760;
+  font-size:13px;
+}
+.day-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  padding-bottom:13px;
+  border-bottom:1px solid var(--line);
+}
+.day-label{font-size:12px;color:var(--sub)}
+.route{font-size:22px;font-weight:900;margin-top:2px}
+.stop{
+  display:grid;
+  grid-template-columns:108px minmax(0,1fr);
+  gap:16px;
+  padding:17px 0;
+  border-bottom:1px dashed var(--line);
+}
+.stop:last-child{border-bottom:none}
+.stop-top{
+  display:block;
+}
+.place-title{font-size:19px;font-weight:850}
+.place-title a{color:var(--text);text-decoration:none}
+.stop-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:5px}
+.stop-option{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:10px;padding:5px 8px;color:var(--text);background:var(--blue-soft);font-size:15px}
+.arrival{
+  grid-column:1;
+  grid-row:1;
+  font-size:15px;
+  color:#7c858f;
+  font-weight:750;
+  white-space:nowrap;
+  padding-top:1px;
+}
+.stop-content{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+}
+.secondary-stop{margin:0;border:0;border-radius:0;background:transparent;overflow:visible;box-shadow:none}
+.secondary-stop::before{content:none}
+.secondary-stop summary{display:flex;align-items:center;gap:8px;min-height:24px;padding:0;cursor:pointer;list-style:none}
+.secondary-stop summary::-webkit-details-marker{display:none}
+.secondary-stop summary::after{content:"⌄";margin-left:auto;color:#8a949d;font-size:15px;font-weight:900}
+.secondary-stop[open] summary::after{content:"⌃"}
+.secondary-stop-label{display:inline-flex;flex:0 0 auto;padding:3px 7px;border-radius:999px;background:#e9eef2;color:#63737f;font-size:11px;font-weight:850}
+.secondary-stop .place-title{font-size:19px;color:var(--text)}
+.secondary-stop-body{margin-top:10px;padding:0;border-top:1px dashed var(--line)}
+.secondary-stop-body .place-note{margin-top:10px;line-height:1.65}
+.flow-list{display:grid;margin-top:10px;padding:2px 0}
+.flow-row{position:relative;display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding:7px 0 7px 19px}
+.flow-row::before{content:"";position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:50%;background:#91a5b3;box-shadow:0 0 0 3px #f4f7f8}
+.flow-row::after{content:"";position:absolute;left:7px;top:24px;bottom:-7px;width:1px;background:#dce4e8}
+.flow-row:last-child::after{display:none}
+.flow-time{color:#788791;font-size:12px;font-weight:800;white-space:nowrap;text-align:left;line-height:1.65}
+.flow-text{color:#273640;font-size:14px;font-weight:750;line-height:1.5;min-width:0}
+.flow-text a{color:inherit;text-decoration:none}
+.flow-text a:hover{color:#1769aa}
+.flow-text a::after{content:" ↗";color:#8a9aa5;font-size:11px;font-weight:700}
+.flow-text a .external-arrow{display:none}
+.place-note{font-size:15px;color:var(--sub);margin-top:3px}
+.metrics{
+  display:flex;
+  gap:0;
+  flex-wrap:wrap;
+  margin-top:7px;
+  color:#8a929b;
+  font-size:12px;
+}
+.metric{
+  font-size:12px;
+  font-weight:500;
+  padding:0;
+  border-radius:0;
+  background:transparent!important;
+  color:#8a929b!important;
+}
+.metric + .metric::before{
+  content:"｜";
+  color:#c1c6cc;
+  margin:0 7px;
+}
+.area-list{margin-top:14px}
+.compact-options{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.compact-options-title{
+  margin-bottom:2px;
+  color:var(--text);
+  font-size:17px;
+  font-weight:850;
+}
+.compact-option-row{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:14px;
+  padding:11px 0;
+  border-bottom:1px dashed var(--line);
+}
+.compact-option-row:last-child{border-bottom:0}
+.compact-option-label{color:var(--sub);font-size:14px;font-weight:750}
+.compact-option-links{font-size:15px;line-height:1.65}
+.compact-option-links a{color:var(--text);font-weight:800;text-decoration:none}
+.compact-option-separator{margin:0 7px;color:#b0b6bb}
+.area-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:13px;
+  margin-top:9px;
+}
+.area-card.group-meal{border-left:5px solid #c78945;background:#fffaf3}
+.area-card.group-pharmacy{border-left:5px solid #5b82b2;background:#f7faff}
+.area-card.group-convenience{border-left:5px solid #5b8b71;background:#f7fbf8}
+.area-card.group-shopping{border-left:5px solid #8469aa;background:#faf8fd}
+.area-card.group-dessert{border-left:5px solid #c9798c;background:#fff8fa}
+.area-card.group-essentials{border-left:5px solid #567b9e;background:#f7fafc}
+.area-card.group-essentials .shop{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:13px;
+  margin-top:11px;
+}
+.shop-type{
+  display:inline-flex;
+  align-items:center;
+  color:#4f6273;
+  background:#edf2f6;
+  border-radius:999px;
+  padding:4px 9px;
+  margin-bottom:7px;
+  font-size:13px;
+  font-weight:850;
+}
+.area-card summary{
+  cursor:pointer;
+  font-weight:800;
+}
+.area-subhead{
+  margin:16px 0 3px;
+  padding-left:9px;
+  border-left:3px solid #7893a6;
+  color:#334b5d;
+  font-size:14px;
+  font-weight:900;
+}
+.area-subhead:first-child{margin-top:12px}
+.area-subnote{margin:0 0 6px 12px;color:var(--sub);font-size:12px}
+.area-note{font-size:12px;color:var(--sub);margin-top:3px}
+.place-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
+.place-guide-title{margin-bottom:4px;color:#16232d;font-size:18px;font-weight:900}
+.place-guide-item{border:1px solid #dce4ea;border-left:5px solid #8469aa;border-radius:15px;background:#fff;overflow:hidden}
+.place-guide-item summary{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;list-style:none}
+.place-guide-item summary::-webkit-details-marker{display:none}
+.place-guide-item summary::after{content:"⌄";color:#617b8d;font-size:15px;font-weight:900}
+.place-guide-item[open] summary::after{content:"⌃"}
+.place-guide-number{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-size:14px;font-weight:900}
+.place-guide-heading{min-width:0}
+.place-guide-name{display:block;color:#1769aa;font-size:17px;font-weight:900;line-height:1.35}
+.place-guide-name-row{display:flex;align-items:center;gap:7px;min-width:0}
+.place-guide-name-row .place-guide-name{min-width:0}
+.place-guide-direct{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px;padding:13px 14px}
+.place-guide-direct-note{margin-top:5px;color:#66717b;font-size:13px;font-weight:800}
+.place-guide-time{display:block;margin-top:3px;color:#4e5862;font-size:13px;font-weight:850;white-space:nowrap}
+.place-guide-body{padding:14px 14px 14px 18px;border-top:1px dashed #dce4ea;color:#596570;font-size:14px}
+.place-guide-info{padding:10px 12px;border-radius:12px;background:#f7fafc;color:#4f5963;line-height:1.65}
+.place-guide-info+.place-guide-info{margin-top:9px}
+.place-guide-map-row{display:flex;align-items:center;margin-top:9px}
+.place-guide-link{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid #b9cad7;border-radius:10px;background:#f5f9fc;color:#1769aa;text-decoration:none;font-size:17px;line-height:1}
+.place-guide-link:hover{background:#eaf3f9;border-color:#8eafc5}
+.place-guide-drive{display:flex;align-items:center;justify-content:center;padding:9px;color:#75818b;font-size:14px;font-weight:850}
+.walk-guide{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
+.walk-guide-title{color:#16232d;font-size:18px;font-weight:900}
+.walk-guide-note{margin:4px 0 12px;color:var(--sub);font-size:13px}
+.walk-shop{margin-top:10px;padding:13px 14px;border:1px solid #dce4ea;border-radius:15px;background:#fff}
+.walk-shop:first-of-type{margin-top:0}
+.walk-shop-name{display:flex;align-items:center;gap:7px;color:#1769aa;font-size:17px;font-weight:900;line-height:1.4}
+.walk-shop-desc{display:flex;align-items:flex-start;gap:7px;margin-top:6px;color:#596570;font-size:14px;line-height:1.55}
+.walk-shop-desc-text{min-width:0}
+.walk-shop-meta{margin-top:7px}
+.walk-shop-tag{display:inline-flex;flex:0 0 auto;padding:2px 7px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:11px;font-weight:850}
+.walk-shop-hours{color:#6d7780;font-size:13px;font-weight:700}
+.walk-shop-map{display:inline-grid;flex:0 0 auto;place-items:center;width:25px;height:25px;border:1px solid #b9cad7;border-radius:8px;background:#f5f9fc;text-decoration:none;font-size:14px;line-height:1}
+.coffee-guide{margin-top:11px;padding:11px 12px;border-radius:12px;background:#fff8fa}
+.coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
+.coffee-list{padding-top:4px}
+.coffee-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px dashed #dfe5e9}
+.coffee-item:first-child{border-top:0}
+.coffee-item a{color:#1769aa;text-decoration:none;font-size:15px;font-weight:850}
+.coffee-hours{color:#7b858d;font-size:13px;text-align:right}
+.shop{
+  padding:11px 0;
+  border-bottom:1px dashed var(--line);
+}
+.shop:last-child{border-bottom:0}
+.shop a{color:#1769aa;text-decoration:none;font-weight:850;font-size:17px}
+.shop-name-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.shop-location{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:12px;font-weight:850;line-height:1.35}
+.shop p{margin:4px 0;color:var(--sub);font-size:15px}
+.shop-hours{font-size:14px;color:#505a65;margin-top:4px;font-weight:700}
+.burger-options{display:grid;gap:9px;margin-top:7px}
+.burger-option{padding:9px 0;border-top:1px dashed var(--line)}
+.burger-option:first-child{border-top:0;padding-top:0}
+.burger-option a{display:inline-block}
+.burger-option p{margin:3px 0 0}
+.shop-alert{font-size:12px;color:#955f45;background:#f8eee9;border-radius:9px;padding:7px 9px;margin-top:7px}
+.field-guide{
+  margin-top:10px;
+  border:1px solid #dce6ee;
+  border-radius:12px;
+  background:#f7fafc;
+  overflow:hidden;
+}
+.field-guide summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  color:#46677f;
+  font-size:13px;
+  font-weight:900;
+  cursor:pointer;
+  list-style:none;
+}
+.field-guide summary::-webkit-details-marker{display:none}
+.field-guide summary::after{content:"⌄";font-size:16px;transition:transform .2s ease}
+.field-guide[open] summary::after{transform:rotate(180deg)}
+.guide-body{padding:0 12px 11px;border-top:1px dashed #dce6ee}
+.guide-note{margin:9px 0 0;color:var(--sub);font-size:12px}
+.guide-list{margin:8px 0 0;padding-left:19px;color:#4f5963;font-size:13px}
+.guide-list li{margin:6px 0}
+.guide-table{width:100%;border-collapse:collapse;margin-top:9px;font-size:12px}
+.guide-table th,.guide-table td{padding:7px 5px;border-bottom:1px solid #e5ebf0;text-align:left;vertical-align:top}
+.guide-table th{color:#526574;background:#eef4f7}
+.route-area{margin-top:9px;border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcfd}
+.route-area-head{font-size:18px;font-weight:900}
+.route-area-note{font-size:12px;color:var(--sub);margin-top:3px}
+.route-strip{display:flex;align-items:center;gap:8px;margin:13px 0;padding:10px 12px;border-radius:12px;background:#edf4f8;color:#45677e;font-size:13px;font-weight:850}
+.route-strip .arrow{color:#8ca1b0}
+.route-stop-card{border:1px solid #dce4ea;border-radius:15px;background:#fff;overflow:hidden}
+.route-stop-card.primary{border-left:5px solid #8469aa}
+.route-stop-card.shoes{border-left:5px solid #567b9e}
+.route-stop-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;cursor:pointer;list-style:none}
+.route-stop-summary::-webkit-details-marker{display:none}
+.route-stop-summary::after{content:"⌄";flex:0 0 auto;color:#617b8d;font-size:15px;font-weight:900}
+.route-stop-card[open]>.route-stop-summary::after{content:"⌃"}
+.route-stop-head{display:flex;align-items:flex-start;gap:10px;min-width:0}
+.route-stop-number{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#405f75;color:#fff;font-weight:900}
+.route-stop-title{font-size:17px;font-weight:900;line-height:1.35}
+.route-stop-title a{color:#1769aa;text-decoration:none}
+.route-stop-badge{display:inline-block;margin-top:4px;padding:3px 7px;border-radius:999px;background:#f0edf7;color:#705791;font-size:11px;font-weight:850}
+.route-stop-time{margin-top:3px;font-size:13px;font-weight:850;color:#4e5862}
+.route-stop-body{padding:0 14px 14px;border-top:1px dashed #dce4ea}
+.route-stop-desc{margin-top:4px;color:var(--sub);font-size:15px}
+.route-stop-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;color:#66717b;font-size:13px}
+.route-quick-guide{margin-top:11px;padding:10px 11px;border-radius:12px;background:#f7fafc;color:#4f5963;font-size:15px}
+.route-map-link{display:block;margin-top:10px;padding:10px 11px;border:1px solid #dce6ee;border-radius:12px;background:#f7fafc;color:#46677f;text-decoration:none;font-size:15px;font-weight:900}
+.route-quick-guide b{display:block;color:#46677f;margin-bottom:5px}
+.route-quick-guide ul{margin:0;padding-left:19px}
+.route-quick-guide li{margin:5px 0}
+.inside-list{margin-top:11px;padding:10px 11px;border-radius:12px;background:#fff8fa}
+.inside-title{font-size:14px;font-weight:900;color:#9a6170;margin-bottom:7px}
+.inside-item{font-size:15px;color:#555f68;padding:4px 0}
+.route-drive{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;color:#75818b;font-size:14px;font-weight:800}
+.district-label{margin-top:12px;padding:6px 9px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
+.tag{
+  display:inline-block;
+  border-radius:999px;
+  padding:3px 8px;
+  font-size:11px;
+  font-weight:800;
+  margin-right:6px;
+}
+.tag.must{background:var(--green-soft);color:var(--green)}
+.tag.rec{background:var(--amber-soft);color:var(--amber)}
+.tag.opt{background:var(--gray-soft);color:#69717a}
+.tag.time{background:#f5e5df;color:#9b654f}
+.back-btn{
+  border:0;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:999px;
+  padding:8px 12px;
+  font-weight:800;
+  cursor:pointer;
+  margin-bottom:10px;
+}
+.flight{
+  padding:0;
+  overflow:hidden;
+}
+.flight-head{
+  background:var(--blue);
+  color:#fff;
+  padding:11px 15px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:13px;
+}
+.flight-body{padding:17px}
+.airports{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  align-items:center;
+}
+.code{font-size:38px;font-weight:900;line-height:1}
+.clock{font-size:20px;font-weight:800;margin-top:6px}
+.plane{color:var(--sub)}
+.meta{border-top:1px dashed var(--line);margin-top:14px;padding-top:10px}
+.meta div{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-size:14px}
+.meta span{color:var(--sub)}
+.hotel-row{
+  display:block;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  margin-top:12px;
+  color:var(--text);
+  text-decoration:none;
+  background:#fff;
+}
+.hotel-row:active{background:#f8fbfd}
+.hotel-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hotel-date{font-size:18px;color:var(--blue);font-weight:900}
+.hotel-map{font-size:14px;color:#1769aa;font-weight:800}
+.hotel-city{font-size:22px;font-weight:900;margin-top:8px}
+.hotel-city a{color:#1769aa;text-decoration:none;font-weight:900}
+.hotel-platform{
+  display:inline-block;
+  margin-left:9px;
+  padding:3px 8px;
+  border-radius:999px;
+  background:var(--gray-soft);
+  color:var(--sub);
+  font-size:12px;
+  font-weight:700;
+  vertical-align:3px;
+}
+.hotel-parking{margin-top:11px;padding-top:10px;border-top:1px dashed var(--line);font-size:16px;font-weight:750;color:#505862}
+.hotel-parking.pending{color:#9a6b3f}
+.note-row{padding:12px 0;border-bottom:1px dashed var(--line)}
+.note-row:last-child{border-bottom:0}
+.note-row b{display:block}
+.note-row span{font-size:13px;color:var(--sub)}
+.footer{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:calc(10px + env(safe-area-inset-bottom));
+  z-index:20;
+  width:min(780px,calc(100vw - 20px));
+  background:rgba(255,255,255,.97);
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(44,57,72,.15);
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:3px;
+  padding:7px;
+  backdrop-filter:blur(12px);
+}
+.footer button{
+  border:0;
+  border-radius:15px;
+  background:transparent;
+  color:var(--sub);
+  padding:7px 3px;
+  cursor:pointer;
+}
+.footer button.active{color:var(--blue);font-weight:900;background:var(--blue-soft)}
+.footer span{display:block;font-size:22px;line-height:1.1}
+.footer small{display:block;font-size:12px;margin-top:4px;white-space:nowrap}
+@media(max-width:560px){
+  .hero-top{align-items:flex-start}
+  .stop{grid-template-columns:92px minmax(0,1fr);gap:12px}
+  .arrival{font-size:14px}
+  .route-strip{align-items:flex-start;flex-wrap:wrap}
+  .route-strip .arrow{width:100%;padding-left:3px}
+  .route-stop-summary{align-items:flex-start}
+  .route-stop-summary::after{content:"⌄"}
+  .route-stop-card[open]>.route-stop-summary::after{content:"⌃"}
+  .place-guide-item summary{grid-template-columns:auto minmax(0,1fr) auto;gap:8px}
+  .place-guide-time{font-size:12px}
+  .place-guide-item summary::after{grid-column:auto;grid-row:auto}
+  .place-guide-body{padding:12px}
+  .coffee-item{align-items:flex-start}
+  .flow-row{grid-template-columns:88px minmax(0,1fr);gap:9px}
+  .flow-time{font-size:12px}
+}
+
+.rental-card{padding:0;overflow:hidden}
+.rental-head{background:var(--blue);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;gap:10px}
+.rental-body{padding:17px}
+.rental-title{font-size:21px;font-weight:900}
+.rental-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.rental-links a{color:#1769aa;text-decoration:none;font-weight:800;background:var(--blue-soft);padding:7px 10px;border-radius:10px}
+.rental-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.rental-box{border:1px solid var(--line);border-radius:14px;padding:12px}
+.rental-box span{display:block;color:var(--sub);font-size:12px}
+.rental-box b{display:block;font-size:16px;margin-top:2px}
+.rental-more{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+.rental-more summary{cursor:pointer;font-weight:800}
+@media(max-width:560px){.rental-grid{grid-template-columns:1fr}}
+
+
+.must-do{margin:14px 0 4px;padding:13px;border-radius:15px;background:var(--green-soft)}
+.must-do-title{font-size:15px;font-weight:900;color:var(--green);margin-bottom:8px}
+.must-do .mission-list{display:grid;gap:8px}
+.must-do .mission-item{font-size:15px;font-weight:750}
+.quick-rates{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.quick-rates button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;cursor:pointer}
+.plan-label{
+  display:inline-block;
+  margin:16px 0 0;
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--blue-soft);
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+}
+@media(max-width:560px){.plan-btn{padding:10px 6px;font-size:13px}}
+
+
+.audit-box{
+  margin:12px 0;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid #ead9bd;
+  background:#fff9ef;
+  color:#795b31;
+  font-size:13px;
+}
+.audit-status{
+  display:inline-block;
+  margin-left:6px;
+  padding:2px 7px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+  vertical-align:2px;
+}
+.audit-status.confirmed{background:#e9f2ec;color:#4e7e64}
+.audit-status.estimate{background:#f6eee2;color:#96703c}
+.audit-status.pending{background:#f1f3f5;color:#6f7782}
+.fixed-event{
+  border-left:4px solid var(--blue);
+  padding-left:12px;
+}
+
+
+.day-brief{
+  margin:14px 0 2px;
+  display:grid;
+  gap:9px;
+}
+.brief-block{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:12px 13px;
+  background:#fbfcfd;
+}
+.brief-title{
+  font-size:12px;
+  color:var(--sub);
+  font-weight:900;
+  margin-bottom:7px;
+}
+.brief-tags{display:flex;gap:6px;flex-wrap:wrap}
+.brief-tag{
+  display:inline-block;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:11px;
+  background:var(--gray-soft);
+  color:#59616a;
+}
+.mission-list{display:grid;gap:5px}
+.mission-item{display:flex;gap:8px;align-items:center;font-size:13px}
+.mission-item input{width:17px;height:17px;accent-color:var(--green)}
+.mission-item input:checked + span{text-decoration:line-through;color:#9ca3aa}
+.area-guide-link{
+  display:inline-block;
+  margin-top:8px;
+  padding:8px 11px;
+  border-radius:10px;
+  background:var(--blue);
+  color:#fff!important;
+  font-size:12px;
+  font-weight:900;
+}
+.plan-card-note{
+  margin:8px 0 0;
+  padding:8px 10px;
+  border-radius:10px;
+  background:var(--amber-soft);
+  color:#805a31;
+  font-size:12px;
+}
+
+
+.currency-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:12px;
+  align-items:end;
+  margin-top:14px;
+}
+.currency-field label{display:block;font-size:12px;color:var(--sub);font-weight:800;margin-bottom:6px}
+.currency-field input{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 13px;
+  background:#fff;
+  color:var(--text);
+  font-size:18px;
+  font-weight:800;
+}
+.currency-swap{
+  border:0;
+  background:var(--blue-soft);
+  color:var(--blue);
+  border-radius:999px;
+  width:42px;
+  height:42px;
+  cursor:pointer;
+  font-weight:900;
+}
+.rate-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.rate-row input{
+  width:120px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 10px;
+  font-weight:800;
+}
+.rate-btn{
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  border-radius:10px;
+  padding:9px 12px;
+  cursor:pointer;
+  font-weight:800;
+}
+.rate-status{font-size:12px;color:var(--sub);margin-top:8px}
+@media(max-width:560px){
+  .currency-grid{grid-template-columns:1fr}
+  .currency-swap{transform:rotate(90deg);justify-self:center}
+  .compact-option-row{grid-template-columns:1fr;gap:4px}
+  .compact-option-links{display:flex;flex-direction:column;gap:4px}
+  .compact-option-separator{display:none}
+}
+
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">TRAVEL OS 3.0・MINIMAL</div>
+        <h1>2026 北海道</h1>
+        <div class="sub">9/16（三）– 9/20（日）｜5天4夜自駕</div>
+      </div>
+      <div class="countdown" id="countdown">
+        <strong>計算中</strong>
+        <span>距離出發</span>
+      </div>
+    </div>
+
+    <div class="weather" id="weather">
+      <div class="weather-main">
+        <div class="weather-icon" id="weatherIcon">⌛</div>
+        <div>
+          <div class="weather-temp" id="weatherTemp">讀取中</div>
+          <div class="sub" id="weatherText">札幌今日天氣</div>
+        </div>
+      </div>
+      <div class="weather-meta" id="weatherMeta"></div>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-target="home">首頁</button>
+    <button class="tab" data-target="flights">航班</button>
+    <button class="tab" data-target="rental">租車</button>
+    <button class="tab" data-target="lodging">住宿</button>
+    <button class="tab" data-target="currency">匯率</button>
+  </nav>
+
+  <section id="home" class="panel active">
+    <article class="card">
+      <h2 style="margin:0 0 12px">北海道 5 日</h2>
+      <div class="day-list">
+
+        <div class="day-preview" data-day="day1">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day"><span class="preview-date">9/16（三）</span><span class="preview-day-label">Day 1</span></div>
+              <div class="preview-route">✈ 新千歲 → 🛍️ 北廣島 Outlet → 👟 Sports Depo → 🌃 札幌</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day2">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day"><span class="preview-date">9/17（四）</span><span class="preview-day-label">Day 2</span></div>
+              <div class="preview-route">🗿 頭大佛 → 🏛️ 豐平館 → 🦀 場外市場 → 🌊 小樽</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day3">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day"><span class="preview-date">9/18（五）</span><span class="preview-day-label">Day 3</span></div>
+              <div class="preview-route">☕ 小樽 → 🍄 仁木 → 🐄 二世谷 → 🎆 洞爺湖</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day4">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day"><span class="preview-date">9/19（六）</span><span class="preview-day-label">Day 4</span></div>
+              <div class="preview-route">🚠 有珠山 → 🐟 虎杖浜 → 🏨 苫小牧</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-preview" data-day="day5">
+          <div class="preview-top">
+            <div>
+              <div class="preview-day"><span class="preview-date">9/20（日）</span><span class="preview-day-label">Day 5</span></div>
+              <div class="preview-route">🚗 苫小牧 → ✈️ 新千歲機場</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </section>
+
+  <section id="dayDetail" class="panel"></section>
+
+  <section id="flights" class="panel">
+    <article class="card flight">
+      <div class="flight-head"><span>去程｜IT234</span><span>2026/9/16</span></div>
+      <div class="flight-body">
+        <div class="airports">
+          <div><div class="code">TPE</div><div class="clock">06:20</div></div>
+          <div class="plane">✈</div>
+          <div><div class="code">CTS</div><div class="clock">11:05</div></div>
+        </div>
+        <div class="meta">
+          <div><span>託運行李</span><b>20 公斤</b></div>
+          <div><span>座位</span><b></b></div>
+          <div><span>機上餐</span><b>油蔥雞肉飯</b></div>
+          <div><span>訂位代號</span><b></b></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card flight">
+      <div class="flight-head"><span>回程｜IT235</span><span>2026/9/20</span></div>
+      <div class="flight-body">
+        <div class="airports">
+          <div><div class="code">CTS</div><div class="clock">12:05</div></div>
+          <div class="plane">✈</div>
+          <div><div class="code">TPE</div><div class="clock">15:20</div></div>
+        </div>
+        <div class="meta">
+          <div><span>託運行李</span><b>40 公斤</b></div>
+          <div><span>座位</span><b></b></div>
+          <div><span>訂位代號</span><b></b></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  
+  <section id="rental" class="panel">
+    <article class="card rental-card">
+      <div class="rental-head">
+        <span>Toyota Rent a Car</span>
+        <span>預約完成</span>
+      </div>
+      <div class="rental-body">
+        <div class="rental-title">新千歲機場鈴蘭店</div>
+        <div class="sub">預約號碼</div>
+
+        <div class="rental-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC" target="_blank">新千歲機場鈴蘭店 ↗</a>
+          <a href="tel:+81123240100">撥打 0123-24-0100</a>
+        </div>
+
+        <div class="rental-grid">
+          <div class="rental-box"><span>取車</span><b>9/16 12:00</b><span>到着便 IT234</span></div>
+          <div class="rental-box"><span>還車</span><b>9/20 09:00</b><span>出発便 IT235</span></div>
+          <div class="rental-box"><span>車輛</span><b>C2 等級</b><span>AT／禁菸</span></div>
+          <div class="rental-box"><span>租車總額</span><b></b><span></span></div>
+        </div>
+
+        <div class="meta">
+          <div><span>完整套餐</span><b>已包含</b></div>
+          <div><span>4WD</span><b>不指定</b></div>
+          <div><span>雪胎</span><b>不需要</b></div>
+          <div><span>ETC／JAF</span><b>依現場庫存；無法提供則退款</b></div>
+        </div>
+
+        <details class="rental-more">
+          <summary>更多預約與費用資訊</summary>
+          <div class="meta">
+            <div><span>姓名</span><b></b></div>
+            <div><span>基本費用</span><b></b></div>
+            <div><span>信用卡折扣</span><b></b></div>
+            <div><span>配件費用</span><b></b></div>
+            <div><span>內含消費稅</span><b></b></div>
+          </div>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section id="lodging" class="panel">
+    <article class="card">
+      <h2 style="margin:0">住宿</h2>
+
+      <div class="hotel-row">
+        <div class="hotel-top"><span class="hotel-date">9/16（三）</span></div>
+        <div class="hotel-city"><a href="https://www.google.com/maps/search/?api=1&query=5-chōme-2-10+Kotoni+2+Jō,+Nishi-ku,+Sapporo,+Hokkaido+063-0812" target="_blank" rel="noopener">🏨 札幌住宿 ↗</a><span class="hotel-platform">Airbnb</span></div>
+        <div class="hotel-parking">🅿️ 停車費：¥1,500／晚｜現金付款</div>
+      </div>
+
+      <div class="hotel-row">
+        <div class="hotel-top"><span class="hotel-date">9/17（四）</span></div>
+        <div class="hotel-city"><a href="https://www.google.com/maps/search/?api=1&query=1-19+Shinonomechō,+Otaru,+Hokkaido+047-0026" target="_blank" rel="noopener">🏨 小樽住宿 ↗</a><span class="hotel-platform">Airbnb</span></div>
+        <div class="hotel-parking">🅿️ 停車費：免費</div>
+      </div>
+
+      <div class="hotel-row">
+        <div class="hotel-top"><span class="hotel-date">9/18（五）</span></div>
+        <div class="hotel-city"><a href="https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721" target="_blank" rel="noopener">🏨 洞爺湖住宿 ↗</a><span class="hotel-platform">Airbnb</span></div>
+        <div class="hotel-parking">🅿️ 停車費：免費</div>
+      </div>
+
+      <div class="hotel-row">
+        <div class="hotel-top"><span class="hotel-date">9/19（六）</span></div>
+        <div class="hotel-city"><a href="https://www.google.com/maps/search/?api=1&query=4+Chome-3-1+Omotemachi,+Tomakomai,+Hokkaido+053-0022" target="_blank" rel="noopener">🏨 苫小牧住宿 ↗</a><span class="hotel-platform">Trip.com</span></div>
+        <div class="hotel-parking">🅿️ 停車費：¥600／晚｜現金付款</div>
+      </div>
+    </article>
+  </section>
+
+  <section id="currency" class="panel">
+    <article class="card">
+      <h2 style="margin:0">💴 日圓匯率工具</h2>
+      <div class="currency-grid">
+        <div class="currency-field">
+          <label for="jpyAmount">日圓 JPY</label>
+          <input id="jpyAmount" type="number" inputmode="decimal" min="0" step="1" placeholder="例如 5000">
+        </div>
+        <div class="currency-field">
+          <label for="twdAmount">結果 TWD</label>
+          <input id="twdAmount" type="number" inputmode="decimal" readonly>
+        </div>
+      </div>
+
+      <div class="rate-row">
+        <span>1 JPY =</span>
+        <input id="jpyRate" type="number" inputmode="decimal" min="0.001" step="0.0001" value="0.2200" readonly>
+        <span>TWD</span>
+        <button class="rate-btn" id="refreshRate" type="button">更新</button>
+      </div>
+      <div class="quick-rates"><button type="button" data-jpy="1000">¥1,000</button><button type="button" data-jpy="3000">¥3,000</button><button type="button" data-jpy="5000">¥5,000</button><button type="button" data-jpy="10000">¥10,000</button></div>
+      <div class="rate-status" id="rateStatus" aria-live="polite"></div>
+    </article>
+  </section>
+
+</main>
+
+<nav class="footer" aria-label="主要導覽">
+  <button class="active" data-target="home"><span>🗓️</span><small>行程總表</small></button>
+  <button data-target="flights"><span>✈️</span><small>航班</small></button>
+  <button data-target="rental"><span>🚗</span><small>租車</small></button>
+  <button data-target="lodging"><span>🏨</span><small>住宿</small></button>
+  <button data-target="currency"><span>¥</span><small>匯率</small></button>
+</nav>
+
+<script>
+const dayData = {
+  day1: {
+    label:"Day 1｜9/16（三）",
+    highlights:["北廣島 Outlet","Sports Depo 三品牌試鞋","札幌夜間散步","北海道第一支冰品"],
+    missions:["完成取車","Outlet主要採購","試穿 On／HOKA／Salomon","入住札幌"],
+    foodFocus:["札幌農学校牛奶霜淇淋","道之驛南瓜咖哩麵包"],
+    route:"新千歲 → 北廣島 Outlet → Sports Depo → 札幌",
+    hotel:"札幌住宿",
+    stops:[
+      {time:"11:05–12:00",name:"新千歲機場／取車",note:"入境、領行李，前往鈴蘭店。",stay:"約 55 分",next:"下一段約 30 分"},
+      {time:"12:30–13:20",name:"花ロードえにわ",note:"中午道之驛用餐，品嚐人氣南瓜咖哩麵包。",stay:"約 50 分",next:"下一段約 15 分"},
+      {time:"13:35–18:50",name:"三井 Outlet 札幌北廣島",note:"今天主要採購行程；18:50離場，保留完整試鞋時間。",stay:"約 5 小時 15 分",next:"開車約 2–3 分"},
+      {time:"18:55–20:15",name:"Sports Depo 大曲店",note:"集中試穿 On、HOKA、Salomon；實際品牌與鞋款庫存依現場為準。",stay:"約 80 分",next:"前往札幌市區約 35 分"},
+      {time:"20:50–21:35",name:"札幌市區／狸小路六丁目 → 二丁目",note:"補吃居酒屋，沿商店街步行逛街。",stay:"約 45 分",next:"前往住宿約 10 分"},
+      {time:"21:45",name:"札幌住宿",note:"Check-in。",stay:"",next:""}
+    ],
+    areas:[
+      {
+        title:"惠庭",
+        note:"Day 1 中午短停",
+        shops:[
+          ["推薦","花ロードえにわ","道之驛午餐、南瓜咖哩麵包。","https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC"]
+        ]
+      },
+      {
+        title:"北廣島",
+        note:"Day 1 主要購物區",
+        layout:"route",
+        shops:[
+          ["必去","三井 Outlet 札幌北廣島","採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島","主要行程",{title:"🧭 採買指南｜建議先逛 164、123",items:["進入 Outlet 後，優先前往店號 164、123。","完成重點採買後，再依原定路線逛其他店家。","18:50 前離場，保留 Sports Depo 三品牌試鞋時間。"]}],
+          ["Guide","查看 Outlet 店號簡圖","依官方樓層圖校正店號；Clover 1F → Clover 2F → Maple 2F。","現場對照使用","guides/kitahiroshima-outlet/index.html","主要行程"],
+          ["冰品必吃","札幌農学校 札幌北広島店","酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=札幌農学校+札幌北広島店","Outlet冰品"],
+          ["冰品備選","MIL PRESSO","北海道ロコファームビレッジ內的北海道素材霜淇淋。","10:00–20:00","https://www.google.com/maps/search/?api=1&query=MIL+PRESSO+三井アウトレットパーク札幌北広島","Outlet冰品"],
+          ["三品牌試鞋","Sports Depo 大曲店／スポーツデポ大曲店","地址：北海道北広島市大曲幸町2丁目8番地2；有停車場、可免稅。Salomon 經銷資格已有官方資料；On、HOKA 與指定鞋款請以現場庫存為準。","10:00–20:30｜011-377-1477","https://www.google.com/maps/search/?api=1&query=スポーツデポ大曲店","Outlet 北側｜開車約2–3分",{title:"👟 試鞋指南｜On・HOKA・Salomon",note:"低足弓以穩定、底盤寬度與長時間步行舒適度為主要比較；不要只看第一腳的柔軟感。",table:[["鞋款","適合度","試穿重點"],["HOKA Gaviota 6","★★★★★","底盤寬、穩定、緩震強；優先測長時間城市步行。"],["HOKA Arahi 8","★★★★☆","有穩定支撐且較輕；比較後足固定感。"],["On Cloudflyer／Cloudrunner","★★★★","支撐與穿搭均衡、腳感偏紮實。"],["Salomon XA Pro 3D V9","★★★★","底盤穩、抗扭強；適合步道及不平路面。"]],items:["依序試：Gaviota 6 → Arahi 8 → Cloudflyer／Cloudrunner → XA Pro 3D V9。","穿旅行會用的襪子，雙腳都試並走動至少 5–10 分鐘。","指定鞋款與尺碼不保證有貨，現場可請店員找同支撐類型替代款。"]}]
+        ]
+      },
+      {
+        title:"札幌晚上",
+        note:"先沿狸小路採買，再依序前往兩家消夜。",
+        shops:[
+          ["備選","BicCamera Select 札幌狸小路店","補行動電源、充電線、轉接頭、記憶卡與旅行小電器。","10:00–23:00","https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店","🛍️ 採買",null,"狸小路5丁目"],
+          ["必去","TNOC THE STORE SAPPORO T4","買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。","10:00–21:00","https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4","🛍️ 採買",null,"狸小路4丁目"],
+          ["第一站","海味はちきょう別亭 おやじ","北海道海鮮居酒屋。","依當日營業時間","https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il","🌙 消夜",null,"南3條西3丁目"],
+          ["第二站","迴轉壽司 根室花丸 COCONO SUSUKINO店","根室海鮮握壽司、花咲蟹與當日推薦品項。","依當日營業時間","https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il","🌙 消夜",null,"南4條西4丁目"]
+        ]
+      }
+    ]
+  },
+  day2:{
+    label:"Day 2｜9/17（四）",
+    highlights:["頭大佛","札幌場外市場","北海道大學","小樽港町"],
+    missions:["頭大佛參觀","場外市場海鮮早午餐","北海道大學散步與北大マルシェ","小樽 Muse晚餐"],
+    foodFocus:["場外市場海鮮","北大マルシェ牛奶／冰淇淋","小樽冰品候選"],
+    route:"琴似住宿 → 頭大佛 → 場外市場 → 北海道大學 → 小樽",
+    hotel:"小樽住宿",
+    stops:[
+      {time:"08:00",name:"札幌住宿出發",note:"由琴似住宿前往頭大佛，預留市區交通與停車時間。",stay:"",next:"開車約 45 分"},
+      {time:"08:45–09:45",name:"頭大佛",note:"參觀安藤忠雄建築與園區。",stay:"約 60 分",next:"開車約 35–40 分"},
+      {time:"10:25–11:20",name:"札幌場外市場",note:"海鮮早午餐與簡單採買。",stay:"約 55 分",next:"前往北海道大學約 10–15 分"},
+      {time:"11:35–13:00",name:"北海道大學／北大マルシェ Café & Labo",note:"校園散步，品嚐牛奶、冰淇淋與甜點；停車建議 タイムズ北９西４。",stay:"約 85 分",next:"13:00 出發前往小樽"},
+      {time:"13:00–14:00",name:"前往小樽",note:"由北海道大學前往小樽住宿附近。",stay:"開車約 50–60 分",next:"抵達後停車、放行李"},
+      {time:"約 14:00–14:30",name:"小樽住宿點／停車",note:"放行李後改為步行。",stay:"約 30 分",next:"後續步行"},
+      {time:"14:30–18:15",name:"堺町通 → 北一硝子三号館 → 小樽運河",note:"甜點、玻璃工藝、選物，最後接夕景與夜景。",stay:"整段約 3 小時 45 分",next:"18:30 已預約晚餐"},
+      {time:"18:30（已預約）",name:"小樽 Muse",note:"燭光洋食餐廳，已確認 Day 2 晚餐預約。",stay:"約 60–90 分",next:"步行返回住宿"}
+    ],
+    areas:[
+      {
+        title:"札幌",
+        layout:"place-guide",
+        guideTitle:"🅿️ 北海道大學停車與 Café",
+        drives:["🚗 約 35–40 分鐘","🚗 約 10–15 分鐘"],
+        shops:[
+          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps?cid=15134224251499317861",""],
+          ["2","札幌場外市場","10:25–11:20","","https://maps.app.goo.gl/MWxtBL2Lwo6FDcDG8",""],
+          ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=北海道大学+北大マルシェ+Café%26Labo","13:00 出發小樽｜🅿️ タイムズ北９西４"]
+        ],
+        coffee:[
+          ["タイムズ北９西４","4 Chome-1 Kita 9 Jonishi, Kita Ward, Sapporo, Hokkaido 060-0809 日本","https://www.google.com/maps/search/?api=1&query=タイムズ北９西４"],
+          ["北大マルシェ Café & Labo","牛奶、冰淇淋、甜點","https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo"]
+        ]
+      },
+      {
+        title:"【小樽】",
+        note:"從 1-19 Shinonomechō 出發，由近到遠。",
+        layout:"walking-guide",
+        shops:[
+          ["①","LeTAO 本店","Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。","09:00–18:00（各店略有差異）","https://www.google.com/maps/search/?api=1&query=LeTAO+小樽","甜點選購"],
+          ["②","北菓樓 小樽本館","妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","甜點選購"],
+          ["③","六花亭 小樽運河店","Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。","營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店","甜點選購"],
+          ["④","北一硝子三号館","玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。","10:00–17:30（L.O.17:15）","https://www.google.com/maps/search/?api=1&query=北一硝子三号館","玻璃工藝"],
+          ["⑤","ポプラファーム 小樽店","サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。","11:00–17:30（L.O.17:00）","https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店","冰品備選"],
+          ["⑥","アイスクリームパーラー美園","自家製傳統冰淇淋、聖代或冰淇淋蘇打。","11:00–17:00","https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽","老舖冰品"],
+          ["⑦","小樽運河","拍攝石造倉庫、煤氣燈與水面倒影。","全天開放","https://www.google.com/maps/search/?api=1&query=小樽運河","夕景"],
+          ["⑧","小樽 Muse","18:30 已預約；看完運河後前往，主打漢堡排、蛋包飯等洋食。","預約 18:30｜17:00–20:30（L.O.20:00）；週一休","https://www.google.com/maps/search/?api=1&query=小樽+Muse","已預約晚餐"]
+        ]
+      }
+    ]
+  },
+  day3:{
+    label:"Day 3｜9/18（五）",
+    highlights:["北一ホール","きのこ王国 仁木店","高橋牧場","望羊蹄晚餐","洞爺湖煙火船"],
+    missions:["12:30退房","仁木短停","外帶EBIJIN漢堡","18:30望羊蹄晚餐","20:15前往煙火船碼頭"],
+    foodFocus:["EBIJIN鹿肉漢堡","Milk Kobo牛奶霜淇淋","望羊蹄漢堡排套餐"],
+    route:"小樽 → 余市 → 仁木 → 俱知安 → 二世谷 → 洞爺湖",
+    hotel:"洞爺湖溫泉街",
+    stops:[
+      {time:"07:30–12:30",name:"小樽｜住宿停車・步行行程",steps:[["07:30–08:30","小樽運河"],["09:00–10:30","北一ホール"],["10:40–11:00","サツドラ小樽堺町店"],["11:00–11:40","外帶漢堡"],["11:40–12:30","返回住宿、整理行李並退房"]],stay:"整段約 5 小時",next:"12:30 退房，前往仁木約 40–45 分",collapsible:true},
+      {time:"13:15–13:35",name:"きのこ王国 仁木店",note:"洗手間、駕駛休息，可喝蘑菇湯或簡短採買；若延誤縮短為10–15分鐘。",stay:"約 20 分",next:"前往俱知安約 50–55 分"},
+      {time:"14:30–15:20",name:"MARKIE CURRY",note:"點雞腿野菜湯咖哩，可選辣度與飯量。",stay:"約 50 分",next:"前往高橋牧場約 20–25 分"},
+      {time:"15:45–16:25",name:"ニセコ高橋牧場 Milk Kobo",note:"吃牛奶霜淇淋；可買飲用優格、乳酪塔、泡芙與伴手禮。",stay:"約 40 分",next:"依時間決定是否停 fanfun"},
+      {time:"16:35–16:50",name:"革と珈琲 fanfun（可選）",note:"買皮革小物或咖啡；16:35前未抵達就取消。",stay:"最多 15 分",next:"直接前往洞爺湖"},
+      {time:"17:55–21:20",name:"洞爺湖｜晚餐・煙火・住宿",steps:[["17:55","洞爺湖住宿 Check-in"],["18:05","花火觀賞船購票"],["18:10–18:25","Seicomart 洞爺田中店"],["18:30–19:40","レストラン望羊蹄"],["19:40–20:00","洞爺湖溫泉街散步"],["20:00–20:10","返回住宿換浴衣"],["20:15","前往花火船碼頭"],["20:35–21:20","花火觀賞船"]],next:"結束後返回住宿",collapsible:true}
+    ],
+    areas:[
+      {
+        title:"小樽",
+        note:"住宿停車後步行；12:30 整理完成並退房",
+        shops:[
+          ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール",""],
+          ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",""],
+          ["__BURGER__","漢堡（二選一）",[
+            ["EBIJIN 小樽店","主選：後志產鹿肉漢堡，可外帶；沒有專用停車場。","平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休","https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC"],
+            ["CONTAINER BURGER 3-SUN","備選：牛肉漢堡、薯條與無酒精啤酒；停車較方便。","11:00–19:00（L.O.18:30）；臨時休業需確認","https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"]
+          ]]
+        ]
+      },
+      {
+        title:"途中停留・用餐",
+        note:"",
+        shops:[
+          ["休息站","きのこ王国 仁木店","洗手間、駕駛休息，可喝蘑菇湯。","","https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店",""],
+          ["吃飯","MARKIE CURRY／マーキーカリー","雞腿野菜湯咖哩，可選辣度與飯量。","","https://www.google.com/maps/search/?api=1&query=MARKIE+CURRY+倶知安",""]
+        ]
+      },
+      {
+        title:"二世谷停留",
+        note:"",
+        shops:[
+          ["","ニセコ高橋牧場 Milk Kobo","牛奶霜淇淋。","","https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場+ミルク工房",""],
+          ["","☕ 革と珈琲 fanfun","咖啡・皮革小物，有時間再停。","","https://www.google.com/maps/search/?api=1&query=革と珈琲+fanfun+ニセコ",""]
+        ]
+      },
+      {
+        title:"前往洞爺湖途中｜有空二選一",
+        note:"",
+        shops:[
+          ["","道の駅 230ルスツ","休息站。","","https://www.google.com/maps/search/?api=1&query=道の駅+230ルスツ",""],
+          ["","🍦 Lake Hill Farm","霜淇淋。","","https://www.google.com/maps/search/?api=1&query=レークヒル・ファーム+花和127",""]
+        ]
+      },
+      {
+        title:"洞爺湖",
+        note:"",
+        shops:[
+          ["","洞爺湖住宿","抵達、Check-in。","","https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721",""],
+          ["","Seicomart 洞爺田中店","逛超商、簡單採買。","","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen",""],
+          ["","わかさいも本舗 洞爺湖本店","採買伴手禮、順逛周邊。","","https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店",""],
+          ["","レストラン望羊蹄","晚餐。","","https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖",""],
+          ["","洞爺湖花火船碼頭","購票、候船與登船。","","https://www.google.com/maps/search/?api=1&query=洞爺湖+花火鑑賞船+乗り場",""]
+        ]
+      }
+    ]
+  },
+  day4:{
+    label:"Day 4｜9/19（六）",
+    route:"有珠山 → 虎杖浜 → 苫小牧",
+    hotel:"苫小牧住宿",
+    highlights:["08:15有珠山首班纜車","🐟 虎杖浜海鮮午餐","苫小牧晚餐四選一"],
+    missions:["07:40前抵達纜車站","搭08:15推估首班","選定虎杖浜午餐","選一間苫小牧晚餐"],
+    foodFocus:["虎杖浜海鮮午餐","鱈魚子伴手禮"],
+    stops:[
+      {time:"07:20–09:51",name:"有珠山纜車｜上山・展望・下山",steps:[["07:20–07:40","洞爺湖住宿出發，前往有珠山纜車山麓站"],["07:40–08:10","停車、購票，08:10 前抵達乘車處"],["08:15–08:21","搭乘推估首班纜車上山（單程約 6 分）"],["08:21–09:35","山頂展望台與步道，09:35 前返回山頂站"],["09:45–09:51","搭乘纜車下山，班次依現場運行調整"]],next:"10:00 開車前往虎杖浜",collapsible:true},
+      {time:"10:00–11:00",name:"有珠山 → 虎杖浜",note:"車程依當日導航與路況調整。",stay:"估計約60分",next:"虎杖浜海鮮午餐"},
+      {time:"11:00–12:30",name:"虎杖浜海鮮午餐",note:"時間為推估；たっちゃん食堂或 Kojohama Café，依現場營業與排隊狀況決定。",stay:"約 60–90 分",next:"沿途採買水產"},
+      {time:"13:30–16:30",name:"虎杖浜沿途採買 → 苫小牧霜淇淋",steps:[["13:30–14:30","虎杖浜沿途水產｜依南往北方向停留たらこ家與かんばら，不必全部買（約 30–60 分）"],["14:30–15:30","虎杖浜 → 苫小牧｜車程依當日導航與路況調整（估計約 60 分）"],["15:30–16:30","幸せの生ソフト プチラパン｜吃牛奶生霜淇淋，口味與配料以當日菜單為準（最多 60 分）"]],next:"前往住宿",collapsible:true},
+      {time:"17:00左右",name:"苫小牧住宿 Check-in",note:"停車、放行李。",stay:"約30分",next:"晚餐"},
+      {time:"18:00–20:30",name:"苫小牧晚餐（四選一）",note:"依料理、營業時間與訂位狀況選一間。",stay:"約60–90分",next:"藥妝、超商或大型採買"}
+    ],
+    areaOrder:["有珠山","虎杖浜海鮮","晚餐","晚間採買","冰品"],
+    areas:[
+      {
+        title:"有珠山",
+        note:"上午主行程；依天氣與風勢決定是否搭乘",
+        shops:[
+          ["主行程","有珠山ロープウェイ","目前官方資料顯示首班08:15、約每15分鐘一班、單程約6分鐘；2026年9月19日班次仍須出發前確認。","目前參考 08:15–17:45","https://www.google.com/maps/search/?api=1&query=有珠山ロープウェイ","有珠山"]
+        ]
+      },
+      {
+        title:"🍴 虎杖浜海鮮午餐",
+        note:"午餐選一；吃完後水產店依南往北順路停留",
+        shops:[
+          ["午餐候選","白老たっちゃん食堂","點海鮮丼、烤魚定食或當日水產料理。","10:00–14:00；火、三休","https://www.google.com/maps/search/?api=1&query=白老たっちゃん食堂","虎杖浜"],
+          ["午餐候選","Kojohama Café／虎杖浜カフェ","點咖啡、甜點或當日輕食，菜單以現場為準。","出發前確認","https://www.google.com/maps/search/?api=1&query=虎杖浜カフェ","虎杖浜"],
+          ["水產伴手禮","たらこ家 虎杖浜","買虎杖浜鱈魚子、明太子與冷藏水產，食堂可點鱈魚子飯。","商店約09:00–17:00；週四休","https://www.google.com/maps/search/?api=1&query=たらこ家+虎杖浜","虎杖浜"],
+          ["水產伴手禮","虎杖浜たらこのかんばら直売所","無著色鱈魚子、真空包與送禮選擇。","09:00–16:30；週三休","https://www.google.com/maps/search/?api=1&query=虎杖浜たらこのかんばら","虎杖浜"]
+        ]
+      },
+      {
+        title:"🍽️ 晚餐（四選一）",
+        note:"依料理、營業時間與訂位狀況選一間",
+        shops:[
+          ["壽司／海鮮","海鮮・鮨 みね","壽司、生魚片與海鮮料理；建議訂位。","星期六 17:00–23:00","https://www.google.com/maps/search/?api=1&query=海鮮+鮨+みね+苫小牧市表町3丁目2-2",""],
+          ["蕎麥","香るつけ蕎麦 蕎麦花 王子町店","つけ蕎麦、木の実せいろ與蕎麥料理。","星期六 17:30–21:00（L.O.20:30）","https://www.google.com/maps/search/?api=1&query=香るつけ蕎麦+蕎麦花+王子町店",""],
+          ["會席／串料理","串坊・会席料理 たいしょう","會席料理、串料理與生魚片；建議訂位。","星期六 17:00–22:00","https://www.google.com/maps/search/?api=1&query=串坊+会席料理+たいしょう+苫小牧",""],
+          ["海鮮／爐端燒","地魚・活魚・炉端焼き 魚次郎","地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。","星期六 17:00–22:30（L.O.22:00）","https://www.google.com/maps/search/?api=1&query=地魚+活魚+炉端焼き+魚次郎+苫小牧",""]
+        ]
+      },
+      {
+        title:"🛍️ 晚間採買（依需求選擇）",
+        note:"藥妝、便利商店與大型採買集中在同一欄，依需要前往",
+        shops:[
+          ["💊 藥妝／藥局","ツルハドラッグ 苫小牧王子店","補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。","09:00–22:00","https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店",""],
+          ["🏪 便利商店","セイコーマート 苫小牧表町店","補飲料、早餐與北海道限定商品。","06:00–24:00","https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店","",{title:"🏪 Secoma 必買指南",note:"北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",items:["Secoma 北海道牛奶","夕張哈密瓜冰棒","HOT CHEF 炸雞便當","北海道玉米濃湯","北海道馬鈴薯洋芋片","北海道牛奶霜淇淋","起司奶油夾心歐姆蛋蛋糕捲"]}],
+          ["🛒 大型採買","MEGAドン・キホーテ 苫小牧店","補零食、飲料、藥妝、盥洗用品與北海道伴手禮。","09:00–24:00","https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店",""]
+        ]
+      },
+      {
+        title:"🍦 苫小牧冰品",
+        note:"下午前往プチラパン",
+        shops:[
+          ["冰品","幸せの生ソフト プチラパン","吃牛奶生霜淇淋，口味與配料以當日菜單為準。","11:00–18:00；不定休","https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン",""]
+        ]
+      }
+    ]
+  },
+  day5:{
+    label:"Day 5｜9/20（日）",
+    highlights:["09:00還車","新千歲機場最後採買"],
+    missions:["準時還車","完成報到與安檢","購買冷藏伴手禮"],
+    foodFocus:["機場最後一餐","北海道最後一支冰品（有時間）"],
+    route:"苫小牧 → 新千歲機場",
+    hotel:"返程",
+    stops:[
+      {time:"07:40 左右",name:"苫小牧住宿出發",note:"還車預約固定為09:00，必須倒推時間；此出發時間仍需依飯店位置與導航微調。",stay:"",next:""},
+      {time:"08:00–08:20",name:"道の駅ウトナイ湖（可略過）",note:"只能短停約15–20分鐘；若出發延誤、路況不佳或需加油，直接取消。",stay:"最多 20 分",next:"最晚約08:25離開"},
+      {time:"08:45–09:00",name:"新千歲機場鈴蘭店還車",note:"預約還車時間09:00；原網頁寫09:20抵達是錯誤，已修正。",stay:"依店家流程",next:"接駁前往機場"},
+      {time:"09:30–11:15",name:"新千歲機場補貨／用餐",note:"預留接駁、報到、安檢與購物時間；餐廳是否排隊需現場判斷。",stay:"約 90 分",next:"準備登機"},
+      {time:"12:05",name:"IT235 新千歲 → 桃園",note:"回程航班。",stay:"",next:""}
+    ],
+    areas:[
+      {
+        title:"苫小牧至機場",
+        note:"Day 5 上午",
+        shops:[
+          ["短停","道の駅ウトナイ湖","買 B1 とんちゃん豬肉包、北寄貝相關食品與苫小牧伴手禮。","營業時間依設施；戶外區域可早到","https://www.google.com/maps/search/?api=1&query=道の駅ウトナイ湖","ウトナイ湖"],
+          ["還車","トヨタレンタカー 新千歳空港すずらん店","預約還車時間 09:00。","依預約時間","https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC","新千歲"]
+        ]
+      },
+      {
+        title:"新千歲機場",
+        note:"Day 5 返程",
+        shops:[
+          ["用餐候選","えびそば一幻 新千歳空港店","點えびみそ拉麵，可選濃厚蝦湯或較清爽湯底。","機場店營業時間出發前確認","https://www.google.com/maps/search/?api=1&query=えびそば一幻+新千歳空港店","新千歲機場"],
+          ["採買","新千歲機場國內線商店區","買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。","依各店營業時間","https://www.google.com/maps/search/?api=1&query=新千歳空港+国内線+ショップ","新千歲機場"]
+        ]
+      }
+    ]
+  }
+};
+
+const mapLink=name=>{
+  if(name.includes("新千歲機場鈴蘭店") || name.includes("新千歲機場／取車")) return "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC";
+  if(name.includes("花ロードえにわ")) return "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC";
+  if(name.includes("EBIJIN 小樽店")) return "https://www.google.com/maps/search/?api=1&query=2+Chome-13-16+Inaho%2C+Otaru%2C+Hokkaido+047-0032%E6%97%A5%E6%9C%AC";
+  if(name.includes("頭大佛")) return "https://www.google.com/maps/search/?api=1&query=2+Takino%2C+Minami+Ward%2C+Sapporo%2C+Hokkaido+005-0862%E6%97%A5%E6%9C%AC";
+  if(name.includes("豐平館")) return "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B9%B3%E9%A4%A8+%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%921%E7%95%AA20%E5%8F%B7";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name.replace(/（.*?）/g,"").replace(/\/.*$/,""))}`;
+};
+const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
+
+function stopMarkup(stops){
+  return stops.map(s=>s.collapsible?`
+    <div class="stop">
+      <div class="arrival">${s.time}</div>
+      <div class="stop-content">
+        <details class="secondary-stop">
+          <summary><span class="place-title">${s.name}</span></summary>
+          <div class="secondary-stop-body">
+            ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[1]}</div></div>`).join("")}</div>`:""}
+            ${s.note?`<div class="place-note">${s.note}</div>`:""}
+            <div class="metrics">
+              ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
+              ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  `:`
+    <div class="stop">
+      <div class="arrival">${s.time}</div>
+      <div class="stop-content">
+        <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
+        ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+        ${s.note?`<div class="place-note">${shortText(s.note)}</div>`:""}
+        <div class="metrics">
+          ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
+          ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function areaMarkup(areas){
+  return areas.map(a=>{
+    if(a.layout==="compact-options"){
+      return `<section class="compact-options">
+        <div class="compact-options-title">${a.title}</div>
+        ${a.groups.map(group=>`<div class="compact-option-row">
+          <div class="compact-option-label">${group.label}</div>
+          <div class="compact-option-links">${group.places.map(place=>`<a href="${place[1]}" target="_blank" rel="noopener">${place[0]} ↗</a>`).join(`<span class="compact-option-separator">／</span>`)}</div>
+        </div>`).join("")}
+      </section>`;
+    }
+    if(a.layout==="place-guide"){
+      return `<section class="place-guide">
+        <div class="place-guide-title">${a.title}</div>
+        ${a.shops.map((shop,index)=>{
+          const mapLink=`<a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">${shop[0]==="1"?"📍":"🅿️"}</a>`;
+          const card=shop[0]==="2"?`<details class="place-guide-item">
+          <summary><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name-row"><span class="place-guide-name">${shop[1]}</span>${mapLink}</span><span class="place-guide-time">🕐 ${shop[2]}</span></span></summary>
+          <div class="place-guide-body">
+            ${shop[3]?`<div class="place-guide-info">${shop[3]}</div>`:""}
+            ${shop[5]?`<div class="place-guide-info">${shop[5]}</div>`:""}
+            <div class="coffee-guide">
+              <div class="coffee-guide-title">☕ 咖啡選擇</div>
+              <div class="coffee-list">${a.coffee.map(c=>`<div class="coffee-item"><a href="${c[2]}" target="_blank" rel="noopener">${c[0]} ↗</a><span class="coffee-hours">${c[1]}</span></div>`).join("")}</div>
+            </div>
+          </div>
+        </details>`:`<article class="place-guide-item">
+          <div class="place-guide-direct"><span class="place-guide-number">${shop[0]}</span><span class="place-guide-heading"><span class="place-guide-name-row"><span class="place-guide-name">${shop[1]}</span>${mapLink}</span><span class="place-guide-time">🕐 ${shop[2]}</span>${shop[5]?`<span class="place-guide-direct-note">${shop[5]}</span>`:""}</span></div>
+        </article>`;
+          return `${card}${a.drives?.[index]?`<div class="place-guide-drive">${a.drives[index]}</div>`:""}`;
+        }).join("")}
+      </section>`;
+    }
+    if(a.layout==="walking-guide"){
+      return `<details class="area-card">
+        <summary>${a.title}</summary>
+        <section class="walk-guide">
+        <div class="walk-guide-note">${a.note}</div>
+        ${a.shops.map(shop=>`<article class="walk-shop">
+          <div class="walk-shop-name"><span>${shop[0]} ${shop[1]}</span><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a></div>
+          <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
+          ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
+        </article>`).join("")}
+        </section>
+      </details>`;
+    }
+    if(a.layout==="route"){
+      const outlet=a.shops[0], map=a.shops[1], ice1=a.shops[2], ice2=a.shops[3], sports=a.shops[4];
+      const guideMarkup=guide=>guide?`<details class="field-guide">
+        <summary>${guide.title}</summary>
+        <div class="guide-body">
+          ${guide.note?`<p class="guide-note">${guide.note}</p>`:""}
+          ${guide.items?`<ul class="guide-list">${guide.items.map(item=>`<li>${item}</li>`).join("")}</ul>`:""}
+          ${guide.table?`<div style="overflow-x:auto"><table class="guide-table">${guide.table.map((row,i)=>`<tr>${row.map(cell=>i===0?`<th>${cell}</th>`:`<td>${cell}</td>`).join("")}</tr>`).join("")}</table></div>`:""}
+        </div>
+      </details>`:"";
+      return `<section class="route-area">
+        <div class="route-area-head">${a.title}</div>
+        <details class="route-stop-card primary">
+          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">1</span><div><div class="route-stop-title"><a href="${outlet[4]}" target="_blank" rel="noopener">${outlet[1]} <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 13:35–18:50</div></div></div></summary>
+          <div class="route-stop-body">
+          <div class="route-quick-guide">🧭 先逛 164、123，18:50 離場</div>
+          <a class="route-map-link" href="${map[4]}" target="_blank" rel="noopener">🗺️ 品牌位置｜店號簡圖 ↗</a>
+          <div class="inside-list"><div class="inside-title">🍦 冰品</div><div class="inside-item">札幌農学校｜酪農牛奶</div><div class="inside-item">MIL PRESSO｜北海道素材</div></div>
+          </div>
+        </details>
+        <div class="route-drive">🚗 2–3 分鐘</div>
+        <details class="route-stop-card shoes">
+          <summary class="route-stop-summary"><div class="route-stop-head"><span class="route-stop-number">2</span><div><div class="route-stop-title"><a href="${sports[4]}" target="_blank" rel="noopener">Sports Depo 大曲店 <span aria-hidden="true">📍</span></a></div><div class="route-stop-time">🕐 18:55–20:15</div></div></div></summary>
+          <div class="route-stop-body">
+          <div class="route-stop-desc">On・HOKA・Salomon</div>
+          <div class="route-stop-meta"><span>🅿️</span><span>免稅</span><span>☎ 011-377-1477</span></div>
+          ${guideMarkup(sports[6])}
+          </div>
+        </details>
+      </section>`;
+    }
+    const groupClass=/晚餐/.test(a.title)?"group-meal":/晚間採買/.test(a.title)?"group-essentials":/藥妝|藥局/.test(a.title)?"group-pharmacy":/便利商店/.test(a.title)?"group-convenience":/大型採買/.test(a.title)?"group-shopping":/冰品/.test(a.title)?"group-dessert":"";
+    return `
+    <details class="area-card ${groupClass}">
+      <summary>${a.title}</summary>
+      ${(() => {
+        let lastDistrict = "";
+        return a.shops.map(shop => {
+          if(shop[0]==="__SECTION__"){
+            lastDistrict="";
+            return `<div class="area-subhead">${shop[1]}</div>${shop[2]?`<div class="area-subnote">${shop[2]}</div>`:""}`;
+          }
+          if(shop[0]==="__BURGER__"){
+            return `<div class="shop">
+              <div class="shop-type">漢堡</div>
+              <div class="shop-name-row"><strong style="font-size:17px">${shop[1]}</strong></div>
+              <div class="burger-options">${shop[2].map(option=>`<div class="burger-option">
+                <a href="${option[3]}" target="_blank" rel="noopener">${option[0]} ↗</a>
+                <p>${option[1]}</p>
+                <div class="shop-hours">🕘 ${option[2]}</div>
+              </div>`).join("")}</div>
+            </div>`;
+          }
+          const extended = shop.length >= 6;
+          const hours = extended ? shop[3] : "";
+          const link = extended ? shop[4] : shop[3];
+          const district = extended ? shop[5] : "";
+          const location = extended ? shop[7] : "";
+          const header = district && district !== lastDistrict ? `<div class="district-label">${district}</div>` : "";
+          if (district) lastDistrict = district;
+          const ice=/冰品|霜淇淋|ソフト|Gelato|MIL PRESSO|Milk Kobo|LeTAO PLUS|札幌農学校|北一 Terrace|ポプラファーム|幸せの生ソフト/.test(shop.join(" "));
+          const name=(ice && !shop[1].startsWith("🍦"))?`🍦 ${shop[1]}`:shop[1];
+          const description=shortText(shop[2]);
+          const guide=extended ? shop[6] : null;
+          const guideMarkup=guide?`<details class="field-guide">
+            <summary>${guide.title}</summary>
+            <div class="guide-body">
+              ${guide.note?`<p class="guide-note">${guide.note}</p>`:""}
+              ${guide.items?`<ul class="guide-list">${guide.items.map(item=>`<li>${item}</li>`).join("")}</ul>`:""}
+              ${guide.table?`<div style="overflow-x:auto"><table class="guide-table">${guide.table.map((row,i)=>`<tr>${row.map(cell=>i===0?`<th>${cell}</th>`:`<td>${cell}</td>`).join("")}</tr>`).join("")}</table></div>`:""}
+            </div>
+          </details>`:"";
+          return `${header}<div class="shop">
+            ${shop[0]?`<div class="shop-type">${shop[0]}</div>`:""}
+            <div class="shop-name-row"><a href="${link}" target="_blank" rel="noopener">${name} ↗</a>${location?`<span class="shop-location">${location}</span>`:""}</div>
+            ${description?`<p>${description}</p>`:""}
+            ${hours ? `<div class="shop-hours">🕘 ${hours}</div>` : ""}
+            ${guideMarkup}
+          </div>`;
+        }).join("");
+      })()}
+    </details>
+  `}).join("");
+}
+
+
+const mustDoByDate={
+  "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
+  "9/17":["🗿 09:00 頭大佛","🏛️ 豐平館","🦀 場外市場海鮮","🚗 13:30 出發小樽","🍽️ 小樽 Muse"],
+  "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🧳 12:30 小樽退房","🍄 仁木短停","🍽️ 18:30 望羊蹄","🎆 洞爺湖煙火船"],
+  "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮午餐","🍽️ 苫小牧晚餐四選一"],
+  "9/20":["🎁 新千歲機場伴手禮"]
+};
+function dayBriefMarkup(d){
+  const date=Object.keys(mustDoByDate).find(x=>d.label.includes(x));
+  const items=mustDoByDate[date]||[];
+  const missions=items.map((x,i)=>`
+    <label class="mission-item">
+      <input type="checkbox" data-mission="${date}-${i}">
+      <span>${x}</span>
+    </label>`).join("");
+  if(!missions) return "";
+  return `
+    <div class="must-do">
+      <div class="must-do-title">⭐ 今日必完成</div>
+      <div class="mission-list">${missions}</div>
+    </div>`;
+}
+function restoreMissions(root){
+  root.querySelectorAll("[data-mission]").forEach(box=>{
+    const key="travelos-mission-"+box.dataset.mission;
+    box.checked=localStorage.getItem(key)==="1";
+    box.addEventListener("change",()=>localStorage.setItem(key,box.checked?"1":"0"));
+  });
+}
+
+function renderDay(dayKey){
+  const d=dayData[dayKey];
+  const detail=document.getElementById("dayDetail");
+  const orderedAreas=d.areaOrder
+    ? [...d.areas].sort((a,b)=>{
+        const rank=title=>{
+          const i=d.areaOrder.findIndex(key=>title.includes(key));
+          return i<0?d.areaOrder.length:i;
+        };
+        return rank(a.title)-rank(b.title);
+      })
+    : d.areas;
+
+  detail.innerHTML=`
+      <button class="back-btn" id="backHome">← 回每日總覽</button>
+      <article class="day-card">
+        <div class="day-head">
+          <div>
+            <div class="day-label">${d.label}</div>
+            <div class="route">${d.route}</div>
+          </div>
+          <div class="hotel-chip">${d.hotel}</div>
+        </div>
+        ${dayBriefMarkup(d)}
+        ${stopMarkup(d.stops)}
+        <div class="area-list">
+          ${orderedAreas.some(a=>a.layout==="place-guide")?"":`<h3 style="margin:14px 0 2px">今日會經過的區域</h3>`}
+          ${areaMarkup(orderedAreas)}
+        </div>
+      </article>
+    `;
+
+  showPanel("dayDetail");
+  restoreMissions(detail);
+  document.getElementById("backHome").addEventListener("click",()=>showPanel("home"));
+}
+
+document.querySelectorAll(".day-preview").forEach(el=>{
+  el.addEventListener("click",()=>{
+    if(dayData[el.dataset.day]) renderDay(el.dataset.day);
+  });
+});
+
+const buttons=document.querySelectorAll("[data-target]");
+const panels=document.querySelectorAll(".panel");
+
+function showPanel(id){
+  panels.forEach(p=>p.classList.toggle("active",p.id===id));
+  document.querySelectorAll(".tab,.footer button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.target===id);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+buttons.forEach(b=>b.addEventListener("click",()=>showPanel(b.dataset.target)));
+
+function updateCountdown(){
+  const start=new Date("2026-09-16T00:00:00+08:00");
+  const end=new Date("2026-09-20T23:59:59+08:00");
+  const now=new Date();
+  const box=document.getElementById("countdown");
+  const strong=box.querySelector("strong");
+  const label=box.querySelector("span");
+  if(now<start){
+    strong.textContent=Math.ceil((start-now)/86400000)+" 天";
+    label.textContent="距離出發";
+  }else if(now<=end){
+    strong.textContent="旅行中";
+    label.textContent="北海道旅程";
+  }else{
+    strong.textContent="已完成";
+    label.textContent="北海道旅程";
+  }
+}
+updateCountdown();
+
+function weatherIcon(code){
+  if(code===0) return "☀️";
+  if([1,2].includes(code)) return "🌤️";
+  if(code===3) return "☁️";
+  if([45,48].includes(code)) return "🌫️";
+  if([51,53,55,56,57].includes(code)) return "🌦️";
+  if([61,63,65,66,67,80,81,82].includes(code)) return "🌧️";
+  if([71,73,75,77,85,86].includes(code)) return "🌨️";
+  if([95,96,99].includes(code)) return "⛈️";
+  return "🌤️";
+}
+function weatherText(code){
+  if(code===0) return "晴朗";
+  if([1,2].includes(code)) return "晴時多雲";
+  if(code===3) return "多雲";
+  if([45,48].includes(code)) return "有霧";
+  if([51,53,55,56,57].includes(code)) return "毛毛雨";
+  if([61,63,65,66,67,80,81,82].includes(code)) return "有雨";
+  if([71,73,75,77,85,86].includes(code)) return "降雪";
+  if([95,96,99].includes(code)) return "雷雨";
+  return "天氣";
+}
+
+async function loadWeather(){
+  const temp=document.getElementById("weatherTemp");
+  const text=document.getElementById("weatherText");
+  const icon=document.getElementById("weatherIcon");
+  const meta=document.getElementById("weatherMeta");
+  try{
+    const url="https://api.open-meteo.com/v1/forecast?latitude=43.0618&longitude=141.3545&current=temperature_2m,apparent_temperature,weather_code,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=1";
+    const res=await fetch(url);
+    if(!res.ok) throw new Error("weather error");
+    const data=await res.json();
+    temp.textContent=Math.round(data.current.temperature_2m)+"°";
+    text.textContent="札幌今日・"+weatherText(data.current.weather_code);
+    icon.textContent=weatherIcon(data.current.weather_code);
+    const hi=Math.round(data.daily.temperature_2m_max[0]);
+    const lo=Math.round(data.daily.temperature_2m_min[0]);
+    const rain=data.daily.precipitation_probability_max[0] ?? 0;
+    meta.innerHTML=`體感 ${Math.round(data.current.apparent_temperature)}°<br>最高 ${hi}°／最低 ${lo}°<br>降雨機率 ${rain}%`;
+  }catch(e){
+    temp.textContent="無法取得";
+    text.textContent="札幌今日天氣";
+    icon.textContent="☁️";
+    meta.textContent="請確認網路連線";
+  }
+}
+loadWeather();
+
+function initCurrencyTool(){
+  const twd=document.getElementById("twdAmount");
+  const jpy=document.getElementById("jpyAmount");
+  const rate=document.getElementById("jpyRate");
+  const refresh=document.getElementById("refreshRate");
+  const status=document.getElementById("rateStatus");
+  if(!twd || !jpy || !rate) return;
+
+  const stored=Number(localStorage.getItem("travelos-jpy-rate"));
+  if(Number.isFinite(stored) && stored>0) rate.value=stored.toFixed(4);
+
+  const currentRate=()=>{
+    const value=Number(rate.value);
+    return Number.isFinite(value) && value>0 ? value : 0.22;
+  };
+  const fromJpy=()=>{
+    const value=Number(jpy.value);
+    twd.value=Number.isFinite(value) && jpy.value!=="" ? Math.round(value*currentRate()) : "";
+  };
+
+  async function loadLiveRate(){
+    status.textContent="";
+    if(refresh) refresh.disabled=true;
+    try{
+      const res=await fetch("https://api.frankfurter.dev/v2/rate/JPY/TWD",{cache:"no-store"});
+      if(!res.ok) throw new Error("rate request failed");
+      const data=await res.json();
+      const value=Number(data.rate);
+      if(!Number.isFinite(value) || value<=0) throw new Error("invalid rate");
+      rate.value=value.toFixed(4);
+      localStorage.setItem("travelos-jpy-rate",String(value));
+      fromJpy();
+    }catch(e){
+      const cached=Number(localStorage.getItem("travelos-jpy-rate"));
+      if(Number.isFinite(cached) && cached>0){
+        rate.value=cached.toFixed(4);
+      }
+      status.textContent="";
+      fromJpy();
+    }finally{
+      if(refresh) refresh.disabled=false;
+    }
+  }
+
+  jpy.addEventListener("input",fromJpy);
+  if(refresh) refresh.addEventListener("click",loadLiveRate);
+  document.querySelectorAll("[data-jpy]").forEach(btn=>btn.addEventListener("click",()=>{
+    jpy.value=btn.dataset.jpy;
+    fromJpy();
+  }));
+  loadLiveRate();
+}
+initCurrencyTool();
+
+</script>
+</body>
+</html>
