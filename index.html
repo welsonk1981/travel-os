@@ -201,12 +201,13 @@ h1{margin:4px 0 4px;font-size:30px}
 .flow-text a::after{content:" ↗";color:#8a9aa5;font-size:11px;font-weight:700}
 .flow-text a .external-arrow{display:none}
 .place-note{font-size:15px;color:var(--sub);margin-top:3px}
-.stop-detail{margin-top:7px}
-.stop-detail summary{display:inline-flex;align-items:center;gap:5px;color:#71808b;font-size:12px;font-weight:800;cursor:pointer;list-style:none}
+.stop-detail{margin:0}
+.stop-detail summary{position:relative;display:block;min-height:48px;margin:-4px -6px;padding:4px 38px 4px 6px;border-radius:12px;cursor:pointer;list-style:none;transition:background .18s ease}
+.stop-detail summary:hover,.stop-detail summary:focus-visible{background:#f5f8fa;outline:none}
 .stop-detail summary::-webkit-details-marker{display:none}
-.stop-detail summary::after{content:"⌄";font-size:13px}
-.stop-detail[open] summary::after{content:"⌃"}
-.stop-detail .place-note{margin-top:7px;padding:9px 11px;border-radius:10px;background:#f7f9fa;color:#68737c;font-size:13px;line-height:1.6}
+.stop-detail summary::after{content:"⌄";position:absolute;right:12px;top:7px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#eef3f6;color:#5f7483;font-size:18px;font-weight:900;line-height:1;transition:transform .18s ease,background .18s ease}
+.stop-detail[open] summary::after{transform:rotate(180deg);background:#e4edf3}
+.stop-detail .place-note{margin-top:9px;padding:10px 11px;border-radius:10px;background:#f7f9fa;color:#68737c;font-size:13px;line-height:1.6}
 .metrics{
   display:flex;
   gap:0;
@@ -556,10 +557,13 @@ h1{margin:4px 0 4px;font-size:30px}
 @media(max-width:560px){.rental-grid{grid-template-columns:1fr}}
 
 
-.must-do{margin:14px 0 4px;padding:13px;border-radius:15px;background:var(--green-soft)}
-.must-do-title{font-size:15px;font-weight:900;color:var(--green);margin-bottom:8px}
-.must-do .mission-list{display:grid;gap:8px}
-.must-do .mission-item{font-size:15px;font-weight:750}
+.must-do{margin:14px 0 4px;border-radius:15px;background:var(--green-soft);overflow:hidden}
+.must-do summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;color:var(--green);font-size:14px;font-weight:900;cursor:pointer;list-style:none}
+.must-do summary::-webkit-details-marker{display:none}
+.must-do summary::after{content:"⌄";font-size:16px;transition:transform .18s ease}
+.must-do[open] summary::after{transform:rotate(180deg)}
+.must-do .mission-list{display:grid;gap:8px;padding:0 13px 13px}
+.must-do .mission-item{font-size:14px;font-weight:750}
 .quick-rates{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .quick-rates button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;cursor:pointer}
 .plan-label{
@@ -1022,8 +1026,8 @@ const dayData = {
         guideTitle:"🅿️ 北海道大學停車與 Café",
         drives:["🚗 約 35–40 分鐘","🚗 約 10–15 分鐘"],
         shops:[
-          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps/dir/?api=1&destination=%E9%A0%AD%E5%A4%A7%E4%BB%8F%2C+%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8D%97%E5%8C%BA%E6%BB%9D%E9%87%8E2-3&travelmode=driving",""],
-          ["2","札幌場外市場","10:25–11:20","","https://www.google.com/maps/dir/?api=1&destination=%E5%A0%B4%E5%A4%96%E5%B8%82%E5%A0%B4%E3%83%90%E3%82%B9%E9%A7%90%E8%BB%8A%E5%A0%B4%2C+%E5%8C%97%E6%B5%B7%E9%81%93%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8C%9710%E6%9D%A1%E8%A5%BF21%E4%B8%81%E7%9B%AE2-26&travelmode=driving",""],
+          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps/search/?api=1&query=%E9%A0%AD%E5%A4%A7%E4%BB%8F+2+Takino+Minami+Ward+Sapporo+Hokkaido+005-0862",""],
+          ["2","札幌場外市場","10:25–11:20","","https://www.google.com/maps/search/?api=1&query=%E5%A0%B4%E5%A4%96%E5%B8%82%E5%A0%B4%E3%83%90%E3%82%B9%E9%A7%90%E8%BB%8A%E5%A0%B4+21+Chome-2-26+Kita+10+Jonishi+Chuo+Ward+Sapporo+Hokkaido+060-0010",""],
           ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=北海道大学+北大マルシェ+Café%26Labo","13:00 出發小樽｜🅿️ タイムズ北９西４"]
         ],
         coffee:[
@@ -1243,13 +1247,23 @@ function stopMarkup(stops){
     <div class="stop">
       <div class="arrival">${s.time}</div>
       <div class="stop-content">
-        <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
-        ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
-        <div class="metrics">
-          ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
-          ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
-        </div>
-        ${s.note?`<details class="stop-detail"><summary aria-label="展開詳細資訊" title="展開詳細資訊"><span class="sr-only">詳細資訊</span></summary><div class="place-note">${s.note}</div></details>`:""}
+        ${s.note?`<details class="stop-detail">
+          <summary aria-label="展開 ${s.name} 詳細資訊">
+            <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
+            ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+            <div class="metrics">
+              ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
+              ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
+            </div>
+          </summary>
+          <div class="place-note">${s.note}</div>
+        </details>`:`
+          <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}</div>
+          ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
+          <div class="metrics">
+            ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
+            ${s.next?`<span class="metric drive">🚗 ${s.next}</span>`:""}
+          </div>`}
       </div>
     </div>
   `).join("");
@@ -1404,10 +1418,10 @@ function dayBriefMarkup(d){
     </label>`).join("");
   if(!missions) return "";
   return `
-    <div class="must-do">
-      <div class="must-do-title">⭐ 今日必完成</div>
+    <details class="must-do">
+      <summary>⭐ 今日重點 <span>${items.length} 項</span></summary>
       <div class="mission-list">${missions}</div>
-    </div>`;
+    </details>`;
 }
 function restoreMissions(root){
   root.querySelectorAll("[data-mission]").forEach(box=>{
