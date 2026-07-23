@@ -727,6 +727,7 @@ h1{margin:4px 0 4px;font-size:30px}
 .day2-places{display:grid;gap:12px}
 .day2-place-card{border:1px solid #dce4ea;border-radius:17px;background:#fff;overflow:hidden}
 .day2-place-card>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:15px;cursor:pointer;list-style:none}
+.day2-place-card>summary .day2-actions{grid-column:1/-1}
 .day2-place-card>summary::-webkit-details-marker{display:none}
 .day2-place-card>summary::after{content:"⌄";display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eef3f6;color:#587083;font-size:18px;font-weight:900;transition:transform .18s ease}
 .day2-place-card[open]>summary::after{transform:rotate(180deg);background:#e4edf3}
@@ -1541,11 +1542,11 @@ function day2CardsMarkup(){
               <span>🚗 ${card.next}</span>
             </div>
           </div>
+          <div class="day2-actions">
+            <a class="day2-action" href="${card.nav}" target="_blank" rel="noopener">📍 導航</a>
+            ${card.parking?`<a class="day2-action" href="${card.parking}" target="_blank" rel="noopener">🅿️ 停車</a>`:""}
+          </div>
         </summary>
-        <div class="day2-actions">
-          <a class="day2-action" href="${card.nav}" target="_blank" rel="noopener">📍 導航</a>
-          ${card.parking?`<a class="day2-action" href="${card.parking}" target="_blank" rel="noopener">🅿️ 停車</a>`:""}
-        </div>
         <div class="day2-place-body">
           ${row("特色",card.feature)}
           ${row("地址",card.address)}
