@@ -969,13 +969,15 @@ const masterLocations=Object.freeze({
 });
 
 const displayRules=Object.freeze({
-  itineraryTimeline:Object.freeze({
+  day4Timeline:Object.freeze({
+    appliesTo:["day4"],
     language:"zh-Hant",
     purpose:"快速辨識每個時間要做什麼",
     conciseActivityLabels:true,
     omitJapaneseNames:true,
     omitOperationalCaveats:true,
-    keepOfficialNamesInPlaceData:true
+    keepOfficialNamesInPlaceData:true,
+    otherDaysUnchanged:true
   })
 });
 
