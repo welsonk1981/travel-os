@@ -194,7 +194,8 @@ h1{margin:4px 0 4px;font-size:30px}
 .flow-row::after{content:"";position:absolute;left:7px;top:24px;bottom:-7px;width:1px;background:#dce4e8}
 .flow-row:last-child::after{display:none}
 .flow-time{color:#788791;font-size:12px;font-weight:800;white-space:nowrap;text-align:left;line-height:1.65}
-.flow-text{color:#273640;font-size:14px;font-weight:750;line-height:1.5;min-width:0}
+.flow-text{color:#273640;font-size:16px;font-weight:750;line-height:1.5;min-width:0}
+.flow-number{display:inline-block;font-size:17px;font-weight:900;line-height:1;vertical-align:-.02em}
 .flow-text a{color:inherit;text-decoration:none}
 .flow-text a:hover{color:#1769aa}
 .flow-text a::after{content:" ↗";color:#8a9aa5;font-size:11px;font-weight:700}
@@ -1262,6 +1263,10 @@ const mapLink=name=>{
 };
 const shortText=text=>(text||"").split(/[；。]/)[0].replace(/^(建議|主要|安排)/,"");
 
+function formatFlowText(text){
+  return text.replace(/^([①-⑳])/,`<span class="flow-number">$1</span>`);
+}
+
 function stopMarkup(stops){
   return stops.map(s=>s.collapsible?`
     <div class="stop">
@@ -1271,7 +1276,7 @@ function stopMarkup(stops){
           <summary><span class="place-title">${s.name}</span></summary>
           <div class="secondary-stop-body">
             ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
-            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[1]}</div></div>`).join("")}</div>`:""}
+            ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${formatFlowText(step[1])}</div></div>`).join("")}</div>`:""}
             ${s.note?`<div class="place-note">${s.note}</div>`:""}
             <div class="metrics">
               ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
@@ -1287,7 +1292,7 @@ function stopMarkup(stops){
       <div class="stop-content">
         <div class="place-title">${s.link?`<a href="${s.link}" target="_blank" rel="noopener">${s.name} ↗</a>`:s.name}${s.reservation?`<span class="reservation-note">${s.reservation}</span>`:""}</div>
         ${s.options?`<div class="stop-options">${s.options.map(o=>`<span class="stop-option">${o.label}｜${o.name}</span>`).join("")}</div>`:""}
-        ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${step[1]}</div></div>`).join("")}</div>`:""}
+        ${s.steps?`<div class="flow-list">${s.steps.map(step=>`<div class="flow-row"><div class="flow-time">${step[0]}</div><div class="flow-text">${formatFlowText(step[1])}</div></div>`).join("")}</div>`:""}
         ${s.note?`<div class="place-note">${shortText(s.note)}</div>`:""}
         <div class="metrics">
           ${s.stay?`<span class="metric stay">⏱ ${s.stay}</span>`:""}
