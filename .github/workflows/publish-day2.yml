@@ -1,11 +1,6 @@
 name: Publish Day 2
 
 on:
-  push:
-    paths:
-      - '.github/workflows/publish-day2.yml'
-      - '.github/scripts/publish_day2_v2.py'
-      - 'data/master-database.json'
   workflow_dispatch:
 
 permissions:
@@ -52,5 +47,3 @@ jobs:
             git commit -m "發布 Day 2 札幌早晨行程與首頁摘要"
             git push
           fi
-
-# trigger: 2026-07-29T15:50+08:00
