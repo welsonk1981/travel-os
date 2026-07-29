@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.4",
-  "updatedAt": "2026-07-29T15:48:00+08:00",
+  "updatedAt": "2026-07-29T16:02:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -44,7 +44,14 @@
           "id": "marusan-mikami-marusan-tei",
           "name": "㈱マルサン三上商店／まるさん亭 本店",
           "mapUrl": "https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
-          "hours": "07:00–15:00"
+          "hours": "07:00–15:00",
+          "parkingId": "sapporo-jogai-market-parking"
+        },
+        "sapporo-jogai-market-parking": {
+          "id": "sapporo-jogai-market-parking",
+          "name": "札幌場外市場 共用免費停車場",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場",
+          "hours": null
         },
         "hokkaido-university": {
           "id": "hokkaido-university",
@@ -100,6 +107,9 @@
               "id": "hill-of-buddha-main-stop",
               "title": "頭大佛",
               "collapsible": false,
+              "displayStyle": "compact-row",
+              "showSectionTitle": false,
+              "showNumberBadge": false,
               "placeIds": [
                 "hill-of-buddha"
               ]
@@ -129,7 +139,8 @@
             {
               "time": "08:30–09:20",
               "type": "place",
-              "placeId": "marusan-mikami-marusan-tei"
+              "placeId": "marusan-mikami-marusan-tei",
+              "parkingId": "sapporo-jogai-market-parking"
             },
             {
               "time": "09:20–09:45",
@@ -196,6 +207,17 @@
       ],
       "websitePublished": true,
       "publishedAt": "2026-07-29T15:48:00+08:00"
+    },
+    {
+      "date": "2026-07-29",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 2 顯示與停車資料",
+      "changes": [
+        "新增札幌場外市場共用免費停車場定位，並關聯㈱マルサン三上商店／まるさん亭 本店",
+        "頭大佛下方資訊改採緊湊單列規格，不重複顯示區塊標題與數字圓章",
+        "本次僅寫入 Master Database，尚未發布網頁"
+      ],
+      "websitePublished": false
     }
   ]
 }
