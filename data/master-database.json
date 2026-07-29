@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.4",
-  "updatedAt": "2026-07-29T16:02:00+08:00",
+  "updatedAt": "2026-07-29T16:11:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -189,7 +189,66 @@
             }
           ]
         }
-      }
+      },
+      "pendingUiChanges": [
+        {
+          "id": "otaru-area-information-hierarchy",
+          "scope": "今日會經過的區域／小樽",
+          "status": "recorded",
+          "websitePublished": false,
+          "preserveOrder": true,
+          "order": [
+            "咖啡",
+            "採買",
+            "漢堡（二選一）"
+          ],
+          "displayRules": {
+            "areaTitle": "小樽",
+            "categoryLabel": {
+              "style": "small-muted-label",
+              "purpose": "只作分類提示，不與店名競爭"
+            },
+            "placeName": {
+              "style": "primary-title",
+              "mapButtonPosition": "right"
+            },
+            "summary": {
+              "style": "secondary-text",
+              "maxLines": 1,
+              "purpose": "保留用途重點，但降低視覺重量"
+            },
+            "hours": {
+              "style": "tertiary-meta",
+              "fixedPosition": "last-row"
+            },
+            "optionGroup": {
+              "title": "漢堡（二選一）",
+              "showGroupTitleOnce": true,
+              "showChoiceBadges": true,
+              "choiceBadges": [
+                "主選",
+                "備選"
+              ]
+            },
+            "spacing": {
+              "betweenCategories": "large",
+              "withinPlace": "compact",
+              "divider": "subtle"
+            },
+            "contentPolicy": {
+              "keepExistingOrder": true,
+              "doNotDeleteExistingInformation": true,
+              "reduceRepeatedLabels": true,
+              "emphasizeActionableInformation": [
+                "店名",
+                "定位",
+                "營業時間",
+                "主選／備選"
+              ]
+            }
+          }
+        }
+      ]
     }
   },
   "changeLog": [
@@ -216,6 +275,20 @@
         "新增札幌場外市場共用免費停車場定位，並關聯㈱マルサン三上商店／まるさん亭 本店",
         "頭大佛下方資訊改採緊湊單列規格，不重複顯示區塊標題與數字圓章",
         "本次僅寫入 Master Database，尚未發布網頁"
+      ],
+      "websitePublished": false
+    },
+    {
+      "date": "2026-07-29",
+      "projectId": "2026-hokkaido",
+      "scope": "小樽區域資訊欄排版",
+      "changes": [
+        "維持咖啡、採買、漢堡（二選一）的既有順序，不調整行程與店家排列",
+        "建立分類標籤、店名、簡介、營業時間四層閱讀層級",
+        "店名與 Google Maps 定位列為主要資訊，簡介降為次要單行文字，營業時間固定置於最後一列",
+        "漢堡區塊只顯示一次二選一標題，並以主選／備選徽章辨識兩家店",
+        "加大不同分類之間的間距，店內資訊維持緊湊，分隔線改為低彩度",
+        "本次僅寫入 Master Database，尚未修改或發布網頁"
       ],
       "websitePublished": false
     }
