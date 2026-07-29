@@ -1,0 +1,200 @@
+{
+  "databaseName": "Travel OS Master Database",
+  "databaseVersion": "1.4",
+  "updatedAt": "2026-07-29T15:18:00+08:00",
+  "projects": {
+    "2026-hokkaido": {
+      "name": "2026 北海道",
+      "travelDates": {
+        "start": "2026-09-16",
+        "end": "2026-09-20"
+      },
+      "places": {
+        "toya-fireworks-pier": {
+          "id": "toya-fireworks-pier",
+          "name": "洞爺湖花火船碼頭",
+          "mapUrl": "https://maps.app.goo.gl/QtkVqHj5hLuV7svC8",
+          "hours": null
+        },
+        "ebijin-otaru": {
+          "id": "ebijin-otaru",
+          "name": "EBIJIN 小樽店",
+          "mapUrl": "https://maps.app.goo.gl/jaHGkfT3ZcdzwsUk8",
+          "hours": null
+        },
+        "letao-main": {
+          "id": "letao-main",
+          "name": "LeTAO 總店",
+          "mapUrl": "https://maps.app.goo.gl/iRy2gmCFUBvbcEgW7",
+          "hours": "09:00–19:00"
+        },
+        "lake-hill-farm": {
+          "id": "lake-hill-farm",
+          "name": "Lake Hill Farm",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm+127+Hanawa+Toyako",
+          "hours": null
+        },
+        "kotoni-jinja": {
+          "id": "kotoni-jinja",
+          "name": "琴似神社",
+          "mapUrl": "https://maps.app.goo.gl/C7Hq32wX3t4aCAuQ9",
+          "hours": "境內自由參拜"
+        },
+        "marusan-mikami-marusan-tei": {
+          "id": "marusan-mikami-marusan-tei",
+          "name": "㈱マルサン三上商店／まるさん亭 本店",
+          "mapUrl": "https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
+          "hours": "07:00–15:00"
+        },
+        "hokkaido-university": {
+          "id": "hokkaido-university",
+          "name": "北海道大學",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北海道大学",
+          "hours": null
+        },
+        "hokudai-marche-cafe": {
+          "id": "hokudai-marche-cafe",
+          "name": "北大マルシェ Café & Labo",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo",
+          "hours": "10:00–16:00"
+        },
+        "hill-of-buddha": {
+          "id": "hill-of-buddha",
+          "name": "頭大佛",
+          "mapUrl": "https://www.google.com/maps?cid=15134224251499317861",
+          "hours": "09:00–16:00"
+        },
+        "otaru-stained-glass-museum": {
+          "id": "otaru-stained-glass-museum",
+          "name": "花窗玻璃美術館（舊高橋倉庫）",
+          "mapUrl": "https://maps.app.goo.gl/4S6TfKmJY84Zrqd47",
+          "hours": "09:30–17:00"
+        }
+      },
+      "itineraries": {
+        "day2": {
+          "date": "2026-09-17",
+          "route": [
+            "kotoni-jinja",
+            "marusan-mikami-marusan-tei",
+            "hokkaido-university",
+            "hokudai-marche-cafe",
+            "hill-of-buddha",
+            "otaru-stained-glass-museum"
+          ],
+          "displayGroups": [
+            {
+              "id": "sapporo-north-morning",
+              "title": "札幌北側早晨",
+              "collapsible": true,
+              "defaultExpanded": false,
+              "itemMarker": "●",
+              "placeIds": [
+                "kotoni-jinja",
+                "marusan-mikami-marusan-tei",
+                "hokkaido-university",
+                "hokudai-marche-cafe"
+              ]
+            },
+            {
+              "id": "hill-of-buddha-main-stop",
+              "title": "頭大佛",
+              "collapsible": false,
+              "placeIds": [
+                "hill-of-buddha"
+              ]
+            }
+          ],
+          "timeline": [
+            {
+              "time": "07:30",
+              "type": "depart",
+              "name": "札幌住宿步行出發"
+            },
+            {
+              "time": "07:40–08:00",
+              "type": "place",
+              "placeId": "kotoni-jinja"
+            },
+            {
+              "time": "08:00–08:10",
+              "type": "walk",
+              "name": "步行返回住宿"
+            },
+            {
+              "time": "08:10–08:30",
+              "type": "drive",
+              "name": "取車並前往海鮮早餐"
+            },
+            {
+              "time": "08:30–09:20",
+              "type": "place",
+              "placeId": "marusan-mikami-marusan-tei"
+            },
+            {
+              "time": "09:20–09:45",
+              "type": "drive",
+              "name": "前往北海道大學並停車"
+            },
+            {
+              "time": "09:45–10:00",
+              "type": "place",
+              "placeId": "hokkaido-university"
+            },
+            {
+              "time": "10:00–10:40",
+              "type": "place",
+              "placeId": "hokudai-marche-cafe"
+            },
+            {
+              "time": "10:40–11:30",
+              "type": "drive",
+              "name": "前往頭大佛"
+            },
+            {
+              "time": "11:30–12:25",
+              "type": "place",
+              "placeId": "hill-of-buddha"
+            },
+            {
+              "time": "12:25–13:35",
+              "type": "drive",
+              "name": "前往小樽"
+            },
+            {
+              "time": "13:35–14:05",
+              "type": "arrival",
+              "name": "抵達小樽、停車並放行李"
+            },
+            {
+              "time": "14:05–14:25",
+              "type": "walk",
+              "name": "步行前往花窗玻璃美術館"
+            },
+            {
+              "time": "14:30–15:15",
+              "type": "place",
+              "placeId": "otaru-stained-glass-museum"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "changeLog": [
+    {
+      "date": "2026-07-29",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 2",
+      "changes": [
+        "新增琴似神社並安排 07:30 由住宿步行出發",
+        "札幌場外市場改為㈱マルサン三上商店／まるさん亭 本店",
+        "調整為琴似神社、海鮮早餐、北海道大學、北大マルシェ、頭大佛、小樽的順序",
+        "新增札幌北側早晨收合群組，展開後各地點使用項目符號",
+        "頭大佛維持獨立顯示",
+        "地點資料統一保留名稱、Google Maps 定位與營業時間"
+      ],
+      "websitePublished": false
+    }
+  ]
+}
