@@ -3,7 +3,7 @@ name: Publish Day 2
 on:
   push:
     paths:
-      - '.github/scripts/publish_day2.py'
+      - '.github/scripts/publish_day2_v2.py'
       - 'data/master-database.json'
   workflow_dispatch:
 
@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Apply Master Database to website
-        run: python .github/scripts/publish_day2.py
+        run: python .github/scripts/publish_day2_v2.py
 
       - name: Verify HTML
         run: |
@@ -51,3 +51,5 @@ jobs:
             git commit -m "發布 Day 2 札幌早晨行程與首頁摘要"
             git push
           fi
+
+# trigger: 2026-07-29T15:49+08:00
