@@ -762,7 +762,7 @@ h1{margin:4px 0 4px;font-size:30px}
           <div class="preview-top">
             <div>
               <div class="preview-day"><span class="preview-date">9/17（四）</span><span class="preview-day-label">Day 2</span></div>
-              <div class="preview-route">🗿 頭大佛 → 🦀 場外市場 → 🎓 北海道大學 → 🌊 小樽</div>
+              <div class="preview-route">⛩️ 琴似神社 → 🦀 海鮮早餐 → 🎓 北大 → 🗿 頭大佛 → 🌊 小樽</div>
             </div>
           </div>
         </div>
@@ -967,14 +967,35 @@ const masterLocations=Object.freeze({
     mapStatus:"人工確認",
     verifiedAt:"2026-07-23"
   }),
+  kotoniJinja:Object.freeze({
+    id:"kotoni-jinja",
+    name:"琴似神社",
+    mapUrl:"https://maps.app.goo.gl/C7Hq32wX3t4aCAuQ9",
+    hours:"境內自由參拜"
+  }),
+  marusanMikamiMarusantei:Object.freeze({
+    id:"marusan-mikami-marusan-tei",
+    name:"㈱マルサン三上商店／まるさん亭 本店",
+    mapUrl:"https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
+    hours:"07:00–15:00"
+  }),
+  hokkaidoUniversity:Object.freeze({
+    id:"hokkaido-university",
+    name:"北海道大學",
+    mapUrl:"https://www.google.com/maps/search/?api=1&query=北海道大学",
+    hours:""
+  }),
+  hillOfBuddha:Object.freeze({
+    id:"hill-of-buddha",
+    name:"頭大佛",
+    mapUrl:"https://www.google.com/maps?cid=15134224251499317861",
+    hours:"09:00–16:00"
+  }),
   hokudaiMarcheCafe:Object.freeze({
     id:"hokudai-marche-cafe",
-    name:"北大 Marche Café & Labo",
-    address:"日本〒060-0809 Hokkaido, Sapporo, Kita Ward, Kita 9 Jonishi, 5 Chome 1階 北海道大学",
+    name:"北大マルシェ Café & Labo",
     mapUrl:"https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo",
-    mustEat:Object.freeze(["布丁","鬆餅"]),
-    source:"使用者提供",
-    verifiedAt:"2026-07-23"
+    hours:"10:00–16:00"
   }),
   lakeHillFarm:Object.freeze({
     id:"lake-hill-farm",
@@ -1051,18 +1072,16 @@ const dayData = {
   },
   day2:{
     label:"Day 2｜9/17（四）",
-    highlights:["頭大佛","札幌場外市場","北海道大學","小樽港町"],
-    missions:["頭大佛參觀","場外市場海鮮早午餐","北海道大學散步與北大マルシェ","小樽 Muse晚餐"],
-    foodFocus:["場外市場海鮮","北大マルシェ牛奶／冰淇淋","小樽冰品候選"],
-    route:"琴似住宿 → 頭大佛 → 場外市場 → 北海道大學 → 小樽",
+    highlights:["琴似神社","㈱マルサン三上商店／まるさん亭 本店","北海道大學","頭大佛","小樽港町"],
+    missions:["琴似神社晨間參拜","08:30 海鮮早餐","北大マルシェ乳製品體驗","頭大佛參觀","14:30 花窗玻璃美術館","小樽 Muse晚餐"],
+    foodFocus:["まるさん亭海鮮早餐","北大マルシェ牛奶／冰淇淋","小樽冰品候選"],
+    route:"琴似住宿 → 琴似神社 → ㈱マルサン三上商店 → 北海道大學 → 頭大佛 → 小樽",
     hotel:"小樽住宿",
     stops:[
-      {time:"08:00",name:"札幌住宿出發",note:"由琴似住宿前往頭大佛，預留市區交通與停車時間。",stay:"",next:"開車約 45 分"},
-      {time:"08:45–09:45",name:"頭大佛",note:"參觀安藤忠雄建築與園區。",stay:"約 60 分",next:"開車約 35–40 分"},
-      {time:"10:25–11:20",name:"札幌場外市場",note:"海鮮早午餐與簡單採買。",stay:"約 55 分",next:"前往北海道大學約 10–15 分"},
-      {time:"11:35–13:00",name:"北海道大學／北大マルシェ Café & Labo",note:"校園散步，品嚐牛奶、冰淇淋與甜點；停車建議 タイムズ北９西４。",stay:"約 85 分",next:"13:00 出發前往小樽"},
-      {time:"13:00–14:00",name:"前往小樽",note:"由北海道大學前往小樽住宿附近。",stay:"開車約 50–60 分",next:"抵達後停車、放行李"},
-      {time:"14:00–14:20",name:"抵達小樽／停車・放行李",note:"住宿停車後改為步行。",stay:"約 20 分",next:"前往花窗玻璃美術館"},
+      {time:"07:30–12:25",name:"札幌早晨｜琴似神社・海鮮早餐・北大・頭大佛",steps:[["07:30","札幌住宿步行出發"],["07:40–08:00","琴似神社"],["08:00–08:10","步行返回住宿"],["08:10–08:30","取車並前往海鮮早餐"],["08:30–09:20","㈱マルサン三上商店／まるさん亭 本店"],["09:20–09:45","前往北海道大學並停車"],["09:45–10:00","北海道大學短散步"],["10:00–10:40","北大マルシェ Café & Labo"],["10:40–11:30","前往頭大佛"],["11:30–12:25","頭大佛"]],stay:"約 4 小時 55 分",next:"12:25 出發前往小樽",collapsible:true},
+      {time:"12:25–13:35",name:"前往小樽",note:"由頭大佛前往小樽住宿附近。",stay:"開車約 70 分",next:"抵達後停車、放行李"},
+      {time:"13:35–14:05",name:"抵達小樽／停車・放行李",note:"住宿停車後改為步行。",stay:"約 30 分",next:"步行前往花窗玻璃美術館"},
+      {time:"14:05–14:25",name:"步行前往花窗玻璃美術館",note:"由住宿附近步行前往。",stay:"約 20 分",next:"14:30 入館"},
       {time:"14:30–15:15",name:"⑦ 花窗玻璃美術館（舊高橋倉庫）｜必去",note:"營業時間 09:30–17:00。",stay:"約 45 分",next:"步行約 15 分前往堺町通"},
       {time:"15:30–17:30",name:"堺町通｜依關門時間順逛",steps:[["15:30–15:45","⑥ アイスクリームパーラー美園｜11:00–17:00"],["15:50–16:10","⑤ ポプラファーム 小樽店｜11:00–17:30（L.O.17:00）"],["16:15–16:35","③ 六花亭 小樽運河店｜10:00–18:00"],["16:35–16:55","② 北菓楼 小樽本館｜10:00–18:00"],["17:00–17:30","① LeTAO 總店｜09:00–19:00"]],stay:"約 2 小時",next:"18:30 小樽 Muse 晚餐",collapsible:true},
       {time:"18:30",name:"⑧ 小樽 Muse",reservation:"已預約",note:"燭光洋食餐廳",stay:"60–90 分",next:"晚餐後可前往小樽運河"},
@@ -1070,18 +1089,21 @@ const dayData = {
     ],
     areas:[
       {
-        title:"札幌",
-        layout:"place-guide",
-        guideTitle:"🅿️ 北海道大學停車與 Café",
-        drives:["🚗 約 35–40 分鐘","🚗 約 10–15 分鐘"],
+        title:"札幌北側早晨",
+        note:"",
+        layout:"walking-guide",
         shops:[
-          ["1","頭大佛","08:45–09:45","","https://www.google.com/maps?cid=15134224251499317861",""],
-          ["2","札幌場外市場","10:25–11:20","","https://maps.app.goo.gl/MWxtBL2Lwo6FDcDG8",""],
-          ["3","北海道大學／北大マルシェ Café & Labo","11:35–13:00","校園散步，品嚐牛奶、冰淇淋與甜點。","https://www.google.com/maps/search/?api=1&query=タイムズ北９西４",""]
-        ],
-        coffeeStop:"3",
-        coffee:[
-          [masterLocations.hokudaiMarcheCafe.name,"🍴 必吃｜布丁・鬆餅",masterLocations.hokudaiMarcheCafe.mapUrl]
+          ["●",masterLocations.kotoniJinja.name,"",masterLocations.kotoniJinja.hours,masterLocations.kotoniJinja.mapUrl,""],
+          ["●",masterLocations.marusanMikamiMarusantei.name,"",masterLocations.marusanMikamiMarusantei.hours,masterLocations.marusanMikamiMarusantei.mapUrl,""],
+          ["●",masterLocations.hokkaidoUniversity.name,"",masterLocations.hokkaidoUniversity.hours,masterLocations.hokkaidoUniversity.mapUrl,""],
+          ["●",masterLocations.hokudaiMarcheCafe.name,"",masterLocations.hokudaiMarcheCafe.hours,masterLocations.hokudaiMarcheCafe.mapUrl,""]
+        ]
+      },
+      {
+        title:"頭大佛",
+        layout:"place-guide",
+        shops:[
+          ["1",masterLocations.hillOfBuddha.name,"11:30–12:25","",masterLocations.hillOfBuddha.mapUrl,"開放時間 09:00–16:00"]
         ]
       },
       {
@@ -1437,7 +1459,7 @@ function areaMarkup(areas){
 
 const mustDoByDate={
   "9/16":["🍦 札幌農学校 牛奶霜淇淋","🥐 南瓜咖哩麵包","👟 Sports Depo 三品牌試鞋"],
-  "9/17":["🗿 08:45 頭大佛","🦀 10:25 場外市場海鮮","🎓 11:35 北海道大學／北大マルシェ","🪟 14:30 花窗玻璃美術館（舊高橋倉庫）","🍽️ 18:30 小樽 Muse"],
+  "9/17":["⛩️ 07:40 琴似神社","🦀 08:30 ㈱マルサン三上商店／まるさん亭 本店","🎓 10:00 北大マルシェ Café & Labo","🗿 11:30 頭大佛","🪟 14:30 花窗玻璃美術館（舊高橋倉庫）","🍽️ 18:30 小樽 Muse"],
   "9/18":["☕ 北一ホール","🍔 鹿肉漢堡","🍦 Lake Hill Farm 必去","🎆 洞爺湖煙火船"],
   "9/19":["🚠 08:15 有珠山首班纜車","🐟 虎杖浜海鮮午餐","🍽️ 苫小牧晚餐四選一"],
   "9/20":["🎁 新千歲機場伴手禮"]
@@ -1647,4 +1669,4 @@ initCurrencyTool();
 </body>
 </html>
 
-<!-- pages-redeploy:2026-07-23T08:00+08:00 -->
+<!-- pages-redeploy:2026-07-29T15:48+08:00 -->

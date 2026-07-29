@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.4",
-  "updatedAt": "2026-07-29T15:18:00+08:00",
+  "updatedAt": "2026-07-29T15:48:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -194,7 +194,8 @@
         "頭大佛維持獨立顯示",
         "地點資料統一保留名稱、Google Maps 定位與營業時間"
       ],
-      "websitePublished": false
+      "websitePublished": true,
+      "publishedAt": "2026-07-29T15:48:00+08:00"
     }
   ]
 }
