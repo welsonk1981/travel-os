@@ -3,7 +3,6 @@ name: Publish Day 2
 on:
   push:
     paths:
-      - '.github/workflows/publish-day2.yml'
       - '.github/scripts/publish_day2.py'
       - 'data/master-database.json'
   workflow_dispatch:
@@ -14,6 +13,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
               '㈱マルサン三上商店／まるさん亭 本店',
               '北大マルシェ Café & Labo',
               '14:30–15:15',
-              '⛩️ 琴似神社 → 🦐 海鮮早餐 → 🎓 北大 → 🗿 頭大佛 → 🏙 小樽',
+              '⛩️ 琴似神社 → 🦀 海鮮早餐 → 🎓 北大 → 🗿 頭大佛 → 🌊 小樽',
           ]
           missing = [item for item in required if item not in text]
           if missing:
@@ -51,5 +51,3 @@ jobs:
             git commit -m "發布 Day 2 札幌早晨行程與首頁摘要"
             git push
           fi
-
-# trigger: 2026-07-29T15:30+08:00
