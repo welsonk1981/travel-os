@@ -3,6 +3,7 @@ name: Publish Day 2
 on:
   push:
     paths:
+      - '.github/workflows/publish-day2.yml'
       - '.github/scripts/publish_day2_v2.py'
       - 'data/master-database.json'
   workflow_dispatch:
@@ -52,4 +53,4 @@ jobs:
             git push
           fi
 
-# trigger: 2026-07-29T15:49+08:00
+# trigger: 2026-07-29T15:50+08:00
