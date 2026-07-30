@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.5",
-  "updatedAt": "2026-07-30T10:08:00+08:00",
+  "updatedAt": "2026-07-30T11:15:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -375,6 +375,18 @@
           ],
           "estimateWindow": "20:00–23:00",
           "display": "列出兩個平面停車候選與預估停車費"
+        },
+        {
+          "id": "area-link-style-and-toyako-auto-numbering",
+          "scope": "Day 3／今日會經過的區域",
+          "status": "published",
+          "websitePublished": true,
+          "publishedAt": "2026-07-30T11:15:00+08:00",
+          "changes": [
+            "小樽階層資訊的 Google Maps 連結由右側方形圖釘改為店名後方的 ↗ 內嵌連結",
+            "洞爺湖區域的五個停留點以 CSS 自動編號顯示，不在資料內容中寫死序號",
+            "保留原有地點順序與內容"
+          ]
         }
       ]
     }
@@ -459,6 +471,18 @@
       ],
       "websitePublished": true,
       "publishedAt": "2026-07-30T10:08:00+08:00"
+    },
+    {
+      "date": "2026-07-30",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 3 區域資訊連結與編號",
+      "changes": [
+        "小樽階層資訊的 Google Maps 連結由右側方形圖釘改為店名後方的 ↗ 內嵌連結",
+        "洞爺湖區域的五個停留點以 CSS 自動編號顯示，不在資料內容中寫死序號",
+        "保留原有地點順序與內容"
+      ],
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T11:15:00+08:00"
     }
   ]
 }

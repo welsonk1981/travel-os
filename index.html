@@ -339,7 +339,7 @@ h1{margin:4px 0 4px;font-size:30px}
 .hierarchy-group:last-child{border-bottom:0;padding-bottom:2px}
 .hierarchy-category{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#edf2f6;color:#677580;font-size:11px;font-weight:850}
 .hierarchy-place{margin-top:7px}
-.hierarchy-name-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hierarchy-name-row{display:flex;align-items:center;gap:10px}
 .hierarchy-name{color:#1769aa;text-decoration:none;font-size:17px;font-weight:900;line-height:1.35}
 .hierarchy-map{display:inline-grid;place-items:center;flex:0 0 auto;width:28px;height:28px;border:1px solid #b9cad7;border-radius:8px;background:#f5f9fc;text-decoration:none;font-size:14px}
 .hierarchy-summary{margin-top:4px;color:#68737d;font-size:14px;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -348,6 +348,9 @@ h1{margin:4px 0 4px;font-size:30px}
 .hierarchy-choice{padding:11px 0;border-top:1px dashed #e1e5e8}
 .hierarchy-choice:first-of-type{border-top:0;padding-top:8px}
 .hierarchy-badge{display:inline-flex;padding:3px 8px;border-radius:999px;background:#f0edf7;color:#705791;font-size:11px;font-weight:850;margin-bottom:5px}
+.numbered-area{counter-reset:area-place}
+.numbered-area .shop{position:relative;padding-left:38px}
+.numbered-area .shop::before{counter-increment:area-place;content:counter(area-place);position:absolute;left:0;top:11px;display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
 .coffee-guide{margin-top:11px;padding:11px 12px;border-radius:12px;background:#fff8fa}
 .coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
 .coffee-list{padding-top:4px}
@@ -1201,6 +1204,7 @@ const dayData = {
       {
         title:"洞爺湖",
         note:"",
+        numbered:true,
         shops:[
           ["","洞爺湖住宿","抵達、Check-in。","","https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721",""],
           ["","Seicomart 洞爺田中店","逛超商、簡單採買。","06:00–00:00","https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen",""],
@@ -1391,7 +1395,7 @@ function areaMarkup(areas){
                 <div class="hierarchy-choice-title">${shop[1]}</div>
                 ${shop[2].map((option,index)=>`<article class="hierarchy-choice">
                   <div class="hierarchy-badge">${index===0?"主選":"備選"}</div>
-                  <div class="hierarchy-name-row"><a class="hierarchy-name" href="${option[3]}" target="_blank" rel="noopener">${option[0]}</a><a class="hierarchy-map" href="${option[3]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${option[0]}">📍</a></div>
+                  <div class="hierarchy-name-row"><a class="hierarchy-name" href="${option[3]}" target="_blank" rel="noopener">${option[0]} ↗</a></div>
                   <div class="hierarchy-summary">${option[1].replace(/^(主選|備選)：/,"")}</div>
                   <div class="hierarchy-hours">🕘 ${option[2]}</div>
                 </article>`).join("")}
@@ -1400,7 +1404,7 @@ function areaMarkup(areas){
             return `<section class="hierarchy-group">
               <div class="hierarchy-category">${shop[0]}</div>
               <article class="hierarchy-place">
-                <div class="hierarchy-name-row"><a class="hierarchy-name" href="${shop[4]}" target="_blank" rel="noopener">${shop[1]}</a><a class="hierarchy-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a></div>
+                <div class="hierarchy-name-row"><a class="hierarchy-name" href="${shop[4]}" target="_blank" rel="noopener">${shop[1]} ↗</a></div>
                 ${shop[2]?`<div class="hierarchy-summary">${shortText(shop[2])}</div>`:""}
                 ${shop[3]?`<div class="hierarchy-hours">🕘 ${shop[3]}</div>`:""}
               </article>
@@ -1476,8 +1480,9 @@ function areaMarkup(areas){
       </section>`;
     }
     const groupClass=/晚餐/.test(a.title)?"group-meal":/晚間採買/.test(a.title)?"group-essentials":/藥妝|藥局/.test(a.title)?"group-pharmacy":/便利商店/.test(a.title)?"group-convenience":/大型採買/.test(a.title)?"group-shopping":/冰品/.test(a.title)?"group-dessert":"";
+    const numberedClass=a.numbered?" numbered-area":"";
     return `
-    <details class="area-card ${groupClass}">
+    <details class="area-card ${groupClass}${numberedClass}">
       <summary>${a.title}</summary>
       ${(() => {
         let lastDistrict = "";
@@ -1742,4 +1747,4 @@ initCurrencyTool();
 </body>
 </html>
 
-<!-- pages-redeploy:2026-07-30T10:08+08:00 -->
+<!-- pages-redeploy:2026-07-30T11:15+08:00 -->
