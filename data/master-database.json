@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.4",
-  "updatedAt": "2026-07-30T08:08:00+08:00",
+  "updatedAt": "2026-07-30T08:43:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -76,6 +76,12 @@
           "name": "花窗玻璃美術館（舊高橋倉庫）",
           "mapUrl": "https://maps.app.goo.gl/4S6TfKmJY84Zrqd47",
           "hours": "09:30–17:00"
+        },
+        "satudora-otaru-sakaimachi": {
+          "id": "satudora-otaru-sakaimachi",
+          "name": "サツドラ小樽堺町店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",
+          "hours": "10:30–19:00"
         }
       },
       "itineraries": {
@@ -248,6 +254,16 @@
             }
           },
           "publishedAt": "2026-07-30T08:08:00+08:00"
+        },
+        {
+          "id": "satudora-otaru-sakaimachi-hours",
+          "scope": "今日會經過的區域／小樽／採買",
+          "status": "recorded",
+          "websitePublished": false,
+          "placeId": "satudora-otaru-sakaimachi",
+          "field": "hours",
+          "currentDisplay": "營業時間待確認",
+          "targetDisplay": "10:30–19:00"
         }
       ]
     }
@@ -294,6 +310,17 @@
       ],
       "websitePublished": true,
       "publishedAt": "2026-07-30T08:08:00+08:00"
+    },
+    {
+      "date": "2026-07-30",
+      "projectId": "2026-hokkaido",
+      "scope": "小樽區域資訊欄／サツドラ小樽堺町店",
+      "changes": [
+        "補入サツドラ小樽堺町店正式營業時間 10:30–19:00",
+        "網頁目前顯示的『營業時間待確認』應於下次發布時替換為 10:30–19:00",
+        "本次僅更新 Master Database 與待辦紀錄，尚未修改或發布網頁"
+      ],
+      "websitePublished": false
     }
   ]
 }
