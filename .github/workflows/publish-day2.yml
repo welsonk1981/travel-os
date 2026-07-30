@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/publish-day2.yml'
-      - '.github/scripts/publish_sapporo_night_parking.py'
+      - '.github/scripts/publish_link_style_and_area_numbering.py'
   workflow_dispatch:
 
 permissions:
@@ -18,8 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Apply parking and business-hours updates
-        run: python .github/scripts/publish_sapporo_night_parking.py
+      - name: Apply link style and area numbering updates
+        run: python .github/scripts/publish_link_style_and_area_numbering.py
 
       - name: Verify HTML
         run: |
@@ -27,14 +27,11 @@ jobs:
           from pathlib import Path
           text = Path('index.html').read_text(encoding='utf-8')
           required = [
-              'Parking（南3條西9丁目）',
-              '遠藤興産㈱ 南３西７パーキング',
-              '20:00–23:00 預估停車費 ¥800',
-              '20:00–23:00 預估停車費 ¥1,400',
-              '🌙 宵夜',
-              '18:00–24:00（L.O.23:00）',
-              '11:00–21:00（L.O.20:30）',
-              '10:30–19:00',
+              '${option[0]} ↗',
+              '${shop[1]} ↗',
+              'numbered:true',
+              'numbered-area',
+              'counter(area-place)',
           ]
           missing = [item for item in required if item not in text]
           if missing:
@@ -50,6 +47,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No publication changes"
           else
-            git commit -m "發布札幌宵夜停車與營業時間更新"
+            git commit -m "發布區域連結樣式與洞爺湖自動編號"
             git push
           fi
