@@ -1,6 +1,10 @@
-name: Publish Day 2
+name: Publish Day 2 UI
 
 on:
+  push:
+    paths:
+      - '.github/workflows/publish-day2.yml'
+      - '.github/scripts/publish_day2_ui_v3.py'
   workflow_dispatch:
 
 permissions:
@@ -14,8 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Apply Master Database to website
-        run: python .github/scripts/publish_day2_v2.py
+      - name: Apply UI updates
+        run: python .github/scripts/publish_day2_ui_v3.py
 
       - name: Verify HTML
         run: |
@@ -23,12 +27,12 @@ jobs:
           from pathlib import Path
           text = Path('index.html').read_text(encoding='utf-8')
           required = [
-              '札幌北側早晨',
-              '琴似神社',
-              '㈱マルサン三上商店／まるさん亭 本店',
-              '北大マルシェ Café & Labo',
-              '14:30–15:15',
-              '⛩️ 琴似神社 → 🦀 海鮮早餐 → 🎓 北大 → 🗿 頭大佛 → 🌊 小樽',
+              'class="walk-shop-parking"',
+              'layout:"compact-place"',
+              'layout:"hierarchy"',
+              'class="compact-place-card"',
+              'class="hierarchy-category"',
+              '札幌場外市場 共用免費停車場',
           ]
           missing = [item for item in required if item not in text]
           if missing:
@@ -44,6 +48,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No publication changes"
           else
-            git commit -m "發布 Day 2 札幌早晨行程與首頁摘要"
+            git commit -m "發布停車定位、頭大佛卡片與小樽資訊層次"
             git push
           fi
