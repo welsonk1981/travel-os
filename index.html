@@ -325,6 +325,29 @@ h1{margin:4px 0 4px;font-size:30px}
 .walk-shop-tag{display:inline-flex;flex:0 0 auto;padding:2px 7px;border-radius:999px;background:#edf2f6;color:#5d6c78;font-size:11px;font-weight:850}
 .walk-shop-hours{color:#6d7780;font-size:13px;font-weight:700}
 .walk-shop-map{display:inline-grid;flex:0 0 auto;place-items:center;width:25px;height:25px;border:1px solid #b9cad7;border-radius:8px;background:#f5f9fc;text-decoration:none;font-size:14px;line-height:1}
+.walk-shop-actions{display:flex;align-items:center;gap:7px;margin-left:auto}
+.walk-shop-parking{display:inline-grid;flex:0 0 auto;place-items:center;width:25px;height:25px;border:1px solid #c8b98c;border-radius:8px;background:#fffaf0;text-decoration:none;font-size:14px;line-height:1}
+.compact-place-card{margin-top:10px;padding:14px 15px;border:1px solid #dce4ea;border-left:4px solid #8469aa;border-radius:15px;background:#fff}
+.compact-place-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.compact-place-name{color:#1769aa;font-size:17px;font-weight:900;line-height:1.35}
+.compact-place-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px;color:#5f6972;font-size:13px;font-weight:800}
+.compact-place-hours{color:#66717a;font-weight:700}
+.hierarchy-area{border:1px solid var(--line);border-radius:16px;padding:13px;margin-top:9px}
+.hierarchy-area>summary{cursor:pointer;font-weight:800}
+.hierarchy-list{padding-top:6px}
+.hierarchy-group{padding:15px 0;border-bottom:1px solid #edf0f2}
+.hierarchy-group:last-child{border-bottom:0;padding-bottom:2px}
+.hierarchy-category{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#edf2f6;color:#677580;font-size:11px;font-weight:850}
+.hierarchy-place{margin-top:7px}
+.hierarchy-name-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hierarchy-name{color:#1769aa;text-decoration:none;font-size:17px;font-weight:900;line-height:1.35}
+.hierarchy-map{display:inline-grid;place-items:center;flex:0 0 auto;width:28px;height:28px;border:1px solid #b9cad7;border-radius:8px;background:#f5f9fc;text-decoration:none;font-size:14px}
+.hierarchy-summary{margin-top:4px;color:#68737d;font-size:14px;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hierarchy-hours{margin-top:6px;color:#505a65;font-size:13px;font-weight:750}
+.hierarchy-choice-title{margin-top:7px;color:#334b5d;font-size:16px;font-weight:900}
+.hierarchy-choice{padding:11px 0;border-top:1px dashed #e1e5e8}
+.hierarchy-choice:first-of-type{border-top:0;padding-top:8px}
+.hierarchy-badge{display:inline-flex;padding:3px 8px;border-radius:999px;background:#f0edf7;color:#705791;font-size:11px;font-weight:850;margin-bottom:5px}
 .coffee-guide{margin-top:11px;padding:11px 12px;border-radius:12px;background:#fff8fa}
 .coffee-guide-title{color:#66737d;font-size:14px;font-weight:900}
 .coffee-list{padding-top:4px}
@@ -979,6 +1002,12 @@ const masterLocations=Object.freeze({
     mapUrl:"https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
     hours:"07:00–15:00"
   }),
+  sapporoJogaiMarketParking:Object.freeze({
+    id:"sapporo-jogai-market-parking",
+    name:"札幌場外市場 共用免費停車場",
+    mapUrl:"https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場",
+    hours:""
+  }),
   hokkaidoUniversity:Object.freeze({
     id:"hokkaido-university",
     name:"北海道大學",
@@ -1094,16 +1123,16 @@ const dayData = {
         layout:"walking-guide",
         shops:[
           ["●",masterLocations.kotoniJinja.name,"",masterLocations.kotoniJinja.hours,masterLocations.kotoniJinja.mapUrl,""],
-          ["●",masterLocations.marusanMikamiMarusantei.name,"",masterLocations.marusanMikamiMarusantei.hours,masterLocations.marusanMikamiMarusantei.mapUrl,""],
+          ["●",masterLocations.marusanMikamiMarusantei.name,"",masterLocations.marusanMikamiMarusantei.hours,masterLocations.marusanMikamiMarusantei.mapUrl,"",masterLocations.sapporoJogaiMarketParking.mapUrl],
           ["●",masterLocations.hokkaidoUniversity.name,"",masterLocations.hokkaidoUniversity.hours,masterLocations.hokkaidoUniversity.mapUrl,""],
           ["●",masterLocations.hokudaiMarcheCafe.name,"",masterLocations.hokudaiMarcheCafe.hours,masterLocations.hokudaiMarcheCafe.mapUrl,""]
         ]
       },
       {
         title:"頭大佛",
-        layout:"place-guide",
+        layout:"compact-place",
         shops:[
-          ["1",masterLocations.hillOfBuddha.name,"11:30–12:25","",masterLocations.hillOfBuddha.mapUrl,"開放時間 09:00–16:00"]
+          ["",masterLocations.hillOfBuddha.name,"11:30–12:25","",masterLocations.hillOfBuddha.mapUrl,"開放時間 09:00–16:00"]
         ]
       },
       {
@@ -1141,6 +1170,7 @@ const dayData = {
       {
         title:"小樽",
         note:"住宿停車後步行；12:30 整理完成並退房",
+        layout:"hierarchy",
         shops:[
           ["咖啡","北一硝子 北一ホール","點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。","09:00–17:30；點餐 09:30–17:00","https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール",""],
           ["採買","サツドラ小樽堺町店","補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。","營業時間待確認","https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",""],
@@ -1336,6 +1366,47 @@ function areaMarkup(areas){
         </div>`).join("")}
       </section>`;
     }
+    if(a.layout==="compact-place"){
+      const shop=a.shops[0];
+      return `<article class="compact-place-card">
+        <div class="compact-place-head">
+          <div>
+            <div class="compact-place-name">${shop[1]}</div>
+            <div class="compact-place-meta"><span>🕐 ${shop[2]}</span>${shop[5]?`<span class="compact-place-hours">${shop[5]}</span>`:""}</div>
+          </div>
+          <a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">📍</a>
+        </div>
+      </article>`;
+    }
+    if(a.layout==="hierarchy"){
+      return `<details class="hierarchy-area">
+        <summary>${a.title}</summary>
+        <div class="hierarchy-list">
+          ${a.shops.map(shop=>{
+            if(shop[0]==="__BURGER__"){
+              return `<section class="hierarchy-group">
+                <div class="hierarchy-category">漢堡</div>
+                <div class="hierarchy-choice-title">${shop[1]}</div>
+                ${shop[2].map((option,index)=>`<article class="hierarchy-choice">
+                  <div class="hierarchy-badge">${index===0?"主選":"備選"}</div>
+                  <div class="hierarchy-name-row"><a class="hierarchy-name" href="${option[3]}" target="_blank" rel="noopener">${option[0]}</a><a class="hierarchy-map" href="${option[3]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${option[0]}">📍</a></div>
+                  <div class="hierarchy-summary">${option[1].replace(/^(主選|備選)：/,"")}</div>
+                  <div class="hierarchy-hours">🕘 ${option[2]}</div>
+                </article>`).join("")}
+              </section>`;
+            }
+            return `<section class="hierarchy-group">
+              <div class="hierarchy-category">${shop[0]}</div>
+              <article class="hierarchy-place">
+                <div class="hierarchy-name-row"><a class="hierarchy-name" href="${shop[4]}" target="_blank" rel="noopener">${shop[1]}</a><a class="hierarchy-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a></div>
+                ${shop[2]?`<div class="hierarchy-summary">${shortText(shop[2])}</div>`:""}
+                ${shop[3]?`<div class="hierarchy-hours">🕘 ${shop[3]}</div>`:""}
+              </article>
+            </section>`;
+          }).join("")}
+        </div>
+      </details>`;
+    }
     if(a.layout==="place-guide"){
       return `<section class="place-guide">
         <div class="place-guide-title">${a.title}</div>
@@ -1364,7 +1435,7 @@ function areaMarkup(areas){
         <section class="walk-guide">
         <div class="walk-guide-note">${a.note}</div>
         ${a.shops.map(shop=>`<article class="walk-shop">
-          <div class="walk-shop-name"><span>${shop[0]} ${shop[1]}</span><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}">📍</a></div>
+          <div class="walk-shop-name"><span>${shop[0]} ${shop[1]}</span><span class="walk-shop-actions"><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="店家定位">📍</a>${shop[6]?`<a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a>`:""}</span></div>
           <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
           ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
         </article>`).join("")}
@@ -1513,7 +1584,7 @@ function renderDay(dayKey){
         ${dayBriefMarkup(d)}
         ${stopMarkup(d.stops)}
         <div class="area-list">
-          ${orderedAreas.some(a=>a.layout==="place-guide")?"":`<h3 style="margin:14px 0 2px">今日會經過的區域</h3>`}
+          <h3 style="margin:14px 0 2px">今日會經過的區域</h3>
           ${areaMarkup(orderedAreas)}
         </div>
       </article>
@@ -1669,4 +1740,4 @@ initCurrencyTool();
 </body>
 </html>
 
-<!-- pages-redeploy:2026-07-29T15:48+08:00 -->
+<!-- pages-redeploy:2026-07-30T08:08+08:00 -->

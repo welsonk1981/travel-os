@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.4",
-  "updatedAt": "2026-07-29T16:11:00+08:00",
+  "updatedAt": "2026-07-30T08:08:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -194,8 +194,8 @@
         {
           "id": "otaru-area-information-hierarchy",
           "scope": "今日會經過的區域／小樽",
-          "status": "recorded",
-          "websitePublished": false,
+          "status": "published",
+          "websitePublished": true,
           "preserveOrder": true,
           "order": [
             "咖啡",
@@ -246,7 +246,8 @@
                 "主選／備選"
               ]
             }
-          }
+          },
+          "publishedAt": "2026-07-30T08:08:00+08:00"
         }
       ]
     }
@@ -276,7 +277,8 @@
         "頭大佛下方資訊改採緊湊單列規格，不重複顯示區塊標題與數字圓章",
         "本次僅寫入 Master Database，尚未發布網頁"
       ],
-      "websitePublished": false
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T08:08:00+08:00"
     },
     {
       "date": "2026-07-29",
@@ -290,7 +292,8 @@
         "加大不同分類之間的間距，店內資訊維持緊湊，分隔線改為低彩度",
         "本次僅寫入 Master Database，尚未修改或發布網頁"
       ],
-      "websitePublished": false
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T08:08:00+08:00"
     }
   ]
 }
