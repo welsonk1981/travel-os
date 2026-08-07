@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#4f7fa8">
-<title>2026 北海道 Travel OS 3.1 Minimal</title>
+<title>2026 北海道 Travel OS 3.0 Minimal</title>
 <style>
 :root{
   --bg:#f7f6f2;
@@ -319,6 +319,8 @@ h1{margin:4px 0 4px;font-size:30px}
 .walk-shop{margin-top:10px;padding:13px 14px;border:1px solid #dce4ea;border-radius:15px;background:#fff}
 .walk-shop:first-of-type{margin-top:0}
 .walk-shop-name{display:flex;align-items:center;gap:7px;color:#1769aa;font-size:17px;font-weight:900;line-height:1.4}
+.walk-shop-inline-link{color:#1769aa;text-decoration:none;font-size:17px;font-weight:900;line-height:1.4}
+.walk-shop-inline-link:hover{text-decoration:underline}
 .walk-shop-desc{display:flex;align-items:flex-start;gap:7px;margin-top:6px;color:#596570;font-size:14px;line-height:1.55}
 .walk-shop-desc-text{min-width:0}
 .walk-shop-meta{margin-top:7px}
@@ -733,244 +735,6 @@ h1{margin:4px 0 4px;font-size:30px}
   .compact-option-separator{display:none}
 }
 
-
-/* Travel OS 3.1｜區域資訊統一為單層清單；只調整呈現，不修改資料 */
-.area-card,
-.hierarchy-area{
-  margin-top:10px;
-  padding:0;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:#fff;
-}
-.area-card.group-meal,
-.area-card.group-pharmacy,
-.area-card.group-convenience,
-.area-card.group-shopping,
-.area-card.group-dessert,
-.area-card.group-essentials{
-  border-left:1px solid var(--line);
-  background:#fff;
-}
-.area-card>summary,
-.hierarchy-area>summary{
-  padding:12px 14px;
-  list-style:none;
-  background:#fbfcfd;
-  color:var(--text);
-  font-size:16px;
-  font-weight:900;
-}
-.area-card>summary::-webkit-details-marker,
-.hierarchy-area>summary::-webkit-details-marker{display:none}
-.area-card>summary::before,
-.hierarchy-area>summary::before{
-  content:"▸";
-  display:inline-block;
-  margin-right:7px;
-  color:#71818c;
-  font-size:12px;
-  transform:translateY(-1px);
-}
-.area-card[open]>summary::before,
-.hierarchy-area[open]>summary::before{content:"▾"}
-.area-card>summary:focus,
-.hierarchy-area>summary:focus{outline:none}
-.area-card>summary:focus-visible,
-.hierarchy-area>summary:focus-visible{
-  outline:2px solid #9bbbd1;
-  outline-offset:-3px;
-  border-radius:14px;
-}
-
-/* 通用單層清單 */
-.flat-list,
-.hierarchy-list{
-  margin:0;
-  padding:5px 14px 13px;
-  background:transparent;
-}
-.flat-note,
-.walk-guide-note{
-  margin:5px 0 4px;
-  color:var(--sub);
-  font-size:12px;
-}
-.flat-item,
-.hierarchy-group{
-  position:relative;
-  margin:0;
-  padding:12px 0;
-  border:0;
-  background:transparent;
-}
-.flat-item + .flat-item,
-.hierarchy-group + .hierarchy-group{margin-top:2px}
-.flat-kicker,
-.hierarchy-category{
-  display:block;
-  margin:0 0 4px;
-  padding:0;
-  border-radius:0;
-  background:transparent;
-  color:#7b8790;
-  font-size:11px;
-  font-weight:850;
-}
-.flat-title-row,
-.hierarchy-name-row{
-  display:flex;
-  align-items:baseline;
-  gap:7px;
-  min-width:0;
-}
-.flat-marker{
-  flex:0 0 auto;
-  color:#1769aa;
-  font-size:14px;
-  font-weight:900;
-}
-.flat-name,
-.hierarchy-name{
-  min-width:0;
-  color:#1769aa;
-  text-decoration:none;
-  font-size:17px;
-  font-weight:900;
-  line-height:1.4;
-}
-.flat-name:hover,
-.hierarchy-name:hover{text-decoration:underline}
-.flat-desc,
-.hierarchy-summary{
-  margin-top:3px;
-  color:#68737d;
-  font-size:14px;
-  line-height:1.5;
-  white-space:normal;
-  overflow:visible;
-  text-overflow:clip;
-}
-.flat-meta,
-.hierarchy-hours{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:5px;
-  color:#5f6972;
-  font-size:13px;
-  font-weight:750;
-}
-.flat-parking{
-  color:#8a6c27;
-  text-decoration:none;
-  font-weight:850;
-}
-.flat-parking:hover{text-decoration:underline}
-
-/* 原 walking-guide 改為同一種單層清單 */
-.walk-guide{
-  margin:0;
-  padding:5px 14px 13px;
-  border:0;
-  border-radius:0;
-  background:transparent;
-}
-.walk-shop{
-  margin:0;
-  padding:12px 0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-}
-.walk-shop + .walk-shop{margin-top:2px}
-
-/* 小樽階層：分類與選項都以留白區隔，不再用內框或分隔線 */
-.hierarchy-choice{
-  margin:0;
-  padding:9px 0 5px;
-  border:0;
-}
-.hierarchy-choice + .hierarchy-choice{margin-top:4px}
-.hierarchy-choice-title{
-  margin-top:2px;
-  color:#334b5d;
-  font-size:16px;
-  font-weight:900;
-}
-.hierarchy-badge{
-  display:block;
-  margin:0 0 3px;
-  padding:0;
-  border-radius:0;
-  background:transparent;
-  color:#705791;
-  font-size:11px;
-  font-weight:900;
-}
-
-/* 一個地點的獨立顯示，改成清爽單列 */
-.compact-place-card{
-  margin-top:10px;
-  padding:13px 14px;
-  border:1px solid var(--line);
-  border-left:1px solid var(--line);
-  border-radius:16px;
-  background:#fff;
-}
-.compact-place-head{align-items:flex-start}
-.compact-place-name a{
-  color:#1769aa;
-  text-decoration:none;
-}
-.compact-place-name a:hover{text-decoration:underline}
-.compact-place-meta{margin-top:4px}
-
-/* 一般區域清單同步減少框線與膠囊 */
-.area-card .shop{
-  margin:0;
-  padding:12px 0;
-  border:0;
-  background:transparent;
-}
-.area-card.group-essentials .shop{
-  margin:0;
-  padding:12px 0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-}
-.shop-type{
-  display:block;
-  margin:0 0 4px;
-  padding:0;
-  border-radius:0;
-  background:transparent;
-  color:#7b8790;
-  font-size:11px;
-}
-.district-label{
-  margin:7px 0 0;
-  padding:9px 0 0;
-  border-radius:0;
-  background:transparent;
-  color:#5e7383;
-  font-size:12px;
-}
-.numbered-area .shop{padding-left:36px}
-.numbered-area .shop::before{top:12px}
-
-/* 舊方形地圖按鈕不再作為主要呈現；停車仍保留文字連結 */
-.hierarchy-map{display:none}
-
-@media(max-width:560px){
-  .flat-list,.hierarchy-list,.walk-guide{padding-left:13px;padding-right:13px}
-  .flat-name,.hierarchy-name{font-size:16px}
-  .flat-desc,.hierarchy-summary{font-size:13px}
-}
-
 </style>
 </head>
 <body>
@@ -978,7 +742,7 @@ h1{margin:4px 0 4px;font-size:30px}
   <section class="hero">
     <div class="hero-top">
       <div>
-        <div class="eyebrow">TRAVEL OS 3.1・MINIMAL</div>
+        <div class="eyebrow">TRAVEL OS 3.0・MINIMAL</div>
         <h1>2026 北海道</h1>
         <div class="sub">9/16（三）– 9/20（日）｜5天4夜自駕</div>
       </div>
@@ -1382,6 +1146,7 @@ const dayData = {
         title:"小樽",
         note:"從 1-19 Shinonomechō 出發，由近到遠。",
         layout:"walking-guide",
+        linkStyle:"inline-arrow",
         shops:[
           ["①",masterLocations.letAoMain.name,"Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。","09:00–19:00",masterLocations.letAoMain.mapUrl,"甜點選購"],
           ["②","北菓楼 小樽本館","妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","10:00–18:00","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","甜點選購"],
@@ -1615,9 +1380,10 @@ function areaMarkup(areas){
       return `<article class="compact-place-card">
         <div class="compact-place-head">
           <div>
-            <div class="compact-place-name"><a href="${shop[4]}" target="_blank" rel="noopener">${shop[1]} ↗</a></div>
+            <div class="compact-place-name">${shop[1]}</div>
             <div class="compact-place-meta"><span>🕐 ${shop[2]}</span>${shop[5]?`<span class="compact-place-hours">${shop[5]}</span>`:""}</div>
           </div>
+          <a class="place-guide-link" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="在 Google Maps 開啟">📍</a>
         </div>
       </article>`;
     }
@@ -1673,20 +1439,26 @@ function areaMarkup(areas){
       </section>`;
     }
     if(a.layout==="walking-guide"){
+      const inlineArrow=a.linkStyle==="inline-arrow";
       return `<details class="area-card">
         <summary>${a.title}</summary>
-        <div class="flat-list">
-          ${a.note?`<div class="flat-note">${a.note}</div>`:""}
-          ${a.shops.map(shop=>`<article class="flat-item">
-            ${shop[5]?`<div class="flat-kicker">${shop[5]}</div>`:""}
-            <div class="flat-title-row">
-              ${shop[0]?`<span class="flat-marker">${shop[0]}</span>`:""}
-              <a class="flat-name" href="${shop[4]}" target="_blank" rel="noopener">${shop[1]} ↗</a>
-            </div>
-            ${shop[2]?`<div class="flat-desc">${shop[2]}</div>`:""}
-            ${(shop[3]||shop[6])?`<div class="flat-meta">${shop[3]?`<span>🕘 ${shop[3]}</span>`:""}${shop[6]?`<a class="flat-parking" href="${shop[6]}" target="_blank" rel="noopener">🅿️ 停車定位 ↗</a>`:""}</div>`:""}
-          </article>`).join("")}
-        </div>
+        <section class="walk-guide">
+        <div class="walk-guide-note">${a.note}</div>
+        ${a.shops.map(shop=>`<article class="walk-shop">
+          <div class="walk-shop-name">
+            ${inlineArrow
+              ? `<a class="walk-shop-inline-link" href="${shop[4]}" target="_blank" rel="noopener">${shop[0]} ${shop[1]} ↗</a>`
+              : `<span>${shop[0]} ${shop[1]}</span>`
+            }
+            ${inlineArrow
+              ? (shop[6]?`<span class="walk-shop-actions"><a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a></span>`:"")
+              : `<span class="walk-shop-actions"><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="店家定位">📍</a>${shop[6]?`<a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a>`:""}</span>`
+            }
+          </div>
+          <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
+          ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
+        </article>`).join("")}
+        </section>
       </details>`;
     }
     if(a.layout==="route"){
@@ -1988,4 +1760,4 @@ initCurrencyTool();
 </body>
 </html>
 
-<!-- travel-os-version:3.1 | local-build:2026-08-07T08:42+08:00 | data-unchanged -->
+<!-- local-edit:2026-08-07T08:33+08:00 -->
