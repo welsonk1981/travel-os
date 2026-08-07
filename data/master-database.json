@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
   "databaseVersion": "1.5",
-  "updatedAt": "2026-07-30T11:15:00+08:00",
+  "updatedAt": "2026-08-07T14:59:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -134,6 +134,13 @@
             "appliedCap": "24小時最高",
             "totalYen": 1400
           }
+        },
+        "don-quijote-susukino": {
+          "id": "don-quijote-susukino",
+          "name": "ドン・キホーテ すすきの店",
+          "mapUrl": "https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7",
+          "hours": "10:00–05:00",
+          "category": "Day 1／札幌晚上／採買"
         }
       },
       "itineraries": {
@@ -254,7 +261,10 @@
             "endo-minami3-nishi7-parking"
           ],
           "parkingEstimateWindow": "20:00–23:00",
-          "preferredParkingType": "平面停車場"
+          "preferredParkingType": "平面停車場",
+          "eveningShoppingPlaceIds": [
+            "don-quijote-susukino"
+          ]
         }
       },
       "pendingUiChanges": [
@@ -387,6 +397,19 @@
             "洞爺湖區域的五個停留點以 CSS 自動編號顯示，不在資料內容中寫死序號",
             "保留原有地點順序與內容"
           ]
+        },
+        {
+          "id": "donki-susukino-day1-shopping",
+          "scope": "Day 1／札幌晚上／採買",
+          "status": "recorded",
+          "websitePublished": false,
+          "placeId": "don-quijote-susukino",
+          "targetCategory": "🛍️ 採買",
+          "targetDisplay": {
+            "name": "ドン・キホーテ すすきの店",
+            "hours": "10:00–05:00",
+            "mapUrl": "https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7"
+          }
         }
       ]
     }
@@ -483,6 +506,19 @@
       ],
       "websitePublished": true,
       "publishedAt": "2026-07-30T11:15:00+08:00"
+    },
+    {
+      "date": "2026-08-07",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 1 札幌晚上／唐吉訶德薄野店",
+      "changes": [
+        "新增ドン・キホーテ すすきの店",
+        "Google Maps：https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7",
+        "營業時間：10:00–05:00",
+        "歸類至 Day 1 札幌晚上／採買",
+        "本次先寫入 Master Database；正式 GitHub Pages 尚未發布"
+      ],
+      "websitePublished": false
     }
   ]
 }
