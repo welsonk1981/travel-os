@@ -1,0 +1,524 @@
+{
+  "databaseName": "Travel OS Master Database",
+  "databaseVersion": "1.5",
+  "updatedAt": "2026-08-07T14:59:00+08:00",
+  "projects": {
+    "2026-hokkaido": {
+      "name": "2026 北海道",
+      "travelDates": {
+        "start": "2026-09-16",
+        "end": "2026-09-20"
+      },
+      "places": {
+        "toya-fireworks-pier": {
+          "id": "toya-fireworks-pier",
+          "name": "洞爺湖花火船碼頭",
+          "mapUrl": "https://maps.app.goo.gl/QtkVqHj5hLuV7svC8",
+          "hours": null
+        },
+        "ebijin-otaru": {
+          "id": "ebijin-otaru",
+          "name": "EBIJIN 小樽店",
+          "mapUrl": "https://maps.app.goo.gl/jaHGkfT3ZcdzwsUk8",
+          "hours": null
+        },
+        "letao-main": {
+          "id": "letao-main",
+          "name": "LeTAO 總店",
+          "mapUrl": "https://maps.app.goo.gl/iRy2gmCFUBvbcEgW7",
+          "hours": "09:00–19:00"
+        },
+        "lake-hill-farm": {
+          "id": "lake-hill-farm",
+          "name": "Lake Hill Farm",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm+127+Hanawa+Toyako",
+          "hours": null
+        },
+        "kotoni-jinja": {
+          "id": "kotoni-jinja",
+          "name": "琴似神社",
+          "mapUrl": "https://maps.app.goo.gl/C7Hq32wX3t4aCAuQ9",
+          "hours": "境內自由參拜"
+        },
+        "marusan-mikami-marusan-tei": {
+          "id": "marusan-mikami-marusan-tei",
+          "name": "㈱マルサン三上商店／まるさん亭 本店",
+          "mapUrl": "https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
+          "hours": "07:00–15:00",
+          "parkingId": "sapporo-jogai-market-parking"
+        },
+        "sapporo-jogai-market-parking": {
+          "id": "sapporo-jogai-market-parking",
+          "name": "札幌場外市場 共用免費停車場",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場",
+          "hours": null
+        },
+        "hokkaido-university": {
+          "id": "hokkaido-university",
+          "name": "北海道大學",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北海道大学",
+          "hours": null
+        },
+        "hokudai-marche-cafe": {
+          "id": "hokudai-marche-cafe",
+          "name": "北大マルシェ Café & Labo",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo",
+          "hours": "10:00–16:00"
+        },
+        "hill-of-buddha": {
+          "id": "hill-of-buddha",
+          "name": "頭大佛",
+          "mapUrl": "https://www.google.com/maps?cid=15134224251499317861",
+          "hours": "09:00–16:00"
+        },
+        "otaru-stained-glass-museum": {
+          "id": "otaru-stained-glass-museum",
+          "name": "花窗玻璃美術館（舊高橋倉庫）",
+          "mapUrl": "https://maps.app.goo.gl/4S6TfKmJY84Zrqd47",
+          "hours": "09:30–17:00"
+        },
+        "satudora-otaru-sakaimachi": {
+          "id": "satudora-otaru-sakaimachi",
+          "name": "サツドラ小樽堺町店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",
+          "hours": "10:30–19:00"
+        },
+        "hachikyo-oyaji": {
+          "id": "hachikyo-oyaji",
+          "name": "海味はちきょう別亭 おやじ",
+          "mapUrl": "https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il",
+          "hours": "18:00–24:00（L.O.23:00）；週日休，週一為國定假日時週日營業"
+        },
+        "nemuro-hanamaru-cocono": {
+          "id": "nemuro-hanamaru-cocono",
+          "name": "迴轉壽司 根室花丸 COCONO SUSUKINO店",
+          "mapUrl": "https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il",
+          "hours": "11:00–21:00（L.O.20:30）"
+        },
+        "sapporo-minami3-nishi9-parking": {
+          "id": "sapporo-minami3-nishi9-parking",
+          "name": "Parking（南3條西9丁目）",
+          "mapUrl": "https://maps.app.goo.gl/Z1dYJfc6i8WCAitJ6",
+          "type": "平面停車場",
+          "hours": "24小時",
+          "pricing": {
+            "daytime": "08:00–20:00｜30分 ¥300",
+            "nighttime": "20:00–08:00｜30分 ¥300",
+            "nightMaximumYen": 800,
+            "maximum": "入庫後12小時最高 ¥1,600"
+          },
+          "estimatedParking": {
+            "start": "20:00",
+            "end": "23:00",
+            "durationMinutes": 180,
+            "rawYen": 1800,
+            "appliedCap": "夜間最高",
+            "totalYen": 800
+          }
+        },
+        "endo-minami3-nishi7-parking": {
+          "id": "endo-minami3-nishi7-parking",
+          "name": "遠藤興産㈱ 南３西７パーキング",
+          "mapUrl": "https://maps.app.goo.gl/b7qBjfFCpby2eTCA8",
+          "type": "平面停車場",
+          "hours": "24小時",
+          "pricing": {
+            "allDay": "30分 ¥330",
+            "maximum": "入庫後24小時最高 ¥1,400（重複適用）"
+          },
+          "estimatedParking": {
+            "start": "20:00",
+            "end": "23:00",
+            "durationMinutes": 180,
+            "rawYen": 1980,
+            "appliedCap": "24小時最高",
+            "totalYen": 1400
+          }
+        },
+        "don-quijote-susukino": {
+          "id": "don-quijote-susukino",
+          "name": "ドン・キホーテ すすきの店",
+          "mapUrl": "https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7",
+          "hours": "10:00–05:00",
+          "category": "Day 1／札幌晚上／採買"
+        }
+      },
+      "itineraries": {
+        "day2": {
+          "date": "2026-09-17",
+          "route": [
+            "kotoni-jinja",
+            "marusan-mikami-marusan-tei",
+            "hokkaido-university",
+            "hokudai-marche-cafe",
+            "hill-of-buddha",
+            "otaru-stained-glass-museum"
+          ],
+          "displayGroups": [
+            {
+              "id": "sapporo-north-morning",
+              "title": "札幌北側早晨",
+              "collapsible": true,
+              "defaultExpanded": false,
+              "itemMarker": "●",
+              "placeIds": [
+                "kotoni-jinja",
+                "marusan-mikami-marusan-tei",
+                "hokkaido-university",
+                "hokudai-marche-cafe"
+              ]
+            },
+            {
+              "id": "hill-of-buddha-main-stop",
+              "title": "頭大佛",
+              "collapsible": false,
+              "displayStyle": "compact-row",
+              "showSectionTitle": false,
+              "showNumberBadge": false,
+              "placeIds": [
+                "hill-of-buddha"
+              ]
+            }
+          ],
+          "timeline": [
+            {
+              "time": "07:30",
+              "type": "depart",
+              "name": "札幌住宿步行出發"
+            },
+            {
+              "time": "07:40–08:00",
+              "type": "place",
+              "placeId": "kotoni-jinja"
+            },
+            {
+              "time": "08:00–08:10",
+              "type": "walk",
+              "name": "步行返回住宿"
+            },
+            {
+              "time": "08:10–08:30",
+              "type": "drive",
+              "name": "取車並前往海鮮早餐"
+            },
+            {
+              "time": "08:30–09:20",
+              "type": "place",
+              "placeId": "marusan-mikami-marusan-tei",
+              "parkingId": "sapporo-jogai-market-parking"
+            },
+            {
+              "time": "09:20–09:45",
+              "type": "drive",
+              "name": "前往北海道大學並停車"
+            },
+            {
+              "time": "09:45–10:00",
+              "type": "place",
+              "placeId": "hokkaido-university"
+            },
+            {
+              "time": "10:00–10:40",
+              "type": "place",
+              "placeId": "hokudai-marche-cafe"
+            },
+            {
+              "time": "10:40–11:30",
+              "type": "drive",
+              "name": "前往頭大佛"
+            },
+            {
+              "time": "11:30–12:25",
+              "type": "place",
+              "placeId": "hill-of-buddha"
+            },
+            {
+              "time": "12:25–13:35",
+              "type": "drive",
+              "name": "前往小樽"
+            },
+            {
+              "time": "13:35–14:05",
+              "type": "arrival",
+              "name": "抵達小樽、停車並放行李"
+            },
+            {
+              "time": "14:05–14:25",
+              "type": "walk",
+              "name": "步行前往花窗玻璃美術館"
+            },
+            {
+              "time": "14:30–15:15",
+              "type": "place",
+              "placeId": "otaru-stained-glass-museum"
+            }
+          ]
+        },
+        "day1": {
+          "date": "2026-09-16",
+          "parkingOptions": [
+            "sapporo-minami3-nishi9-parking",
+            "endo-minami3-nishi7-parking"
+          ],
+          "parkingEstimateWindow": "20:00–23:00",
+          "preferredParkingType": "平面停車場",
+          "eveningShoppingPlaceIds": [
+            "don-quijote-susukino"
+          ]
+        }
+      },
+      "pendingUiChanges": [
+        {
+          "id": "otaru-area-information-hierarchy",
+          "scope": "今日會經過的區域／小樽",
+          "status": "published",
+          "websitePublished": true,
+          "preserveOrder": true,
+          "order": [
+            "咖啡",
+            "採買",
+            "漢堡（二選一）"
+          ],
+          "displayRules": {
+            "areaTitle": "小樽",
+            "categoryLabel": {
+              "style": "small-muted-label",
+              "purpose": "只作分類提示，不與店名競爭"
+            },
+            "placeName": {
+              "style": "primary-title",
+              "mapButtonPosition": "right"
+            },
+            "summary": {
+              "style": "secondary-text",
+              "maxLines": 1,
+              "purpose": "保留用途重點，但降低視覺重量"
+            },
+            "hours": {
+              "style": "tertiary-meta",
+              "fixedPosition": "last-row"
+            },
+            "optionGroup": {
+              "title": "漢堡（二選一）",
+              "showGroupTitleOnce": true,
+              "showChoiceBadges": true,
+              "choiceBadges": [
+                "主選",
+                "備選"
+              ]
+            },
+            "spacing": {
+              "betweenCategories": "large",
+              "withinPlace": "compact",
+              "divider": "subtle"
+            },
+            "contentPolicy": {
+              "keepExistingOrder": true,
+              "doNotDeleteExistingInformation": true,
+              "reduceRepeatedLabels": true,
+              "emphasizeActionableInformation": [
+                "店名",
+                "定位",
+                "營業時間",
+                "主選／備選"
+              ]
+            }
+          },
+          "publishedAt": "2026-07-30T08:08:00+08:00"
+        },
+        {
+          "id": "satudora-otaru-sakaimachi-hours",
+          "scope": "今日會經過的區域／小樽／採買",
+          "status": "published",
+          "websitePublished": true,
+          "placeId": "satudora-otaru-sakaimachi",
+          "field": "hours",
+          "currentDisplay": "營業時間待確認",
+          "targetDisplay": "10:30–19:00",
+          "publishedAt": "2026-07-30T10:08:00+08:00"
+        },
+        {
+          "id": "hachikyo-oyaji-hours",
+          "scope": "Day 1／札幌晚上／宵夜",
+          "status": "published",
+          "websitePublished": true,
+          "placeId": "hachikyo-oyaji",
+          "field": "hours",
+          "currentDisplay": "依當日營業時間",
+          "targetDisplay": "18:00–24:00（L.O.23:00）；週日休，週一為國定假日時週日營業",
+          "publishedAt": "2026-07-30T10:08:00+08:00"
+        },
+        {
+          "id": "nemuro-hanamaru-cocono-hours",
+          "scope": "Day 1／札幌晚上／宵夜",
+          "status": "published",
+          "websitePublished": true,
+          "placeId": "nemuro-hanamaru-cocono",
+          "field": "hours",
+          "currentDisplay": "依當日營業時間",
+          "targetDisplay": "11:00–21:00（L.O.20:30）",
+          "publishedAt": "2026-07-30T10:08:00+08:00"
+        },
+        {
+          "id": "late-night-wording",
+          "scope": "Day 1／札幌晚上",
+          "status": "published",
+          "websitePublished": true,
+          "field": "wording",
+          "currentDisplay": "消夜",
+          "targetDisplay": "宵夜",
+          "applyTo": [
+            "分類標題",
+            "相關說明文字"
+          ],
+          "publishedAt": "2026-07-30T10:08:00+08:00"
+        },
+        {
+          "id": "sapporo-night-parking-options",
+          "scope": "Day 1／札幌晚上／停車",
+          "status": "published",
+          "websitePublished": true,
+          "publishedAt": "2026-07-30T10:08:00+08:00",
+          "placeIds": [
+            "sapporo-minami3-nishi9-parking",
+            "endo-minami3-nishi7-parking"
+          ],
+          "estimateWindow": "20:00–23:00",
+          "display": "列出兩個平面停車候選與預估停車費"
+        },
+        {
+          "id": "area-link-style-and-toyako-auto-numbering",
+          "scope": "Day 3／今日會經過的區域",
+          "status": "published",
+          "websitePublished": true,
+          "publishedAt": "2026-07-30T11:15:00+08:00",
+          "changes": [
+            "小樽階層資訊的 Google Maps 連結由右側方形圖釘改為店名後方的 ↗ 內嵌連結",
+            "洞爺湖區域的五個停留點以 CSS 自動編號顯示，不在資料內容中寫死序號",
+            "保留原有地點順序與內容"
+          ]
+        },
+        {
+          "id": "donki-susukino-day1-shopping",
+          "scope": "Day 1／札幌晚上／採買",
+          "status": "recorded",
+          "websitePublished": false,
+          "placeId": "don-quijote-susukino",
+          "targetCategory": "🛍️ 採買",
+          "targetDisplay": {
+            "name": "ドン・キホーテ すすきの店",
+            "hours": "10:00–05:00",
+            "mapUrl": "https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7"
+          }
+        }
+      ]
+    }
+  },
+  "changeLog": [
+    {
+      "date": "2026-07-29",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 2",
+      "changes": [
+        "新增琴似神社並安排 07:30 由住宿步行出發",
+        "札幌場外市場改為㈱マルサン三上商店／まるさん亭 本店",
+        "調整為琴似神社、海鮮早餐、北海道大學、北大マルシェ、頭大佛、小樽的順序",
+        "新增札幌北側早晨收合群組，展開後各地點使用項目符號",
+        "頭大佛維持獨立顯示",
+        "地點資料統一保留名稱、Google Maps 定位與營業時間"
+      ],
+      "websitePublished": true,
+      "publishedAt": "2026-07-29T15:48:00+08:00"
+    },
+    {
+      "date": "2026-07-29",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 2 顯示與停車資料",
+      "changes": [
+        "新增札幌場外市場共用免費停車場定位，並關聯㈱マルサン三上商店／まるさん亭 本店",
+        "頭大佛下方資訊改採緊湊單列規格，不重複顯示區塊標題與數字圓章",
+        "本次僅寫入 Master Database，尚未發布網頁"
+      ],
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T08:08:00+08:00"
+    },
+    {
+      "date": "2026-07-29",
+      "projectId": "2026-hokkaido",
+      "scope": "小樽區域資訊欄排版",
+      "changes": [
+        "維持咖啡、採買、漢堡（二選一）的既有順序，不調整行程與店家排列",
+        "建立分類標籤、店名、簡介、營業時間四層閱讀層級",
+        "店名與 Google Maps 定位列為主要資訊，簡介降為次要單行文字，營業時間固定置於最後一列",
+        "漢堡區塊只顯示一次二選一標題，並以主選／備選徽章辨識兩家店",
+        "加大不同分類之間的間距，店內資訊維持緊湊，分隔線改為低彩度",
+        "本次僅寫入 Master Database，尚未修改或發布網頁"
+      ],
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T08:08:00+08:00"
+    },
+    {
+      "date": "2026-07-30",
+      "projectId": "2026-hokkaido",
+      "scope": "小樽區域資訊欄／サツドラ小樽堺町店",
+      "changes": [
+        "補入サツドラ小樽堺町店正式營業時間 10:30–19:00",
+        "網頁目前顯示的『營業時間待確認』應於下次發布時替換為 10:30–19:00",
+        "本次僅更新 Master Database 與待辦紀錄，尚未修改或發布網頁"
+      ],
+      "websitePublished": false
+    },
+    {
+      "date": "2026-07-30",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 1 札幌晚上／宵夜",
+      "changes": [
+        "補入海味はちきょう別亭 おやじ營業時間：18:00–24:00（L.O.23:00）；週日休，週一為國定假日時週日營業",
+        "補入迴轉壽司 根室花丸 COCONO SUSUKINO店營業時間：11:00–21:00（L.O.20:30）",
+        "將網頁分類與相關文字中的『消夜』統一改為『宵夜』",
+        "本次僅更新 Master Database 與待辦紀錄，尚未修改或發布網頁"
+      ],
+      "websitePublished": false
+    },
+    {
+      "date": "2026-07-30",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 1 札幌晚上／平面停車與營業時間",
+      "changes": [
+        "新增 Parking（南3條西9丁目）平面停車場；20:00–23:00 原價 ¥1,800，套用夜間最高後預估 ¥800",
+        "新增遠藤興産㈱ 南３西７パーキング；20:00–23:00 原價 ¥1,980，套用24小時最高後預估 ¥1,400",
+        "網頁札幌晚上區塊列出兩個停車候選與 Google Maps 定位",
+        "海味はちきょう別亭 おやじ與根室花丸 COCONO SUSUKINO店補上營業時間",
+        "『消夜』統一改為『宵夜』",
+        "サツドラ小樽堺町店營業時間更新為10:30–19:00"
+      ],
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T10:08:00+08:00"
+    },
+    {
+      "date": "2026-07-30",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 3 區域資訊連結與編號",
+      "changes": [
+        "小樽階層資訊的 Google Maps 連結由右側方形圖釘改為店名後方的 ↗ 內嵌連結",
+        "洞爺湖區域的五個停留點以 CSS 自動編號顯示，不在資料內容中寫死序號",
+        "保留原有地點順序與內容"
+      ],
+      "websitePublished": true,
+      "publishedAt": "2026-07-30T11:15:00+08:00"
+    },
+    {
+      "date": "2026-08-07",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 1 札幌晚上／唐吉訶德薄野店",
+      "changes": [
+        "新增ドン・キホーテ すすきの店",
+        "Google Maps：https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7",
+        "營業時間：10:00–05:00",
+        "歸類至 Day 1 札幌晚上／採買",
+        "本次先寫入 Master Database；正式 GitHub Pages 尚未發布"
+      ],
+      "websitePublished": false
+    }
+  ]
+}
