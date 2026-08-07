@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#4f7fa8">
-<title>2026 北海道 Travel OS 3.4 Minimal</title>
+<title>2026 北海道 Travel OS 3.2 Minimal</title>
 <style>
 :root{
   --bg:#f7f6f2;
@@ -865,89 +865,6 @@ h1{margin:4px 0 4px;font-size:30px}
   .numbered-area .shop::before{left:11px;top:11px}
 }
 
-
-/* ===== Travel OS 3.3 walking-list refinement =====
-   每家店有清楚區隔，但不回到一店一大卡片。 */
-.walking-list .walk-guide{
-  margin-top:6px;
-  padding:4px 2px 0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-}
-.walking-list .walk-guide-note{
-  margin:0 0 7px;
-  padding:0 2px 7px;
-  color:#7b858d;
-  font-size:12px;
-}
-.walking-list .walk-shop{
-  margin:0;
-  padding:13px 2px 12px;
-  border:0;
-  border-bottom:1px solid #e8edf0;
-  border-radius:0;
-  background:transparent;
-}
-.walking-list .walk-shop:last-child{
-  border-bottom:0;
-  padding-bottom:5px;
-}
-.walking-list .walk-shop-name{
-  display:flex;
-  align-items:flex-start;
-  gap:8px;
-  line-height:1.45;
-}
-.walking-list .walk-shop-marker{
-  flex:0 0 auto;
-  min-width:15px;
-  color:#1769aa;
-  font-size:15px;
-  font-weight:900;
-  padding-top:2px;
-}
-.walking-list .walk-shop-title-link{
-  color:#1769aa;
-  text-decoration:none;
-  font-size:17px;
-  font-weight:900;
-}
-.walking-list .walk-shop-tag{
-  display:inline-block;
-  margin:5px 0 0 23px;
-  padding:0;
-  border-radius:0;
-  background:transparent;
-  color:#7b858d;
-  font-size:11px;
-  font-weight:800;
-}
-.walking-list .walk-shop-desc{
-  margin:4px 0 0 23px;
-  color:#66717a;
-  font-size:14px;
-  line-height:1.5;
-}
-.walking-list .walk-shop-meta{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin:6px 0 0 23px;
-}
-.walking-list .walk-shop-hours{
-  color:#68727b;
-  font-size:13px;
-  font-weight:750;
-}
-.walking-list .walk-shop-parking-text{
-  color:#8a6b2f;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:850;
-}
-
 </style>
 </head>
 <body>
@@ -955,7 +872,7 @@ h1{margin:4px 0 4px;font-size:30px}
   <section class="hero">
     <div class="hero-top">
       <div>
-        <div class="eyebrow">TRAVEL OS 3.4・MINIMAL</div>
+        <div class="eyebrow">TRAVEL OS 3.2・MINIMAL</div>
         <h1>2026 北海道</h1>
         <div class="sub">9/16（三）– 9/20（日）｜5天4夜自駕</div>
       </div>
@@ -1232,12 +1149,6 @@ const masterLocations=Object.freeze({
     mapUrl:"https://www.google.com/maps/search/?api=1&query=北海道大学",
     hours:""
   }),
-  donQuijoteSusukino:Object.freeze({
-    id:"don-quijote-susukino",
-    name:"ドン・キホーテ すすきの店",
-    mapUrl:"https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7",
-    hours:"10:00–05:00"
-  }),
   hillOfBuddha:Object.freeze({
     id:"hill-of-buddha",
     name:"頭大佛",
@@ -1319,7 +1230,6 @@ const dayData = {
           ["備選","遠藤興産㈱ 南３西７パーキング","平面停車場；20:00–23:00 預估停車費 ¥1,400。","24小時｜30分 ¥330；入庫後24小時最高 ¥1,400","https://maps.app.goo.gl/b7qBjfFCpby2eTCA8","🅿️ 停車候選",null,"南3條西7丁目"],
           ["備選","BicCamera Select 札幌狸小路店","補行動電源、充電線、轉接頭、記憶卡與旅行小電器。","10:00–23:00","https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店","🛍️ 採買",null,"狸小路5丁目"],
           ["必去","TNOC THE STORE SAPPORO T4","買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。","10:00–21:00","https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4","🛍️ 採買",null,"狸小路4丁目"],
-          ["",masterLocations.donQuijoteSusukino.name,"",masterLocations.donQuijoteSusukino.hours,masterLocations.donQuijoteSusukino.mapUrl,"🛍️ 採買",null,""],
           ["第一站","海味はちきょう別亭 おやじ","北海道海鮮居酒屋。","18:00–24:00（L.O.23:00）；週日休，週一為國定假日時週日營業","https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il","🌙 宵夜",null,"南3條西3丁目"],
           ["第二站","迴轉壽司 根室花丸 COCONO SUSUKINO店","根室海鮮握壽司、花咲蟹與當日推薦品項。","11:00–21:00（L.O.20:30）","https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il","🌙 宵夜",null,"南4條西4丁目"]
         ]
@@ -1659,26 +1569,28 @@ function areaMarkup(areas){
       </section>`;
     }
     if(a.layout==="walking-guide"){
-      return `<details class="area-card walking-list">
+      const inlineArrow=a.linkStyle==="inline-arrow";
+      return `<details class="area-card">
         <summary>${a.title}</summary>
         <section class="walk-guide">
-        ${a.note?`<div class="walk-guide-note">${a.note}</div>`:""}
+        <div class="walk-guide-note">${a.note}</div>
         ${a.shops.map(shop=>`<article class="walk-shop">
           <div class="walk-shop-name">
-            <span class="walk-shop-marker">${shop[0]}</span>
-            <a class="walk-shop-title-link" href="${shop[4]}" target="_blank" rel="noopener">${shop[1]} ↗</a>
+            ${inlineArrow
+              ? `<a class="walk-shop-inline-link" href="${shop[4]}" target="_blank" rel="noopener">${shop[0]} ${shop[1]} ↗</a>`
+              : `<span>${shop[0]} ${shop[1]}</span>`
+            }
+            ${inlineArrow
+              ? (shop[6]?`<span class="walk-shop-actions"><a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a></span>`:"")
+              : `<span class="walk-shop-actions"><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="店家定位">📍</a>${shop[6]?`<a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a>`:""}</span>`
+            }
           </div>
-          ${shop[5]?`<div class="walk-shop-tag">${shop[5]}</div>`:""}
-          ${shop[2]?`<div class="walk-shop-desc"><span class="walk-shop-desc-text">${shop[2]}</span></div>`:""}
-          ${(shop[3]||shop[6])?`<div class="walk-shop-meta">
-            ${shop[3]?`<span class="walk-shop-hours">🕘 ${shop[3]}</span>`:""}
-            ${shop[6]?`<a class="walk-shop-parking-text" href="${shop[6]}" target="_blank" rel="noopener">🅿️ 停車定位 ↗</a>`:""}
-          </div>`:""}
+          <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
+          ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
         </article>`).join("")}
         </section>
       </details>`;
     }
-
     if(a.layout==="route"){
       const outlet=a.shops[0], map=a.shops[1], ice1=a.shops[2], ice2=a.shops[3], sports=a.shops[4];
       const guideMarkup=guide=>guide?`<details class="field-guide">
@@ -1978,4 +1890,4 @@ initCurrencyTool();
 </body>
 </html>
 
-<!-- local-edit:Travel OS 3.4 Minimal | 2026-08-07 | add Don Quijote Susukino -->
+<!-- local-edit:Travel OS 3.2 Minimal | 2026-08-07 -->
