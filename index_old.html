@@ -319,8 +319,6 @@ h1{margin:4px 0 4px;font-size:30px}
 .walk-shop{margin-top:10px;padding:13px 14px;border:1px solid #dce4ea;border-radius:15px;background:#fff}
 .walk-shop:first-of-type{margin-top:0}
 .walk-shop-name{display:flex;align-items:center;gap:7px;color:#1769aa;font-size:17px;font-weight:900;line-height:1.4}
-.walk-shop-inline-link{color:#1769aa;text-decoration:none;font-size:17px;font-weight:900;line-height:1.4}
-.walk-shop-inline-link:hover{text-decoration:underline}
 .walk-shop-desc{display:flex;align-items:flex-start;gap:7px;margin-top:6px;color:#596570;font-size:14px;line-height:1.55}
 .walk-shop-desc-text{min-width:0}
 .walk-shop-meta{margin-top:7px}
@@ -1146,7 +1144,6 @@ const dayData = {
         title:"小樽",
         note:"從 1-19 Shinonomechō 出發，由近到遠。",
         layout:"walking-guide",
-        linkStyle:"inline-arrow",
         shops:[
           ["①",masterLocations.letAoMain.name,"Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。","09:00–19:00",masterLocations.letAoMain.mapUrl,"甜點選購"],
           ["②","北菓楼 小樽本館","妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。","10:00–18:00","https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館","甜點選購"],
@@ -1439,22 +1436,12 @@ function areaMarkup(areas){
       </section>`;
     }
     if(a.layout==="walking-guide"){
-      const inlineArrow=a.linkStyle==="inline-arrow";
       return `<details class="area-card">
         <summary>${a.title}</summary>
         <section class="walk-guide">
         <div class="walk-guide-note">${a.note}</div>
         ${a.shops.map(shop=>`<article class="walk-shop">
-          <div class="walk-shop-name">
-            ${inlineArrow
-              ? `<a class="walk-shop-inline-link" href="${shop[4]}" target="_blank" rel="noopener">${shop[0]} ${shop[1]} ↗</a>`
-              : `<span>${shop[0]} ${shop[1]}</span>`
-            }
-            ${inlineArrow
-              ? (shop[6]?`<span class="walk-shop-actions"><a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a></span>`:"")
-              : `<span class="walk-shop-actions"><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="店家定位">📍</a>${shop[6]?`<a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a>`:""}</span>`
-            }
-          </div>
+          <div class="walk-shop-name"><span>${shop[0]} ${shop[1]}</span><span class="walk-shop-actions"><a class="walk-shop-map" href="${shop[4]}" target="_blank" rel="noopener" aria-label="在 Google Maps 開啟 ${shop[1]}" title="店家定位">📍</a>${shop[6]?`<a class="walk-shop-parking" href="${shop[6]}" target="_blank" rel="noopener" aria-label="開啟 ${shop[1]} 停車場定位" title="停車場定位">🅿️</a>`:""}</span></div>
           <div class="walk-shop-desc">${shop[5]?`<span class="walk-shop-tag">${shop[5]}</span>`:""}<span class="walk-shop-desc-text">${shop[2]}</span></div>
           ${shop[3]?`<div class="walk-shop-meta"><div class="walk-shop-hours">🕘 ${shop[3]}</div></div>`:""}
         </article>`).join("")}
@@ -1760,4 +1747,4 @@ initCurrencyTool();
 </body>
 </html>
 
-<!-- local-edit:2026-08-07T08:33+08:00 -->
+<!-- pages-redeploy:2026-07-30T11:15+08:00 -->
