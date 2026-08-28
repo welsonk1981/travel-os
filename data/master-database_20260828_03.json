@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
-  "databaseVersion": "1.6.7",
-  "updatedAt": "2026-08-28T15:47:33+08:00",
+  "databaseVersion": "1.6.6",
+  "updatedAt": "2026-08-28T15:25:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -1719,8 +1719,6 @@
           "preferredParkingType": "平面停車場",
           "eveningShoppingPlaceIds": [
             "muji-sapporo-parco",
-            "tnoc-store-sapporo-t4",
-            "biccamera-select-sapporo-tanukikoji",
             "don-quijote-susukino"
           ]
         }
@@ -2312,7 +2310,7 @@
                 },
                 {
                   "kind": "place",
-                  "placeId": "muji-sapporo-parco"
+                  "placeId": "biccamera-select-sapporo-tanukikoji"
                 },
                 {
                   "kind": "place",
@@ -2320,7 +2318,7 @@
                 },
                 {
                   "kind": "place",
-                  "placeId": "biccamera-select-sapporo-tanukikoji"
+                  "placeId": "muji-sapporo-parco"
                 },
                 {
                   "kind": "place",
@@ -3266,19 +3264,6 @@
         "本次由 Master Database 更新並重新由 Builder 產生 index.html"
       ],
       "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 1／札幌晚上／採買顯示順序",
-      "changes": [
-        "採買順序調整為：無印良品 札幌PARCO店 → TNOC THE STORE SAPPORO T4 → BicCamera Select 札幌狸小路店 → 唐吉訶德 薄野店",
-        "同步更新 itineraries.day1.eveningShoppingPlaceIds 與 dayPages.day1 札幌晚上顯示順序",
-        "停車候選與宵夜順序不變",
-        "本次僅調整資料順序，UI/CSS 不變"
-      ],
-      "websitePublished": false,
-      "updatedAt": "2026-08-28T15:47:33+08:00"
     }
   ]
 }
