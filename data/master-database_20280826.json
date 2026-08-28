@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
-  "databaseVersion": "1.6.4",
-  "updatedAt": "2026-08-28T14:39:00+08:00",
+  "databaseVersion": "1.6.2",
+  "updatedAt": "2026-08-28T10:58:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -557,22 +557,7 @@
                 "mil-presso-kitahiroshima"
               ]
             }
-          },
-          "purchaseTargets": [
-            {
-              "id": "asics-gel-kayano-31",
-              "brand": "ASICS",
-              "productName": "GEL-KAYANO 31",
-              "category": "鞋款",
-              "targetStore": "ASICS",
-              "status": "待購買",
-              "action": "現場試穿",
-              "size": null,
-              "color": null,
-              "price": null,
-              "inventoryStatus": "待現場確認"
-            }
-          ]
+          }
         },
         "sapporo-nogakko-kitahiroshima": {
           "id": "sapporo-nogakko-kitahiroshima",
@@ -3031,7 +3016,7 @@
         "databaseFirst": {
           "enabled": true,
           "uiFrozenBaseline": "index(20260828-034206).html",
-          "sourceOfTruth": "master-database-v1.6.3-database-first.json",
+          "sourceOfTruth": "master-database-v1.6.2-database-first.json",
           "builder": "build_travel_os.py",
           "policy": "UI frozen. Travel data is maintained in Master Database and emitted by Builder; generated HTML is not manually edited."
         }
@@ -3185,33 +3170,6 @@
         "本階段不新增 GEL-KAYANO 31，先完成重構前後 1:1 UI 驗證"
       ],
       "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 1／北廣島／三井 Outlet 札幌北廣島／指定採買",
-      "changes": [
-        "新增指定採買：ASICS GEL-KAYANO 31",
-        "採買動作：現場試穿",
-        "庫存狀態：待現場確認",
-        "尺寸、顏色、價格保留為待現場確認，不自行補資料",
-        "資料掛在三井 Outlet 札幌北廣島的 purchaseTargets，不建立為獨立景點或店家",
-        "本次未查詢外部資料；UI 樣式維持凍結，只新增資料驅動內容"
-      ],
-      "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "首頁版本資訊／版本交付規則",
-      "changes": [
-        "首頁新增版本名稱、修改日期與修改時間",
-        "版本資訊直接使用 Master Database 根層 databaseVersion 與 updatedAt，不另建重複資料來源",
-        "往後每個發布版本皆須更新 databaseVersion、updatedAt，並由 Builder 自動顯示於首頁",
-        "交付版本固定包含 index.html 首頁檔案"
-      ],
-      "websitePublished": false,
-      "updatedAt": "2026-08-28T14:39:00+08:00"
     }
   ]
 }
