@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
-  "databaseVersion": "1.6.5",
-  "updatedAt": "2026-08-28T15:13:00+08:00",
+  "databaseVersion": "1.6.4",
+  "updatedAt": "2026-08-28T14:39:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -1576,26 +1576,6 @@
             "syncedAt": "2026-08-28",
             "externalResearchUsed": false
           }
-        },
-        "muji-sapporo-parco": {
-          "id": "muji-sapporo-parco",
-          "name": "無印良品 札幌PARCO店",
-          "hours": "10:00–20:00",
-          "mapUrl": "https://maps.app.goo.gl/DY711Ko82sQUrtkg7",
-          "displayGroup": "🛍️ 採買",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "",
-              "displayGroup": "🛍️ 採買",
-              "description": "",
-              "hours": "10:00–20:00",
-              "mapUrl": "https://maps.app.goo.gl/DY711Ko82sQUrtkg7"
-            }
-          ],
-          "source": "使用者提供",
-          "verifiedAt": "2026-08-28"
         }
       },
       "itineraries": {
@@ -1718,7 +1698,6 @@
           "parkingEstimateWindow": "20:00–23:00",
           "preferredParkingType": "平面停車場",
           "eveningShoppingPlaceIds": [
-            "muji-sapporo-parco",
             "don-quijote-susukino"
           ]
         }
@@ -2315,10 +2294,6 @@
                 {
                   "kind": "place",
                   "placeId": "tnoc-store-sapporo-t4"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "muji-sapporo-parco"
                 },
                 {
                   "kind": "place",
@@ -3237,20 +3212,6 @@
       ],
       "websitePublished": false,
       "updatedAt": "2026-08-28T14:39:00+08:00"
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 1／札幌晚上／採買",
-      "changes": [
-        "新增無印良品 札幌PARCO店",
-        "營業時間：10:00–20:00",
-        "Google Maps：https://maps.app.goo.gl/DY711Ko82sQUrtkg7",
-        "顯示位置排在 TNOC THE STORE SAPPORO T4 之後、唐吉訶德 薄野店之前",
-        "未自行設定必去／備選優先級",
-        "同步更新 Master Database 與網頁，UI 樣式不變"
-      ],
-      "websitePublished": false
     }
   ]
 }
