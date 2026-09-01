@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
-  "databaseVersion": "1.6.7",
-  "updatedAt": "2026-08-28T15:47:33+08:00",
+  "databaseVersion": "1.9.0",
+  "updatedAt": "2026-08-31T23:42:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -15,92 +15,36 @@
           "name": "洞爺湖花火船碼頭",
           "mapUrl": "https://maps.app.goo.gl/QtkVqHj5hLuV7svC8",
           "hours": null,
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "洞爺湖",
-              "description": "購票、候船與登船。",
-              "mapUrl": "https://maps.app.goo.gl/QtkVqHj5hLuV7svC8"
-            }
-          ],
           "mapStatus": "人工確認",
           "verifiedAt": "2026-07-23",
           "description": "購票、候船與登船。",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "partial"
         },
         "ebijin-otaru": {
           "id": "ebijin-otaru",
           "name": "EBIJIN 小樽店",
           "mapUrl": "https://maps.app.goo.gl/jaHGkfT3ZcdzwsUk8",
           "hours": "平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "小樽",
-              "category": "漢堡",
-              "choiceRole": "主選",
-              "description": "主選：後志產鹿肉漢堡，可外帶；沒有專用停車場。",
-              "hours": "平日、六 11:00–15:00／17:00–19:00；日 12:00–17:00；不定休",
-              "mapUrl": "https://maps.app.goo.gl/jaHGkfT3ZcdzwsUk8"
-            }
-          ],
           "mapStatus": "人工確認",
           "verifiedAt": "2026-07-23",
           "description": "主選：後志產鹿肉漢堡，可外帶；沒有專用停車場。",
-          "category": "漢堡",
-          "choiceRole": "主選",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "letao-main": {
           "id": "letao-main",
           "name": "LeTAO 總店",
           "mapUrl": "https://maps.app.goo.gl/iRy2gmCFUBvbcEgW7",
           "hours": "09:00–19:00",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "①",
-              "displayGroup": "甜點選購",
-              "description": "Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。",
-              "hours": "09:00–19:00",
-              "mapUrl": "https://maps.app.goo.gl/iRy2gmCFUBvbcEgW7"
-            }
-          ],
           "mapStatus": "人工確認",
           "verifiedAt": "2026-07-23",
-          "label": "①",
           "description": "Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。",
-          "displayGroup": "甜點選購",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "lake-hill-farm": {
           "id": "lake-hill-farm",
           "name": "Lake Hill Farm",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm+127+Hanawa+Toyako",
           "hours": "09:00–18:00",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "二世谷 → Lake Hill Farm",
-              "label": "必去",
-              "description": "🍴 必吃｜牛奶派・冰淇淋・果醬・咖哩",
-              "hours": "09:00–18:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lake+Hill+Farm+127+Hanawa+Toyako"
-            }
-          ],
           "address": "127 Hanawa, Toyako, Abuta District, Hokkaido 049-5724日本",
           "mustEat": [
             "牛奶派",
@@ -110,34 +54,19 @@
           ],
           "source": "使用者提供",
           "verifiedAt": "2026-07-23",
-          "label": "必去",
+          "displayName": "🍦 Lake Hill Farm",
           "description": "🍴 必吃｜牛奶派・冰淇淋・果醬・咖哩",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "displayNames": {
+            "timeline": "Lake Hill Farm"
+          },
+          "dataStatus": "detailed"
         },
         "kotoni-jinja": {
           "id": "kotoni-jinja",
           "name": "琴似神社",
           "mapUrl": "https://maps.app.goo.gl/C7Hq32wX3t4aCAuQ9",
           "hours": "境內自由參拜",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "札幌北側早晨",
-              "label": "●",
-              "hours": "境內自由參拜",
-              "mapUrl": "https://maps.app.goo.gl/C7Hq32wX3t4aCAuQ9"
-            }
-          ],
-          "label": "●",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "marusan-mikami-marusan-tei": {
           "id": "marusan-mikami-marusan-tei",
@@ -145,208 +74,68 @@
           "mapUrl": "https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
           "hours": "07:00–15:00",
           "parkingId": "sapporo-jogai-market-parking",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "札幌北側早晨",
-              "label": "●",
-              "hours": "07:00–15:00",
-              "mapUrl": "https://maps.app.goo.gl/9ojJpxLfgaYLS4se9",
-              "guide": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場"
-            }
-          ],
-          "label": "●",
-          "guide": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "sapporo-jogai-market-parking": {
           "id": "sapporo-jogai-market-parking",
           "name": "札幌場外市場 共用免費停車場",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場",
-          "hours": null,
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "札幌北側早晨",
-              "relation": "parking-for",
-              "placeId": "marusan-mikami-marusan-tei",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場"
-            }
-          ],
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "hours": "",
+          "dataStatus": "partial"
         },
         "hokkaido-university": {
           "id": "hokkaido-university",
           "name": "北海道大學",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=北海道大学",
-          "hours": null,
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "札幌北側早晨",
-              "label": "●",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=北海道大学"
-            }
-          ],
-          "label": "●",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "hours": "",
+          "dataStatus": "partial"
         },
         "hokudai-marche-cafe": {
           "id": "hokudai-marche-cafe",
           "name": "北大マルシェ Café & Labo",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo",
           "hours": "10:00–16:00",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "札幌北側早晨",
-              "label": "●",
-              "hours": "10:00–16:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo"
-            }
-          ],
-          "label": "●",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "hill-of-buddha": {
           "id": "hill-of-buddha",
           "name": "頭大佛",
           "mapUrl": "https://www.google.com/maps?cid=15134224251499317861",
           "hours": "09:00–16:00",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "頭大佛",
-              "displayGroup": "開放時間 09:00–16:00",
-              "description": "11:30–12:25",
-              "mapUrl": "https://www.google.com/maps?cid=15134224251499317861"
-            }
-          ],
           "description": "11:30–12:25",
-          "displayGroup": "開放時間 09:00–16:00",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "otaru-stained-glass-museum": {
           "id": "otaru-stained-glass-museum",
           "name": "花窗玻璃美術館（舊高橋倉庫）",
           "mapUrl": "https://maps.app.goo.gl/4S6TfKmJY84Zrqd47",
           "hours": "09:30–17:00",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "⑦",
-              "displayGroup": "必去美術館",
-              "description": "先參觀有固定閉館時間的必去景點。",
-              "hours": "09:30–17:00",
-              "mapUrl": "https://maps.app.goo.gl/4S6TfKmJY84Zrqd47"
-            }
-          ],
-          "label": "⑦",
           "description": "先參觀有固定閉館時間的必去景點。",
-          "displayGroup": "必去美術館",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "satudora-otaru-sakaimachi": {
           "id": "satudora-otaru-sakaimachi",
           "name": "サツドラ小樽堺町店",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店",
           "hours": "10:30–19:00",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "小樽",
-              "label": "採買",
-              "description": "補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。",
-              "hours": "10:30–19:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=サツドラ小樽堺町店"
-            }
-          ],
-          "label": "採買",
           "description": "補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "hachikyo-oyaji": {
           "id": "hachikyo-oyaji",
           "name": "海味はちきょう別亭 おやじ",
           "mapUrl": "https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il",
           "hours": "18:00–24:00（L.O.23:00）；週日休，週一為國定假日時週日營業",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "第一站",
-              "displayGroup": "🌙 宵夜",
-              "locationLabel": "南3條西3丁目",
-              "description": "北海道海鮮居酒屋。",
-              "hours": "18:00–24:00（L.O.23:00）；週日休，週一為國定假日時週日營業",
-              "mapUrl": "https://maps.app.goo.gl/QBdXeb7Gv2NY18vLA?g_st=il"
-            }
-          ],
-          "label": "第一站",
           "description": "北海道海鮮居酒屋。",
-          "displayGroup": "🌙 宵夜",
-          "locationLabel": "南3條西3丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "nemuro-hanamaru-cocono": {
           "id": "nemuro-hanamaru-cocono",
           "name": "迴轉壽司 根室花丸 COCONO SUSUKINO店",
           "mapUrl": "https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il",
           "hours": "11:00–21:00（L.O.20:30）",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "第二站",
-              "displayGroup": "🌙 宵夜",
-              "locationLabel": "南4條西4丁目",
-              "description": "根室海鮮握壽司、花咲蟹與當日推薦品項。",
-              "hours": "11:00–21:00（L.O.20:30）",
-              "mapUrl": "https://maps.app.goo.gl/J65RA13a5K1ozkZF7?g_st=il"
-            }
-          ],
-          "label": "第二站",
           "description": "根室海鮮握壽司、花咲蟹與當日推薦品項。",
-          "displayGroup": "🌙 宵夜",
-          "locationLabel": "南4條西4丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "sapporo-minami3-nishi9-parking": {
           "id": "sapporo-minami3-nishi9-parking",
@@ -368,30 +157,8 @@
             "appliedCap": "夜間最高",
             "totalYen": 800
           },
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "首選",
-              "displayGroup": "🅿️ 停車候選",
-              "locationLabel": "南3條西9丁目",
-              "description": "平面停車場；20:00–23:00 預估停車費 ¥800。",
-              "hours": "20:00–08:00｜30分 ¥300；夜間最高 ¥800；入庫後12小時最高 ¥1,600",
-              "mapUrl": "https://maps.app.goo.gl/Z1dYJfc6i8WCAitJ6"
-            }
-          ],
-          "label": "首選",
           "description": "平面停車場；20:00–23:00 預估停車費 ¥800。",
-          "htmlCurrentDisplay": {
-            "hours": "20:00–08:00｜30分 ¥300；夜間最高 ¥800；入庫後12小時最高 ¥1,600"
-          },
-          "displayGroup": "🅿️ 停車候選",
-          "locationLabel": "南3條西9丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "endo-minami3-nishi7-parking": {
           "id": "endo-minami3-nishi7-parking",
@@ -411,30 +178,8 @@
             "appliedCap": "24小時最高",
             "totalYen": 1400
           },
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "備選",
-              "displayGroup": "🅿️ 停車候選",
-              "locationLabel": "南3條西7丁目",
-              "description": "平面停車場；20:00–23:00 預估停車費 ¥1,400。",
-              "hours": "24小時｜30分 ¥330；入庫後24小時最高 ¥1,400",
-              "mapUrl": "https://maps.app.goo.gl/b7qBjfFCpby2eTCA8"
-            }
-          ],
-          "label": "備選",
           "description": "平面停車場；20:00–23:00 預估停車費 ¥1,400。",
-          "htmlCurrentDisplay": {
-            "hours": "24小時｜30分 ¥330；入庫後24小時最高 ¥1,400"
-          },
-          "displayGroup": "🅿️ 停車候選",
-          "locationLabel": "南3條西7丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "don-quijote-susukino": {
           "id": "don-quijote-susukino",
@@ -447,11 +192,8 @@
           "address": "〒064-0805 北海道札幌市中央区南5条西3丁目11番地",
           "phone": "0570-069-090",
           "regularHoliday": "無",
-          "parking": {
-            "available": false,
-            "note": "店舖無專用停車場"
-          },
-          "access": "札幌市營地下鐵南北線「すすきの站」步行約2分鐘",
+          "parking": "無專用停車場",
+          "access": "すすきの站步行約2分鐘",
           "services": [
             "免稅",
             "醫藥品",
@@ -462,1266 +204,1363 @@
           ],
           "source": "ドン・キホーテ官方店舗情報",
           "verifiedAt": "2026-08-07",
+          "description": "ドン・キホーテ すすきの店",
+          "dataStatus": "detailed"
+        },
+        "sprout-niseko": {
+          "id": "sprout-niseko",
+          "name": "SPROUT",
+          "displayName": "Sprout 咖啡店",
+          "category": "咖啡／倶知安",
+          "area": "倶知安／二世谷",
+          "address": "〒044-0051 北海道虻田郡倶知安町北一条西3-10",
+          "mapUrl": "https://maps.app.goo.gl/PoCduSnYndJ2o8dQ9",
+          "officialUrl": "https://sprout-project.com/contact/",
+          "phone": "0136-55-5161",
+          "hours": "08:00–18:00",
+          "regularHoliday": "週四",
+          "source": "使用者提供＋SPROUT 官方資料",
+          "verifiedAt": "2026-08-31",
+          "verification": "使用者提供 Google Maps 與營業時間；地址、電話、週四定休由 SPROUT 官方網站確認",
           "appearances": [
             {
-              "day": "day1",
-              "area": "札幌晚上",
-              "displayGroup": "🛍️ 採買",
-              "locationLabel": "南5條西3丁目",
-              "description": "ドン・キホーテ すすきの店",
-              "hours": "10:00–05:00",
-              "mapUrl": "https://maps.app.goo.gl/MCJ91HKKE3WrvuQt7"
+              "day": "day3",
+              "date": "2026-09-18",
+              "area": "二世谷 → 🍦 Lake Hill Farm｜必去",
+              "position": "first",
+              "order": 1,
+              "hours": "08:00–18:00",
+              "mapUrl": "https://maps.app.goo.gl/PoCduSnYndJ2o8dQ9"
             }
           ],
-          "htmlCurrentDisplay": {
-            "parking": "無專用停車場",
-            "access": "すすきの站步行約2分鐘"
+          "displayNames": {
+            "timeline": "Sprout 咖啡店"
           },
-          "officialName": "ドン・キホーテ すすきの店",
-          "displayGroup": "🛍️ 採買",
-          "locationLabel": "南5條西3丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "hana-road-eniwa": {
           "id": "hana-road-eniwa",
           "name": "花ロードえにわ",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "惠庭",
-              "label": "推薦",
-              "description": "道之驛午餐、南瓜咖哩麵包。",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC"
-            }
-          ],
-          "label": "推薦",
+          "hours": "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC",
           "description": "道之驛午餐、南瓜咖哩麵包。",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "partial"
         },
         "mitsui-outlet-sapporo-kitahiroshima": {
           "id": "mitsui-outlet-sapporo-kitahiroshima",
           "name": "三井 Outlet 札幌北廣島",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "北廣島",
-              "label": "必去",
-              "displayGroup": "主要行程",
-              "description": "採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。",
-              "hours": "10:00–20:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島",
-              "guide": {
-                "title": "🧭 採買指南｜建議先逛 164、123",
-                "items": [
-                  "進入 Outlet 後，優先前往店號 164、123。",
-                  "完成重點採買後，再依原定路線逛其他店家。",
-                  "18:50 前離場，保留 Sports Depo 三品牌試鞋時間。"
-                ]
-              }
-            }
-          ],
-          "label": "必去",
-          "description": "採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。",
-          "hours": "10:00–20:00",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク札幌北広島",
-          "displayGroup": "主要行程",
-          "guide": {
-            "title": "🧭 採買指南｜建議先逛 164、123",
-            "items": [
-              "進入 Outlet 後，優先前往店號 164、123。",
-              "完成重點採買後，再依原定路線逛其他店家。",
-              "18:50 前離場，保留 Sports Depo 三品牌試鞋時間。"
-            ]
-          },
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          },
-          "display": {
-            "routeCard": {
-              "compactGuide": "🧭 先逛 164、123，18:50 離場",
-              "time": "13:35–18:50",
-              "mapReferenceId": "kitahiroshima-outlet-map-guide",
-              "icePlaceIds": [
-                "sapporo-nogakko-kitahiroshima",
-                "mil-presso-kitahiroshima"
-              ]
-            }
-          },
-          "purchaseTargets": [
-            {
-              "id": "asics-gel-kayano-31",
-              "brand": "ASICS",
-              "productName": "GEL-KAYANO 31",
-              "category": "鞋款",
-              "targetStore": "ASICS",
-              "status": "待購買",
-              "action": "現場試穿",
-              "size": null,
-              "color": null,
-              "price": null,
-              "inventoryStatus": "待現場確認"
-            }
-          ]
+          "hours": "10:00–20:00",
+          "description": "採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。",
+          "dataStatus": "detailed"
         },
         "sapporo-nogakko-kitahiroshima": {
           "id": "sapporo-nogakko-kitahiroshima",
           "name": "札幌農学校 札幌北広島店",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "北廣島",
-              "label": "冰品必吃",
-              "displayGroup": "Outlet冰品",
-              "description": "酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。",
-              "hours": "10:00–20:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=札幌農学校+札幌北広島店"
-            }
-          ],
-          "label": "冰品必吃",
-          "description": "酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。",
-          "hours": "10:00–20:00",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=札幌農学校+札幌北広島店",
-          "displayGroup": "Outlet冰品",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "hours": "10:00–20:00",
+          "description": "酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。",
+          "dataStatus": "detailed"
         },
         "mil-presso-kitahiroshima": {
           "id": "mil-presso-kitahiroshima",
           "name": "MIL PRESSO",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "北廣島",
-              "label": "冰品備選",
-              "displayGroup": "Outlet冰品",
-              "description": "北海道ロコファームビレッジ內的北海道素材霜淇淋。",
-              "hours": "10:00–20:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=MIL+PRESSO+三井アウトレットパーク札幌北広島"
-            }
-          ],
-          "label": "冰品備選",
-          "description": "北海道ロコファームビレッジ內的北海道素材霜淇淋。",
-          "hours": "10:00–20:00",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=MIL+PRESSO+三井アウトレットパーク札幌北広島",
-          "displayGroup": "Outlet冰品",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "hours": "10:00–20:00",
+          "description": "北海道ロコファームビレッジ內的北海道素材霜淇淋。",
+          "dataStatus": "detailed"
         },
         "sports-depo-omagari": {
           "id": "sports-depo-omagari",
           "name": "Sports Depo 大曲店／スポーツデポ大曲店",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "北廣島",
-              "label": "三品牌試鞋",
-              "displayGroup": "Outlet 北側｜開車約2–3分",
-              "description": "地址：北海道北広島市大曲幸町2丁目8番地2；有停車場、可免稅。Salomon 經銷資格已有官方資料；On、HOKA 與指定鞋款請以現場庫存為準。",
-              "hours": "10:00–20:30｜011-377-1477",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=スポーツデポ大曲店",
-              "guide": {
-                "title": "👟 試鞋指南｜On・HOKA・Salomon",
-                "note": "低足弓以穩定、底盤寬度與長時間步行舒適度為主要比較；不要只看第一腳的柔軟感。",
-                "table": [
-                  [
-                    "鞋款",
-                    "適合度",
-                    "試穿重點"
-                  ],
-                  [
-                    "HOKA Gaviota 6",
-                    "★★★★★",
-                    "底盤寬、穩定、緩震強；優先測長時間城市步行。"
-                  ],
-                  [
-                    "HOKA Arahi 8",
-                    "★★★★☆",
-                    "有穩定支撐且較輕；比較後足固定感。"
-                  ],
-                  [
-                    "On Cloudflyer／Cloudrunner",
-                    "★★★★",
-                    "支撐與穿搭均衡、腳感偏紮實。"
-                  ],
-                  [
-                    "Salomon XA Pro 3D V9",
-                    "★★★★",
-                    "底盤穩、抗扭強；適合步道及不平路面。"
-                  ]
-                ],
-                "items": [
-                  "依序試：Gaviota 6 → Arahi 8 → Cloudflyer／Cloudrunner → XA Pro 3D V9。",
-                  "穿旅行會用的襪子，雙腳都試並走動至少 5–10 分鐘。",
-                  "指定鞋款與尺碼不保證有貨，現場可請店員找同支撐類型替代款。"
-                ]
-              }
-            }
-          ],
-          "label": "三品牌試鞋",
-          "description": "地址：北海道北広島市大曲幸町2丁目8番地2；有停車場、可免稅。Salomon 經銷資格已有官方資料；On、HOKA 與指定鞋款請以現場庫存為準。",
-          "hours": "10:00–20:30｜011-377-1477",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=スポーツデポ大曲店",
-          "displayGroup": "Outlet 北側｜開車約2–3分",
-          "guide": {
-            "title": "👟 試鞋指南｜On・HOKA・Salomon",
-            "note": "低足弓以穩定、底盤寬度與長時間步行舒適度為主要比較；不要只看第一腳的柔軟感。",
-            "table": [
-              [
-                "鞋款",
-                "適合度",
-                "試穿重點"
-              ],
-              [
-                "HOKA Gaviota 6",
-                "★★★★★",
-                "底盤寬、穩定、緩震強；優先測長時間城市步行。"
-              ],
-              [
-                "HOKA Arahi 8",
-                "★★★★☆",
-                "有穩定支撐且較輕；比較後足固定感。"
-              ],
-              [
-                "On Cloudflyer／Cloudrunner",
-                "★★★★",
-                "支撐與穿搭均衡、腳感偏紮實。"
-              ],
-              [
-                "Salomon XA Pro 3D V9",
-                "★★★★",
-                "底盤穩、抗扭強；適合步道及不平路面。"
-              ]
-            ],
-            "items": [
-              "依序試：Gaviota 6 → Arahi 8 → Cloudflyer／Cloudrunner → XA Pro 3D V9。",
-              "穿旅行會用的襪子，雙腳都試並走動至少 5–10 分鐘。",
-              "指定鞋款與尺碼不保證有貨，現場可請店員找同支撐類型替代款。"
-            ]
+          "hours": "10:00–20:30｜011-377-1477",
+          "description": "地址：北海道北広島市大曲幸町2丁目8番地2；有停車場、可免稅。Salomon 經銷資格已有官方資料；On、HOKA 與指定鞋款請以現場庫存為準。",
+          "displayNames": {
+            "timeline": "Sports Depo 大曲店"
           },
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "biccamera-select-sapporo-tanukikoji": {
-          "id": "biccamera-select-sapporo-tanukikoji",
-          "name": "BicCamera Select 札幌狸小路店",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "備選",
-              "displayGroup": "🛍️ 採買",
-              "locationLabel": "狸小路5丁目",
-              "description": "補行動電源、充電線、轉接頭、記憶卡與旅行小電器。",
-              "hours": "10:00–23:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店"
-            }
-          ],
-          "label": "備選",
-          "description": "補行動電源、充電線、轉接頭、記憶卡與旅行小電器。",
-          "hours": "10:00–23:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店",
-          "displayGroup": "🛍️ 採買",
-          "locationLabel": "狸小路5丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "tnoc-store-sapporo-t4": {
-          "id": "tnoc-store-sapporo-t4",
-          "name": "TNOC THE STORE SAPPORO T4",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "必去",
-              "displayGroup": "🛍️ 採買",
-              "locationLabel": "狸小路4丁目",
-              "description": "買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。",
-              "hours": "10:00–21:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4"
-            }
-          ],
-          "label": "必去",
-          "description": "買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。",
-          "hours": "10:00–21:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4",
-          "displayGroup": "🛍️ 採買",
-          "locationLabel": "狸小路4丁目",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kitakaro-otaru-main": {
-          "id": "kitakaro-otaru-main",
-          "name": "北菓楼 小樽本館",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "②",
-              "displayGroup": "甜點選購",
-              "description": "妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。",
-              "hours": "10:00–18:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館"
-            }
-          ],
-          "label": "②",
-          "description": "妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。",
-          "hours": "10:00–18:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館",
-          "displayGroup": "甜點選購",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "rokkatei-otaru-unga": {
-          "id": "rokkatei-otaru-unga",
-          "name": "六花亭 小樽運河店",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "③",
-              "displayGroup": "甜點選購",
-              "description": "Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。",
-              "hours": "10:00–18:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店"
-            }
-          ],
-          "label": "③",
-          "description": "Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。",
-          "hours": "10:00–18:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店",
-          "displayGroup": "甜點選購",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kitaichi-glass-sangokan": {
-          "id": "kitaichi-glass-sangokan",
-          "name": "北一硝子三号館",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "④",
-              "displayGroup": "玻璃工藝",
-              "description": "玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。",
-              "hours": "10:00–17:30（L.O.17:15）",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=北一硝子三号館"
-            }
-          ],
-          "label": "④",
-          "description": "玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。",
-          "hours": "10:00–17:30（L.O.17:15）",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北一硝子三号館",
-          "displayGroup": "玻璃工藝",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "popura-farm-otaru": {
-          "id": "popura-farm-otaru",
-          "name": "ポプラファーム 小樽店",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "⑤",
-              "displayGroup": "冰品備選",
-              "description": "サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。",
-              "hours": "11:00–17:30（L.O.17:00）",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店"
-            }
-          ],
-          "label": "⑤",
-          "description": "サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。",
-          "hours": "11:00–17:30（L.O.17:00）",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店",
-          "displayGroup": "冰品備選",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "ice-cream-parlor-misono": {
-          "id": "ice-cream-parlor-misono",
-          "name": "アイスクリームパーラー美園",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "⑥",
-              "displayGroup": "老舖冰品",
-              "description": "自家製傳統冰淇淋、聖代或冰淇淋蘇打。",
-              "hours": "11:00–17:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽"
-            }
-          ],
-          "label": "⑥",
-          "description": "自家製傳統冰淇淋、聖代或冰淇淋蘇打。",
-          "hours": "11:00–17:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽",
-          "displayGroup": "老舖冰品",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "otaru-muse": {
-          "id": "otaru-muse",
-          "name": "小樽 Muse",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "⑧",
-              "description": "漢堡排、蛋包飯等洋食。",
-              "hours": "18:30｜17:00–20:30（L.O.20:00）；週一休",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=小樽+Muse",
-              "reservation": "已預約"
-            }
-          ],
-          "label": "⑧",
-          "description": "漢堡排、蛋包飯等洋食。",
-          "hours": "18:30｜17:00–20:30（L.O.20:00）；週一休",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=小樽+Muse",
-          "reservation": "已預約",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "otaru-canal": {
-          "id": "otaru-canal",
-          "name": "小樽運河",
-          "appearances": [
-            {
-              "day": "day2",
-              "area": "小樽",
-              "label": "⑨",
-              "displayGroup": "晚間／清晨皆可",
-              "description": "晚餐後欣賞夜景，或隔天清晨散步；拍攝石造倉庫、煤氣燈與水面倒影。",
-              "hours": "全天開放",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=小樽運河"
-            }
-          ],
-          "label": "⑨",
-          "description": "晚餐後欣賞夜景，或隔天清晨散步；拍攝石造倉庫、煤氣燈與水面倒影。",
-          "hours": "全天開放",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=小樽運河",
-          "displayGroup": "晚間／清晨皆可",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kitaichi-hall": {
-          "id": "kitaichi-hall",
-          "name": "北一硝子 北一ホール",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "小樽",
-              "label": "咖啡",
-              "description": "點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。",
-              "hours": "09:00–17:30；點餐 09:30–17:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール"
-            }
-          ],
-          "label": "咖啡",
-          "description": "點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。",
-          "hours": "09:00–17:30；點餐 09:30–17:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "container-burger-3-sun": {
-          "id": "container-burger-3-sun",
-          "name": "CONTAINER BURGER 3-SUN",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "小樽",
-              "category": "漢堡",
-              "choiceRole": "備選",
-              "description": "備選：牛肉漢堡、薯條與無酒精啤酒；停車較方便。",
-              "hours": "11:00–19:00（L.O.18:30）；臨時休業需確認",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽"
-            }
-          ],
-          "description": "備選：牛肉漢堡、薯條與無酒精啤酒；停車較方便。",
-          "hours": "11:00–19:00（L.O.18:30）；臨時休業需確認",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽",
-          "category": "漢堡",
-          "choiceRole": "備選",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kinoko-okoku-niki": {
-          "id": "kinoko-okoku-niki",
-          "name": "きのこ王国 仁木店",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "仁木午餐",
-              "label": "午餐",
-              "description": "吃午餐。",
-              "hours": "09:00–18:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店"
-            }
-          ],
-          "label": "午餐",
-          "description": "吃午餐。",
-          "hours": "09:00–18:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "niseko-takahashi-milk-kobo": {
-          "id": "niseko-takahashi-milk-kobo",
-          "name": "ニセコ高橋牧場 Milk Kobo",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "二世谷 → Lake Hill Farm",
-              "description": "牛奶霜淇淋。",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場+ミルク工房"
-            }
-          ],
-          "description": "牛奶霜淇淋。",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場+ミルク工房",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kawa-to-coffee-fanfun": {
-          "id": "kawa-to-coffee-fanfun",
-          "name": "革と珈琲 fanfun",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "二世谷 → Lake Hill Farm",
-              "label": "可省略",
-              "description": "咖啡・皮革小物。",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=革と珈琲+fanfun+ニセコ"
-            }
-          ],
-          "label": "可省略",
-          "description": "咖啡・皮革小物。",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=革と珈琲+fanfun+ニセコ",
-          "displayName": "☕ 革と珈琲 fanfun",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "toyako-lodging": {
-          "id": "toyako-lodging",
-          "name": "洞爺湖住宿",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "洞爺湖",
-              "description": "抵達、Check-in。",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721"
-            }
-          ],
-          "description": "抵達、Check-in。",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "seicomart-toya-tanaka": {
-          "id": "seicomart-toya-tanaka",
-          "name": "Seicomart 洞爺田中店",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "洞爺湖",
-              "description": "逛超商、簡單採買。",
-              "hours": "06:00–00:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen"
-            }
-          ],
-          "description": "逛超商、簡單採買。",
-          "hours": "06:00–00:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "wakasaimo-toyako-main": {
-          "id": "wakasaimo-toyako-main",
-          "name": "わかさいも本舗 洞爺湖本店",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "洞爺湖",
-              "description": "採買伴手禮、順逛周邊。",
-              "hours": "09:00–18:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店"
-            }
-          ],
-          "description": "採買伴手禮、順逛周邊。",
-          "hours": "09:00–18:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "restaurant-boyotei": {
-          "id": "restaurant-boyotei",
-          "name": "レストラン望羊蹄",
-          "appearances": [
-            {
-              "day": "day3",
-              "area": "洞爺湖",
-              "description": "晚餐。",
-              "hours": "17:00–19:30",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖"
-            }
-          ],
-          "description": "晚餐。",
-          "hours": "17:00–19:30",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "usuzan-ropeway": {
-          "id": "usuzan-ropeway",
-          "name": "有珠山ロープウェイ",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "有珠山",
-              "label": "主行程",
-              "displayGroup": "有珠山",
-              "description": "目前官方資料顯示首班08:15、約每15分鐘一班、單程約6分鐘；2026年9月19日班次仍須出發前確認。",
-              "hours": "目前參考 08:15–17:45",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=有珠山ロープウェイ"
-            }
-          ],
-          "label": "主行程",
-          "description": "目前官方資料顯示首班08:15、約每15分鐘一班、單程約6分鐘；2026年9月19日班次仍須出發前確認。",
-          "hours": "目前參考 08:15–17:45",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=有珠山ロープウェイ",
-          "displayGroup": "有珠山",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "shiraoi-tacchan-shokudo": {
-          "id": "shiraoi-tacchan-shokudo",
-          "name": "白老たっちゃん食堂",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍴 虎杖浜海鮮午餐",
-              "label": "午餐候選",
-              "displayGroup": "虎杖浜",
-              "description": "點海鮮丼、烤魚定食或當日水產料理。",
-              "hours": "10:00–14:00；火、三休",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=白老たっちゃん食堂"
-            }
-          ],
-          "label": "午餐候選",
-          "description": "點海鮮丼、烤魚定食或當日水產料理。",
-          "hours": "10:00–14:00；火、三休",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=白老たっちゃん食堂",
-          "displayGroup": "虎杖浜",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kojohama-cafe": {
-          "id": "kojohama-cafe",
-          "name": "Kojohama Café／虎杖浜カフェ",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍴 虎杖浜海鮮午餐",
-              "label": "午餐候選",
-              "displayGroup": "虎杖浜",
-              "description": "點咖啡、甜點或當日輕食，菜單以現場為準。",
-              "hours": "出發前確認",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=虎杖浜カフェ"
-            }
-          ],
-          "label": "午餐候選",
-          "description": "點咖啡、甜點或當日輕食，菜單以現場為準。",
-          "hours": "出發前確認",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=虎杖浜カフェ",
-          "displayGroup": "虎杖浜",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "tarakoya-kojohama": {
-          "id": "tarakoya-kojohama",
-          "name": "たらこ家 虎杖浜",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍴 虎杖浜海鮮午餐",
-              "label": "水產伴手禮",
-              "displayGroup": "虎杖浜",
-              "description": "買虎杖浜鱈魚子、明太子與冷藏水產，食堂可點鱈魚子飯。",
-              "hours": "商店約09:00–17:00；週四休",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=たらこ家+虎杖浜"
-            }
-          ],
-          "label": "水產伴手禮",
-          "description": "買虎杖浜鱈魚子、明太子與冷藏水產，食堂可點鱈魚子飯。",
-          "hours": "商店約09:00–17:00；週四休",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=たらこ家+虎杖浜",
-          "displayGroup": "虎杖浜",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kojohama-tarako-kanbara": {
-          "id": "kojohama-tarako-kanbara",
-          "name": "虎杖浜たらこのかんばら直売所",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍴 虎杖浜海鮮午餐",
-              "label": "水產伴手禮",
-              "displayGroup": "虎杖浜",
-              "description": "無著色鱈魚子、真空包與送禮選擇。",
-              "hours": "09:00–16:30；週三休",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=虎杖浜たらこのかんばら"
-            }
-          ],
-          "label": "水產伴手禮",
-          "description": "無著色鱈魚子、真空包與送禮選擇。",
-          "hours": "09:00–16:30；週三休",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=虎杖浜たらこのかんばら",
-          "displayGroup": "虎杖浜",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "kaisen-sushi-mine": {
-          "id": "kaisen-sushi-mine",
-          "name": "海鮮・鮨 みね",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍽️ 晚餐（四選一）",
-              "label": "壽司／海鮮",
-              "description": "壽司、生魚片與海鮮料理；建議訂位。",
-              "hours": "星期六 17:00–23:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=海鮮+鮨+みね+苫小牧市表町3丁目2-2"
-            }
-          ],
-          "label": "壽司／海鮮",
-          "description": "壽司、生魚片與海鮮料理；建議訂位。",
-          "hours": "星期六 17:00–23:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=海鮮+鮨+みね+苫小牧市表町3丁目2-2",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "soba-hana-ojicho": {
-          "id": "soba-hana-ojicho",
-          "name": "香るつけ蕎麦 蕎麦花 王子町店",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍽️ 晚餐（四選一）",
-              "label": "蕎麥",
-              "description": "つけ蕎麦、木の実せいろ與蕎麥料理。",
-              "hours": "星期六 17:30–21:00（L.O.20:30）",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=香るつけ蕎麦+蕎麦花+王子町店"
-            }
-          ],
-          "label": "蕎麥",
-          "description": "つけ蕎麦、木の実せいろ與蕎麥料理。",
-          "hours": "星期六 17:30–21:00（L.O.20:30）",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=香るつけ蕎麦+蕎麦花+王子町店",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "taisho-tomakomai": {
-          "id": "taisho-tomakomai",
-          "name": "串坊・会席料理 たいしょう",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍽️ 晚餐（四選一）",
-              "label": "會席／串料理",
-              "description": "會席料理、串料理與生魚片；建議訂位。",
-              "hours": "星期六 17:00–22:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=串坊+会席料理+たいしょう+苫小牧"
-            }
-          ],
-          "label": "會席／串料理",
-          "description": "會席料理、串料理與生魚片；建議訂位。",
-          "hours": "星期六 17:00–22:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=串坊+会席料理+たいしょう+苫小牧",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "uojiro-tomakomai": {
-          "id": "uojiro-tomakomai",
-          "name": "地魚・活魚・炉端焼き 魚次郎",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍽️ 晚餐（四選一）",
-              "label": "海鮮／爐端燒",
-              "description": "地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。",
-              "hours": "星期六 17:00–22:30（L.O.22:00）",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=地魚+活魚+炉端焼き+魚次郎+苫小牧"
-            }
-          ],
-          "label": "海鮮／爐端燒",
-          "description": "地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。",
-          "hours": "星期六 17:00–22:30（L.O.22:00）",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=地魚+活魚+炉端焼き+魚次郎+苫小牧",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "tsuruha-tomakomai-oji": {
-          "id": "tsuruha-tomakomai-oji",
-          "name": "ツルハドラッグ 苫小牧王子店",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🛍️ 晚間採買（依需求選擇）",
-              "label": "💊 藥妝／藥局",
-              "description": "補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。",
-              "hours": "09:00–22:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店"
-            }
-          ],
-          "label": "💊 藥妝／藥局",
-          "description": "補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。",
-          "hours": "09:00–22:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "seicomart-tomakomai-omotemachi": {
-          "id": "seicomart-tomakomai-omotemachi",
-          "name": "セイコーマート 苫小牧表町店",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🛍️ 晚間採買（依需求選擇）",
-              "label": "🏪 便利商店",
-              "description": "補飲料、早餐與北海道限定商品。",
-              "hours": "06:00–24:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店",
-              "guide": {
-                "title": "🏪 Secoma 必買指南",
-                "note": "北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",
-                "items": [
-                  "Secoma 北海道牛奶",
-                  "夕張哈密瓜冰棒",
-                  "HOT CHEF 炸雞便當",
-                  "北海道玉米濃湯",
-                  "北海道馬鈴薯洋芋片",
-                  "北海道牛奶霜淇淋",
-                  "起司奶油夾心歐姆蛋蛋糕捲"
-                ]
-              }
-            }
-          ],
-          "label": "🏪 便利商店",
-          "description": "補飲料、早餐與北海道限定商品。",
-          "hours": "06:00–24:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店",
-          "guide": {
-            "title": "🏪 Secoma 必買指南",
-            "note": "北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",
-            "items": [
-              "Secoma 北海道牛奶",
-              "夕張哈密瓜冰棒",
-              "HOT CHEF 炸雞便當",
-              "北海道玉米濃湯",
-              "北海道馬鈴薯洋芋片",
-              "北海道牛奶霜淇淋",
-              "起司奶油夾心歐姆蛋蛋糕捲"
-            ]
-          },
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "mega-donki-tomakomai": {
-          "id": "mega-donki-tomakomai",
-          "name": "MEGAドン・キホーテ 苫小牧店",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🛍️ 晚間採買（依需求選擇）",
-              "label": "🛒 唐吉訶德",
-              "hours": "09:00–24:00",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店"
-            }
-          ],
-          "label": "🛒 唐吉訶德",
-          "hours": "09:00–24:00",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "petit-lapin-tomakomai": {
-          "id": "petit-lapin-tomakomai",
-          "name": "幸せの生ソフト プチラパン",
-          "appearances": [
-            {
-              "day": "day4",
-              "area": "🍦 苫小牧冰品",
-              "label": "冰品",
-              "description": "吃牛奶生霜淇淋，口味與配料以當日菜單為準。",
-              "hours": "11:00–18:00；不定休",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン"
-            }
-          ],
-          "label": "冰品",
-          "description": "吃牛奶生霜淇淋，口味與配料以當日菜單為準。",
-          "hours": "11:00–18:00；不定休",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "michi-no-eki-utonaiko": {
-          "id": "michi-no-eki-utonaiko",
-          "name": "道の駅ウトナイ湖",
-          "appearances": [
-            {
-              "day": "day5",
-              "area": "苫小牧至機場",
-              "label": "短停",
-              "displayGroup": "ウトナイ湖",
-              "description": "買 B1 とんちゃん豬肉包、北寄貝相關食品與苫小牧伴手禮。",
-              "hours": "營業時間依設施；戶外區域可早到",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=道の駅ウトナイ湖"
-            }
-          ],
-          "label": "短停",
-          "description": "買 B1 とんちゃん豬肉包、北寄貝相關食品與苫小牧伴手禮。",
-          "hours": "營業時間依設施；戶外區域可早到",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=道の駅ウトナイ湖",
-          "displayGroup": "ウトナイ湖",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "toyota-rentacar-new-chitose-suzuran": {
-          "id": "toyota-rentacar-new-chitose-suzuran",
-          "name": "トヨタレンタカー 新千歳空港すずらん店",
-          "appearances": [
-            {
-              "day": "day5",
-              "area": "苫小牧至機場",
-              "label": "還車",
-              "displayGroup": "新千歲",
-              "description": "預約還車時間 09:00。",
-              "hours": "依預約時間",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC"
-            }
-          ],
-          "label": "還車",
-          "description": "預約還車時間 09:00。",
-          "hours": "依預約時間",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC",
-          "displayGroup": "新千歲",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "ebisoba-ichigen-new-chitose": {
-          "id": "ebisoba-ichigen-new-chitose",
-          "name": "えびそば一幻 新千歳空港店",
-          "appearances": [
-            {
-              "day": "day5",
-              "area": "新千歲機場",
-              "label": "用餐候選",
-              "displayGroup": "新千歲機場",
-              "description": "點えびみそ拉麵，可選濃厚蝦湯或較清爽湯底。",
-              "hours": "機場店營業時間出發前確認",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=えびそば一幻+新千歳空港店"
-            }
-          ],
-          "label": "用餐候選",
-          "description": "點えびみそ拉麵，可選濃厚蝦湯或較清爽湯底。",
-          "hours": "機場店營業時間出發前確認",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=えびそば一幻+新千歳空港店",
-          "displayGroup": "新千歲機場",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
-        },
-        "new-chitose-domestic-shopping-area": {
-          "id": "new-chitose-domestic-shopping-area",
-          "name": "新千歲機場國內線商店區",
-          "appearances": [
-            {
-              "day": "day5",
-              "area": "新千歲機場",
-              "label": "採買",
-              "displayGroup": "新千歲機場",
-              "description": "買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。",
-              "hours": "依各店營業時間",
-              "mapUrl": "https://www.google.com/maps/search/?api=1&query=新千歳空港+国内線+ショップ"
-            }
-          ],
-          "label": "採買",
-          "description": "買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。",
-          "hours": "依各店營業時間",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=新千歳空港+国内線+ショップ",
-          "displayGroup": "新千歲機場",
-          "htmlSync": {
-            "source": "index(20260828-024500).html",
-            "syncedAt": "2026-08-28",
-            "externalResearchUsed": false
-          }
+          "dataStatus": "detailed"
         },
         "muji-sapporo-parco": {
           "id": "muji-sapporo-parco",
           "name": "無印良品 札幌PARCO店",
-          "hours": "10:00–20:00",
           "mapUrl": "https://maps.app.goo.gl/nf4enUtE5aEXPQ447",
-          "displayGroup": "🛍️ 採買",
-          "appearances": [
-            {
-              "day": "day1",
-              "area": "札幌晚上",
-              "label": "",
-              "displayGroup": "🛍️ 採買",
-              "description": "",
-              "hours": "10:00–20:00",
-              "mapUrl": "https://maps.app.goo.gl/nf4enUtE5aEXPQ447"
-            }
-          ],
-          "source": "使用者提供",
-          "verifiedAt": "2026-08-28"
+          "hours": "10:00–20:00",
+          "dataStatus": "detailed"
+        },
+        "tnoc-store-sapporo-t4": {
+          "id": "tnoc-store-sapporo-t4",
+          "name": "TNOC THE STORE SAPPORO T4",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=TNOC+THE+STORE+SAPPORO+T4",
+          "hours": "10:00–21:00",
+          "description": "買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。",
+          "dataStatus": "detailed"
+        },
+        "biccamera-select-sapporo-tanukikoji": {
+          "id": "biccamera-select-sapporo-tanukikoji",
+          "name": "BicCamera Select 札幌狸小路店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ビックカメラ+Select+札幌狸小路店",
+          "hours": "10:00–23:00",
+          "description": "補行動電源、充電線、轉接頭、記憶卡與旅行小電器。",
+          "dataStatus": "detailed"
+        },
+        "kitakaro-otaru-main": {
+          "id": "kitakaro-otaru-main",
+          "name": "北菓楼 小樽本館",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北菓楼+小樽本館",
+          "hours": "10:00–18:00",
+          "description": "妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。",
+          "dataStatus": "detailed"
+        },
+        "rokkatei-otaru-unga": {
+          "id": "rokkatei-otaru-unga",
+          "name": "六花亭 小樽運河店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=六花亭+小樽運河店",
+          "hours": "10:00–18:00",
+          "description": "Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。",
+          "dataStatus": "detailed"
+        },
+        "kitaichi-glass-sangokan": {
+          "id": "kitaichi-glass-sangokan",
+          "name": "北一硝子三号館",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北一硝子三号館",
+          "hours": "10:00–17:30（L.O.17:15）",
+          "description": "玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。",
+          "dataStatus": "detailed"
+        },
+        "popura-farm-otaru": {
+          "id": "popura-farm-otaru",
+          "name": "ポプラファーム 小樽店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ポプラファーム+小樽店",
+          "hours": "11:00–17:30（L.O.17:00）",
+          "description": "サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。",
+          "dataStatus": "detailed"
+        },
+        "ice-cream-parlor-misono": {
+          "id": "ice-cream-parlor-misono",
+          "name": "アイスクリームパーラー美園",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=アイスクリームパーラー美園+小樽",
+          "hours": "11:00–17:00",
+          "description": "自家製傳統冰淇淋、聖代或冰淇淋蘇打。",
+          "dataStatus": "detailed"
+        },
+        "otaru-muse": {
+          "id": "otaru-muse",
+          "name": "小樽 Muse",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=小樽+Muse",
+          "hours": "18:30｜17:00–20:30（L.O.20:00）；週一休",
+          "description": "漢堡排、蛋包飯等洋食。",
+          "dataStatus": "detailed"
+        },
+        "otaru-canal": {
+          "id": "otaru-canal",
+          "name": "小樽運河",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=小樽運河",
+          "hours": "全天開放",
+          "description": "晚餐後欣賞夜景，或隔天清晨散步；拍攝石造倉庫、煤氣燈與水面倒影。",
+          "dataStatus": "detailed"
+        },
+        "kitaichi-hall": {
+          "id": "kitaichi-hall",
+          "name": "北一硝子 北一ホール",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=北一硝子+北一ホール",
+          "hours": "09:00–17:30；點餐 09:30–17:00",
+          "description": "點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。",
+          "displayNames": {
+            "timeline": "北一ホール"
+          },
+          "dataStatus": "detailed"
+        },
+        "container-burger-3-sun": {
+          "id": "container-burger-3-sun",
+          "name": "CONTAINER BURGER 3-SUN",
+          "description": "備選：牛肉漢堡、薯條與無酒精啤酒；停車較方便。",
+          "hours": "11:00–19:00（L.O.18:30）；臨時休業需確認",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=CONTAINER+BURGER+3-SUN+小樽",
+          "dataStatus": "detailed"
+        },
+        "kinoko-okoku-niki": {
+          "id": "kinoko-okoku-niki",
+          "name": "きのこ王国 仁木店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=きのこ王国+仁木店",
+          "hours": "09:00–18:00",
+          "description": "吃午餐。",
+          "dataStatus": "detailed"
+        },
+        "niseko-takahashi-milk-kobo": {
+          "id": "niseko-takahashi-milk-kobo",
+          "name": "ニセコ高橋牧場 Milk Kobo",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ニセコ高橋牧場+ミルク工房",
+          "description": "牛奶霜淇淋。",
+          "dataStatus": "partial"
+        },
+        "kawa-to-coffee-fanfun": {
+          "id": "kawa-to-coffee-fanfun",
+          "name": "革と珈琲 fanfun",
+          "displayName": "☕ 革と珈琲 fanfun",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=革と珈琲+fanfun+ニセコ",
+          "description": "咖啡・皮革小物。",
+          "displayNames": {
+            "timeline": "革と珈琲 fanfun"
+          },
+          "dataStatus": "partial"
+        },
+        "toyako-lodging": {
+          "id": "toyako-lodging",
+          "name": "洞爺湖住宿",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=40-2+Toyakoonsen,+Toyako,+Abuta+District,+Hokkaido+049-5721",
+          "description": "抵達、Check-in。",
+          "dataStatus": "partial"
+        },
+        "seicomart-toya-tanaka": {
+          "id": "seicomart-toya-tanaka",
+          "name": "Seicomart 洞爺田中店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Seicomart+洞爺田中店+38-1+Toyakoonsen",
+          "hours": "06:00–00:00",
+          "description": "逛超商、簡單採買。",
+          "dataStatus": "detailed"
+        },
+        "wakasaimo-toyako-main": {
+          "id": "wakasaimo-toyako-main",
+          "name": "わかさいも本舗 洞爺湖本店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=わかさいも本舗+洞爺湖本店",
+          "hours": "09:00–18:00",
+          "description": "採買伴手禮、順逛周邊。",
+          "dataStatus": "detailed"
+        },
+        "restaurant-boyotei": {
+          "id": "restaurant-boyotei",
+          "name": "レストラン望羊蹄",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖",
+          "hours": "17:00–19:30",
+          "description": "晚餐。",
+          "dataStatus": "detailed"
+        },
+        "usuzan-ropeway": {
+          "id": "usuzan-ropeway",
+          "name": "有珠山ロープウェイ",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=有珠山ロープウェイ",
+          "hours": "目前參考 08:15–17:45",
+          "description": "目前官方資料顯示首班08:15、約每15分鐘一班、單程約6分鐘；2026年9月19日班次仍須出發前確認。",
+          "dataStatus": "detailed"
+        },
+        "shiraoi-tacchan-shokudo": {
+          "id": "shiraoi-tacchan-shokudo",
+          "name": "白老たっちゃん食堂",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=白老たっちゃん食堂",
+          "hours": "10:00–14:00；火、三休",
+          "description": "點海鮮丼、烤魚定食或當日水產料理。",
+          "dataStatus": "detailed"
+        },
+        "kojohama-cafe": {
+          "id": "kojohama-cafe",
+          "name": "Kojohama Café／虎杖浜カフェ",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=虎杖浜カフェ",
+          "hours": "出發前確認",
+          "description": "點咖啡、甜點或當日輕食，菜單以現場為準。",
+          "dataStatus": "detailed"
+        },
+        "tarakoya-kojohama": {
+          "id": "tarakoya-kojohama",
+          "name": "たらこ家 虎杖浜",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=たらこ家+虎杖浜",
+          "hours": "商店約09:00–17:00；週四休",
+          "description": "買虎杖浜鱈魚子、明太子與冷藏水產，食堂可點鱈魚子飯。",
+          "dataStatus": "detailed"
+        },
+        "kojohama-tarako-kanbara": {
+          "id": "kojohama-tarako-kanbara",
+          "name": "虎杖浜たらこのかんばら直売所",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=虎杖浜たらこのかんばら",
+          "hours": "09:00–16:30；週三休",
+          "description": "無著色鱈魚子、真空包與送禮選擇。",
+          "dataStatus": "detailed"
+        },
+        "kaisen-sushi-mine": {
+          "id": "kaisen-sushi-mine",
+          "name": "海鮮・鮨 みね",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=海鮮+鮨+みね+苫小牧市表町3丁目2-2",
+          "hours": "星期六 17:00–23:00",
+          "description": "壽司、生魚片與海鮮料理；建議訂位。",
+          "dataStatus": "detailed"
+        },
+        "soba-hana-ojicho": {
+          "id": "soba-hana-ojicho",
+          "name": "香るつけ蕎麦 蕎麦花 王子町店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=香るつけ蕎麦+蕎麦花+王子町店",
+          "hours": "星期六 17:30–21:00（L.O.20:30）",
+          "description": "つけ蕎麦、木の実せいろ與蕎麥料理。",
+          "dataStatus": "detailed"
+        },
+        "taisho-tomakomai": {
+          "id": "taisho-tomakomai",
+          "name": "串坊・会席料理 たいしょう",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=串坊+会席料理+たいしょう+苫小牧",
+          "hours": "星期六 17:00–22:00",
+          "description": "會席料理、串料理與生魚片；建議訂位。",
+          "dataStatus": "detailed"
+        },
+        "uojiro-tomakomai": {
+          "id": "uojiro-tomakomai",
+          "name": "地魚・活魚・炉端焼き 魚次郎",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=地魚+活魚+炉端焼き+魚次郎+苫小牧",
+          "hours": "星期六 17:00–22:30（L.O.22:00）",
+          "description": "地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。",
+          "dataStatus": "detailed"
+        },
+        "tsuruha-tomakomai-oji": {
+          "id": "tsuruha-tomakomai-oji",
+          "name": "ツルハドラッグ 苫小牧王子店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=ツルハドラッグ+苫小牧王子店",
+          "hours": "09:00–22:00",
+          "description": "補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。",
+          "dataStatus": "detailed"
+        },
+        "seicomart-tomakomai-omotemachi": {
+          "id": "seicomart-tomakomai-omotemachi",
+          "name": "セイコーマート 苫小牧表町店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=セイコーマート+苫小牧表町店",
+          "hours": "06:00–24:00",
+          "description": "補飲料、早餐與北海道限定商品。",
+          "dataStatus": "detailed"
+        },
+        "mega-donki-tomakomai": {
+          "id": "mega-donki-tomakomai",
+          "name": "MEGAドン・キホーテ 苫小牧店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=MEGAドン・キホーテ+苫小牧店",
+          "hours": "09:00–24:00",
+          "dataStatus": "detailed"
+        },
+        "petit-lapin-tomakomai": {
+          "id": "petit-lapin-tomakomai",
+          "name": "幸せの生ソフト プチラパン",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=幸せの生ソフト+プチラパン",
+          "hours": "11:00–18:00；不定休",
+          "description": "吃牛奶生霜淇淋，口味與配料以當日菜單為準。",
+          "dataStatus": "detailed"
+        },
+        "michi-no-eki-utonaiko": {
+          "id": "michi-no-eki-utonaiko",
+          "name": "道の駅ウトナイ湖",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=道の駅ウトナイ湖",
+          "hours": "營業時間依設施；戶外區域可早到",
+          "description": "買 B1 とんちゃん豬肉包、北寄貝相關食品與苫小牧伴手禮。",
+          "dataStatus": "detailed"
+        },
+        "toyota-rentacar-new-chitose-suzuran": {
+          "id": "toyota-rentacar-new-chitose-suzuran",
+          "name": "トヨタレンタカー 新千歳空港すずらん店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=758%EF%BD%B0134+Bibi%2C+Chitose%2C+Hokkaido+066-0012%E6%97%A5%E6%9C%AC",
+          "hours": "依預約時間",
+          "description": "預約還車時間 09:00。",
+          "dataStatus": "detailed"
+        },
+        "ebisoba-ichigen-new-chitose": {
+          "id": "ebisoba-ichigen-new-chitose",
+          "name": "えびそば一幻 新千歳空港店",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=えびそば一幻+新千歳空港店",
+          "hours": "機場店營業時間出發前確認",
+          "description": "點えびみそ拉麵，可選濃厚蝦湯或較清爽湯底。",
+          "dataStatus": "detailed"
+        },
+        "new-chitose-domestic-shopping-area": {
+          "id": "new-chitose-domestic-shopping-area",
+          "name": "新千歲機場國內線商店區",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=新千歳空港+国内線+ショップ",
+          "hours": "依各店營業時間",
+          "description": "買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。",
+          "dataStatus": "detailed"
         }
       },
       "itineraries": {
-        "day2": {
-          "date": "2026-09-17",
-          "route": [
-            "kotoni-jinja",
-            "marusan-mikami-marusan-tei",
-            "hokkaido-university",
-            "hokudai-marche-cafe",
-            "hill-of-buddha",
-            "otaru-stained-glass-museum"
-          ],
-          "displayGroups": [
-            {
-              "id": "sapporo-north-morning",
-              "title": "札幌北側早晨",
-              "collapsible": true,
-              "defaultExpanded": false,
-              "itemMarker": "●",
-              "placeIds": [
-                "kotoni-jinja",
-                "marusan-mikami-marusan-tei",
-                "hokkaido-university",
-                "hokudai-marche-cafe"
-              ]
-            },
-            {
-              "id": "hill-of-buddha-main-stop",
-              "title": "頭大佛",
-              "collapsible": false,
-              "displayStyle": "compact-row",
-              "showSectionTitle": false,
-              "showNumberBadge": false,
-              "placeIds": [
-                "hill-of-buddha"
-              ]
-            }
-          ],
+        "day1": {
+          "date": "2026-09-16",
+          "route": "新千歲 → 北廣島 Outlet → Sports Depo → 札幌",
           "timeline": [
             {
-              "time": "07:30",
-              "type": "depart",
-              "name": "札幌住宿步行出發"
+              "id": "d1-01",
+              "type": "action",
+              "time": {
+                "start": "11:05",
+                "end": "12:00",
+                "status": "estimate",
+                "display": "11:05–12:00"
+              },
+              "text": "新千歲機場／取車",
+              "relatedPlaceId": "toyota-rentacar-new-chitose-suzuran",
+              "note": "入境、領行李，前往鈴蘭店。",
+              "stay": "約 55 分",
+              "next": "下一段約 30 分"
             },
             {
-              "time": "07:40–08:00",
+              "id": "d1-02",
               "type": "place",
-              "placeId": "kotoni-jinja"
+              "placeId": "hana-road-eniwa",
+              "visitRole": "primary",
+              "time": {
+                "start": "12:30",
+                "end": "13:20",
+                "status": "estimate",
+                "display": "12:30–13:20"
+              },
+              "note": "中午道之驛用餐，品嚐人氣南瓜咖哩麵包。",
+              "stay": "約 50 分",
+              "next": "下一段約 15 分"
             },
             {
-              "time": "08:00–08:10",
-              "type": "walk",
-              "name": "步行返回住宿"
-            },
-            {
-              "time": "08:10–08:30",
-              "type": "drive",
-              "name": "取車並前往海鮮早餐"
-            },
-            {
-              "time": "08:30–09:20",
+              "id": "d1-03",
               "type": "place",
-              "placeId": "marusan-mikami-marusan-tei",
-              "parkingId": "sapporo-jogai-market-parking"
+              "placeId": "mitsui-outlet-sapporo-kitahiroshima",
+              "visitRole": "must",
+              "time": {
+                "start": "13:35",
+                "end": "18:50",
+                "status": "estimate",
+                "display": "13:35–18:50"
+              },
+              "note": "今天主要採購行程；18:50離場，保留完整試鞋時間。",
+              "stay": "約 5 小時 15 分",
+              "next": "開車約 2–3 分"
             },
             {
-              "time": "09:20–09:45",
-              "type": "drive",
-              "name": "前往北海道大學並停車"
-            },
-            {
-              "time": "09:45–10:00",
+              "id": "d1-04",
               "type": "place",
-              "placeId": "hokkaido-university"
+              "placeId": "sports-depo-omagari",
+              "visitRole": "primary",
+              "time": {
+                "start": "18:55",
+                "end": "20:15",
+                "status": "estimate",
+                "display": "18:55–20:15"
+              },
+              "display": {
+                "nameStyle": "timeline"
+              },
+              "note": "集中試穿 On、HOKA、Salomon；實際品牌與鞋款庫存依現場為準。",
+              "stay": "約 80 分",
+              "next": "前往札幌市區約 35 分"
             },
             {
-              "time": "10:00–10:40",
-              "type": "place",
-              "placeId": "hokudai-marche-cafe"
+              "id": "d1-05",
+              "type": "action",
+              "time": {
+                "start": "20:50",
+                "end": "21:35",
+                "status": "estimate",
+                "display": "20:50–21:35"
+              },
+              "text": "札幌市區／狸小路六丁目 → 二丁目",
+              "note": "補吃居酒屋，沿商店街步行逛街。",
+              "stay": "約 45 分",
+              "next": "前往住宿約 10 分"
             },
             {
-              "time": "10:40–11:30",
-              "type": "drive",
-              "name": "前往頭大佛"
-            },
-            {
-              "time": "11:30–12:25",
-              "type": "place",
-              "placeId": "hill-of-buddha"
-            },
-            {
-              "time": "12:25–13:35",
-              "type": "drive",
-              "name": "前往小樽"
-            },
-            {
-              "time": "13:35–14:05",
-              "type": "arrival",
-              "name": "抵達小樽、停車並放行李"
-            },
-            {
-              "time": "14:05–14:25",
-              "type": "walk",
-              "name": "步行前往花窗玻璃美術館"
-            },
-            {
-              "time": "14:30–15:15",
-              "type": "place",
-              "placeId": "otaru-stained-glass-museum"
+              "id": "d1-06",
+              "type": "lodging",
+              "lodgingDate": "9/16（三）",
+              "time": {
+                "start": "21:45",
+                "end": null,
+                "status": "estimate",
+                "display": "21:45"
+              },
+              "note": "Check-in。",
+              "stay": "",
+              "next": ""
             }
           ]
         },
-        "day1": {
-          "date": "2026-09-16",
-          "parkingOptions": [
-            "sapporo-minami3-nishi9-parking",
-            "endo-minami3-nishi7-parking"
-          ],
-          "parkingEstimateWindow": "20:00–23:00",
-          "preferredParkingType": "平面停車場",
-          "eveningShoppingPlaceIds": [
-            "muji-sapporo-parco",
-            "tnoc-store-sapporo-t4",
-            "biccamera-select-sapporo-tanukikoji",
-            "don-quijote-susukino"
+        "day2": {
+          "date": "2026-09-17",
+          "route": "琴似住宿 → 琴似神社 → ㈱マルサン三上商店 → 北海道大學 → 頭大佛 → 小樽",
+          "timeline": [
+            {
+              "id": "d2-01",
+              "type": "group",
+              "time": {
+                "start": "07:30",
+                "end": "12:25",
+                "status": "estimate",
+                "display": "07:30–12:25"
+              },
+              "title": "札幌早晨｜琴似神社・海鮮早餐・北大・頭大佛",
+              "collapsible": true,
+              "stay": "約 4 小時 55 分",
+              "next": "12:25 出發前往小樽",
+              "items": [
+                {
+                  "type": "lodging",
+                  "lodgingDate": "9/16（三）",
+                  "time": {
+                    "start": "07:30",
+                    "end": null,
+                    "status": "estimate",
+                    "display": "07:30"
+                  },
+                  "display": {
+                    "suffix": "步行出發"
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "kotoni-jinja",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "07:40",
+                    "end": "08:00",
+                    "status": "estimate",
+                    "display": "07:40–08:00"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "08:00",
+                    "end": "08:10",
+                    "status": "estimate",
+                    "display": "08:00–08:10"
+                  },
+                  "text": "步行返回住宿"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "08:10",
+                    "end": "08:30",
+                    "status": "estimate",
+                    "display": "08:10–08:30"
+                  },
+                  "text": "取車並前往海鮮早餐"
+                },
+                {
+                  "type": "place",
+                  "placeId": "marusan-mikami-marusan-tei",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "08:30",
+                    "end": "09:20",
+                    "status": "estimate",
+                    "display": "08:30–09:20"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "09:20",
+                    "end": "09:45",
+                    "status": "estimate",
+                    "display": "09:20–09:45"
+                  },
+                  "text": "前往北海道大學並停車",
+                  "relatedPlaceId": "hokkaido-university"
+                },
+                {
+                  "type": "place",
+                  "placeId": "hokkaido-university",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "09:45",
+                    "end": "10:00",
+                    "status": "estimate",
+                    "display": "09:45–10:00"
+                  },
+                  "display": {
+                    "suffix": "短散步"
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "hokudai-marche-cafe",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "10:00",
+                    "end": "10:40",
+                    "status": "estimate",
+                    "display": "10:00–10:40"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "10:40",
+                    "end": "11:30",
+                    "status": "estimate",
+                    "display": "10:40–11:30"
+                  },
+                  "text": "前往頭大佛",
+                  "relatedPlaceId": "hill-of-buddha"
+                },
+                {
+                  "type": "place",
+                  "placeId": "hill-of-buddha",
+                  "visitRole": "must",
+                  "time": {
+                    "start": "11:30",
+                    "end": "12:25",
+                    "status": "estimate",
+                    "display": "11:30–12:25"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "d2-02",
+              "type": "action",
+              "time": {
+                "start": "12:25",
+                "end": "13:35",
+                "status": "estimate",
+                "display": "12:25–13:35"
+              },
+              "text": "前往小樽",
+              "note": "由頭大佛前往小樽住宿附近。",
+              "stay": "開車約 70 分",
+              "next": "抵達後停車、放行李"
+            },
+            {
+              "id": "d2-03",
+              "type": "action",
+              "time": {
+                "start": "13:35",
+                "end": "14:05",
+                "status": "estimate",
+                "display": "13:35–14:05"
+              },
+              "text": "抵達小樽／停車・放行李",
+              "note": "住宿停車後改為步行。",
+              "stay": "約 30 分",
+              "next": "步行前往花窗玻璃美術館"
+            },
+            {
+              "id": "d2-04",
+              "type": "action",
+              "time": {
+                "start": "14:05",
+                "end": "14:25",
+                "status": "estimate",
+                "display": "14:05–14:25"
+              },
+              "text": "步行前往花窗玻璃美術館",
+              "relatedPlaceId": "otaru-stained-glass-museum",
+              "note": "由住宿附近步行前往。",
+              "stay": "約 20 分",
+              "next": "14:30 入館"
+            },
+            {
+              "id": "d2-05",
+              "type": "place",
+              "placeId": "otaru-stained-glass-museum",
+              "visitRole": "must",
+              "time": {
+                "start": "14:30",
+                "end": "15:15",
+                "status": "estimate",
+                "display": "14:30–15:15"
+              },
+              "display": {
+                "prefix": "⑦ ",
+                "roleSuffix": true
+              },
+              "note": "營業時間 09:30–17:00。",
+              "stay": "約 45 分",
+              "next": "步行約 15 分前往堺町通"
+            },
+            {
+              "id": "d2-06",
+              "type": "group",
+              "time": {
+                "start": "15:30",
+                "end": "17:30",
+                "status": "estimate",
+                "display": "15:30–17:30"
+              },
+              "title": "堺町通｜依關門時間順逛",
+              "collapsible": true,
+              "stay": "約 2 小時",
+              "next": "18:30 小樽 Muse 晚餐",
+              "items": [
+                {
+                  "type": "place",
+                  "placeId": "ice-cream-parlor-misono",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "15:30",
+                    "end": "15:45",
+                    "status": "estimate",
+                    "display": "15:30–15:45"
+                  },
+                  "display": {
+                    "prefix": "⑥ ",
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "popura-farm-otaru",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "15:50",
+                    "end": "16:10",
+                    "status": "estimate",
+                    "display": "15:50–16:10"
+                  },
+                  "display": {
+                    "prefix": "⑤ ",
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "rokkatei-otaru-unga",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "16:15",
+                    "end": "16:35",
+                    "status": "estimate",
+                    "display": "16:15–16:35"
+                  },
+                  "display": {
+                    "prefix": "③ ",
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "kitakaro-otaru-main",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "16:35",
+                    "end": "16:55",
+                    "status": "estimate",
+                    "display": "16:35–16:55"
+                  },
+                  "display": {
+                    "prefix": "② ",
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "letao-main",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "17:00",
+                    "end": "17:30",
+                    "status": "estimate",
+                    "display": "17:00–17:30"
+                  },
+                  "display": {
+                    "prefix": "① ",
+                    "showHours": true
+                  }
+                }
+              ]
+            },
+            {
+              "id": "d2-07",
+              "type": "place",
+              "placeId": "otaru-muse",
+              "visitRole": "must",
+              "time": {
+                "start": "18:30",
+                "end": null,
+                "status": "confirmed",
+                "display": "18:30"
+              },
+              "display": {
+                "prefix": "⑧ "
+              },
+              "reservation": "已預約",
+              "note": "燭光洋食餐廳",
+              "stay": "60–90 分",
+              "next": "晚餐後可前往小樽運河"
+            },
+            {
+              "id": "d2-08",
+              "type": "place",
+              "placeId": "otaru-canal",
+              "visitRole": "primary",
+              "time": {
+                "start": "20:30",
+                "end": null,
+                "status": "estimate",
+                "display": "20:30"
+              },
+              "display": {
+                "prefix": "⑨ "
+              },
+              "note": "晚餐後欣賞夜景；若當晚太累，可改隔天清晨散步。",
+              "stay": "約 30–60 分"
+            }
+          ]
+        },
+        "day3": {
+          "date": "2026-09-18",
+          "route": "小樽 → 余市 → 仁木 → 俱知安 → 二世谷 → 洞爺湖",
+          "timeline": [
+            {
+              "id": "d3-01",
+              "type": "group",
+              "time": {
+                "start": "07:30",
+                "end": "12:30",
+                "status": "estimate",
+                "display": "07:30–12:30"
+              },
+              "title": "小樽｜住宿停車・步行行程",
+              "collapsible": true,
+              "stay": "整段約 5 小時",
+              "next": "12:30 退房，前往仁木約 40–45 分",
+              "items": [
+                {
+                  "type": "place",
+                  "placeId": "otaru-canal",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "07:30",
+                    "end": "08:30",
+                    "status": "estimate",
+                    "display": "07:30–08:30"
+                  },
+                  "display": {
+                    "prefix": "⑨ "
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "kitaichi-hall",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "09:00",
+                    "end": "09:50",
+                    "status": "estimate",
+                    "display": "09:00–09:50"
+                  },
+                  "display": {
+                    "nameStyle": "timeline",
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "kitaichi-glass-sangokan",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "10:00",
+                    "end": "10:40",
+                    "status": "estimate",
+                    "display": "10:00–10:40"
+                  },
+                  "display": {
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "satudora-otaru-sakaimachi",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "10:40",
+                    "end": "11:30",
+                    "status": "estimate",
+                    "display": "10:40–11:30"
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "ebijin-otaru",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "11:30",
+                    "end": "12:00",
+                    "status": "estimate",
+                    "display": "11:30–12:00"
+                  },
+                  "display": {
+                    "suffix": "｜外帶漢堡"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "12:00",
+                    "end": "12:30",
+                    "status": "estimate",
+                    "display": "12:00–12:30"
+                  },
+                  "text": "返回住宿、整理行李並退房"
+                }
+              ]
+            },
+            {
+              "id": "d3-02",
+              "type": "place",
+              "placeId": "kinoko-okoku-niki",
+              "visitRole": "primary",
+              "time": {
+                "start": "13:15",
+                "end": "13:50",
+                "status": "estimate",
+                "display": "13:15–13:50"
+              },
+              "display": {
+                "suffix": "｜吃午餐"
+              },
+              "note": "吃午餐。",
+              "stay": "約 35 分",
+              "next": "前往二世谷"
+            },
+            {
+              "id": "d3-03",
+              "type": "group",
+              "time": {
+                "start": "14:25",
+                "end": "17:20",
+                "status": "estimate",
+                "display": "14:25–17:20"
+              },
+              "title": "二世谷 → 🍦 Lake Hill Farm｜必去",
+              "collapsible": true,
+              "note": "Sprout 14:25–14:45 為依現有行程推估；Lake Hill Farm 必吃：牛奶派、冰淇淋、果醬、咖哩",
+              "next": "前往洞爺湖住宿",
+              "items": [
+                {
+                  "type": "place",
+                  "placeId": "sprout-niseko",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "14:25",
+                    "end": "14:45",
+                    "status": "estimate",
+                    "display": "14:25–14:45"
+                  },
+                  "display": {
+                    "nameStyle": "timeline",
+                    "showHours": true,
+                    "hoursPrefix": "營業 "
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "niseko-takahashi-milk-kobo",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "14:55",
+                    "end": "15:25",
+                    "status": "estimate",
+                    "display": "14:55–15:25"
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "kawa-to-coffee-fanfun",
+                  "visitRole": "optional",
+                  "time": {
+                    "start": "15:30",
+                    "end": "15:45",
+                    "status": "estimate",
+                    "display": "15:30–15:45"
+                  },
+                  "display": {
+                    "nameStyle": "timeline",
+                    "roleParenthetical": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "lake-hill-farm",
+                  "visitRole": "must",
+                  "time": {
+                    "start": "16:20",
+                    "end": "17:20",
+                    "status": "estimate",
+                    "display": "16:20–17:20"
+                  },
+                  "display": {
+                    "nameStyle": "timeline",
+                    "prefix": "🍦 ",
+                    "roleSuffix": true
+                  }
+                }
+              ]
+            },
+            {
+              "id": "d3-04",
+              "type": "group",
+              "time": {
+                "start": "17:40",
+                "end": "21:20",
+                "status": "estimate",
+                "display": "17:40–21:20"
+              },
+              "title": "洞爺湖｜晚餐・煙火・住宿",
+              "collapsible": true,
+              "next": "結束後返回住宿",
+              "items": [
+                {
+                  "type": "place",
+                  "placeId": "toyako-lodging",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "17:40",
+                    "end": null,
+                    "status": "estimate",
+                    "display": "17:40"
+                  },
+                  "display": {
+                    "suffix": " Check-in"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "18:05",
+                    "end": null,
+                    "status": "estimate",
+                    "display": "18:05"
+                  },
+                  "text": "花火觀賞船購票",
+                  "relatedPlaceId": "toya-fireworks-pier"
+                },
+                {
+                  "type": "place",
+                  "placeId": "seicomart-toya-tanaka",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "18:10",
+                    "end": "18:25",
+                    "status": "estimate",
+                    "display": "18:10–18:25"
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "restaurant-boyotei",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "18:30",
+                    "end": "19:40",
+                    "status": "estimate",
+                    "display": "18:30–19:40"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "19:40",
+                    "end": "20:00",
+                    "status": "estimate",
+                    "display": "19:40–20:00"
+                  },
+                  "text": "洞爺湖溫泉街散步"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "20:00",
+                    "end": "20:10",
+                    "status": "estimate",
+                    "display": "20:00–20:10"
+                  },
+                  "text": "返回住宿換浴衣",
+                  "relatedPlaceId": "toyako-lodging"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "20:15",
+                    "end": null,
+                    "status": "estimate",
+                    "display": "20:15"
+                  },
+                  "text": "前往花火船碼頭",
+                  "relatedPlaceId": "toya-fireworks-pier"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "20:35",
+                    "end": "21:20",
+                    "status": "estimate",
+                    "display": "20:35–21:20"
+                  },
+                  "text": "花火觀賞船",
+                  "relatedPlaceId": "toya-fireworks-pier"
+                }
+              ]
+            }
+          ]
+        },
+        "day4": {
+          "date": "2026-09-19",
+          "route": "有珠山 → 虎杖浜 → 苫小牧",
+          "timeline": [
+            {
+              "id": "d4-01",
+              "type": "group",
+              "time": {
+                "start": "07:20",
+                "end": "09:51",
+                "status": "estimate",
+                "display": "07:20–09:51"
+              },
+              "title": "有珠山纜車｜上山・展望・下山",
+              "collapsible": true,
+              "next": "10:00 開車前往虎杖浜",
+              "items": [
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "07:20",
+                    "end": "07:40",
+                    "status": "estimate",
+                    "display": "07:20–07:40"
+                  },
+                  "text": "洞爺湖住宿出發，前往有珠山纜車山麓站",
+                  "relatedPlaceId": "usuzan-ropeway"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "07:40",
+                    "end": "08:10",
+                    "status": "estimate",
+                    "display": "07:40–08:10"
+                  },
+                  "text": "停車、購票，08:10 前抵達乘車處",
+                  "relatedPlaceId": "usuzan-ropeway"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "08:15",
+                    "end": "08:21",
+                    "status": "estimate",
+                    "display": "08:15–08:21"
+                  },
+                  "text": "搭乘推估首班纜車上山（單程約 6 分）",
+                  "relatedPlaceId": "usuzan-ropeway"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "08:21",
+                    "end": "09:35",
+                    "status": "estimate",
+                    "display": "08:21–09:35"
+                  },
+                  "text": "山頂展望台與步道，09:35 前返回山頂站",
+                  "relatedPlaceId": "usuzan-ropeway"
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "09:45",
+                    "end": "09:51",
+                    "status": "estimate",
+                    "display": "09:45–09:51"
+                  },
+                  "text": "搭乘纜車下山，班次依現場運行調整",
+                  "relatedPlaceId": "usuzan-ropeway"
+                }
+              ]
+            },
+            {
+              "id": "d4-02",
+              "type": "action",
+              "time": {
+                "start": "10:00",
+                "end": "11:00",
+                "status": "estimate",
+                "display": "10:00–11:00"
+              },
+              "text": "有珠山 → 虎杖浜",
+              "note": "車程依當日導航與路況調整。",
+              "stay": "估計約60分",
+              "next": "虎杖浜海鮮午餐"
+            },
+            {
+              "id": "d4-03",
+              "type": "action",
+              "time": {
+                "start": "11:00",
+                "end": "12:30",
+                "status": "estimate",
+                "display": "11:00–12:30"
+              },
+              "text": "虎杖浜海鮮午餐",
+              "note": "時間為推估；たっちゃん食堂或 Kojohama Café，依現場營業與排隊狀況決定。",
+              "stay": "約 60–90 分",
+              "next": "沿途採買水產"
+            },
+            {
+              "id": "d4-04",
+              "type": "group",
+              "time": {
+                "start": "13:30",
+                "end": "16:30",
+                "status": "estimate",
+                "display": "13:30–16:30"
+              },
+              "title": "虎杖浜採買 → 苫小牧霜淇淋",
+              "collapsible": true,
+              "next": "前往住宿",
+              "items": [
+                {
+                  "type": "multiPlace",
+                  "placeIds": [
+                    "tarakoya-kojohama",
+                    "kojohama-tarako-kanbara"
+                  ],
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "13:30",
+                    "end": "14:30",
+                    "status": "estimate",
+                    "display": "13:30–14:30"
+                  },
+                  "display": {
+                    "suffix": "｜採買鱈魚子、海鮮乾貨"
+                  }
+                },
+                {
+                  "type": "action",
+                  "time": {
+                    "start": "14:30",
+                    "end": "15:30",
+                    "status": "estimate",
+                    "display": "14:30–15:30"
+                  },
+                  "text": "虎杖浜 → 苫小牧｜開車"
+                },
+                {
+                  "type": "place",
+                  "placeId": "petit-lapin-tomakomai",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "15:30",
+                    "end": "16:30",
+                    "status": "estimate",
+                    "display": "15:30–16:30"
+                  },
+                  "display": {
+                    "suffix": "｜吃牛奶霜淇淋"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "d4-05",
+              "type": "action",
+              "time": {
+                "start": "17:00",
+                "end": null,
+                "status": "estimate",
+                "display": "17:00"
+              },
+              "text": "苫小牧住宿 Check-in",
+              "note": "停車、放行李。",
+              "stay": "30 分",
+              "next": "晚餐"
+            },
+            {
+              "id": "d4-06",
+              "type": "action",
+              "time": {
+                "start": "18:00",
+                "end": "20:30",
+                "status": "estimate",
+                "display": "18:00–20:30"
+              },
+              "text": "苫小牧晚餐（四選一）",
+              "note": "依料理、營業時間與訂位狀況選一間。",
+              "stay": "約60–90分",
+              "next": "藥妝、超商或大型採買"
+            }
+          ]
+        },
+        "day5": {
+          "date": "2026-09-20",
+          "route": "苫小牧 → 新千歲機場",
+          "timeline": [
+            {
+              "id": "d5-01",
+              "type": "action",
+              "time": {
+                "start": "07:40",
+                "end": null,
+                "status": "estimate",
+                "display": "07:40 左右"
+              },
+              "text": "苫小牧住宿出發",
+              "note": "還車預約固定為09:00，必須倒推時間；此出發時間仍需依飯店位置與導航微調。",
+              "stay": "",
+              "next": ""
+            },
+            {
+              "id": "d5-02",
+              "type": "place",
+              "placeId": "michi-no-eki-utonaiko",
+              "visitRole": "optional",
+              "time": {
+                "start": "08:00",
+                "end": "08:20",
+                "status": "estimate",
+                "display": "08:00–08:20"
+              },
+              "display": {
+                "roleParenthetical": true,
+                "optionalLabel": "可略過"
+              },
+              "note": "只能短停約15–20分鐘；若出發延誤、路況不佳或需加油，直接取消。",
+              "stay": "最多 20 分",
+              "next": "最晚約08:25離開"
+            },
+            {
+              "id": "d5-03",
+              "type": "action",
+              "time": {
+                "start": "08:45",
+                "end": "09:00",
+                "status": "confirmed",
+                "display": "08:45–09:00"
+              },
+              "text": "新千歲機場鈴蘭店還車",
+              "relatedPlaceId": "toyota-rentacar-new-chitose-suzuran",
+              "note": "預約還車時間09:00；原網頁寫09:20抵達是錯誤，已修正。",
+              "stay": "依店家流程",
+              "next": "接駁前往機場"
+            },
+            {
+              "id": "d5-04",
+              "type": "action",
+              "time": {
+                "start": "09:30",
+                "end": "11:15",
+                "status": "estimate",
+                "display": "09:30–11:15"
+              },
+              "text": "新千歲機場補貨／用餐",
+              "note": "預留接駁、報到、安檢與購物時間；餐廳是否排隊需現場判斷。",
+              "stay": "約 90 分",
+              "next": "準備登機"
+            },
+            {
+              "id": "d5-05",
+              "type": "flight",
+              "flightHeader": "回程｜IT235",
+              "time": {
+                "start": "12:05",
+                "end": null,
+                "status": "confirmed",
+                "display": "12:05"
+              },
+              "display": {
+                "text": "IT235 新千歲 → 桃園"
+              },
+              "note": "回程航班。",
+              "stay": "",
+              "next": ""
+            }
           ]
         }
       },
@@ -1872,35 +1711,929 @@
           }
         }
       ],
-      "uiReferences": [
-        {
-          "day": "day1",
-          "area": "北廣島",
-          "label": "Guide",
-          "name": "查看 Outlet 店號簡圖",
-          "description": "依官方樓層圖校正店號；Clover 1F → Clover 2F → Maple 2F。",
-          "usage": "現場對照使用",
-          "url": "guides/kitahiroshima-outlet/index.html",
-          "reason": "UI/guide reference, not a physical place record"
-        }
-      ],
-      "dataSync": {
-        "htmlPlacesSync20260828": {
-          "sourceHtml": "index(20260828-024500).html",
-          "rule": "Only copy/normalize information already present in the supplied HTML. Do not verify, correct, enrich, or replace with outside information.",
-          "externalResearchUsed": false,
-          "webSearchUsed": false,
-          "matchedExistingPlaces": 17,
-          "addedNewPlaces": 40,
-          "totalPlaceRecordsFromHtml": 57,
-          "websiteModified": false
+      "dayMeta": {
+        "day1": {
+          "label": "Day 1｜9/16（三）",
+          "highlights": [
+            "北廣島 Outlet",
+            "Sports Depo 三品牌試鞋",
+            "札幌夜間散步",
+            "北海道第一支冰品"
+          ],
+          "missions": [
+            "完成取車",
+            "Outlet主要採購",
+            "試穿 On／HOKA／Salomon",
+            "入住札幌"
+          ],
+          "foodFocus": [
+            "札幌農学校牛奶霜淇淋",
+            "道之驛南瓜咖哩麵包"
+          ],
+          "hotel": "札幌住宿"
+        },
+        "day2": {
+          "label": "Day 2｜9/17（四）",
+          "highlights": [
+            "琴似神社",
+            "㈱マルサン三上商店／まるさん亭 本店",
+            "北海道大學",
+            "頭大佛",
+            "小樽港町"
+          ],
+          "missions": [
+            "琴似神社晨間參拜",
+            "08:30 海鮮早餐",
+            "北大マルシェ乳製品體驗",
+            "頭大佛參觀",
+            "14:30 花窗玻璃美術館",
+            "小樽 Muse晚餐"
+          ],
+          "foodFocus": [
+            "まるさん亭海鮮早餐",
+            "北大マルシェ牛奶／冰淇淋",
+            "小樽冰品候選"
+          ],
+          "hotel": "小樽住宿"
+        },
+        "day3": {
+          "label": "Day 3｜9/18（五）",
+          "highlights": [
+            "北一ホール",
+            "きのこ王国 仁木店午餐",
+            "高橋牧場",
+            "Lake Hill Farm",
+            "望羊蹄晚餐",
+            "洞爺湖煙火船"
+          ],
+          "missions": [
+            "12:30退房",
+            "きのこ王国午餐",
+            "外帶EBIJIN漢堡",
+            "Lake Hill Farm必去",
+            "18:30望羊蹄晚餐",
+            "20:15前往煙火船碼頭"
+          ],
+          "foodFocus": [
+            "EBIJIN鹿肉漢堡",
+            "きのこ王国午餐",
+            "Milk Kobo牛奶霜淇淋",
+            "Lake Hill Farm牛奶派・冰淇淋・果醬・咖哩",
+            "望羊蹄漢堡排套餐"
+          ],
+          "hotel": "洞爺湖溫泉街"
+        },
+        "day4": {
+          "label": "Day 4｜9/19（六）",
+          "highlights": [
+            "08:15有珠山首班纜車",
+            "🐟 虎杖浜海鮮午餐",
+            "苫小牧晚餐四選一"
+          ],
+          "missions": [
+            "07:40前抵達纜車站",
+            "搭08:15推估首班",
+            "選定虎杖浜午餐",
+            "選一間苫小牧晚餐"
+          ],
+          "foodFocus": [
+            "虎杖浜海鮮午餐",
+            "鱈魚子伴手禮"
+          ],
+          "hotel": "苫小牧住宿",
+          "areaOrder": [
+            "有珠山",
+            "虎杖浜海鮮",
+            "晚餐",
+            "晚間採買",
+            "冰品"
+          ]
+        },
+        "day5": {
+          "label": "Day 5｜9/20（日）",
+          "highlights": [
+            "09:00還車",
+            "新千歲機場最後採買"
+          ],
+          "missions": [
+            "準時還車",
+            "完成報到與安檢",
+            "購買冷藏伴手禮"
+          ],
+          "foodFocus": [
+            "機場最後一餐",
+            "北海道最後一支冰品（有時間）"
+          ],
+          "hotel": "返程"
         }
       },
+      "displayGroups": {
+        "day1": [
+          {
+            "title": "惠庭",
+            "note": "Day 1 中午短停",
+            "id": "day1-area-1",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "hana-road-eniwa",
+                "display": {
+                  "label": "推薦",
+                  "description": "道之驛午餐、南瓜咖哩麵包。"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "北廣島",
+            "note": "Day 1 主要購物區",
+            "layout": "route",
+            "id": "day1-area-2",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "mitsui-outlet-sapporo-kitahiroshima",
+                "display": {
+                  "label": "必去",
+                  "description": "採買戶外鞋服、運動服飾、旅行用品與北海道伴手禮。",
+                  "displayGroup": "主要行程",
+                  "guide": {
+                    "title": "🧭 採買指南｜建議先逛 164、123",
+                    "items": [
+                      "進入 Outlet 後，優先前往店號 164、123。",
+                      "完成重點採買後，再依原定路線逛其他店家。",
+                      "18:50 前離場，保留 Sports Depo 三品牌試鞋時間。"
+                    ]
+                  },
+                  "roleLabelSource": "visitRole"
+                },
+                "visitRole": "must"
+              },
+              {
+                "kind": "uiReference",
+                "refId": "kitahiroshima-outlet-map-guide"
+              },
+              {
+                "kind": "place",
+                "placeId": "sapporo-nogakko-kitahiroshima",
+                "display": {
+                  "label": "冰品必吃",
+                  "description": "酪農ミルクソフト；位於Clover Mall 1F北海道四季彩館內。",
+                  "displayGroup": "Outlet冰品"
+                },
+                "visitRole": "must"
+              },
+              {
+                "kind": "place",
+                "placeId": "mil-presso-kitahiroshima",
+                "display": {
+                  "label": "冰品備選",
+                  "description": "北海道ロコファームビレッジ內的北海道素材霜淇淋。",
+                  "displayGroup": "Outlet冰品"
+                },
+                "visitRole": "backup"
+              },
+              {
+                "kind": "place",
+                "placeId": "sports-depo-omagari",
+                "display": {
+                  "label": "三品牌試鞋",
+                  "description": "地址：北海道北広島市大曲幸町2丁目8番地2；有停車場、可免稅。Salomon 經銷資格已有官方資料；On、HOKA 與指定鞋款請以現場庫存為準。",
+                  "displayGroup": "Outlet 北側｜開車約2–3分",
+                  "guide": {
+                    "title": "👟 試鞋指南｜On・HOKA・Salomon",
+                    "note": "低足弓以穩定、底盤寬度與長時間步行舒適度為主要比較；不要只看第一腳的柔軟感。",
+                    "table": [
+                      [
+                        "鞋款",
+                        "適合度",
+                        "試穿重點"
+                      ],
+                      [
+                        "HOKA Gaviota 6",
+                        "★★★★★",
+                        "底盤寬、穩定、緩震強；優先測長時間城市步行。"
+                      ],
+                      [
+                        "HOKA Arahi 8",
+                        "★★★★☆",
+                        "有穩定支撐且較輕；比較後足固定感。"
+                      ],
+                      [
+                        "On Cloudflyer／Cloudrunner",
+                        "★★★★",
+                        "支撐與穿搭均衡、腳感偏紮實。"
+                      ],
+                      [
+                        "Salomon XA Pro 3D V9",
+                        "★★★★",
+                        "底盤穩、抗扭強；適合步道及不平路面。"
+                      ]
+                    ],
+                    "items": [
+                      "依序試：Gaviota 6 → Arahi 8 → Cloudflyer／Cloudrunner → XA Pro 3D V9。",
+                      "穿旅行會用的襪子，雙腳都試並走動至少 5–10 分鐘。",
+                      "指定鞋款與尺碼不保證有貨，現場可請店員找同支撐類型替代款。"
+                    ]
+                  }
+                },
+                "visitRole": "primary"
+              }
+            ],
+            "routeDisplay": {
+              "outletPlaceId": "mitsui-outlet-sapporo-kitahiroshima",
+              "mapReferenceId": "kitahiroshima-outlet-map-guide",
+              "icePlaceIds": [
+                "sapporo-nogakko-kitahiroshima",
+                "mil-presso-kitahiroshima"
+              ],
+              "sportsPlaceId": "sports-depo-omagari",
+              "outletTime": "13:35–18:50",
+              "quickGuide": "🧭 先逛 164、123，18:50 離場",
+              "mapLinkLabel": "🗺️ 品牌位置｜店號簡圖 ↗",
+              "iceTitle": "🍦 冰品",
+              "iceDisplay": [
+                {
+                  "placeId": "sapporo-nogakko-kitahiroshima",
+                  "text": "札幌農学校｜酪農牛奶"
+                },
+                {
+                  "placeId": "mil-presso-kitahiroshima",
+                  "text": "MIL PRESSO｜北海道素材"
+                }
+              ],
+              "driveText": "🚗 2–3 分鐘",
+              "sportsDisplayName": "Sports Depo 大曲店",
+              "sportsTime": "18:55–20:15",
+              "sportsSummary": "On・HOKA・Salomon",
+              "sportsMeta": [
+                "🅿️",
+                "免稅",
+                "☎ 011-377-1477"
+              ],
+              "purchaseTargets": [
+                {
+                  "id": "asics-gel-kayano-31",
+                  "brand": "ASICS",
+                  "productName": "GEL-KAYANO 31",
+                  "category": "鞋款",
+                  "targetStore": "ASICS",
+                  "status": "待購買",
+                  "action": "現場試穿",
+                  "size": null,
+                  "color": null,
+                  "price": null,
+                  "inventoryStatus": "待現場確認"
+                }
+              ]
+            }
+          },
+          {
+            "title": "札幌晚上",
+            "note": "先選平面停車場，再沿狸小路採買並依序前往兩家宵夜。",
+            "id": "day1-area-3",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "sapporo-minami3-nishi9-parking",
+                "display": {
+                  "label": "首選",
+                  "description": "平面停車場；20:00–23:00 預估停車費 ¥800。",
+                  "hoursOverride": "20:00–08:00｜30分 ¥300；夜間最高 ¥800；入庫後12小時最高 ¥1,600",
+                  "displayGroup": "🅿️ 停車候選",
+                  "locationLabel": "南3條西9丁目"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "endo-minami3-nishi7-parking",
+                "display": {
+                  "label": "備選",
+                  "description": "平面停車場；20:00–23:00 預估停車費 ¥1,400。",
+                  "hoursOverride": "24小時｜30分 ¥330；入庫後24小時最高 ¥1,400",
+                  "displayGroup": "🅿️ 停車候選",
+                  "locationLabel": "南3條西7丁目",
+                  "roleLabelSource": "visitRole"
+                },
+                "visitRole": "backup"
+              },
+              {
+                "kind": "place",
+                "placeId": "muji-sapporo-parco",
+                "display": {
+                  "displayGroup": "🛍️ 採買"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "tnoc-store-sapporo-t4",
+                "display": {
+                  "label": "必去",
+                  "description": "買北海道主題 T-shirt、帽子、外套、包袋與生活雜貨。",
+                  "displayGroup": "🛍️ 採買",
+                  "locationLabel": "狸小路4丁目",
+                  "roleLabelSource": "visitRole"
+                },
+                "visitRole": "must"
+              },
+              {
+                "kind": "place",
+                "placeId": "biccamera-select-sapporo-tanukikoji",
+                "display": {
+                  "label": "備選",
+                  "description": "補行動電源、充電線、轉接頭、記憶卡與旅行小電器。",
+                  "displayGroup": "🛍️ 採買",
+                  "locationLabel": "狸小路5丁目",
+                  "roleLabelSource": "visitRole"
+                },
+                "visitRole": "backup"
+              },
+              {
+                "kind": "place",
+                "placeId": "don-quijote-susukino",
+                "display": {
+                  "description": "ドン・キホーテ すすきの店",
+                  "displayGroup": "🛍️ 採買",
+                  "locationLabel": "南5條西3丁目"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "hachikyo-oyaji",
+                "display": {
+                  "label": "第一站",
+                  "description": "北海道海鮮居酒屋。",
+                  "displayGroup": "🌙 宵夜",
+                  "locationLabel": "南3條西3丁目"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "nemuro-hanamaru-cocono",
+                "display": {
+                  "label": "第二站",
+                  "description": "根室海鮮握壽司、花咲蟹與當日推薦品項。",
+                  "displayGroup": "🌙 宵夜",
+                  "locationLabel": "南4條西4丁目"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          }
+        ],
+        "day2": [
+          {
+            "title": "札幌北側早晨",
+            "note": "",
+            "layout": "walking-guide",
+            "id": "day2-area-1",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "kotoni-jinja",
+                "display": {
+                  "label": "●"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "marusan-mikami-marusan-tei",
+                "display": {
+                  "label": "●",
+                  "guide": "https://www.google.com/maps/search/?api=1&query=札幌場外市場+駐車場"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "hokkaido-university",
+                "display": {
+                  "label": "●"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "hokudai-marche-cafe",
+                "display": {
+                  "label": "●"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "頭大佛",
+            "layout": "compact-place",
+            "id": "day2-area-2",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "hill-of-buddha",
+                "display": {
+                  "description": "11:30–12:25",
+                  "displayGroup": "開放時間 09:00–16:00"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "小樽",
+            "note": "從 1-19 Shinonomechō 出發，由近到遠。",
+            "layout": "walking-guide",
+            "linkStyle": "inline-arrow",
+            "id": "day2-area-3",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "letao-main",
+                "display": {
+                  "label": "①",
+                  "description": "Double Fromage 雙層起司蛋糕、Royal Montagne 巧克力；LeTAO PLUS 的 Jersey 牛乳霜淇淋。",
+                  "displayGroup": "甜點選購"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "kitakaro-otaru-main",
+                "display": {
+                  "label": "②",
+                  "description": "妖精之森年輪蛋糕、開拓おかき與夢不思議泡芙。",
+                  "displayGroup": "甜點選購"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "rokkatei-otaru-unga",
+                "display": {
+                  "label": "③",
+                  "description": "Marusei 奶油夾心餅、草莓巧克力與雪やこんこ。",
+                  "displayGroup": "甜點選購"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "kitaichi-glass-sangokan",
+                "display": {
+                  "label": "④",
+                  "description": "玻璃杯、醬油瓶與燈具；Terrace 的八段霜淇淋。",
+                  "displayGroup": "玻璃工藝"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "popura-farm-otaru",
+                "display": {
+                  "label": "⑤",
+                  "description": "サンタのヒゲ：半顆哈密瓜搭配北海道牛奶霜淇淋。",
+                  "displayGroup": "冰品備選"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "ice-cream-parlor-misono",
+                "display": {
+                  "label": "⑥",
+                  "description": "自家製傳統冰淇淋、聖代或冰淇淋蘇打。",
+                  "displayGroup": "老舖冰品"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "otaru-stained-glass-museum",
+                "display": {
+                  "label": "⑦",
+                  "description": "先參觀有固定閉館時間的必去景點。",
+                  "displayGroup": "必去美術館"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "otaru-muse",
+                "display": {
+                  "label": "⑧",
+                  "description": "漢堡排、蛋包飯等洋食。",
+                  "guide": "",
+                  "reservation": "已預約"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "otaru-canal",
+                "display": {
+                  "label": "⑨",
+                  "description": "晚餐後欣賞夜景，或隔天清晨散步；拍攝石造倉庫、煤氣燈與水面倒影。",
+                  "displayGroup": "晚間／清晨皆可"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          }
+        ],
+        "day3": [
+          {
+            "title": "小樽",
+            "note": "住宿停車後步行；12:30 整理完成並退房",
+            "layout": "hierarchy",
+            "id": "day3-area-1",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "kitaichi-hall",
+                "display": {
+                  "label": "咖啡",
+                  "description": "點咖啡、皇家奶茶、蛋糕或霜淇淋，座位區由 167 盞石油燈照明。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "satudora-otaru-sakaimachi",
+                "display": {
+                  "label": "採買",
+                  "description": "補防曬、暈車藥、腸胃藥、止痛藥、面膜與旅行消耗品。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "choiceGroup",
+                "title": "漢堡（二選一）",
+                "category": "漢堡",
+                "choices": [
+                  {
+                    "placeId": "ebijin-otaru",
+                    "visitRole": "primary",
+                    "displayRoleLabel": "主選"
+                  },
+                  {
+                    "placeId": "container-burger-3-sun",
+                    "visitRole": "backup",
+                    "displayRoleLabel": "備選"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "仁木午餐",
+            "note": "",
+            "id": "day3-area-2",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "kinoko-okoku-niki",
+                "display": {
+                  "label": "午餐",
+                  "description": "吃午餐。"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "二世谷 → Lake Hill Farm",
+            "note": "14:25–17:20",
+            "id": "day3-area-3",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "sprout-niseko",
+                "display": {
+                  "label": "咖啡"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "niseko-takahashi-milk-kobo",
+                "display": {
+                  "description": "牛奶霜淇淋。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "kawa-to-coffee-fanfun",
+                "display": {
+                  "label": "可省略",
+                  "description": "咖啡・皮革小物。",
+                  "roleLabelSource": "visitRole"
+                },
+                "visitRole": "optional"
+              },
+              {
+                "kind": "place",
+                "placeId": "lake-hill-farm",
+                "display": {
+                  "label": "必去",
+                  "description": "🍴 必吃｜牛奶派・冰淇淋・果醬・咖哩",
+                  "roleLabelSource": "visitRole"
+                },
+                "visitRole": "must"
+              }
+            ]
+          },
+          {
+            "title": "洞爺湖",
+            "note": "",
+            "numbered": true,
+            "id": "day3-area-4",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "toyako-lodging",
+                "display": {
+                  "description": "抵達、Check-in。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "seicomart-toya-tanaka",
+                "display": {
+                  "description": "逛超商、簡單採買。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "wakasaimo-toyako-main",
+                "display": {
+                  "description": "採買伴手禮、順逛周邊。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "restaurant-boyotei",
+                "display": {
+                  "description": "晚餐。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "toya-fireworks-pier",
+                "display": {
+                  "description": "購票、候船與登船。"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          }
+        ],
+        "day4": [
+          {
+            "title": "有珠山",
+            "note": "上午主行程；依天氣與風勢決定是否搭乘",
+            "id": "day4-area-1",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "usuzan-ropeway",
+                "display": {
+                  "label": "主行程",
+                  "description": "目前官方資料顯示首班08:15、約每15分鐘一班、單程約6分鐘；2026年9月19日班次仍須出發前確認。",
+                  "displayGroup": "有珠山"
+                },
+                "visitRole": "must"
+              }
+            ]
+          },
+          {
+            "title": "🍴 虎杖浜海鮮午餐",
+            "note": "午餐選一；吃完後水產店依南往北順路停留",
+            "id": "day4-area-2",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "shiraoi-tacchan-shokudo",
+                "display": {
+                  "label": "午餐候選",
+                  "description": "點海鮮丼、烤魚定食或當日水產料理。",
+                  "displayGroup": "虎杖浜"
+                },
+                "visitRole": "backup"
+              },
+              {
+                "kind": "place",
+                "placeId": "kojohama-cafe",
+                "display": {
+                  "label": "午餐候選",
+                  "description": "點咖啡、甜點或當日輕食，菜單以現場為準。",
+                  "displayGroup": "虎杖浜"
+                },
+                "visitRole": "backup"
+              },
+              {
+                "kind": "place",
+                "placeId": "tarakoya-kojohama",
+                "display": {
+                  "label": "水產伴手禮",
+                  "description": "買虎杖浜鱈魚子、明太子與冷藏水產，食堂可點鱈魚子飯。",
+                  "displayGroup": "虎杖浜"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "kojohama-tarako-kanbara",
+                "display": {
+                  "label": "水產伴手禮",
+                  "description": "無著色鱈魚子、真空包與送禮選擇。",
+                  "displayGroup": "虎杖浜"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "🍽️ 晚餐（四選一）",
+            "note": "依料理、營業時間與訂位狀況選一間",
+            "id": "day4-area-3",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "kaisen-sushi-mine",
+                "display": {
+                  "label": "壽司／海鮮",
+                  "description": "壽司、生魚片與海鮮料理；建議訂位。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "soba-hana-ojicho",
+                "display": {
+                  "label": "蕎麥",
+                  "description": "つけ蕎麦、木の実せいろ與蕎麥料理。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "taisho-tomakomai",
+                "display": {
+                  "label": "會席／串料理",
+                  "description": "會席料理、串料理與生魚片；建議訂位。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "uojiro-tomakomai",
+                "display": {
+                  "label": "海鮮／爐端燒",
+                  "description": "地魚、活魚、爐端燒、貝風呂與生魚片；建議訂位。"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "🛍️ 晚間採買（依需求選擇）",
+            "note": "藥妝、便利商店與大型採買集中在同一欄，依需要前往",
+            "id": "day4-area-4",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "tsuruha-tomakomai-oji",
+                "display": {
+                  "label": "💊 藥妝／藥局",
+                  "description": "補暈車藥、腸胃藥、止痛藥、貼布、面膜與くらしリズム日用品。"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "seicomart-tomakomai-omotemachi",
+                "display": {
+                  "label": "🏪 便利商店",
+                  "description": "補飲料、早餐與北海道限定商品。",
+                  "guide": {
+                    "title": "🏪 Secoma 必買指南",
+                    "note": "北海道人的日常生活文化；HOT CHEF、霜淇淋及限定商品依分店與當日庫存為準。",
+                    "items": [
+                      "Secoma 北海道牛奶",
+                      "夕張哈密瓜冰棒",
+                      "HOT CHEF 炸雞便當",
+                      "北海道玉米濃湯",
+                      "北海道馬鈴薯洋芋片",
+                      "北海道牛奶霜淇淋",
+                      "起司奶油夾心歐姆蛋蛋糕捲"
+                    ]
+                  }
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "mega-donki-tomakomai",
+                "display": {
+                  "label": "🛒 唐吉訶德"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "🍦 苫小牧冰品",
+            "note": "下午前往プチラパン",
+            "id": "day4-area-5",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "petit-lapin-tomakomai",
+                "display": {
+                  "label": "冰品",
+                  "description": "吃牛奶生霜淇淋，口味與配料以當日菜單為準。"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          }
+        ],
+        "day5": [
+          {
+            "title": "苫小牧至機場",
+            "note": "Day 5 上午",
+            "id": "day5-area-1",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "michi-no-eki-utonaiko",
+                "display": {
+                  "label": "短停",
+                  "description": "買 B1 とんちゃん豬肉包、北寄貝相關食品與苫小牧伴手禮。",
+                  "displayGroup": "ウトナイ湖"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
+                "placeId": "toyota-rentacar-new-chitose-suzuran",
+                "display": {
+                  "label": "還車",
+                  "description": "預約還車時間 09:00。",
+                  "displayGroup": "新千歲"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          },
+          {
+            "title": "新千歲機場",
+            "note": "Day 5 返程",
+            "id": "day5-area-2",
+            "items": [
+              {
+                "kind": "place",
+                "placeId": "ebisoba-ichigen-new-chitose",
+                "display": {
+                  "label": "用餐候選",
+                  "description": "點えびみそ拉麵，可選濃厚蝦湯或較清爽湯底。",
+                  "displayGroup": "新千歲機場"
+                },
+                "visitRole": "backup"
+              },
+              {
+                "kind": "place",
+                "placeId": "new-chitose-domestic-shopping-area",
+                "display": {
+                  "label": "採買",
+                  "description": "買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。",
+                  "displayGroup": "新千歲機場"
+                },
+                "visitRole": "primary"
+              }
+            ]
+          }
+        ]
+      },
       "siteConfig": {
-        "pageTitle": "2026 北海道 Travel OS 3.5 Minimal",
-        "eyebrow": "TRAVEL OS 3.5・MINIMAL",
+        "pageTitle": "2026 北海道 Travel OS 3.6 Minimal",
+        "eyebrow": "TRAVEL OS 3.6・MINIMAL",
         "heroTitle": "2026 北海道",
         "heroSubtitle": "9/16（三）– 9/20（日）｜5天4夜自駕",
+        "countdown": {
+          "start": "2026-09-16T00:00:00+08:00",
+          "end": "2026-09-20T23:59:59+08:00"
+        },
         "weather": {
           "label": "札幌",
           "latitude": 43.0618,
@@ -1908,7 +2641,8 @@
           "timezone": "Asia/Tokyo"
         },
         "currency": {
-          "defaultJpyToTwd": 0.22
+          "defaultJpyToTwd": 0.22,
+          "liveRateUrl": "https://api.frankfurter.dev/v2/rate/JPY/TWD"
         },
         "homePreviews": [
           {
@@ -2137,25 +2871,12 @@
             "otherDaysUnchanged": true
           }
         },
-        "masterLocationMap": {
-          "toyaFireworksPier": "toya-fireworks-pier",
-          "ebijinOtaru": "ebijin-otaru",
-          "letAoMain": "letao-main",
-          "kotoniJinja": "kotoni-jinja",
-          "marusanMikamiMarusantei": "marusan-mikami-marusan-tei",
-          "sapporoJogaiMarketParking": "sapporo-jogai-market-parking",
-          "hokkaidoUniversity": "hokkaido-university",
-          "donQuijoteSusukino": "don-quijote-susukino",
-          "hillOfBuddha": "hill-of-buddha",
-          "hokudaiMarcheCafe": "hokudai-marche-cafe",
-          "lakeHillFarm": "lake-hill-farm"
-        },
         "uiReferences": {
           "kitahiroshima-outlet-map-guide": {
             "id": "kitahiroshima-outlet-map-guide",
             "kind": "guide-link",
-            "name": "查看 Outlet 店號簡圖",
             "label": "Guide",
+            "name": "查看 Outlet 店號簡圖",
             "description": "依官方樓層圖校正店號；Clover 1F → Clover 2F → Maple 2F。",
             "usage": "現場對照使用",
             "url": "guides/kitahiroshima-outlet/index.html",
@@ -2163,905 +2884,290 @@
           }
         }
       },
-      "dayPages": {
-        "day1": {
-          "label": "Day 1｜9/16（三）",
-          "highlights": [
-            "北廣島 Outlet",
-            "Sports Depo 三品牌試鞋",
-            "札幌夜間散步",
-            "北海道第一支冰品"
-          ],
-          "missions": [
-            "完成取車",
-            "Outlet主要採購",
-            "試穿 On／HOKA／Salomon",
-            "入住札幌"
-          ],
-          "foodFocus": [
-            "札幌農学校牛奶霜淇淋",
-            "道之驛南瓜咖哩麵包"
-          ],
-          "route": "新千歲 → 北廣島 Outlet → Sports Depo → 札幌",
-          "hotel": "札幌住宿",
-          "stops": [
-            {
-              "time": "11:05–12:00",
-              "name": "新千歲機場／取車",
-              "note": "入境、領行李，前往鈴蘭店。",
-              "stay": "約 55 分",
-              "next": "下一段約 30 分"
-            },
-            {
-              "time": "12:30–13:20",
-              "name": "花ロードえにわ",
-              "note": "中午道之驛用餐，品嚐人氣南瓜咖哩麵包。",
-              "stay": "約 50 分",
-              "next": "下一段約 15 分"
-            },
-            {
-              "time": "13:35–18:50",
-              "name": "三井 Outlet 札幌北廣島",
-              "note": "今天主要採購行程；18:50離場，保留完整試鞋時間。",
-              "stay": "約 5 小時 15 分",
-              "next": "開車約 2–3 分"
-            },
-            {
-              "time": "18:55–20:15",
-              "name": "Sports Depo 大曲店",
-              "note": "集中試穿 On、HOKA、Salomon；實際品牌與鞋款庫存依現場為準。",
-              "stay": "約 80 分",
-              "next": "前往札幌市區約 35 分"
-            },
-            {
-              "time": "20:50–21:35",
-              "name": "札幌市區／狸小路六丁目 → 二丁目",
-              "note": "補吃居酒屋，沿商店街步行逛街。",
-              "stay": "約 45 分",
-              "next": "前往住宿約 10 分"
-            },
-            {
-              "time": "21:45",
-              "name": "札幌住宿",
-              "note": "Check-in。",
-              "stay": "",
-              "next": ""
-            }
-          ],
-          "areas": [
-            {
-              "title": "惠庭",
-              "note": "Day 1 中午短停",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "hana-road-eniwa"
-                }
-              ]
-            },
-            {
-              "title": "北廣島",
-              "note": "Day 1 主要購物區",
-              "layout": "route",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "mitsui-outlet-sapporo-kitahiroshima"
-                },
-                {
-                  "kind": "uiReference",
-                  "refId": "kitahiroshima-outlet-map-guide"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "sapporo-nogakko-kitahiroshima"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "mil-presso-kitahiroshima"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "sports-depo-omagari"
-                }
-              ],
-              "routeDisplay": {
-                "outletPlaceId": "mitsui-outlet-sapporo-kitahiroshima",
-                "mapReferenceId": "kitahiroshima-outlet-map-guide",
-                "icePlaceIds": [
-                  "sapporo-nogakko-kitahiroshima",
-                  "mil-presso-kitahiroshima"
-                ],
-                "sportsPlaceId": "sports-depo-omagari",
-                "outletTime": "13:35–18:50",
-                "quickGuide": "🧭 先逛 164、123，18:50 離場",
-                "mapLinkLabel": "🗺️ 品牌位置｜店號簡圖 ↗",
-                "iceTitle": "🍦 冰品",
-                "iceDisplay": [
-                  {
-                    "placeId": "sapporo-nogakko-kitahiroshima",
-                    "text": "札幌農学校｜酪農牛奶"
-                  },
-                  {
-                    "placeId": "mil-presso-kitahiroshima",
-                    "text": "MIL PRESSO｜北海道素材"
-                  }
-                ],
-                "driveText": "🚗 2–3 分鐘",
-                "sportsDisplayName": "Sports Depo 大曲店",
-                "sportsTime": "18:55–20:15",
-                "sportsSummary": "On・HOKA・Salomon",
-                "sportsMeta": [
-                  "🅿️",
-                  "免稅",
-                  "☎ 011-377-1477"
-                ]
-              }
-            },
-            {
-              "title": "札幌晚上",
-              "note": "先選平面停車場，再沿狸小路採買並依序前往兩家宵夜。",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "sapporo-minami3-nishi9-parking"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "endo-minami3-nishi7-parking"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "muji-sapporo-parco"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "tnoc-store-sapporo-t4"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "biccamera-select-sapporo-tanukikoji"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "don-quijote-susukino"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "hachikyo-oyaji"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "nemuro-hanamaru-cocono"
-                }
-              ]
-            }
-          ]
-        },
-        "day2": {
-          "label": "Day 2｜9/17（四）",
-          "highlights": [
-            "琴似神社",
-            "㈱マルサン三上商店／まるさん亭 本店",
-            "北海道大學",
-            "頭大佛",
-            "小樽港町"
-          ],
-          "missions": [
-            "琴似神社晨間參拜",
-            "08:30 海鮮早餐",
-            "北大マルシェ乳製品體驗",
-            "頭大佛參觀",
-            "14:30 花窗玻璃美術館",
-            "小樽 Muse晚餐"
-          ],
-          "foodFocus": [
-            "まるさん亭海鮮早餐",
-            "北大マルシェ牛奶／冰淇淋",
-            "小樽冰品候選"
-          ],
-          "route": "琴似住宿 → 琴似神社 → ㈱マルサン三上商店 → 北海道大學 → 頭大佛 → 小樽",
-          "hotel": "小樽住宿",
-          "stops": [
-            {
-              "time": "07:30–12:25",
-              "name": "札幌早晨｜琴似神社・海鮮早餐・北大・頭大佛",
-              "steps": [
-                [
-                  "07:30",
-                  "札幌住宿步行出發"
-                ],
-                [
-                  "07:40–08:00",
-                  "琴似神社"
-                ],
-                [
-                  "08:00–08:10",
-                  "步行返回住宿"
-                ],
-                [
-                  "08:10–08:30",
-                  "取車並前往海鮮早餐"
-                ],
-                [
-                  "08:30–09:20",
-                  "㈱マルサン三上商店／まるさん亭 本店"
-                ],
-                [
-                  "09:20–09:45",
-                  "前往北海道大學並停車"
-                ],
-                [
-                  "09:45–10:00",
-                  "北海道大學短散步"
-                ],
-                [
-                  "10:00–10:40",
-                  "北大マルシェ Café & Labo"
-                ],
-                [
-                  "10:40–11:30",
-                  "前往頭大佛"
-                ],
-                [
-                  "11:30–12:25",
-                  "頭大佛"
-                ]
-              ],
-              "stay": "約 4 小時 55 分",
-              "next": "12:25 出發前往小樽",
-              "collapsible": true
-            },
-            {
-              "time": "12:25–13:35",
-              "name": "前往小樽",
-              "note": "由頭大佛前往小樽住宿附近。",
-              "stay": "開車約 70 分",
-              "next": "抵達後停車、放行李"
-            },
-            {
-              "time": "13:35–14:05",
-              "name": "抵達小樽／停車・放行李",
-              "note": "住宿停車後改為步行。",
-              "stay": "約 30 分",
-              "next": "步行前往花窗玻璃美術館"
-            },
-            {
-              "time": "14:05–14:25",
-              "name": "步行前往花窗玻璃美術館",
-              "note": "由住宿附近步行前往。",
-              "stay": "約 20 分",
-              "next": "14:30 入館"
-            },
-            {
-              "time": "14:30–15:15",
-              "name": "⑦ 花窗玻璃美術館（舊高橋倉庫）｜必去",
-              "note": "營業時間 09:30–17:00。",
-              "stay": "約 45 分",
-              "next": "步行約 15 分前往堺町通"
-            },
-            {
-              "time": "15:30–17:30",
-              "name": "堺町通｜依關門時間順逛",
-              "steps": [
-                [
-                  "15:30–15:45",
-                  "⑥ アイスクリームパーラー美園｜11:00–17:00"
-                ],
-                [
-                  "15:50–16:10",
-                  "⑤ ポプラファーム 小樽店｜11:00–17:30（L.O.17:00）"
-                ],
-                [
-                  "16:15–16:35",
-                  "③ 六花亭 小樽運河店｜10:00–18:00"
-                ],
-                [
-                  "16:35–16:55",
-                  "② 北菓楼 小樽本館｜10:00–18:00"
-                ],
-                [
-                  "17:00–17:30",
-                  "① LeTAO 總店｜09:00–19:00"
-                ]
-              ],
-              "stay": "約 2 小時",
-              "next": "18:30 小樽 Muse 晚餐",
-              "collapsible": true
-            },
-            {
-              "time": "18:30",
-              "name": "⑧ 小樽 Muse",
-              "reservation": "已預約",
-              "note": "燭光洋食餐廳",
-              "stay": "60–90 分",
-              "next": "晚餐後可前往小樽運河"
-            },
-            {
-              "time": "20:30",
-              "name": "⑨ 小樽運河",
-              "note": "晚餐後欣賞夜景；若當晚太累，可改隔天清晨散步。",
-              "stay": "約 30–60 分"
-            }
-          ],
-          "areas": [
-            {
-              "title": "札幌北側早晨",
-              "note": "",
-              "layout": "walking-guide",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "kotoni-jinja"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "marusan-mikami-marusan-tei"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "hokkaido-university"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "hokudai-marche-cafe"
-                }
-              ]
-            },
-            {
-              "title": "頭大佛",
-              "layout": "compact-place",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "hill-of-buddha"
-                }
-              ]
-            },
-            {
-              "title": "小樽",
-              "note": "從 1-19 Shinonomechō 出發，由近到遠。",
-              "layout": "walking-guide",
-              "linkStyle": "inline-arrow",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "letao-main"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "kitakaro-otaru-main"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "rokkatei-otaru-unga"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "kitaichi-glass-sangokan"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "popura-farm-otaru"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "ice-cream-parlor-misono"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "otaru-stained-glass-museum"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "otaru-muse"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "otaru-canal"
-                }
-              ]
-            }
-          ]
-        },
-        "day3": {
-          "label": "Day 3｜9/18（五）",
-          "highlights": [
-            "北一ホール",
-            "きのこ王国 仁木店午餐",
-            "高橋牧場",
-            "Lake Hill Farm",
-            "望羊蹄晚餐",
-            "洞爺湖煙火船"
-          ],
-          "missions": [
-            "12:30退房",
-            "きのこ王国午餐",
-            "外帶EBIJIN漢堡",
-            "Lake Hill Farm必去",
-            "18:30望羊蹄晚餐",
-            "20:15前往煙火船碼頭"
-          ],
-          "foodFocus": [
-            "EBIJIN鹿肉漢堡",
-            "きのこ王国午餐",
-            "Milk Kobo牛奶霜淇淋",
-            "Lake Hill Farm牛奶派・冰淇淋・果醬・咖哩",
-            "望羊蹄漢堡排套餐"
-          ],
-          "route": "小樽 → 余市 → 仁木 → 俱知安 → 二世谷 → 洞爺湖",
-          "hotel": "洞爺湖溫泉街",
-          "stops": [
-            {
-              "time": "07:30–12:30",
-              "name": "小樽｜住宿停車・步行行程",
-              "steps": [
-                [
-                  "07:30–08:30",
-                  "⑨ 小樽運河"
-                ],
-                [
-                  "09:00–09:50",
-                  "北一ホール｜09:00–17:30；點餐 09:30–17:00"
-                ],
-                [
-                  "10:00–10:40",
-                  "北一硝子三号館｜10:00–17:30（L.O.17:15）"
-                ],
-                [
-                  "10:40–11:30",
-                  "サツドラ小樽堺町店"
-                ],
-                [
-                  "11:30–12:00",
-                  "EBIJIN 小樽店｜外帶漢堡"
-                ],
-                [
-                  "12:00–12:30",
-                  "返回住宿、整理行李並退房"
-                ]
-              ],
-              "stay": "整段約 5 小時",
-              "next": "12:30 退房，前往仁木約 40–45 分",
-              "collapsible": true
-            },
-            {
-              "time": "13:15–13:50",
-              "name": "きのこ王国 仁木店｜吃午餐",
-              "note": "吃午餐。",
-              "stay": "約 35 分",
-              "next": "前往二世谷"
-            },
-            {
-              "time": "14:25–17:20",
-              "name": "二世谷 → 🍦 Lake Hill Farm｜必去",
-              "steps": [
-                [
-                  "14:25–15:05",
-                  "ニセコ高橋牧場 Milk Kobo"
-                ],
-                [
-                  "15:10–15:30",
-                  "革と珈琲 fanfun（可省略）"
-                ],
-                [
-                  "16:20–17:20",
-                  "🍦 Lake Hill Farm｜必去"
-                ]
-              ],
-              "note": "必吃：牛奶派、冰淇淋、果醬、咖哩",
-              "next": "前往洞爺湖住宿",
-              "collapsible": true
-            },
-            {
-              "time": "17:40–21:20",
-              "name": "洞爺湖｜晚餐・煙火・住宿",
-              "steps": [
-                [
-                  "17:40",
-                  "洞爺湖住宿 Check-in"
-                ],
-                [
-                  "18:05",
-                  "花火觀賞船購票"
-                ],
-                [
-                  "18:10–18:25",
-                  "Seicomart 洞爺田中店"
-                ],
-                [
-                  "18:30–19:40",
-                  "レストラン望羊蹄"
-                ],
-                [
-                  "19:40–20:00",
-                  "洞爺湖溫泉街散步"
-                ],
-                [
-                  "20:00–20:10",
-                  "返回住宿換浴衣"
-                ],
-                [
-                  "20:15",
-                  "前往花火船碼頭"
-                ],
-                [
-                  "20:35–21:20",
-                  "花火觀賞船"
-                ]
-              ],
-              "next": "結束後返回住宿",
-              "collapsible": true
-            }
-          ],
-          "areas": [
-            {
-              "title": "小樽",
-              "note": "住宿停車後步行；12:30 整理完成並退房",
-              "layout": "hierarchy",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "kitaichi-hall"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "satudora-otaru-sakaimachi"
-                },
-                {
-                  "kind": "choiceGroup",
-                  "title": "漢堡（二選一）",
-                  "choices": [
-                    {
-                      "placeId": "ebijin-otaru"
-                    },
-                    {
-                      "placeId": "container-burger-3-sun"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "title": "仁木午餐",
-              "note": "",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "kinoko-okoku-niki"
-                }
-              ]
-            },
-            {
-              "title": "二世谷 → Lake Hill Farm",
-              "note": "14:25–17:20",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "niseko-takahashi-milk-kobo"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "kawa-to-coffee-fanfun"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "lake-hill-farm"
-                }
-              ]
-            },
-            {
-              "title": "洞爺湖",
-              "note": "",
-              "numbered": true,
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "toyako-lodging"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "seicomart-toya-tanaka"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "wakasaimo-toyako-main"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "restaurant-boyotei"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "toya-fireworks-pier"
-                }
-              ]
-            }
-          ]
-        },
-        "day4": {
-          "label": "Day 4｜9/19（六）",
-          "route": "有珠山 → 虎杖浜 → 苫小牧",
-          "hotel": "苫小牧住宿",
-          "highlights": [
-            "08:15有珠山首班纜車",
-            "🐟 虎杖浜海鮮午餐",
-            "苫小牧晚餐四選一"
-          ],
-          "missions": [
-            "07:40前抵達纜車站",
-            "搭08:15推估首班",
-            "選定虎杖浜午餐",
-            "選一間苫小牧晚餐"
-          ],
-          "foodFocus": [
-            "虎杖浜海鮮午餐",
-            "鱈魚子伴手禮"
-          ],
-          "stops": [
-            {
-              "time": "07:20–09:51",
-              "name": "有珠山纜車｜上山・展望・下山",
-              "steps": [
-                [
-                  "07:20–07:40",
-                  "洞爺湖住宿出發，前往有珠山纜車山麓站"
-                ],
-                [
-                  "07:40–08:10",
-                  "停車、購票，08:10 前抵達乘車處"
-                ],
-                [
-                  "08:15–08:21",
-                  "搭乘推估首班纜車上山（單程約 6 分）"
-                ],
-                [
-                  "08:21–09:35",
-                  "山頂展望台與步道，09:35 前返回山頂站"
-                ],
-                [
-                  "09:45–09:51",
-                  "搭乘纜車下山，班次依現場運行調整"
-                ]
-              ],
-              "next": "10:00 開車前往虎杖浜",
-              "collapsible": true
-            },
-            {
-              "time": "10:00–11:00",
-              "name": "有珠山 → 虎杖浜",
-              "note": "車程依當日導航與路況調整。",
-              "stay": "估計約60分",
-              "next": "虎杖浜海鮮午餐"
-            },
-            {
-              "time": "11:00–12:30",
-              "name": "虎杖浜海鮮午餐",
-              "note": "時間為推估；たっちゃん食堂或 Kojohama Café，依現場營業與排隊狀況決定。",
-              "stay": "約 60–90 分",
-              "next": "沿途採買水產"
-            },
-            {
-              "time": "13:30–16:30",
-              "name": "虎杖浜採買 → 苫小牧霜淇淋",
-              "steps": [
-                [
-                  "13:30–14:30",
-                  "たらこ家 虎杖浜、虎杖浜たらこのかんばら直売所｜採買鱈魚子、海鮮乾貨"
-                ],
-                [
-                  "14:30–15:30",
-                  "虎杖浜 → 苫小牧｜開車"
-                ],
-                [
-                  "15:30–16:30",
-                  "幸せの生ソフト プチラパン｜吃牛奶霜淇淋"
-                ]
-              ],
-              "next": "前往住宿",
-              "collapsible": true
-            },
-            {
-              "time": "17:00",
-              "name": "苫小牧住宿 Check-in",
-              "note": "停車、放行李。",
-              "stay": "30 分",
-              "next": "晚餐"
-            },
-            {
-              "time": "18:00–20:30",
-              "name": "苫小牧晚餐（四選一）",
-              "note": "依料理、營業時間與訂位狀況選一間。",
-              "stay": "約60–90分",
-              "next": "藥妝、超商或大型採買"
-            }
-          ],
-          "areaOrder": [
-            "有珠山",
-            "虎杖浜海鮮",
-            "晚餐",
-            "晚間採買",
-            "冰品"
-          ],
-          "areas": [
-            {
-              "title": "有珠山",
-              "note": "上午主行程；依天氣與風勢決定是否搭乘",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "usuzan-ropeway"
-                }
-              ]
-            },
-            {
-              "title": "🍴 虎杖浜海鮮午餐",
-              "note": "午餐選一；吃完後水產店依南往北順路停留",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "shiraoi-tacchan-shokudo"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "kojohama-cafe"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "tarakoya-kojohama"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "kojohama-tarako-kanbara"
-                }
-              ]
-            },
-            {
-              "title": "🍽️ 晚餐（四選一）",
-              "note": "依料理、營業時間與訂位狀況選一間",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "kaisen-sushi-mine"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "soba-hana-ojicho"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "taisho-tomakomai"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "uojiro-tomakomai"
-                }
-              ]
-            },
-            {
-              "title": "🛍️ 晚間採買（依需求選擇）",
-              "note": "藥妝、便利商店與大型採買集中在同一欄，依需要前往",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "tsuruha-tomakomai-oji"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "seicomart-tomakomai-omotemachi"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "mega-donki-tomakomai"
-                }
-              ]
-            },
-            {
-              "title": "🍦 苫小牧冰品",
-              "note": "下午前往プチラパン",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "petit-lapin-tomakomai"
-                }
-              ]
-            }
-          ]
-        },
-        "day5": {
-          "label": "Day 5｜9/20（日）",
-          "highlights": [
-            "09:00還車",
-            "新千歲機場最後採買"
-          ],
-          "missions": [
-            "準時還車",
-            "完成報到與安檢",
-            "購買冷藏伴手禮"
-          ],
-          "foodFocus": [
-            "機場最後一餐",
-            "北海道最後一支冰品（有時間）"
-          ],
-          "route": "苫小牧 → 新千歲機場",
-          "hotel": "返程",
-          "stops": [
-            {
-              "time": "07:40 左右",
-              "name": "苫小牧住宿出發",
-              "note": "還車預約固定為09:00，必須倒推時間；此出發時間仍需依飯店位置與導航微調。",
-              "stay": "",
-              "next": ""
-            },
-            {
-              "time": "08:00–08:20",
-              "name": "道の駅ウトナイ湖（可略過）",
-              "note": "只能短停約15–20分鐘；若出發延誤、路況不佳或需加油，直接取消。",
-              "stay": "最多 20 分",
-              "next": "最晚約08:25離開"
-            },
-            {
-              "time": "08:45–09:00",
-              "name": "新千歲機場鈴蘭店還車",
-              "note": "預約還車時間09:00；原網頁寫09:20抵達是錯誤，已修正。",
-              "stay": "依店家流程",
-              "next": "接駁前往機場"
-            },
-            {
-              "time": "09:30–11:15",
-              "name": "新千歲機場補貨／用餐",
-              "note": "預留接駁、報到、安檢與購物時間；餐廳是否排隊需現場判斷。",
-              "stay": "約 90 分",
-              "next": "準備登機"
-            },
-            {
-              "time": "12:05",
-              "name": "IT235 新千歲 → 桃園",
-              "note": "回程航班。",
-              "stay": "",
-              "next": ""
-            }
-          ],
-          "areas": [
-            {
-              "title": "苫小牧至機場",
-              "note": "Day 5 上午",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "michi-no-eki-utonaiko"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "toyota-rentacar-new-chitose-suzuran"
-                }
-              ]
-            },
-            {
-              "title": "新千歲機場",
-              "note": "Day 5 返程",
-              "items": [
-                {
-                  "kind": "place",
-                  "placeId": "ebisoba-ichigen-new-chitose"
-                },
-                {
-                  "kind": "place",
-                  "placeId": "new-chitose-domestic-shopping-area"
-                }
-              ]
-            }
-          ]
-        }
-      },
       "architecture": {
         "databaseFirst": {
           "enabled": true,
-          "uiFrozenBaseline": "index(20260828-034206).html",
-          "sourceOfTruth": "master-database-v1.6.3-database-first.json",
-          "builder": "build_travel_os.py",
-          "policy": "UI frozen. Travel data is maintained in Master Database and emitted by Builder; generated HTML is not manually edited."
+          "sourceOfTruth": "data/master-database.json",
+          "runtimeLoading": "fetch",
+          "policy": "UI frozen. Travel facts and schedules live in Master Database; index.html contains renderer/presentation only.",
+          "uiBaseline": "index-v3.6.html",
+          "noFactualDataInHtml": true
         }
+      },
+      "travelLogic": {
+        "visitRoles": {
+          "must": {
+            "label": "必去",
+            "meaning": "本次行程優先保留的地點"
+          },
+          "primary": {
+            "label": "",
+            "meaning": "正常排入的主行程地點"
+          },
+          "optional": {
+            "label": "可省略",
+            "meaning": "時間不足時可略過"
+          },
+          "backup": {
+            "label": "備用",
+            "meaning": "作為替代或備案，不一定實際前往"
+          }
+        },
+        "timeStatuses": {
+          "confirmed": "已確認／固定時間",
+          "estimate": "依現有行程推估",
+          "unscheduled": "尚未安排時間"
+        },
+        "placeDataStatuses": {
+          "stub": "只有基本識別資料",
+          "partial": "已有部分地點資料",
+          "detailed": "已有較完整地點資料"
+        },
+        "rules": [
+          "places 只保存地點本身的固定資料",
+          "itineraries.timeline 保存本次旅行的日期、順序、visitRole 與時間狀態",
+          "行程中的店名、Map、營業時間由 placeId 回查 places，不重複維護",
+          "未知資料保留 null 或缺省，不自行推定",
+          "UI 呈現規則由 Renderer 組合資料，HTML 不寫死旅行事實"
+        ]
+      }
+    },
+    "2027-tokyo-spring": {
+      "id": "2027-tokyo-spring",
+      "name": "2027 東京清明節",
+      "travelDates": {
+        "start": "2027-04-02",
+        "end": "2027-04-06"
+      },
+      "places": {
+        "tsukiji-yamacho": {
+          "id": "tsukiji-yamacho",
+          "name": "築地山長（山長松江）",
+          "category": "餐飲／築地／玉子燒",
+          "area": "築地",
+          "address": "東京都中央区築地4-10-10",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%AF%89%E5%9C%B0%E5%B1%B1%E9%95%B7%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E7%AF%89%E5%9C%B04-10-10",
+          "status": "candidate",
+          "source": "舊基洞 Friends 東京 AP Tour",
+          "verifiedAt": "2026-08-20",
+          "verification": "地址與地圖資料一致",
+          "sourceDetail": {
+            "type": "TV節目",
+            "network": "tvN",
+            "title": "《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "segment": "東京 AP Tour",
+            "displayLabel": "tvN《舊基洞 Friends》東京 AP Tour",
+            "reasonForRecord": "節目實際到訪／推薦，保留節目脈絡，供網站顯示『為什麼要去』"
+          },
+          "featuredItems": [
+            "串玉ドッグ（玉子燒熱狗）"
+          ],
+          "features": [
+            "築地場外市場的玉子燒專門店",
+            "厚實玉子燒搭配麵包，屬於方便邊走邊吃的築地小吃",
+            "適合和築地其他早餐／市場店家排在同一區"
+          ],
+          "whyGo": "因 tvN《舊基洞 Friends》東京 AP Tour 實際到訪；節目吃的是串玉ドッグ，可作為築地早上第一站的小吃。",
+          "displayNote": "節目同款：串玉ドッグ",
+          "visitOrder": 1,
+          "programVisitDetail": "節目東京 AP Tour 的第一站在築地。實際吃的是「串玉ドッグ」，不是單純一份玉子燒；做法是將厚實的玉子燒夾進麵包裡，變成可以邊走邊吃的築地小吃。這一站的意義在於用一個很輕量、很有市場感的方式開啟築地路線，適合安排成早上第一口，也能和後面的きつねや自然串成同一個築地早餐／早午餐 Cluster。",
+          "programMeaning": "值得去不是因為它只是『築地有名玉子燒』，而是因為 tvN《舊基洞 Friends》實際在此吃了串玉ドッグ；未來行程卡應顯示『節目同款：串玉ドッグ』，讓使用者一眼知道踩點理由。",
+          "fullDisplayCard": {
+            "店名": "築地山長（山長松江）",
+            "區域": "築地",
+            "分類": "築地／玉子燒",
+            "地址": "東京都中央区築地4-10-10",
+            "狀態": "候選",
+            "來源節目": "tvN《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "節目段落": "東京 AP Tour",
+            "節目順序": "第 1 站",
+            "人物關聯": "節目實際到訪",
+            "節目吃什麼": "串玉ドッグ（玉子燒熱狗）。",
+            "店家特色": "築地場外市場的玉子燒專門店。節目吃的不是單純一份玉子燒，而是把厚實玉子燒夾進麵包裡，做成可以邊走邊吃的串玉ドッグ。它比坐下來吃完整早餐更輕量，適合當作築地早上的第一口，也很適合和附近其他市場小吃一起安排。",
+            "節目脈絡": "《舊基洞 Friends》東京 AP Tour 的第一站從築地開始。這一站的作用是用一個很有市場感、又不會太有負擔的小吃開啟整條東京飲食路線，之後再接到同在築地的きつねや。",
+            "為什麼特地去": "這家值得記錄，不只是因為它是築地有名的玉子燒店，而是因為節目實際吃的是串玉ドッグ。未來如果要照節目踩點，重點應該是吃到這個節目同款，而不是只買一般玉子燒。",
+            "網站短標籤": "tvN《舊基洞 Friends》｜節目同款：串玉ドッグ"
+          }
+        },
+        "kitsuneya-tsukiji": {
+          "id": "kitsuneya-tsukiji",
+          "name": "きつねや",
+          "category": "餐飲／築地／ホルモン丼・牛丼",
+          "area": "築地",
+          "address": "東京都中央区築地4-9-12",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%8D%E3%81%A4%E3%81%AD%E3%82%84%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E7%AF%89%E5%9C%B04-9-12",
+          "status": "candidate",
+          "source": "舊基洞 Friends 東京 AP Tour",
+          "verifiedAt": "2026-08-20",
+          "verification": "築地場外市場官方地址與地圖資料一致",
+          "sourceDetail": {
+            "type": "TV節目",
+            "network": "tvN",
+            "title": "《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "segment": "東京 AP Tour",
+            "displayLabel": "tvN《舊基洞 Friends》東京 AP Tour",
+            "reasonForRecord": "節目實際到訪／推薦，保留節目脈絡，供網站顯示『為什麼要去』"
+          },
+          "featuredItems": [
+            "ホルモン丼（內臟丼）",
+            "肉豆腐"
+          ],
+          "features": [
+            "築地場外市場知名老店",
+            "招牌為濃厚味噌風味的牛內臟丼",
+            "口味偏濃郁、在地感強，和一般海鮮築地體驗不同"
+          ],
+          "whyGo": "因 tvN《舊基洞 Friends》東京 AP Tour 實際到訪；節目重點是ホルモン丼，並有肉豆腐，屬於築地很有個性的非海鮮名物。",
+          "displayNote": "節目同款：ホルモン丼／肉豆腐",
+          "visitOrder": 2,
+          "programVisitDetail": "節目東京 AP Tour 的第二站，同樣位於築地。節目重點是「ホルモン丼（內臟丼）」並吃到肉豆腐。這家不是典型築地海鮮路線，而是以濃厚味噌風味的牛內臟丼為核心，口味強、在地感明顯，讓築地這一段不會只剩壽司與海鮮。它和築地山長距離近，因此在 Travel OS 中應視為同一個築地飲食 Cluster。",
+          "programMeaning": "這一站的重點是『節目帶出築地非海鮮的一面』。未來網站應清楚顯示節目同款為ホルモン丼／肉豆腐，以及它和一般築地海鮮體驗不同的理由。",
+          "fullDisplayCard": {
+            "店名": "きつねや",
+            "區域": "築地",
+            "分類": "築地／ホルモン丼・牛丼",
+            "地址": "東京都中央区築地4-9-12",
+            "狀態": "候選",
+            "來源節目": "tvN《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "節目段落": "東京 AP Tour",
+            "節目順序": "第 2 站",
+            "人物關聯": "節目實際到訪",
+            "節目吃什麼": "ホルモン丼（內臟丼）、肉豆腐。",
+            "店家特色": "築地場外市場知名老店，招牌不是海鮮，而是濃厚味噌風味的牛內臟丼。口味濃郁、存在感強，和一般觀光客到築地先想到的壽司、海鮮丼完全不同，因此可以補足『築地不只有海鮮』的另一面。",
+            "節目脈絡": "《舊基洞 Friends》東京 AP Tour 在築地的第二站就是きつねや。前一站先吃築地山長的串玉ドッグ，接著再來這裡吃ホルモン丼與肉豆腐，形成一個很完整的築地早餐／早午餐 Cluster。",
+            "為什麼特地去": "它的價值在於節目帶出了築地比較少被觀光客注意到的『非海鮮名物』。如果照節目路線走，這家不是替代品，而是和築地山長搭配後，才比較能重現節目當天在築地的吃法。",
+            "網站短標籤": "tvN《舊基洞 Friends》｜節目同款：ホルモン丼／肉豆腐"
+          }
+        },
+        "yuchan-roppongi": {
+          "id": "yuchan-roppongi",
+          "name": "焼肉 冷麺 ユッチャン。六本木店",
+          "category": "餐飲／六本木／燒肉・冷麵",
+          "area": "六本木",
+          "address": "〒106-0032 東京都港区六本木7-17-24 eisu bldg",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%20%E5%86%B7%E9%BA%BA%20%E3%83%A6%E3%83%83%E3%83%81%E3%83%A3%E3%83%B3%E3%80%82%E5%85%AD%E6%9C%AC%E6%9C%A8%E5%BA%97%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E5%85%AD%E6%9C%AC%E6%9C%A87-17-24%20eisu%20bldg",
+          "status": "candidate",
+          "source": "舊基洞 Friends 東京 AP Tour",
+          "verifiedAt": "2026-08-20",
+          "verification": "店家官方地址與地圖資料一致",
+          "sourceDetail": {
+            "type": "TV節目",
+            "network": "tvN",
+            "title": "《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "segment": "東京 AP Tour",
+            "displayLabel": "tvN《舊基洞 Friends》東京 AP Tour",
+            "reasonForRecord": "節目實際到訪／推薦，保留節目脈絡，供網站顯示『為什麼要去』",
+            "programContext": "張根碩推薦／東京常去的燒肉店"
+          },
+          "featuredItems": [
+            "厚切牛舌",
+            "燒肉",
+            "冷麵"
+          ],
+          "features": [
+            "六本木燒肉店",
+            "厚切牛舌是節目重點",
+            "燒肉搭配冷麵是店家代表性吃法",
+            "相較單純觀光名店，更有『節目人物私藏店』的意義"
+          ],
+          "whyGo": "因 tvN《舊基洞 Friends》東京 AP Tour 到訪，而且是張根碩推薦／常去的店；重點可鎖定厚切牛舌與冷麵。",
+          "displayNote": "張根碩推薦店｜節目重點：厚切牛舌",
+          "visitOrder": 3,
+          "programVisitDetail": "離開築地後，節目第三站移到六本木的「焼肉 冷麺 ユッチャン。六本木店」。這一站不只是普通燒肉店踩點，而是帶有張根碩推薦／東京常去店的私房脈絡。節目裡的重點是厚切牛舌；店家本身又以燒肉搭配冷麵的組合有辨識度，所以在 Travel OS 中應視為『人物推薦型餐廳』，而不是單純列成六本木燒肉。",
+          "programMeaning": "真正的踩點理由是『張根碩推薦＋節目實際到訪』。未來顯示資料時應保留這層人物關聯，並把厚切牛舌列成第一優先品項，冷麵列成店家代表性搭配。",
+          "fullDisplayCard": {
+            "店名": "焼肉 冷麺 ユッチャン。六本木店",
+            "區域": "六本木",
+            "分類": "六本木／燒肉・冷麵",
+            "地址": "〒106-0032 東京都港区六本木7-17-24 eisu bldg",
+            "狀態": "候選",
+            "來源節目": "tvN《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "節目段落": "東京 AP Tour",
+            "節目順序": "第 3 站",
+            "人物關聯": "張根碩推薦／東京常去的燒肉店",
+            "節目吃什麼": "厚切牛舌；店家代表性搭配為燒肉＋冷麵。",
+            "店家特色": "位於六本木的燒肉店。節目裡最有辨識度的是厚切牛舌，店家本身則以燒肉搭配冷麵的組合很有特色。它和一般單純列入『東京燒肉名店』不同，還多了一層張根碩在東京常去／推薦店的私房脈絡。",
+            "節目脈絡": "《舊基洞 Friends》東京 AP Tour 前兩站都在築地，第三站離開市場後移到六本木。這一站開始從『市場小吃』轉成『人物推薦店』，也讓整條路線的層次從築地在地小吃進入正式燒肉餐。",
+            "為什麼特地去": "真正值得去的理由不是它只是六本木的一家燒肉店，而是『張根碩推薦＋節目實際到訪』。如果未來東京行程只想挑一家帶有節目人物關聯的燒肉店，這家會比單純熱門名店更有故事性。",
+            "網站短標籤": "張根碩推薦｜tvN《舊基洞 Friends》｜節目重點：厚切牛舌"
+          }
+        },
+        "manmi-nishiazabu": {
+          "id": "manmi-nishiazabu",
+          "name": "まんみ西麻布",
+          "category": "餐飲／西麻布／和食・鶏料理",
+          "area": "西麻布",
+          "address": "東京都港区西麻布4-5-8 LA西麻布ビル3F",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E3%81%BE%E3%82%93%E3%81%BF%E8%A5%BF%E9%BA%BB%E5%B8%83%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%A5%BF%E9%BA%BB%E5%B8%834-5-8%20LA%E8%A5%BF%E9%BA%BB%E5%B8%83%E3%83%93%E3%83%AB3F",
+          "status": "candidate",
+          "source": "舊基洞 Friends 東京 AP Tour",
+          "verifiedAt": "2026-08-20",
+          "verification": "店家官方地址與地圖資料一致",
+          "sourceDetail": {
+            "type": "TV節目",
+            "network": "tvN",
+            "title": "《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "segment": "東京 AP Tour",
+            "displayLabel": "tvN《舊基洞 Friends》東京 AP Tour",
+            "reasonForRecord": "節目實際到訪／推薦，保留節目脈絡，供網站顯示『為什麼要去』",
+            "programContext": "張根碩推薦的西麻布雞料理店"
+          },
+          "featuredItems": [
+            "鶏すき焼き（雞壽喜燒）",
+            "鶏刺し（雞刺身）"
+          ],
+          "features": [
+            "西麻布的和食／雞料理店",
+            "以雞壽喜燒等雞料理為特色",
+            "比一般東京觀光客常吃的壽司、燒肉更偏日本在地餐桌感",
+            "適合安排成正式晚餐，而不是快速踩點"
+          ],
+          "whyGo": "因 tvN《舊基洞 Friends》東京 AP Tour 到訪，並帶有張根碩私房推薦色彩；節目重點是鶏すき焼き與鶏刺し，是四家中最有『特別為節目去吃』理由的一家。",
+          "displayNote": "張根碩推薦｜節目重點：鶏すき焼き／鶏刺し",
+          "visitOrder": 4,
+          "programVisitDetail": "節目東京 AP Tour 的第四站是西麻布「まんみ西麻布」。這一站同樣帶有張根碩私房推薦色彩，節目重點為鶏すき焼き（雞壽喜燒）與鶏刺し（雞刺身）。相較壽司、拉麵、燒肉等觀光客熟悉的東京餐飲，它更接近日本在地雞料理與家庭餐桌感，因此不是快速吃完就走的踩點，而是適合安排成一餐正式晚餐。",
+          "programMeaning": "四家裡它最需要保留完整敘事：不是因為西麻布有一家雞料理店，而是因為節目透過張根碩的推薦，帶出一般觀光客不一定會主動找到的日本雞料理體驗。未來網站應顯示『張根碩推薦』、『節目同款：鶏すき焼き／鶏刺し』以及『較在地、私房感強』三層意義。",
+          "fullDisplayCard": {
+            "店名": "まんみ西麻布",
+            "區域": "西麻布",
+            "分類": "和食／雞料理",
+            "地址": "東京都港区西麻布4-5-8 LA西麻布ビル3F",
+            "狀態": "候選",
+            "來源節目": "tvN《舊基洞（クギドン）Friends／구기동 프렌즈》",
+            "節目段落": "東京 AP Tour",
+            "節目順序": "第 4 站",
+            "人物關聯": "張根碩推薦／帶有私房店色彩",
+            "節目吃什麼": "鶏すき焼き（雞壽喜燒）、鶏刺し（雞刺身）。",
+            "店家特色": "以雞料理為核心，不是一般東京觀光客最常安排的壽司、拉麵或燒肉。節目裡呈現的是比較接近日本在地雞料理與家庭餐桌感的吃法，因此比較適合排成一頓正式晚餐，而不是單純快速踩點。",
+            "節目脈絡": "《舊基洞 Friends》東京 AP Tour 前面先從築地吃到六本木，第四站來到西麻布。這一站的重點不是「西麻布有一家雞料理店」，而是透過張根碩的推薦，帶出一般觀光客不一定會主動找到的日本雞料理體驗。",
+            "為什麼特地去": "這家在四個節目餐廳裡，私房感最強。真正值得保留的不是只有「節目來過」，而是「張根碩推薦＋節目實際吃雞壽喜燒與雞刺身＋料理型態比較在地」。如果之後東京行程要挑一間有節目故事、又不是太觀光化的晚餐，這家優先度會很高。",
+            "網站短標籤": "張根碩推薦｜tvN《舊基洞 Friends》｜節目同款：鶏すき焼き／鶏刺し"
+          }
+        }
+      },
+      "excludedPlaces": [
+        {
+          "name": "居酒屋それゆけ！鶏ヤロー！渋谷道玄坂店",
+          "reason": "使用者指定不加入"
+        }
+      ],
+      "programRoutes": {
+        "tvn-kugidong-friends-tokyo-ap-tour": {
+          "program": "tvN《舊基洞（クギドン）Friends／구기동 프렌즈》",
+          "segment": "東京 AP Tour",
+          "routeSummary": "節目實際吃的順序為：築地山長 → きつねや → 焼肉 冷麺 ユッチャン。六本木店 → まんみ西麻布 → 澀谷 U40 居酒屋。Travel OS 僅收錄前四家；澀谷居酒屋依使用者要求排除。",
+          "routeMeaning": "這條線不是單純餐廳清單，而是節目人物在東京實際走訪與推薦的飲食路線。資料庫需保留『第幾站、節目吃了什麼、店家本身有何特色、為什麼值得特地去』，讓未來網站顯示時能理解每個地點的脈絡與意義，而不是只看到店名。",
+          "travelOSRoute": [
+            "築地",
+            "築地",
+            "六本木",
+            "西麻布"
+          ],
+          "excludedAfterRoute": "居酒屋それゆけ！鶏ヤロー！渋谷道玄坂店"
+        }
+      },
+      "displayRules": {
+        "programRestaurantDetail": "凡屬節目型餐廳，詳細頁必須完整顯示 fullDisplayCard，至少包含：店名、區域、分類、地址、狀態、來源節目、節目段落、節目順序、人物關聯、節目吃什麼、店家特色、節目脈絡、為什麼特地去、網站短標籤。列表卡可只顯示網站短標籤，但不可刪減資料庫中的完整敘事。"
       }
     }
   },
@@ -3186,99 +3292,87 @@
       "websitePublished": false
     },
     {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "北海道 HTML → Master Database 地點同步整合",
+      "date": "2026-08-20",
+      "projectId": "2027-tokyo-spring",
+      "scope": "東京候選餐廳／舊基洞 Friends／四家完整顯示卡統一",
       "changes": [
-        "以 master-database(4).json v1.6 為完整主資料庫基底",
-        "保留並比對既有地點 17 筆",
-        "新增原本僅存在 HTML 的地點／店家／設施 40 筆",
-        "既有 Master Database 的較完整結構化欄位不覆蓋；HTML 目前顯示值若不同則保存在 htmlCurrentDisplay",
-        "保留每個地點在現行網頁中的 Day、區域、標籤、說明與顯示脈絡 appearances",
-        "Outlet 店號簡圖屬 UI 導覽資源，保存於 uiReferences，不誤建為實體地點",
-        "本次未查外部資料、未修改 HTML、未發布網頁"
+        "建立 2027 東京清明節專案",
+        "新增築地山長（山長松江）",
+        "新增きつねや",
+        "新增焼肉 冷麺 ユッチャン。六本木店",
+        "新增まんみ西麻布",
+        "排除居酒屋それゆけ！鶏ヤロー！渋谷道玄坂店",
+        "四筆地址均完成來源與地圖比對",
+        "四家餐廳新增完整 tvN《舊基洞（クギドン）Friends／구기동 프렌즈》來源欄位",
+        "新增節目實吃／推薦品項 featuredItems",
+        "新增店家特色 features",
+        "新增 whyGo 欄位供網站顯示『為什麼要去』",
+        "新增 displayNote 供行程卡快速顯示節目同款／張根碩推薦資訊",
+        "新增節目完整路線敘事 programRoutes.tvn-kugidong-friends-tokyo-ap-tour",
+        "四家餐廳新增 visitOrder，保留節目實際吃的順序",
+        "四家餐廳新增 programVisitDetail，完整記錄節目吃什麼、店家特色與路線脈絡",
+        "四家餐廳新增 programMeaning，供未來網站說明『為什麼特地去這家』",
+        "保留節目原本後續前往澀谷 U40 居酒屋的脈絡，但 Travel OS 資料庫明確排除該店",
+        "まんみ西麻布新增 fullDisplayCard，完整保存店名、區域、分類、地址、狀態、來源節目、節目段落、節目順序、人物關聯、節目吃什麼、店家特色、節目脈絡、為什麼特地去、網站短標籤",
+        "新增 programRestaurantDetail 顯示規則：詳細頁必須保留全文，不得只剩短標籤",
+        "築地山長新增完整 fullDisplayCard",
+        "きつねや新增完整 fullDisplayCard",
+        "焼肉 冷麺 ユッチャン。六本木店新增完整 fullDisplayCard",
+        "四家《舊基洞 Friends》餐廳統一使用同一套完整顯示欄位",
+        "更新顯示規則：節目型餐廳詳細頁不得只保留短標籤"
       ],
       "websitePublished": false
     },
     {
-      "date": "2026-08-28",
+      "date": "2026-08-31",
       "projectId": "2026-hokkaido",
-      "scope": "Travel OS UI freeze / data-layer rebuild",
+      "scope": "Day 3／9月18日／二世谷 → Lake Hill Farm",
       "changes": [
-        "凍結 index(20260828-034206).html 的現有 UI 作為視覺基準",
-        "將首頁、Day 1–5、地點、區域、今日必完成、航班、租車、住宿、倒數日期、天氣設定等可變內容移入 Master Database",
-        "Day 區域店家改以 placeId 關聯 Master Database places，避免在 HTML 重複維護店名、Map、營業時間與說明",
-        "北廣島 route 特殊顯示資料改存入資料庫 routeDisplay / place display 設定，Renderer 不再寫死店名與內容",
-        "本階段不新增 GEL-KAYANO 31，先完成重構前後 1:1 UI 驗證"
-      ],
-      "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 1／北廣島／三井 Outlet 札幌北廣島／指定採買",
-      "changes": [
-        "新增指定採買：ASICS GEL-KAYANO 31",
-        "採買動作：現場試穿",
-        "庫存狀態：待現場確認",
-        "尺寸、顏色、價格保留為待現場確認，不自行補資料",
-        "資料掛在三井 Outlet 札幌北廣島的 purchaseTargets，不建立為獨立景點或店家",
-        "本次未查詢外部資料；UI 樣式維持凍結，只新增資料驅動內容"
-      ],
-      "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "首頁版本資訊／版本交付規則",
-      "changes": [
-        "首頁新增版本名稱、修改日期與修改時間",
-        "版本資訊直接使用 Master Database 根層 databaseVersion 與 updatedAt，不另建重複資料來源",
-        "往後每個發布版本皆須更新 databaseVersion、updatedAt，並由 Builder 自動顯示於首頁",
-        "交付版本固定包含 index.html 首頁檔案"
+        "新增 SPROUT（Sprout 咖啡店）至北海道地點資料庫",
+        "營業時間：08:00–18:00",
+        "Google Maps：https://maps.app.goo.gl/PoCduSnYndJ2o8dQ9",
+        "補入官方地址：〒044-0051 北海道虻田郡倶知安町北一条西3-10",
+        "補入電話：0136-55-5161",
+        "補入定休日：週四",
+        "指定顯示於 9/18（五）『二世谷 → 🍦 Lake Hill Farm｜必去』區段的第一個時間點",
+        "未自行新增實際到訪時間；僅記錄排序為第一"
       ],
       "websitePublished": false,
-      "updatedAt": "2026-08-28T14:39:00+08:00"
+      "updatedAt": "2026-08-31T16:41:00+08:00"
     },
     {
-      "date": "2026-08-28",
+      "date": "2026-08-31",
       "projectId": "2026-hokkaido",
-      "scope": "Day 1／札幌晚上／採買",
+      "scope": "Travel OS Database First 全面資料層重構",
       "changes": [
-        "新增無印良品 札幌PARCO店",
-        "營業時間：10:00–20:00",
-        "Google Maps：https://maps.app.goo.gl/DY711Ko82sQUrtkg7",
-        "顯示位置排在 TNOC THE STORE SAPPORO T4 之後、唐吉訶德 薄野店之前",
-        "未自行設定必去／備選優先級",
-        "同步更新 Master Database 與網頁，UI 樣式不變"
-      ],
-      "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 1／札幌晚上／無印良品 札幌PARCO店",
-      "changes": [
-        "更新 Google Maps 定位連結",
-        "原連結：https://maps.app.goo.gl/DY711Ko82sQUrtkg7",
-        "新連結：https://maps.app.goo.gl/nf4enUtE5aEXPQ447",
-        "營業時間與顯示順序不變",
-        "本次由 Master Database 更新並重新由 Builder 產生 index.html"
-      ],
-      "websitePublished": false
-    },
-    {
-      "date": "2026-08-28",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 1／札幌晚上／採買顯示順序",
-      "changes": [
-        "採買順序調整為：無印良品 札幌PARCO店 → TNOC THE STORE SAPPORO T4 → BicCamera Select 札幌狸小路店 → 唐吉訶德 薄野店",
-        "同步更新 itineraries.day1.eveningShoppingPlaceIds 與 dayPages.day1 札幌晚上顯示順序",
-        "停車候選與宵夜順序不變",
-        "本次僅調整資料順序，UI/CSS 不變"
+        "以現行 index-v3.6.html 為 UI 凍結基準",
+        "將 Day 1–5 行程、時間軸、區域店家、首頁、航班、租車、住宿、今日必完成、天氣與匯率設定移入 Master Database",
+        "店家固定資料集中於 places，區域顯示改以 placeId 關聯",
+        "時間推估保存在 itineraries，並以 estimate 狀態標示",
+        "保留 2027 東京專案完整內容",
+        "index.html 後續僅負責 fetch Master Database 與 Renderer，不再寫入旅行事實資料"
       ],
       "websitePublished": false,
-      "updatedAt": "2026-08-28T15:47:33+08:00"
+      "updatedAt": "2026-08-31T17:30:00+08:00"
+    },
+    {
+      "date": "2026-08-31",
+      "projectId": "2026-hokkaido",
+      "scope": "Travel OS itinerary normalization／visitRole／structured timeline",
+      "changes": [
+        "Day 1–Day 5 stops/steps 正規化為 itineraries.timeline",
+        "所有可辨識實體地點以 placeId 關聯 places",
+        "新增 visitRole：must／primary／optional／backup",
+        "新增 time.start／end／status／display",
+        "新增 place.dataStatus：stub／partial／detailed",
+        "革と珈琲 fanfun 改以 optional 表示可省略",
+        "Lake Hill Farm 改以 must 表示必去",
+        "道の駅ウトナイ湖改以 optional 表示可略過",
+        "漢堡二選一主選／備選轉為 visitRole 邏輯",
+        "Renderer 改由 timeline + places 組回既有畫面，UI/CSS 不變"
+      ],
+      "websitePublished": false,
+      "updatedAt": "2026-08-31T23:42:00+08:00"
     }
   ]
 }
