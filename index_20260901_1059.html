@@ -979,12 +979,8 @@ function itemToRow(item){
   }
   const p=getPlace(item.placeId);
   const d=item.display||{};
-  const parking=p?.parkingId ? getPlace(p.parkingId) : null;
-  const label=d.label ?? (d.useRecommendation ? (p?.recommendation?.label||"") : "");
-  const description=d.description ?? (d.showShortFeature ? (p?.shortFeature||"") : (p?.description||""));
-  const guide=d.guide ?? (d.showParking ? (parking?.mapUrl||null) : null);
   const name=d.nameOverride || displayName(p);
-  const row=[label,name,description,d.hoursOverride??p?.hours??"",p?.mapUrl||"",d.displayGroup||"",guide,d.locationLabel||""];
+  const row=[d.label||"",name,d.description??p?.description??"",d.hoursOverride??p?.hours??"",p?.mapUrl||"",d.displayGroup||"",d.guide??null,d.locationLabel||""];
   if(d.reservation) row.push(d.reservation);
   return {placeId:item.placeId,row};
 }
@@ -1015,7 +1011,6 @@ function timelineItemText(item){
     const p=places[item.placeId]||{id:item.placeId,name:item.placeId};
     let text=`${item.display?.prefix||""}${placeDisplayName(p,item)}`;
     if(item.display?.showHours && p.hours) text+=`｜${item.display?.hoursPrefix||""}${p.hours}`;
-    if(item.display?.showFeature && p.shortFeature) text+=`｜${p.shortFeature}`;
     if(item.display?.suffix) text+=item.display.suffix;
     const role=roleLabel(item);
     if(role && item.display?.roleParenthetical) text+=`（${role}）`;
@@ -1116,9 +1111,9 @@ function initCurrencyTool(){const twd=document.getElementById("twdAmount"),jpy=d
 async function boot(){
   const res=await fetch("data/master-database.json",{cache:"no-store"}); if(!res.ok) throw new Error("Master Database 讀取失敗");
   travelDB=await res.json(); project=travelDB.projects["2026-hokkaido"]; places=project.places; siteConfig=project.siteConfig; mustDoByDate=siteConfig.mustDoByDate||{}; dayData=buildDayData();
-  document.title=`${siteConfig.heroTitle} Travel OS 3.10 Minimal`; document.querySelector(".eyebrow").textContent="TRAVEL OS 3.10・MINIMAL"; document.querySelector(".hero h1").textContent=siteConfig.heroTitle; document.querySelector(".hero .sub").textContent=siteConfig.heroSubtitle; document.querySelector(".version-meta").textContent=`版本 Database First v${travelDB.databaseVersion}｜網頁 3.10｜更新 ${travelDB.updatedAt.replace('T',' ').slice(0,16).replaceAll('-','/')}`;
+  document.title=`${siteConfig.heroTitle} Travel OS 3.8 Minimal`; document.querySelector(".eyebrow").textContent="TRAVEL OS 3.8・MINIMAL"; document.querySelector(".hero h1").textContent=siteConfig.heroTitle; document.querySelector(".hero .sub").textContent=siteConfig.heroSubtitle; document.querySelector(".version-meta").textContent=`版本 Database First v${travelDB.databaseVersion}｜網頁 3.8｜更新 ${travelDB.updatedAt.replace('T',' ').slice(0,16).replaceAll('-','/')}`;
   renderHome(); renderFlights(); renderRental(); renderLodging(); updateCountdown(); loadWeather(); initCurrencyTool();
 }
 boot().catch(err=>{console.error(err);document.querySelector(".version-meta").textContent="Master Database 讀取失敗";});
 </script></body></html>
-<!-- Database First runtime | UI preserved | data: data/master-database.json -->
+<!-- Database First runtime | UI baseline preserved from index-v3.7.html | normalized data: data/master-database.json -->

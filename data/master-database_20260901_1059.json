@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
-  "databaseVersion": "1.9.2",
-  "updatedAt": "2026-09-01T09:30:00+08:00",
+  "databaseVersion": "1.9.0",
+  "updatedAt": "2026-08-31T23:42:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -95,8 +95,7 @@
           "name": "北大マルシェ Café & Labo",
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=北大マルシェ+Café%26Labo",
           "hours": "10:00–16:00",
-          "dataStatus": "detailed",
-          "parkingId": "times-kita9-nishi4"
+          "dataStatus": "detailed"
         },
         "hill-of-buddha": {
           "id": "hill-of-buddha",
@@ -237,32 +236,14 @@
           "displayNames": {
             "timeline": "Sprout 咖啡店"
           },
-          "dataStatus": "detailed",
-          "recommendation": {
-            "level": "recommended",
-            "label": "推薦"
-          },
-          "shortFeature": "手沖精品咖啡",
-          "whyGo": "手沖精品咖啡",
-          "evidence": [
-            {
-              "type": "userProvidedPhoto",
-              "date": "2026-09-01",
-              "supports": [
-                "HAND DRIP COFFEE",
-                "PAPER DRIP",
-                "SPECIALTY COFFEE"
-              ]
-            }
-          ]
+          "dataStatus": "detailed"
         },
         "hana-road-eniwa": {
           "id": "hana-road-eniwa",
           "name": "花ロードえにわ",
-          "hours": null,
+          "hours": "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC",
           "description": "道之驛午餐、南瓜咖哩麵包。",
-          "dataStatus": "partial",
-          "mapUrl": "https://www.google.com/maps/search/?api=1&query=817-18+Minamishimamatsu%2C+Eniwa%2C+Hokkaido+061-1375%E6%97%A5%E6%9C%AC"
+          "dataStatus": "partial"
         },
         "mitsui-outlet-sapporo-kitahiroshima": {
           "id": "mitsui-outlet-sapporo-kitahiroshima",
@@ -452,13 +433,7 @@
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=レストラン望羊蹄+洞爺湖",
           "hours": "17:00–19:30",
           "description": "晚餐。",
-          "dataStatus": "detailed",
-          "recommendation": {
-            "level": "recommended",
-            "label": "推薦"
-          },
-          "shortFeature": "洞爺湖老字號洋食｜招牌漢堡排",
-          "whyGo": "洞爺湖老字號洋食｜招牌漢堡排"
+          "dataStatus": "detailed"
         },
         "usuzan-ropeway": {
           "id": "usuzan-ropeway",
@@ -594,37 +569,6 @@
           "hours": "依各店營業時間",
           "description": "買 Royce 生巧克力、LeTAO Double Fromage、薯條三兄弟、六花亭奶油夾心餅與冷藏乳製品。",
           "dataStatus": "detailed"
-        },
-        "times-kita9-nishi4": {
-          "id": "times-kita9-nishi4",
-          "name": "タイムズ北９西４",
-          "category": "停車場",
-          "area": "札幌／北海道大學北側",
-          "mapUrl": "https://maps.app.goo.gl/nD1bPSaUhvrhSAdE9",
-          "hours": null,
-          "dataStatus": "partial",
-          "purpose": "前往北大マルシェ Café & Labo 時停車",
-          "source": "使用者提供",
-          "verifiedAt": "2026-09-01"
-        },
-        "sangaku-kissa": {
-          "id": "sangaku-kissa",
-          "name": "山岳喫茶",
-          "category": "咖啡",
-          "area": "洞爺湖溫泉",
-          "address": "北海道虻田郡洞爺湖町洞爺湖温泉40-21",
-          "mapUrl": "https://maps.app.goo.gl/YfyrURMwxxwiMqiz9",
-          "hours": "10:00–16:00",
-          "phone": "0142-82-4536",
-          "recommendation": {
-            "level": "recommended",
-            "label": "推薦"
-          },
-          "shortFeature": "手沖",
-          "whyGo": "手沖咖啡",
-          "dataStatus": "detailed",
-          "source": "使用者提供＋公開店家資料",
-          "verifiedAt": "2026-09-01"
         }
       },
       "itineraries": {
@@ -727,7 +671,7 @@
         },
         "day2": {
           "date": "2026-09-17",
-          "route": "琴似住宿 → 琴似神社 → ㈱マルサン三上商店 → 北大マルシェ Café & Labo → 頭大佛 → 小樽",
+          "route": "琴似住宿 → 琴似神社 → ㈱マルサン三上商店 → 北海道大學 → 頭大佛 → 小樽",
           "timeline": [
             {
               "id": "d2-01",
@@ -738,7 +682,7 @@
                 "status": "estimate",
                 "display": "07:30–12:25"
               },
-              "title": "札幌早晨｜琴似神社・海鮮早餐・北大マルシェ・頭大佛",
+              "title": "札幌早晨｜琴似神社・海鮮早餐・北大・頭大佛",
               "collapsible": true,
               "stay": "約 4 小時 55 分",
               "next": "12:25 出發前往小樽",
@@ -806,19 +750,32 @@
                     "status": "estimate",
                     "display": "09:20–09:45"
                   },
-                  "text": "前往北大マルシェ並停車",
-                  "relatedPlaceId": "hokudai-marche-cafe",
-                  "parkingId": "times-kita9-nishi4"
+                  "text": "前往北海道大學並停車",
+                  "relatedPlaceId": "hokkaido-university"
+                },
+                {
+                  "type": "place",
+                  "placeId": "hokkaido-university",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "09:45",
+                    "end": "10:00",
+                    "status": "estimate",
+                    "display": "09:45–10:00"
+                  },
+                  "display": {
+                    "suffix": "短散步"
+                  }
                 },
                 {
                   "type": "place",
                   "placeId": "hokudai-marche-cafe",
                   "visitRole": "primary",
                   "time": {
-                    "start": "09:45",
+                    "start": "10:00",
                     "end": "10:40",
                     "status": "estimate",
-                    "display": "09:45–10:40"
+                    "display": "10:00–10:40"
                   }
                 },
                 {
@@ -1085,13 +1042,27 @@
                 },
                 {
                   "type": "place",
-                  "placeId": "satudora-otaru-sakaimachi",
+                  "placeId": "kitaichi-glass-sangokan",
                   "visitRole": "primary",
                   "time": {
                     "start": "10:00",
                     "end": "10:40",
                     "status": "estimate",
                     "display": "10:00–10:40"
+                  },
+                  "display": {
+                    "showHours": true
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "satudora-otaru-sakaimachi",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "10:40",
+                    "end": "11:30",
+                    "status": "estimate",
+                    "display": "10:40–11:30"
                   }
                 },
                 {
@@ -1099,10 +1070,10 @@
                   "placeId": "ebijin-otaru",
                   "visitRole": "primary",
                   "time": {
-                    "start": "11:00",
-                    "end": "11:30",
+                    "start": "11:30",
+                    "end": "12:00",
                     "status": "estimate",
-                    "display": "11:00–11:30"
+                    "display": "11:30–12:00"
                   },
                   "display": {
                     "suffix": "｜外帶漢堡"
@@ -1111,10 +1082,10 @@
                 {
                   "type": "action",
                   "time": {
-                    "start": "11:30",
+                    "start": "12:00",
                     "end": "12:30",
                     "status": "estimate",
-                    "display": "11:30–12:30"
+                    "display": "12:00–12:30"
                   },
                   "text": "返回住宿、整理行李並退房"
                 }
@@ -1165,8 +1136,7 @@
                   "display": {
                     "nameStyle": "timeline",
                     "showHours": true,
-                    "hoursPrefix": "營業 ",
-                    "showFeature": true
+                    "hoursPrefix": "營業 "
                   }
                 },
                 {
@@ -1395,31 +1365,13 @@
               ]
             },
             {
-              "id": "d4-01b",
-              "type": "place",
-              "placeId": "sangaku-kissa",
-              "visitRole": "primary",
-              "time": {
-                "start": "10:00",
-                "end": "10:20",
-                "status": "estimate",
-                "display": "10:00–10:20"
-              },
-              "display": {
-                "showFeature": true
-              },
-              "note": "推薦｜手沖",
-              "stay": "約 20 分",
-              "next": "前往虎杖浜"
-            },
-            {
               "id": "d4-02",
               "type": "action",
               "time": {
-                "start": "10:20",
-                "end": "11:20",
+                "start": "10:00",
+                "end": "11:00",
                 "status": "estimate",
-                "display": "10:20–11:20"
+                "display": "10:00–11:00"
               },
               "text": "有珠山 → 虎杖浜",
               "note": "車程依當日導航與路況調整。",
@@ -1430,10 +1382,10 @@
               "id": "d4-03",
               "type": "action",
               "time": {
-                "start": "11:20",
-                "end": "12:50",
+                "start": "11:00",
+                "end": "12:30",
                 "status": "estimate",
-                "display": "11:20–12:50"
+                "display": "11:00–12:30"
               },
               "text": "虎杖浜海鮮午餐",
               "note": "時間為推估；たっちゃん食堂或 Kojohama Café，依現場營業與排隊狀況決定。",
@@ -1785,7 +1737,7 @@
           "highlights": [
             "琴似神社",
             "㈱マルサン三上商店／まるさん亭 本店",
-            "北大マルシェ Café & Labo",
+            "北海道大學",
             "頭大佛",
             "小樽港町"
           ],
@@ -2160,10 +2112,17 @@
               },
               {
                 "kind": "place",
+                "placeId": "hokkaido-university",
+                "display": {
+                  "label": "●"
+                },
+                "visitRole": "primary"
+              },
+              {
+                "kind": "place",
                 "placeId": "hokudai-marche-cafe",
                 "display": {
-                  "label": "●",
-                  "showParking": true
+                  "label": "●"
                 },
                 "visitRole": "primary"
               }
@@ -2355,8 +2314,7 @@
                 "kind": "place",
                 "placeId": "sprout-niseko",
                 "display": {
-                  "useRecommendation": true,
-                  "showShortFeature": true
+                  "label": "咖啡"
                 },
                 "visitRole": "primary"
               },
@@ -2424,8 +2382,7 @@
                 "kind": "place",
                 "placeId": "restaurant-boyotei",
                 "display": {
-                  "useRecommendation": true,
-                  "showShortFeature": true
+                  "description": "晚餐。"
                 },
                 "visitRole": "primary"
               },
@@ -2455,15 +2412,6 @@
                   "displayGroup": "有珠山"
                 },
                 "visitRole": "must"
-              },
-              {
-                "kind": "place",
-                "placeId": "sangaku-kissa",
-                "visitRole": "primary",
-                "display": {
-                  "useRecommendation": true,
-                  "showShortFeature": true
-                }
               }
             ]
           },
@@ -2707,7 +2655,7 @@
             "dayKey": "day2",
             "date": "9/17（四）",
             "dayLabel": "Day 2",
-            "route": "⛩️ 琴似神社 → 🦀 海鮮早餐 → ☕ 北大マルシェ → 🗿 頭大佛 → 🌊 小樽"
+            "route": "⛩️ 琴似神社 → 🦀 海鮮早餐 → 🎓 北大 → 🗿 頭大佛 → 🌊 小樽"
           },
           {
             "dayKey": "day3",
@@ -3425,40 +3373,6 @@
       ],
       "websitePublished": false,
       "updatedAt": "2026-08-31T23:42:00+08:00"
-    },
-    {
-      "date": "2026-09-01",
-      "projectId": "2026-hokkaido",
-      "scope": "待修正清單第一批整合",
-      "changes": [
-        "修正花ロードえにわ Google Maps URL 誤寫入 hours；mapUrl 恢復正確欄位，hours 保留未知",
-        "新增タイムズ北９西４，並以 parkingId 掛到北大マルシェ Café & Labo",
-        "Day 2 移除北海道大學獨立行程／顯示點，直接前往北大マルシェ並停車",
-        "Day 2 首頁路線、highlights、route 同步改為北大マルシェ Café & Labo",
-        "Day 3 時間軸移除重複的北一硝子三号館 10:00–10:40",
-        "Day 3 サツドラ改 10:00–10:40、EBIJIN 改 11:00–11:30、返回住宿退房改 11:30–12:30，均為 estimate",
-        "SPROUT 新增推薦標籤、shortFeature=手沖精品咖啡、whyGo，行程理由由 places 呼叫",
-        "レストラン望羊蹄新增推薦標籤、shortFeature=洞爺湖老字號洋食｜招牌漢堡排",
-        "Renderer 擴充 canonical recommendation／shortFeature／parkingId 呼叫，UI/CSS 不改"
-      ],
-      "websitePublished": false
-    },
-    {
-      "date": "2026-09-01",
-      "projectId": "2026-hokkaido",
-      "scope": "Day 4／有珠山後新增山岳喫茶",
-      "changes": [
-        "新增山岳喫茶：10:00–16:00",
-        "Google Maps：https://maps.app.goo.gl/YfyrURMwxxwiMqiz9",
-        "地址：北海道虻田郡洞爺湖町洞爺湖温泉40-21",
-        "標籤：推薦",
-        "短特色：手沖",
-        "排在有珠山纜車後，時間暫估 10:00–10:20",
-        "前往虎杖浜順延為 10:20–11:20，海鮮午餐順延為 11:20–12:50",
-        "今日會經過的區域同步列在有珠山區塊、纜車之後",
-        "網頁仍由 Master Database 呼叫，不將山岳喫茶資料硬寫進 HTML"
-      ],
-      "websitePublished": false
     }
   ]
 }
