@@ -1116,7 +1116,7 @@ function initCurrencyTool(){const twd=document.getElementById("twdAmount"),jpy=d
 async function boot(){
   const res=await fetch("data/master-database.json",{cache:"no-store"}); if(!res.ok) throw new Error("Master Database 讀取失敗");
   travelDB=await res.json(); project=travelDB.projects["2026-hokkaido"]; places=project.places; siteConfig=project.siteConfig; mustDoByDate=siteConfig.mustDoByDate||{}; dayData=buildDayData();
-  document.title=`${siteConfig.heroTitle} Travel OS 3.11 Minimal`; document.querySelector(".eyebrow").textContent="TRAVEL OS 3.11・MINIMAL"; document.querySelector(".hero h1").textContent=siteConfig.heroTitle; document.querySelector(".hero .sub").textContent=siteConfig.heroSubtitle; document.querySelector(".version-meta").textContent=`版本 Database First v${travelDB.databaseVersion}｜網頁 3.11｜更新 ${travelDB.updatedAt.replace('T',' ').slice(0,16).replaceAll('-','/')}`;
+  document.title=`${siteConfig.heroTitle} Travel OS 3.10 Minimal`; document.querySelector(".eyebrow").textContent="TRAVEL OS 3.10・MINIMAL"; document.querySelector(".hero h1").textContent=siteConfig.heroTitle; document.querySelector(".hero .sub").textContent=siteConfig.heroSubtitle; document.querySelector(".version-meta").textContent=`版本 Database First v${travelDB.databaseVersion}｜網頁 3.10｜更新 ${travelDB.updatedAt.replace('T',' ').slice(0,16).replaceAll('-','/')}`;
   renderHome(); renderFlights(); renderRental(); renderLodging(); updateCountdown(); loadWeather(); initCurrencyTool();
 }
 boot().catch(err=>{console.error(err);document.querySelector(".version-meta").textContent="Master Database 讀取失敗";});
