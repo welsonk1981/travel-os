@@ -1,7 +1,7 @@
 {
   "databaseName": "Travel OS Master Database",
-  "databaseVersion": "1.9.2",
-  "updatedAt": "2026-09-01T09:30:00+08:00",
+  "databaseVersion": "1.9.4",
+  "updatedAt": "2026-09-02T11:06:00+08:00",
   "projects": {
     "2026-hokkaido": {
       "name": "2026 北海道",
@@ -613,7 +613,7 @@
           "category": "咖啡",
           "area": "洞爺湖溫泉",
           "address": "北海道虻田郡洞爺湖町洞爺湖温泉40-21",
-          "mapUrl": "https://maps.app.goo.gl/YfyrURMwxxwiMqiz9",
+          "mapUrl": "https://maps.app.goo.gl/RMqG3nJQ3kLsw4GK7",
           "hours": "10:00–16:00",
           "phone": "0142-82-4536",
           "recommendation": {
@@ -624,7 +624,40 @@
           "whyGo": "手沖咖啡",
           "dataStatus": "detailed",
           "source": "使用者提供＋公開店家資料",
-          "verifiedAt": "2026-09-01"
+          "verifiedAt": "2026-09-01",
+          "mapUrlSource": "使用者重新提供 Google Maps 分享網址",
+          "mapUrlUpdatedAt": "2026-09-02"
+        },
+        "prono-tomakomai-taisei": {
+          "id": "prono-tomakomai-taisei",
+          "name": "プロノ 苫小牧大成店",
+          "displayName": "PRONO",
+          "category": "工作用品／空調服",
+          "area": "苫小牧",
+          "address": "〒053-0805 北海道苫小牧市新富町1丁目8番25号",
+          "phone": "0144-84-6647",
+          "mapUrl": "https://maps.app.goo.gl/FkaqUJfFiWxNKYaR8",
+          "hours": "10:00–19:30",
+          "hoursNote": "9/19（六）適用週末營業時間",
+          "shortFeature": "空調服試穿／比較",
+          "visitPurpose": "現場比較 HOOH SV900 與 BURTLE AC10 最低檔噪音。",
+          "focusPoints": [
+            "馬達聲",
+            "風切聲",
+            "共振",
+            "最低檔風量",
+            "電池重量"
+          ],
+          "purchaseRule": "若有合適款式再購買。",
+          "shoppingOSReference": {
+            "module": "Shopping OS",
+            "topic": "空調服",
+            "note": "詳細規格與選購原則"
+          },
+          "description": "目的：現場比較 HOOH SV900 與 BURTLE AC10 最低檔噪音。重點：馬達聲、風切聲、共振、最低檔風量、電池重量。若有合適款式再購買。詳細規格與選購原則 → Shopping OS「空調服」",
+          "dataStatus": "detailed",
+          "source": "使用者提供＋PRONO 官方店舗情報",
+          "verifiedAt": "2026-09-02"
         }
       },
       "itineraries": {
@@ -1335,7 +1368,7 @@
               },
               "title": "有珠山纜車｜上山・展望・下山",
               "collapsible": true,
-              "next": "10:00 開車前往虎杖浜",
+              "next": "10:00 前往山岳喫茶",
               "items": [
                 {
                   "type": "action",
@@ -1401,57 +1434,57 @@
               "visitRole": "primary",
               "time": {
                 "start": "10:00",
-                "end": "10:20",
+                "end": "11:00",
                 "status": "estimate",
-                "display": "10:00–10:20"
+                "display": "10:00–11:00"
               },
               "display": {
                 "showFeature": true
               },
               "note": "推薦｜手沖",
-              "stay": "約 20 分",
-              "next": "前往虎杖浜"
+              "stay": "約 1 小時",
+              "next": "11:00 前往虎杖浜"
             },
             {
               "id": "d4-02",
               "type": "action",
               "time": {
-                "start": "10:20",
-                "end": "11:20",
+                "start": "11:00",
+                "end": "12:00",
                 "status": "estimate",
-                "display": "10:20–11:20"
+                "display": "11:00–12:00"
               },
               "text": "有珠山 → 虎杖浜",
               "note": "車程依當日導航與路況調整。",
               "stay": "估計約60分",
-              "next": "虎杖浜海鮮午餐"
+              "next": "12:00 虎杖浜海鮮午餐"
             },
             {
               "id": "d4-03",
               "type": "action",
               "time": {
-                "start": "11:20",
-                "end": "12:50",
+                "start": "12:00",
+                "end": "13:30",
                 "status": "estimate",
-                "display": "11:20–12:50"
+                "display": "12:00–13:30"
               },
               "text": "虎杖浜海鮮午餐",
               "note": "時間為推估；たっちゃん食堂或 Kojohama Café，依現場營業與排隊狀況決定。",
               "stay": "約 60–90 分",
-              "next": "沿途採買水產"
+              "next": "13:30 沿途採買水產"
             },
             {
               "id": "d4-04",
               "type": "group",
               "time": {
                 "start": "13:30",
-                "end": "16:30",
+                "end": "17:10",
                 "status": "estimate",
-                "display": "13:30–16:30"
+                "display": "13:30–17:10"
               },
-              "title": "虎杖浜採買 → 苫小牧霜淇淋",
+              "title": "虎杖浜採買 → 苫小牧",
               "collapsible": true,
-              "next": "前往住宿",
+              "next": "17:20 前往住宿 Check-in",
               "items": [
                 {
                   "type": "multiPlace",
@@ -1486,12 +1519,26 @@
                   "visitRole": "primary",
                   "time": {
                     "start": "15:30",
-                    "end": "16:30",
+                    "end": "16:10",
                     "status": "estimate",
-                    "display": "15:30–16:30"
+                    "display": "15:30–16:10"
                   },
                   "display": {
                     "suffix": "｜吃牛奶霜淇淋"
+                  }
+                },
+                {
+                  "type": "place",
+                  "placeId": "prono-tomakomai-taisei",
+                  "visitRole": "primary",
+                  "time": {
+                    "start": "16:20",
+                    "end": "17:10",
+                    "status": "estimate",
+                    "display": "16:20–17:10"
+                  },
+                  "display": {
+                    "showFeature": true
                   }
                 }
               ]
@@ -1500,15 +1547,15 @@
               "id": "d4-05",
               "type": "action",
               "time": {
-                "start": "17:00",
+                "start": "17:20",
                 "end": null,
                 "status": "estimate",
-                "display": "17:00"
+                "display": "17:20"
               },
               "text": "苫小牧住宿 Check-in",
               "note": "停車、放行李。",
-              "stay": "30 分",
-              "next": "晚餐"
+              "stay": "約 30 分",
+              "next": "18:00 晚餐"
             },
             {
               "id": "d4-06",
@@ -1836,13 +1883,15 @@
           "highlights": [
             "08:15有珠山首班纜車",
             "🐟 虎杖浜海鮮午餐",
-            "苫小牧晚餐四選一"
+            "苫小牧晚餐四選一",
+            "PRONO 空調服試穿／比較"
           ],
           "missions": [
             "07:40前抵達纜車站",
             "搭08:15推估首班",
             "選定虎杖浜午餐",
-            "選一間苫小牧晚餐"
+            "選一間苫小牧晚餐",
+            "PRONO 比較空調服最低檔噪音"
           ],
           "foodFocus": [
             "虎杖浜海鮮午餐",
@@ -2562,6 +2611,14 @@
             "note": "藥妝、便利商店與大型採買集中在同一欄，依需要前往",
             "id": "day4-area-4",
             "items": [
+              {
+                "kind": "place",
+                "placeId": "prono-tomakomai-taisei",
+                "visitRole": "primary",
+                "display": {
+                  "label": "空調服比較"
+                }
+              },
               {
                 "kind": "place",
                 "placeId": "tsuruha-tomakomai-oji",
@@ -3457,6 +3514,40 @@
         "前往虎杖浜順延為 10:20–11:20，海鮮午餐順延為 11:20–12:50",
         "今日會經過的區域同步列在有珠山區塊、纜車之後",
         "網頁仍由 Master Database 呼叫，不將山岳喫茶資料硬寫進 HTML"
+      ],
+      "websitePublished": false
+    },
+    {
+      "date": "2026-09-01",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 4／山岳喫茶停留時間調整",
+      "changes": [
+        "山岳喫茶停留時間由 10:00–10:20 調整為 10:00–11:00",
+        "山岳喫茶停留時間改為約 1 小時，時間狀態維持 estimate",
+        "有珠山後續提示改為 10:00 前往山岳喫茶",
+        "有珠山→虎杖浜順延為 11:00–12:00",
+        "虎杖浜海鮮午餐順延為 12:00–13:30",
+        "13:30 後原有虎杖浜採買與苫小牧行程可直接銜接，因此後段時程不需再變動",
+        "網頁仍由 Master Database 呼叫時間與地點資料，UI/CSS 不變"
+      ],
+      "websitePublished": false
+    },
+    {
+      "date": "2026-09-02",
+      "projectId": "2026-hokkaido",
+      "scope": "Day 4／PRONO 苫小牧大成店／山岳喫茶 Map",
+      "changes": [
+        "山岳喫茶 Google Maps 分享網址更新為 https://maps.app.goo.gl/RMqG3nJQ3kLsw4GK7",
+        "新增プロノ 苫小牧大成店／PRONO",
+        "補入官方地址、電話、9/19（六）營業時間 10:00–19:30 與使用者提供 Google Maps 分享網址",
+        "Travel OS 僅保留空調服試穿／比較用途、比較 HOOH SV900 與 BURTLE AC10 最低檔噪音",
+        "比較重點：馬達聲、風切聲、共振、最低檔風量、電池重量",
+        "購買原則：若有合適款式再購買；詳細規格與選購原則指向 Shopping OS「空調服」",
+        "Day 4 15:30–16:10 幸せの生ソフト プチラパン",
+        "Day 4 16:20–17:10 PRONO 空調服試穿／比較",
+        "住宿 Check-in 順延至 17:20；18:00 晚餐維持不變",
+        "今日會經過的區域同步加入 PRONO，透過 placeId 呼叫資料",
+        "UI/CSS 不變"
       ],
       "websitePublished": false
     }
